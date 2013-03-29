@@ -15,7 +15,7 @@ public class LoginService implements ILoginService{
 		this.userDAO = userDAO;
 	}
 
-	@Override
+
 	public boolean isLogin(String username, String password) {
 		System.out.println("service starting······");
 		boolean flag = false;

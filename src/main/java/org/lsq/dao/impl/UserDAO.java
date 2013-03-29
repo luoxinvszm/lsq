@@ -11,7 +11,7 @@ public class UserDAO implements IUserDAO {
 		this.jdbcTemplate = jdbcTemplate;
 	}
 
-	@Override
+
 	public boolean checkUser(String username, String password) {
 		// TODO Auto-generated method stub
 
