@@ -4,14 +4,12 @@
 	"http://struts.apache.org/dtds/struts-2.3.dtd">
 
 <struts>
-	<package name="struts2"  extends="struts-default">
 	
-		<action name="login" class="loginAction">
-			<result name="success">/result.jsp</result>
-			<result name="input">/login.jsp</result>
-		</action>
-	
-	</package>
-	
+	<include file="struts-yhy.xml"></include>	
+	<include file="struts-qh.xml"></include>	
+	<include file="struts-ylg.xml"></include>	
+	<include file="struts-sxl.xml"></include>	
+	<include file="struts-yzp.xml"></include>	
+	<include file="struts-lx.xml"></include>	
 	
 </struts>
