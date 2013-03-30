@@ -29,7 +29,7 @@ public class LoginAction extends ActionSupport {
 	}
 	public String execute(){
 		System.out.println("action starting······");
-		System.out.println("test..");
+		System.out.println("test··········");
 		if(loginService.isLogin(username, password)){
 			return SUCCESS;
 		}
