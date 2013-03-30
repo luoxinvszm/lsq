@@ -9,7 +9,13 @@
         <property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
         <property name="url" value="jdbc:mysql://localhost:3306/test"></property>
         <property name="username" value="root"></property>
+<<<<<<< HEAD
         <property name="password" value="root"></property>
+=======
+
+        <property name="password" value="qinhua"></property>
+
+>>>>>>> c9c600a0fd4b9629371e09ad4b6c9dd85bc49b23
     </bean> 
     <!-- 定义Spring JDBC模板类bean -->
     <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
