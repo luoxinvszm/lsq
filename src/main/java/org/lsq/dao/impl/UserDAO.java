@@ -16,7 +16,7 @@ public class UserDAO implements IUserDAO {
 		// TODO Auto-generated method stub
 
 		System.out.println("dao starting······ ");
-		String sql = "select count(*) from user where username=? and password=? ";
+		String sql = "select count(*) from user where userName=? and userPassword=? ";
 		int count = jdbcTemplate.queryForInt(sql, new Object[] { username,
 				password });
 		return count > 0;
