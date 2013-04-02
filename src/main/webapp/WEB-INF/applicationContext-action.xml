@@ -8,5 +8,6 @@
 	<bean id="loginAction" class="org.lsq.action.LoginAction" >  
     	<property name="loginService" ref="loginService"></property>  
 	</bean> 
-  
+  	<bean id="AuthImg" class="org.lsq.action.AuthImg">
+  	</bean>
 </beans>  
