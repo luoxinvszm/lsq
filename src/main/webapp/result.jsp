@@ -9,5 +9,6 @@
 <body>
 username: ${requestScope.username }<br>
 password: ${requestScope.password } 
+<a href="CreateManager.action">创建普通管理员</a>
 </body>
 </html>
