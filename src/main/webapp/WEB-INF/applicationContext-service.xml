@@ -7,5 +7,8 @@
     <bean id="loginService" class="org.lsq.service.impl.LoginService">
     	<property name="userDAO" ref="userDAO"></property>
     </bean>  
-  
+  <!-- qh写的service ，InsertMessageService -->
+  	<bean id="InsertMessageService" class="org.lsq.service.impl.InsertMessageService">
+  		<property name="insertMessageDAO" ref="InsertMessageDAO"></property>
+  	</bean>
 </beans>  

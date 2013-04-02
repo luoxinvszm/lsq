@@ -8,5 +8,8 @@
 	<bean id="loginAction" class="org.lsq.action.LoginAction" >  
     	<property name="loginService" ref="loginService"></property>  
 	</bean> 
-  
+  <!-- 这个是qh的action ,insertMessageAction -->
+  <bean id="insertMessageAction" class="org.lsq.action.insertMessageAction">  
+    	<property name="insertMessageService" ref="InsertMessageService"></property>  
+	</bean> 
 </beans>  
