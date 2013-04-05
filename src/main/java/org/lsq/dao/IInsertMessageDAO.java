@@ -7,12 +7,12 @@ public interface IInsertMessageDAO {
 	 * @param messageContext
 	 * @param publisherName
 	 * @param publisherPhone
+	 * @param publishTime
 	 * @param msgRemark
-	 * @param insertTime
 	 * @return true
 	 * 
 	 * @author qinhua 
 	 */
 	public int insertMessage(String messageContext, String publisherName,
-			String publisherPhone, String msgRemark);
+			String publisherPhone,String publishTime ,String msgRemark);
 }

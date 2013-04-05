@@ -14,11 +14,11 @@ public class InsertMessageService implements IInsertMessageService {
 	}
 
 	public int isInsertMessage(String messageContext, String publisherName,
-			String publisherPhone, String msgRemark) {
+			String publisherPhone,String publishTime, String msgRemark) {
 		// TODO Auto-generated method stub
 		System.out.println("insertMessageService starting····");
 		
-		int flag = insertMessageDAO.insertMessage(messageContext, publisherName, publisherPhone, msgRemark);
+		int flag = insertMessageDAO.insertMessage(messageContext, publisherName, publisherPhone,publishTime, msgRemark);
 		
 		if(flag != 0){
 			return flag;
