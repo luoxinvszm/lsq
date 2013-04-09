@@ -10,4 +10,10 @@
 	</bean> 
   	<bean id="AuthImg" class="org.lsq.action.AuthImg">
   	</bean>
+  	<bean id="createOrdin" class="org.lsq.action.CreateOrdinManager">
+  		<property name="addUserService" ref="addUserService"></property>
+  	</bean>
+  	<bean id="createSuper" class="org.lsq.action.CreateSuperManager">
+  		<property name="addUserService" ref="addUserService"></property>
+  	</bean>
 </beans>  

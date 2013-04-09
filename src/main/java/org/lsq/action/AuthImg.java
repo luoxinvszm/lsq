@@ -22,7 +22,7 @@ import com.opensymphony.xwork2.ActionSupport;
   
 public class AuthImg extends ActionSupport {  
     /**
-	 * 
+	 * 生成验证码的工具类
 	 */
 	private static final long serialVersionUID = 1L;
 	private ByteArrayInputStream inputStream;  

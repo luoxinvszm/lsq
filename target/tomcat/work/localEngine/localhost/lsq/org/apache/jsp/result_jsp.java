@@ -64,7 +64,8 @@ public final class result_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("password: ");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${requestScope.password }", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
       out.write(" \r\n");
-      out.write("<a href=\"CreateManager.action\">创建普通管理员</a>\r\n");
+      out.write("<a href=\"CreateOrdinManager.action\">创建普通管理员</a>\r\n");
+      out.write("<a href=\"CreateSuperManager.action\">创建超级管理员</a>\r\n");
       out.write("</body>\r\n");
       out.write("</html>");
     } catch (Throwable t) {

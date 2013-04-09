@@ -15,6 +15,8 @@
             <param name="inputName">inputStream</param> 
 			</result>
 		</action>
+		<action name="createOrdin" class=""></action>
+		<action name="createSuper" class=""></action>
 	</package>
 	
 

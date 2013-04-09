@@ -9,6 +9,7 @@
 <body>
 username: ${requestScope.username }<br>
 password: ${requestScope.password } 
-<a href="CreateManager.action">创建普通管理员</a>
+<a href="CreateOrdin.action">创建普通管理员</a>
+<a href="CreateSuper.action">创建超级管理员</a>
 </body>
 </html>

@@ -21,5 +21,8 @@
     <bean id="userDAO" class="org.lsq.dao.impl.UserDAO">
     	<property name="jdbcTemplate" ref="jdbcTemplate"></property>
     </bean>
+    <bean id="addUserDAO" class="org.lsq.dao.impl.AddUserDAO">
+    	<property name="jdbcTemplate" ref="jdbcTemplate"></property>
+    </bean>
   
 </beans>  
