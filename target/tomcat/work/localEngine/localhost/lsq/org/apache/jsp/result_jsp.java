@@ -88,7 +88,11 @@ public final class result_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write(" \r\n");
       out.write("<a href=\"createOrdin.action\">创建普通管理员</a>\r\n");
       out.write("<a href=\"createSuper.action\">创建超级管理员</a>\r\n");
+<<<<<<< HEAD
+      out.write("\r\n");
+=======
 >>>>>>> 156d1c86cd8580bd9a6790faa7f15ffdf262b862
+>>>>>>> 6f7db7cfd26426369ce4866781adf5bf9b6a8374
       out.write("</body>\r\n");
       out.write("</html>");
     } catch (Throwable t) {

@@ -2,7 +2,7 @@
 <!DOCTYPE beans PUBLIC    
     "-//SPRING//DTD BEAN//EN"   
     "http://www.springframework.org/dtd/spring-beans.dtd">  
-<beans >  
+<beans>  
 
 	
   <bean id="InsertMessageAction" class="org.lsq.action.InsertMessageAction">  
@@ -14,4 +14,3 @@
 	</bean>
 	
 </beans>  
-

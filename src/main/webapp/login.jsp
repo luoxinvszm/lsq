@@ -14,9 +14,8 @@
 	<font color="red" face="songti"><s:fielderror/></font>
 	<form action="login" method="post">
 		
-		用户:<input type="text" name="username"><s:fielderror fieldName="username"/><br>
-		密码:<input type="password" name="password"><s:fielderror fieldName="password"/><br>
-		验证码:<input type="text" name="auth"/> <img src="authImg" id="img" border="0" onclick= "this.src='authImg?d'+(new Date().getTime());"alt="请输入此验证码，如看不清请点击刷新" style="cursor:pointer" />  
+		用户:<input type="text" name="username"><br>
+		密码:<input type="password" name="password"><br>
 		<input type="submit" value="submit" />
 	</form>
 </body>

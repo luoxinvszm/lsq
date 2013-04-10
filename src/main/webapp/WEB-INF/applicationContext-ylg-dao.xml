@@ -3,7 +3,6 @@
     "-//SPRING//DTD BEAN//EN"   
     "http://www.springframework.org/dtd/spring-beans.dtd">
 <beans>
-
 	<bean id="userDAO" class="org.lsq.dao.impl.UserDAO">
 		<property name="jdbcTemplate" ref="jdbcTemplate"></property>
 	</bean>

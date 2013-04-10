@@ -2,35 +2,10 @@
 <!DOCTYPE beans PUBLIC    
     "-//SPRING//DTD BEAN//EN"   
     "http://www.springframework.org/dtd/spring-beans.dtd">  
-<beans >  
+<beans>  
 
-	<!-- action -->
-	<bean id="loginAction" class="org.lsq.action.LoginAction" >  
-    	<property name="loginService" ref="loginService"></property>  
-	</bean> 
-
-  <!-- 这个是qh的action ,insertMessageAction -->
-  <bean id="InsertMessageAction" class="org.lsq.action.InsertMessageAction">  
-    	<property name="insertMessageService" ref="InsertMessageService"></property>  
-	</bean>
-
-	<bean id="QueryMessageAction" class="org.lsq.action.QueryMessageAction">  
-    	<property name="qureyMessageService" ref="QureyMessageService"></property>  
-	</bean>
-	
-	<!-- ****************************************************************** -->
-	<!-- 这个是ylg的action,Authlmg -->
-  	<bean id="AuthImg" class="org.lsq.action.AuthImg">
-  	</bean>
-
-  	<bean id="createOrdin" class="org.lsq.action.CreateOrdinManager">
-  		<property name="addUserService" ref="addUserService"></property>
-  	</bean>
-  	<bean id="createSuper" class="org.lsq.action.CreateSuperManager">
-  		<property name="addUserService" ref="addUserService"></property>
-  	</bean>  
   	<!-- 这个是sxl的action ,MessageSettingsAction-->
   	<bean id="MessageSettingsAction" class="org.lsq.action.MessageSettingsAction"></bean>
 	<!-- ****************************************************************** -->
-</beans>  
 
+</beans>  
