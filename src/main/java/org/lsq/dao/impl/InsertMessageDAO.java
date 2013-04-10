@@ -13,10 +13,12 @@ public class InsertMessageDAO implements IInsertMessageDAO {
 
 	public int insertMessage(String messageContext, String publisherName,
 			String publisherPhone, String publishTime, String msgRemark) {
-
+		
 		System.out.println("insertMessageDAO starting······");
-
-		String sql = "insert into message (msgConctent,publisherName,publisherPhone,publishTime,msgRemark) values ('"
+		int msgId = 3; //随机获取主键值
+		String sql = "insert into message (msgId,msgConctent,publisherName,publisherPhone,publishTime,msgRemark,msgStatus) values ('"
+				+ msgId
+				+ "','"
 				+ messageContext
 				+ "','"
 				+ publisherName
@@ -26,6 +28,8 @@ public class InsertMessageDAO implements IInsertMessageDAO {
 				+ publishTime
 				+ "','"
 				+ msgRemark
+				+ "','"
+				+ 0
 				+ "');";
 
 		int i = 0;

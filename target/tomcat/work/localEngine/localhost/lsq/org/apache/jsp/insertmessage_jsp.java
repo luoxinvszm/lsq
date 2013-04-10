@@ -54,7 +54,6 @@ public final class insertmessage_jsp extends org.apache.jasper.runtime.HttpJspBa
       out.write("<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">\r\n");
       out.write("<html>\r\n");
       out.write("<head>\r\n");
-      out.write("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=ISO-8859-1\">\r\n");
       out.write("<title>Insert title here</title>\r\n");
       out.write("</head>\r\n");
       out.write("<body>\r\n");
