@@ -8,7 +8,7 @@ import org.lsq.util.DateFormat;
 import com.opensymphony.xwork2.ActionSupport;
 
 @SuppressWarnings("serial")
-public class insertMessageAction extends ActionSupport {
+public class InsertMessageAction extends ActionSupport {
 
 	private IInsertMessageService insertMessageService;
 

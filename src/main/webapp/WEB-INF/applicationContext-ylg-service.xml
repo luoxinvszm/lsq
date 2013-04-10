@@ -9,9 +9,6 @@
     </bean>  
   	<bean id="addUserService" class="org.lsq.service.impl.AddUserService">
   		<property name="addUserDAO" ref="addUserDAO"></property>
-  		</bean>
-  <!-- qh写的service ，InsertMessageService -->
-  	<bean id="InsertMessageService" class="org.lsq.service.impl.InsertMessageService">
-  		<property name="insertMessageDAO" ref="InsertMessageDAO"></property>
   	</bean>
+  
 </beans>  

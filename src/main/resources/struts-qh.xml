@@ -5,10 +5,14 @@
 <struts>
 	<package name="struts3" extends="struts-default">
 
-		<action name="insertMessage" class="insertMessageAction">
+		<action name="insertMessage" class="InsertMessageAction">
 			<result name="success">/result.jsp</result>
 			<result name="input">/login.jsp</result>
 		</action>
-
+		<action name="qureyMessage" class="QueryMessageAction">
+			<result name="success">/qureyresult.jsp</result>
+			
+		</action>
+		
 	</package>
 </struts>

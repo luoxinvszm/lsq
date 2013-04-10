@@ -3,26 +3,18 @@
     "-//SPRING//DTD BEAN//EN"   
     "http://www.springframework.org/dtd/spring-beans.dtd">  
 <beans >  
-
-	<!-- action -->
 	<bean id="loginAction" class="org.lsq.action.LoginAction" >  
     	<property name="loginService" ref="loginService"></property>  
 	</bean> 
 
-  <!-- 这个是qh的action ,insertMessageAction -->
-  <bean id="insertMessageAction" class="org.lsq.action.insertMessageAction">  
-    	<property name="insertMessageService" ref="InsertMessageService"></property>  
-	</bean>
   	<bean id="AuthImg" class="org.lsq.action.AuthImgAction">
   	</bean>
+
   	<bean id="createOrdin" class="org.lsq.action.CreateOrdinManagerAction">
   		<property name="addUserService" ref="addUserService"></property>
   	</bean>
   	<bean id="createSuper" class="org.lsq.action.CreateSuperManagerAction">
   		<property name="addUserService" ref="addUserService"></property>
-  	</bean>
-
-  	<!-- 这个是sxl的action ,MessageSettingsAction-->
-  	<bean id="MessageSettingsAction" class="org.lsq.action.MessageSettingsAction"></bean>
-</beans>   
+  	</bean>  
+ </beans>  
 
