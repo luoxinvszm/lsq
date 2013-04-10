@@ -16,6 +16,7 @@
         <property name="dataSource" ref="dataSource"></property>
     </bean>
     
+<<<<<<< HEAD
     
     <import resource="applicationContext-qh-dao.xml"/>
     <import resource="applicationContext-lx-dao.xml"/>
@@ -23,5 +24,17 @@
     <import resource="applicationContext-yzp-dao.xml"/>
     <import resource="applicationContext-yhy-dao.xml"/>
     <import resource="applicationContext-ylg-dao.xml"/>
+=======
+    <!-- dao -->
+    <bean id="userDAO" class="org.lsq.dao.impl.UserDAO">
+    	<property name="jdbcTemplate" ref="jdbcTemplate"></property>
+    </bean>
+    <bean id="addUserDAO" class="org.lsq.dao.impl.AddUserDAO"></bean>
+    
+    <!-- qh写的dao ，insertMessageDAO -->
+    <bean id="InsertMessageDAO" class="org.lsq.dao.impl.InsertMessageDAO">
+    	<property name="jdbcTemplate" ref="jdbcTemplate"></property>
+    </bean>
+>>>>>>> 3bf64fa90d415b060b60ebb66bdfbf5ae2af233f
   
 </beans>  
