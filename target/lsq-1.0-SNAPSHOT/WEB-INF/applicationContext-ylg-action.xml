@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC    
+    "-//SPRING//DTD BEAN//EN"   
+    "http://www.springframework.org/dtd/spring-beans.dtd">  
+<beans >  
+	<bean id="loginAction" class="org.lsq.action.LoginAction" >  
+    	<property name="loginService" ref="loginService"></property>  
+	</bean> 
+
+  	<bean id="AuthImg" class="org.lsq.action.AuthImgAction">
+  	</bean>
+
+  	<bean id="createOrdin" class="org.lsq.action.CreateOrdinManagerAction">
+  		<property name="addUserService" ref="addUserService"></property>
+  	</bean>
+  	<bean id="createSuper" class="org.lsq.action.CreateSuperManagerAction">
+  		<property name="addUserService" ref="addUserService"></property>
+  	</bean>  
+ </beans>  
+
