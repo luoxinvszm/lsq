@@ -8,8 +8,14 @@
 	<bean id="loginAction" class="org.lsq.action.LoginAction" >  
     	<property name="loginService" ref="loginService"></property>  
 	</bean> 
+
+  <!-- 这个是qh的action ,insertMessageAction -->
+  <bean id="insertMessageAction" class="org.lsq.action.insertMessageAction">  
+    	<property name="insertMessageService" ref="InsertMessageService"></property>  
+	</bean>
   	<bean id="AuthImg" class="org.lsq.action.AuthImg">
   	</bean>
+<<<<<<< HEAD
   	<bean id="createOrdin" class="org.lsq.action.CreateOrdinManager">
   		<property name="addUserService" ref="addUserService"></property>
   	</bean>
@@ -17,3 +23,9 @@
   		<property name="addUserService" ref="addUserService"></property>
   	</bean>
 </beans>  
+=======
+  	<!-- 这个是sxl的action ,MessageSettingsAction-->
+  	<bean id="MessageSettingsAction" class="org.lsq.action.MessageSettingsAction"></bean>
+</beans>  
+
+>>>>>>> 6faac2c7d697ff1995974e0e2520d20e9a44b78e

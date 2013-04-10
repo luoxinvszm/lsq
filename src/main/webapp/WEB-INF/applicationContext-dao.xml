@@ -21,7 +21,13 @@
     <bean id="userDAO" class="org.lsq.dao.impl.UserDAO">
     	<property name="jdbcTemplate" ref="jdbcTemplate"></property>
     </bean>
+<<<<<<< HEAD
     <bean id="addUserDAO" class="org.lsq.dao.impl.AddUserDAO">
+=======
+    
+    <!-- qh写的dao ，insertMessageDAO -->
+    <bean id="InsertMessageDAO" class="org.lsq.dao.impl.InsertMessageDAO">
+>>>>>>> 6faac2c7d697ff1995974e0e2520d20e9a44b78e
     	<property name="jdbcTemplate" ref="jdbcTemplate"></property>
     </bean>
   
