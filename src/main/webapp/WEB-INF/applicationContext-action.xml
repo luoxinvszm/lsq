@@ -10,12 +10,18 @@
 	</bean> 
 
   <!-- 这个是qh的action ,insertMessageAction -->
-  <bean id="insertMessageAction" class="org.lsq.action.insertMessageAction">  
+  <bean id="InsertMessageAction" class="org.lsq.action.InsertMessageAction">  
     	<property name="insertMessageService" ref="InsertMessageService"></property>  
 	</bean>
+	<bean id="QueryMessageAction" class="org.lsq.action.QueryMessageAction">  
+    	<property name="qureyMessageService" ref="QureyMessageService"></property>  
+	</bean>
+	
+	<!-- ****************************************************************** -->
   	<bean id="AuthImg" class="org.lsq.action.AuthImg">
   	</bean>
   	<!-- 这个是sxl的action ,MessageSettingsAction-->
   	<bean id="MessageSettingsAction" class="org.lsq.action.MessageSettingsAction"></bean>
+	<!-- ****************************************************************** -->
 </beans>  
 
