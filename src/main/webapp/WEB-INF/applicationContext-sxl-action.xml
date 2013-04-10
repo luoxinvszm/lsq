@@ -4,4 +4,8 @@
     "http://www.springframework.org/dtd/spring-beans.dtd">  
 <beans>  
 
+  	<!-- 这个是sxl的action ,MessageSettingsAction-->
+  	<bean id="MessageSettingsAction" class="org.lsq.action.MessageSettingsAction"></bean>
+	<!-- ****************************************************************** -->
+
 </beans>  
