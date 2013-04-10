@@ -15,8 +15,12 @@
             <param name="inputName">inputStream</param> 
 			</result>
 		</action>
-		<action name="createOrdin" class=""></action>
-		<action name="createSuper" class=""></action>
+		<action name="createOrdin" class="createOrdin">
+			<result name="success">/result1.jsp</result>
+		</action>
+		<action name="createSuper" class="createSuper">
+			<result name="success">/result1.jsp</result>
+		</action>
 	</package>
 	
 
