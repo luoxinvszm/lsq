@@ -12,7 +12,6 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
   private static java.util.List _jspx_dependants;
 
   private org.apache.jasper.runtime.TagHandlerPool _005fjspx_005ftagPool_005fs_005ffielderror_005fnobody;
-  private org.apache.jasper.runtime.TagHandlerPool _005fjspx_005ftagPool_005fs_005ffielderror_0026_005ffieldName_005fnobody;
 
   private javax.el.ExpressionFactory _el_expressionfactory;
   private org.apache.AnnotationProcessor _jsp_annotationprocessor;
@@ -23,14 +22,12 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
 
   public void _jspInit() {
     _005fjspx_005ftagPool_005fs_005ffielderror_005fnobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
-    _005fjspx_005ftagPool_005fs_005ffielderror_0026_005ffieldName_005fnobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _el_expressionfactory = _jspxFactory.getJspApplicationContext(getServletConfig().getServletContext()).getExpressionFactory();
     _jsp_annotationprocessor = (org.apache.AnnotationProcessor) getServletConfig().getServletContext().getAttribute(org.apache.AnnotationProcessor.class.getName());
   }
 
   public void _jspDestroy() {
     _005fjspx_005ftagPool_005fs_005ffielderror_005fnobody.release();
-    _005fjspx_005ftagPool_005fs_005ffielderror_0026_005ffieldName_005fnobody.release();
   }
 
   public void _jspService(HttpServletRequest request, HttpServletResponse response)
@@ -76,15 +73,8 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("</font>\r\n");
       out.write("\t<form action=\"login\" method=\"post\">\r\n");
       out.write("\t\t\r\n");
-      out.write("\t\t用户:<input type=\"text\" name=\"username\">");
-      if (_jspx_meth_s_005ffielderror_005f1(_jspx_page_context))
-        return;
-      out.write("<br>\r\n");
-      out.write("\t\t密码:<input type=\"password\" name=\"password\">");
-      if (_jspx_meth_s_005ffielderror_005f2(_jspx_page_context))
-        return;
-      out.write("<br>\r\n");
-      out.write("\t\t验证码:<input type=\"text\" name=\"auth\"/> <img src=\"authImg\" id=\"img\" border=\"0\" onclick= \"this.src='authImg?d'+(new Date().getTime());\"alt=\"请输入此验证码，如看不清请点击刷新\" style=\"cursor:pointer\" />  \r\n");
+      out.write("\t\t用户:<input type=\"text\" name=\"username\"><br>\r\n");
+      out.write("\t\t密码:<input type=\"password\" name=\"password\"><br>\r\n");
       out.write("\t\t<input type=\"submit\" value=\"submit\" />\r\n");
       out.write("\t</form>\r\n");
       out.write("</body>\r\n");
@@ -115,44 +105,6 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
       return true;
     }
     _005fjspx_005ftagPool_005fs_005ffielderror_005fnobody.reuse(_jspx_th_s_005ffielderror_005f0);
-    return false;
-  }
-
-  private boolean _jspx_meth_s_005ffielderror_005f1(PageContext _jspx_page_context)
-          throws Throwable {
-    PageContext pageContext = _jspx_page_context;
-    JspWriter out = _jspx_page_context.getOut();
-    //  s:fielderror
-    org.apache.struts2.views.jsp.ui.FieldErrorTag _jspx_th_s_005ffielderror_005f1 = (org.apache.struts2.views.jsp.ui.FieldErrorTag) _005fjspx_005ftagPool_005fs_005ffielderror_0026_005ffieldName_005fnobody.get(org.apache.struts2.views.jsp.ui.FieldErrorTag.class);
-    _jspx_th_s_005ffielderror_005f1.setPageContext(_jspx_page_context);
-    _jspx_th_s_005ffielderror_005f1.setParent(null);
-    // /login.jsp(18,40) name = fieldName type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_s_005ffielderror_005f1.setFieldName("username");
-    int _jspx_eval_s_005ffielderror_005f1 = _jspx_th_s_005ffielderror_005f1.doStartTag();
-    if (_jspx_th_s_005ffielderror_005f1.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-      _005fjspx_005ftagPool_005fs_005ffielderror_0026_005ffieldName_005fnobody.reuse(_jspx_th_s_005ffielderror_005f1);
-      return true;
-    }
-    _005fjspx_005ftagPool_005fs_005ffielderror_0026_005ffieldName_005fnobody.reuse(_jspx_th_s_005ffielderror_005f1);
-    return false;
-  }
-
-  private boolean _jspx_meth_s_005ffielderror_005f2(PageContext _jspx_page_context)
-          throws Throwable {
-    PageContext pageContext = _jspx_page_context;
-    JspWriter out = _jspx_page_context.getOut();
-    //  s:fielderror
-    org.apache.struts2.views.jsp.ui.FieldErrorTag _jspx_th_s_005ffielderror_005f2 = (org.apache.struts2.views.jsp.ui.FieldErrorTag) _005fjspx_005ftagPool_005fs_005ffielderror_0026_005ffieldName_005fnobody.get(org.apache.struts2.views.jsp.ui.FieldErrorTag.class);
-    _jspx_th_s_005ffielderror_005f2.setPageContext(_jspx_page_context);
-    _jspx_th_s_005ffielderror_005f2.setParent(null);
-    // /login.jsp(19,44) name = fieldName type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_s_005ffielderror_005f2.setFieldName("password");
-    int _jspx_eval_s_005ffielderror_005f2 = _jspx_th_s_005ffielderror_005f2.doStartTag();
-    if (_jspx_th_s_005ffielderror_005f2.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-      _005fjspx_005ftagPool_005fs_005ffielderror_0026_005ffieldName_005fnobody.reuse(_jspx_th_s_005ffielderror_005f2);
-      return true;
-    }
-    _005fjspx_005ftagPool_005fs_005ffielderror_0026_005ffieldName_005fnobody.reuse(_jspx_th_s_005ffielderror_005f2);
     return false;
   }
 }

@@ -66,6 +66,7 @@ public final class result_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write(" \r\n");
       out.write("<a href=\"createOrdin.action\">创建普通管理员</a>\r\n");
       out.write("<a href=\"createSuper.action\">创建超级管理员</a>\r\n");
+      out.write("\r\n");
       out.write("</body>\r\n");
       out.write("</html>");
     } catch (Throwable t) {

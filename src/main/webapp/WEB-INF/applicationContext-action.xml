@@ -13,19 +13,16 @@
   <bean id="insertMessageAction" class="org.lsq.action.insertMessageAction">  
     	<property name="insertMessageService" ref="InsertMessageService"></property>  
 	</bean>
-  	<bean id="AuthImg" class="org.lsq.action.AuthImg">
+  	<bean id="AuthImg" class="org.lsq.action.AuthImgAction">
   	</bean>
-<<<<<<< HEAD
-  	<bean id="createOrdin" class="org.lsq.action.CreateOrdinManager">
+  	<bean id="createOrdin" class="org.lsq.action.CreateOrdinManagerAction">
   		<property name="addUserService" ref="addUserService"></property>
   	</bean>
-  	<bean id="createSuper" class="org.lsq.action.CreateSuperManager">
+  	<bean id="createSuper" class="org.lsq.action.CreateSuperManagerAction">
   		<property name="addUserService" ref="addUserService"></property>
   	</bean>
-</beans>  
-=======
+
   	<!-- 这个是sxl的action ,MessageSettingsAction-->
   	<bean id="MessageSettingsAction" class="org.lsq.action.MessageSettingsAction"></bean>
-</beans>  
+</beans>   
 
->>>>>>> 6faac2c7d697ff1995974e0e2520d20e9a44b78e
