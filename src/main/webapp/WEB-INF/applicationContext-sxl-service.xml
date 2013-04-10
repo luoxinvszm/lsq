@@ -2,19 +2,5 @@
 <!DOCTYPE beans PUBLIC    
     "-//SPRING//DTD BEAN//EN"   
     "http://www.springframework.org/dtd/spring-beans.dtd">  
-<beans >  
-    <!-- service -->
-    <bean id="loginService" class="org.lsq.service.impl.LoginService">
-    	<property name="userDAO" ref="userDAO"></property>
-    </bean>  
-  	<bean id="addUserService" class="org.lsq.service.impl.AddUserService">
-  		<property name="addUserDAO" ref="addUserDAO"></property>
-  		</bean>
-  <!-- qh写的service ，InsertMessageService -->
-  	<bean id="InsertMessageService" class="org.lsq.service.impl.InsertMessageService">
-  		<property name="insertMessageDAO" ref="InsertMessageDAO"></property>
-  	</bean>
-  	<bean id="QureyMessageService" class="org.lsq.service.impl.QureyMessageService">
-  		<property name="qureyMessageDao" ref="QureyMessageDAO"></property>
-  	</bean>
+<beans > 
 </beans>  

@@ -7,7 +7,7 @@
 <!-- 数据源配置 -->
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
         <property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
-        <property name="url" value="jdbc:mysql://localhost:3306/test"></property>
+        <property name="url" value="jdbc:mysql://localhost:3306/lsq"></property>
         <property name="username" value="root"></property>
         <property name="password" value="root"></property>
     </bean> 
@@ -19,6 +19,12 @@
     
     <!-- dao -->
     <bean id="userDAO" class="org.lsq.dao.impl.UserDAO">
+    	<property name="jdbcTemplate" ref="jdbcTemplate"></property>
+    </bean>
+    <bean id="addUserDAO" class="org.lsq.dao.impl.AddUserDAO"></bean>
+    
+    <!-- qh写的dao ，insertMessageDAO -->
+    <bean id="InsertMessageDAO" class="org.lsq.dao.impl.InsertMessageDAO">
     	<property name="jdbcTemplate" ref="jdbcTemplate"></property>
     </bean>
   
