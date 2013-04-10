@@ -13,6 +13,7 @@
   <bean id="insertMessageAction" class="org.lsq.action.insertMessageAction">  
     	<property name="insertMessageService" ref="InsertMessageService"></property>  
 	</bean>
+	<!-- 这个是ylg的action,Authlmg -->
   	<bean id="AuthImg" class="org.lsq.action.AuthImg">
   	</bean>
   	<!-- 这个是sxl的action ,MessageSettingsAction-->
