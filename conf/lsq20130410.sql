@@ -31,7 +31,7 @@ CREATE TABLE `message` (
   PRIMARY KEY  (`msgId`),
   KEY `FK_message_messageType` (`msgTypeId`),
   CONSTRAINT `FK_message_messageType` FOREIGN KEY (`msgTypeId`) REFERENCES `messagetype` (`msgTypeId`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='��Ϣ���������Ϣ���ͱ�';
+);
 
 -- ----------------------------
 -- Records of message
@@ -47,7 +47,7 @@ CREATE TABLE `messagetype` (
   `msgTypeRemark` text,
   `msgTypeStatus` int(11) default '0' COMMENT '0-可用 1-不可用',
   PRIMARY KEY  (`msgTypeId`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='��Ϣ���ͱ��������Ϣ��';
+);
 
 -- ----------------------------
 -- Records of messagetype
@@ -63,7 +63,7 @@ CREATE TABLE `power` (
   `powerStatus` int(11) default NULL,
   `powerRemark` text,
   PRIMARY KEY  (`powerId`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Ȩ�ޱ��������ɫ��';
+) ;
 
 -- ----------------------------
 -- Records of power
@@ -79,7 +79,7 @@ CREATE TABLE `role` (
   `roleStatus` int(11) default NULL,
   `roleRemark` text,
   PRIMARY KEY  (`roleId`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='��ɫ��������û����Ȩ�ޱ�';
+) ;
 
 -- ----------------------------
 -- Records of role
@@ -96,7 +96,7 @@ CREATE TABLE `role_power` (
   KEY `FK_role_power2` (`roleId`),
   CONSTRAINT `FK_role_power` FOREIGN KEY (`powerId`) REFERENCES `power` (`powerId`),
   CONSTRAINT `FK_role_power2` FOREIGN KEY (`roleId`) REFERENCES `role` (`roleId`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ;
 
 -- ----------------------------
 -- Records of role_power
@@ -116,7 +116,7 @@ CREATE TABLE `user` (
   PRIMARY KEY  (`userId`),
   KEY `FK_user_role` (`roleId`),
   CONSTRAINT `FK_user_role` FOREIGN KEY (`roleId`) REFERENCES `role` (`roleId`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='�û�������������ɫ��';
+) ;
 
 -- ----------------------------
 -- Records of user
