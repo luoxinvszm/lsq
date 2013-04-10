@@ -71,6 +71,7 @@ public final class result_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\r\n");
       out.write("\t<br> password: ");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${requestScope.password }", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
+<<<<<<< HEAD
       out.write("\r\n");
       out.write("\t<a href=\"CreateManager.action\">创建普通管理员</a>\r\n");
       out.write("\r\n");
@@ -83,6 +84,11 @@ public final class result_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\r\n");
       out.write("\t</ol>\r\n");
       out.write("\r\n");
+=======
+      out.write(" \r\n");
+      out.write("<a href=\"createOrdin.action\">创建普通管理员</a>\r\n");
+      out.write("<a href=\"createSuper.action\">创建超级管理员</a>\r\n");
+>>>>>>> 156d1c86cd8580bd9a6790faa7f15ffdf262b862
       out.write("</body>\r\n");
       out.write("</html>");
     } catch (Throwable t) {

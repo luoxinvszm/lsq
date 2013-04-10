@@ -8,12 +8,19 @@
 <title>Insert title here</title>
 </head>
 <body>
+
 	username: ${requestScope.username }
 	<br> password: ${requestScope.password }
 	<a href="CreateManager.action">创建普通管理员</a>
 
 
 
+
+
+username: ${requestScope.username }<br>
+password: ${requestScope.password } 
+<a href="createOrdin.action">创建普通管理员</a>
+<a href="createSuper.action">创建超级管理员</a>
 
 
 </body>

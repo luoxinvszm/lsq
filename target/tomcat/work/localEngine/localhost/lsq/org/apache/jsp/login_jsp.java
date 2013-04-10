@@ -70,21 +70,22 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("</script>\r\n");
       out.write("</head>\r\n");
       out.write("<body>\r\n");
-      out.write("\t");
+      out.write("\t<font color=\"red\" face=\"songti\">");
       if (_jspx_meth_s_005ffielderror_005f0(_jspx_page_context))
         return;
-      out.write("\r\n");
-      out.write("\t<form action=\"login\">\r\n");
-      out.write("\t\tusername:<input type=\"text\" name=\"username\">");
+      out.write("</font>\r\n");
+      out.write("\t<form action=\"login\" method=\"post\">\r\n");
+      out.write("\t\t\r\n");
+      out.write("\t\t用户:<input type=\"text\" name=\"username\">");
       if (_jspx_meth_s_005ffielderror_005f1(_jspx_page_context))
         return;
       out.write("<br>\r\n");
-      out.write("\t\tpassword:<input type=\"password\" name=\"password\">");
+      out.write("\t\t密码:<input type=\"password\" name=\"password\">");
       if (_jspx_meth_s_005ffielderror_005f2(_jspx_page_context))
         return;
       out.write("<br>\r\n");
-      out.write("\t\t<input type=\"text\" name=\"auth\"/> <img src=\"authImg\" id=\"img\" border=\"0\" onclick= \"this.src='authImg?d'+(new Date().getTime());\" alt=\"请输入此验证码，如看不清请点击刷新。\" style=\"cursor:pointer\" />  \r\n");
-      out.write("<input type=\"submit\" value=\"submit\" onclick=\"f()\"/>\r\n");
+      out.write("\t\t验证码:<input type=\"text\" name=\"auth\"/> <img src=\"authImg\" id=\"img\" border=\"0\" onclick= \"this.src='authImg?d'+(new Date().getTime());\"alt=\"请输入此验证码，如看不清请点击刷新\" style=\"cursor:pointer\" />  \r\n");
+      out.write("\t\t<input type=\"submit\" value=\"submit\" />\r\n");
       out.write("\t</form>\r\n");
       out.write("</body>\r\n");
       out.write("</html>");
@@ -125,7 +126,7 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.apache.struts2.views.jsp.ui.FieldErrorTag _jspx_th_s_005ffielderror_005f1 = (org.apache.struts2.views.jsp.ui.FieldErrorTag) _005fjspx_005ftagPool_005fs_005ffielderror_0026_005ffieldName_005fnobody.get(org.apache.struts2.views.jsp.ui.FieldErrorTag.class);
     _jspx_th_s_005ffielderror_005f1.setPageContext(_jspx_page_context);
     _jspx_th_s_005ffielderror_005f1.setParent(null);
-    // /login.jsp(17,46) name = fieldName type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /login.jsp(18,40) name = fieldName type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005ffielderror_005f1.setFieldName("username");
     int _jspx_eval_s_005ffielderror_005f1 = _jspx_th_s_005ffielderror_005f1.doStartTag();
     if (_jspx_th_s_005ffielderror_005f1.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -144,7 +145,7 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.apache.struts2.views.jsp.ui.FieldErrorTag _jspx_th_s_005ffielderror_005f2 = (org.apache.struts2.views.jsp.ui.FieldErrorTag) _005fjspx_005ftagPool_005fs_005ffielderror_0026_005ffieldName_005fnobody.get(org.apache.struts2.views.jsp.ui.FieldErrorTag.class);
     _jspx_th_s_005ffielderror_005f2.setPageContext(_jspx_page_context);
     _jspx_th_s_005ffielderror_005f2.setParent(null);
-    // /login.jsp(18,50) name = fieldName type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /login.jsp(19,44) name = fieldName type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005ffielderror_005f2.setFieldName("password");
     int _jspx_eval_s_005ffielderror_005f2 = _jspx_th_s_005ffielderror_005f2.doStartTag();
     if (_jspx_th_s_005ffielderror_005f2.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {

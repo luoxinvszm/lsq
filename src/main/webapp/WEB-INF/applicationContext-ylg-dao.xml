@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC    
+    "-//SPRING//DTD BEAN//EN"   
+    "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+
+	<bean id="userDAO" class="org.lsq.dao.impl.UserDAO">
+		<property name="jdbcTemplate" ref="jdbcTemplate"></property>
+	</bean>
+	<bean id="addUserDAO" class="org.lsq.dao.impl.AddUserDAO">
+		<property name="jdbcTemplate" ref="jdbcTemplate"></property>
+	</bean>
+</beans>  

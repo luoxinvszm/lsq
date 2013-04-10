@@ -1,6 +1,10 @@
 package org.lsq.util;
 import java.util.Random;
+
 public class NameUtil {
+	/**
+	 * 自动生成账号(六位数字)
+	 * */
 	String name="";
 	Random r = new Random();
 	public String generateName(){
