@@ -16,7 +16,6 @@
         <property name="dataSource" ref="dataSource"></property>
     </bean>
     
-    
     <!-- dao -->
     <bean id="userDAO" class="org.lsq.dao.impl.UserDAO">
     	<property name="jdbcTemplate" ref="jdbcTemplate"></property>
