@@ -1,7 +1,8 @@
 package org.lsq.service.impl;
 
-import org.lsq.service.ILoginService;
 import org.lsq.dao.IUserDAO;
+import org.lsq.service.ILoginService;
+import org.lsq.vo.User;
 
 public class LoginService implements ILoginService{
 
@@ -16,13 +17,13 @@ public class LoginService implements ILoginService{
 	}
 
 
-	public boolean isLogin(String username, String password) {
-		System.out.println("service starting······");
-		boolean flag = false;
-		if (userDAO.checkUser(username, password)) {
-			flag = true;
+	public int isLogin(String username, String password) {
+		User user=userDAO.queryUser(username, password);
+		if(user!=null && user.getUserStatus()==0){
+			return user.getRoleId();
+		}else{
+			return -1;
 		}
-		return flag;
 
 	}
 

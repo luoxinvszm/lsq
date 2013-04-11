@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE beans PUBLIC    
     "-//SPRING//DTD BEAN//EN"   
-    "http://www.springframework.org/dtd/spring-beans.dtd">  
-<beans>  
-
+    "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="InsertMessageService" class="org.lsq.service.impl.InsertMessageService">
+		<property name="insertMessageDAO" ref="InsertMessageDAO"></property>
+	</bean>
+	<bean id="QureyMessageService" class="org.lsq.service.impl.QureyMessageService">
+		<property name="qureyMessageDao" ref="QureyMessageDAO"></property>
+	</bean>
 </beans>  

@@ -18,9 +18,6 @@
 		<action name="createOrdin" class="createOrdin">
 			<result name="success">/result1.jsp</result>
 		</action>
-		<action name="createSuper" class="createSuper">
-			<result name="success">/result1.jsp</result>
-		</action>
 	</package>
 	
 
