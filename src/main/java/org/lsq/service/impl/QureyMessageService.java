@@ -28,20 +28,20 @@ public class QureyMessageService implements IQureyMessageService {
 		return true;
 	}
 
-	public List<Message> checkQuery(String anything) {
-		if (anything.equals("")) {
+	public List<Message> checkQuery(String anything,int msgStatus) {
+		if (anything.equals("") || anything.equals(null)) {
 			System.out.println("qureymessageservice starting······");
-			return qureyMessageDao.qureyMessages();
+			return qureyMessageDao.qureyMessages(msgStatus);
 			
 		} else if (isNumeric(anything)) {
 			System.out.println("qureymessageservicebyphone starting······");
 
-			return qureyMessageDao.qureyMessagesByPhone(anything);
+			return qureyMessageDao.qureyMessagesByPhone(anything,msgStatus);
 			
 		} else {
 			System.out.println("qureymessageservicebytime starting······");
 
-			return qureyMessageDao.qureyMessagesByTime(anything);
+			return qureyMessageDao.qureyMessagesByTime(anything,msgStatus);
 
 		}
 	}

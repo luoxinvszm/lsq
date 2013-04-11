@@ -10,5 +10,5 @@ public interface IQureyMessageService {
 	 * @param anything
 	 * @return List<Message>
 	 */
-	public List<Message> checkQuery(String anything);
+	public List<Message> checkQuery(String anything,int msgStatus);
 }
