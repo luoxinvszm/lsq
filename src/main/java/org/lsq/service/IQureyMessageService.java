@@ -6,9 +6,11 @@ import org.lsq.vo.Message;
 
 public interface IQureyMessageService {
 	/**
-	 * 判断使用哪种查询方式
-	 * @param anything
-	 * @return List<Message>
+	 * 通过传入的参数判断使用哪种方法查询
+	 * @param publisherPhone
+	 * @param publishTime
+	 * @param msgStatus
+	 * @return	List
 	 */
-	public List<Message> checkQuery(String anything,int msgStatus);
+	public List<Message> checkQuery(String publisherPhone,String publishTime,int msgStatus);
 }

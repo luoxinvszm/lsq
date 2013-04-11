@@ -33,7 +33,23 @@ public List<Message> qureyMessagesByTime(String publishTime);
  * @param msgStatus
  * @return List
  */
-public List<Message> qureyMessagesByTime(String publisTime,int msgStatus);
+public List<Message> qureyMessagesByTime(String publishTime,int msgStatus);
+/**
+ * 通过发布时间和电话查询信息（管理员和用户）
+ * @param publsherPhone
+ * @param publishTime
+ * @param msgStatus
+ * @return List
+ */
+public List<Message> qureyMessagesByPhoneAndTime(String publisherPhone,String publishTime,int msgStatus);
+/**
+ * 通过发布时间和电话查询信息(管理员，所有状态)
+ * @param publsherPhone
+ * @param publishTime
+ * @return List
+ */
+public List<Message> qureyMessagesByPhoneAndTime(String publisherPhone,String publishTime);
+
 /**
  * 查询所有信息(某一个状态)
  * @param msgStatus
