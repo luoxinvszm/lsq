@@ -3,4 +3,7 @@
     "-//SPRING//DTD BEAN//EN"   
     "http://www.springframework.org/dtd/spring-beans.dtd">  
 <beans >  
+    <bean id="roleCastPowerDAO" class="org.lsq.dao.impl.RoleCastPowerDAO">
+		<property name="jdbcTemplate" ref="jdbcTemplate"></property>
+	</bean>
 </beans>  

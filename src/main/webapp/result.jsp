@@ -11,17 +11,11 @@
 
 	username: ${requestScope.username }
 	<br> password: ${requestScope.password }
-	<a href="CreateManager.action">创建普通管理员</a>
+	<br>
 
-
-
-
-
-username: ${requestScope.username }<br>
-password: ${requestScope.password } 
-<a href="createOrdin.action">创建普通管理员</a>
-<a href="createSuper.action">创建超级管理员</a>
-
+	<s:iterator value="powersList" id="id">
+	<a href="<s:property value="#id.getPowerAction()"/>"><s:property value="#id.getPowerName()"/></a>
+	</s:iterator>
 
 </body>
 </html>
