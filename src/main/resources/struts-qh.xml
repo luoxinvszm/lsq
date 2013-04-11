@@ -11,8 +11,9 @@
 		</action>
 		<action name="qureyMessage" class="QueryMessageAction">
 			<result name="success">/qureyresult.jsp</result>
-			
 		</action>
-		
+		<action name="updateMessageStatus" class="UpdateMessageStatusAction">
+			<result name="success">/login.jsp</result>
+		</action>
 	</package>
 </struts>
