@@ -42,7 +42,7 @@ public class QueryMessageAction extends ActionSupport {
 
 		System.out.println("qureymessageaction starting····" );
 
-		messageList = qureyMessageService.checkQuery("123",0);
+		messageList = qureyMessageService.checkQuery("123","",0);
 		for (Message m : messageList) {
 			System.out.println(m.getMsgId());
 			System.out.println(m.getMsgTypeId());
