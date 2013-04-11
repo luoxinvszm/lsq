@@ -9,4 +9,7 @@
 	<bean id="QureyMessageDAO" class="org.lsq.dao.impl.QureyMessageDAO">
 		<property name="jdbcTemplate" ref="jdbcTemplate"></property>
 	</bean>
+	<bean id="UpdateMessageStatusDAO" class="org.lsq.dao.impl.UpdateMessageStatusDAO">
+		<property name="jdbcTemplate" ref="jdbcTemplate"></property>
+	</bean>
 </beans>  

@@ -9,4 +9,7 @@
 	<bean id="QureyMessageService" class="org.lsq.service.impl.QureyMessageService">
 		<property name="qureyMessageDao" ref="QureyMessageDAO"></property>
 	</bean>
+	<bean id="UpdateMessageStatusService" class="org.lsq.service.impl.UpdateMessageStatusService">
+		<property name="updateMessageStatusDao" ref="UpdateMessageStatusDAO"></property>
+	</bean>
 </beans>  

@@ -17,7 +17,7 @@ public class DateFormat {
 	 */
 	public static String dateToString() {
 		Date currentTime = new Date();
-		SimpleDateFormat formatter = new SimpleDateFormat("yyyy/MM/dd hh:mm:ss");
+		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
 		String dateString = formatter.format(currentTime);
 
 		 // 	System.out.println(dateString);			测试系统当前时间
