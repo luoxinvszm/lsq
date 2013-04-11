@@ -3,7 +3,7 @@
     "-//SPRING//DTD BEAN//EN"   
     "http://www.springframework.org/dtd/spring-beans.dtd">  
 <beans >  
-	<bean id="loginAction" class="org.lsq.action.LoginAction" >  
+	<bean id="loginAction" class="org.lsq.action.LoginAction" singleton="false">  
     	<property name="loginService" ref="loginService"></property>  
     	<property name="roleCastPowerService" ref="roleCastPowerService"></property>
 	</bean> 

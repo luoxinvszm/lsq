@@ -2,6 +2,7 @@ package org.lsq.action;
 
 
 
+
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -13,6 +14,7 @@ import org.lsq.vo.Power;
 
 import com.opensymphony.xwork2.ActionSupport;
 /**
+ * @author ylg yhy
  * 登录Action
  */
 
@@ -59,21 +61,33 @@ public class LoginAction extends ActionSupport {
 	public void setPowersList(List<Power> powersList) {
 		this.powersList = powersList;
 	}
-	
+	//重新validate方法 进行数据校验
+		public void validate(){
+			System.out.println(auth);
+			HttpSession session =ServletActionContext.getRequest().getSession();
+			String s = session.getAttribute("rand").toString();
+			System.out.println(s+"-----------");
+			if(!auth.equals(s)){
+				this.addFieldError("auth", "验证码输入错误!");
+			}if(loginService.isLogin(username, password)==-1){
+				this.addFieldError("user", "用户不存在!");
+			}
+		}
 	//execute方法
 	public String execute(){
-		int roleId=loginService.isLogin(username, password);
-	
-			if(roleId!=-1){
+		
+		if(hasFieldErrors()){
+			return INPUT;
+		}else{
+				int roleId=loginService.isLogin(username, password);
 				HttpSession session=ServletActionContext.getRequest().getSession();
 				session.setAttribute("username", username);
 				session.setAttribute("password", password);
 				session.setAttribute("roleId", roleId);
 				powersList=roleCastPowerService.queryPowers(roleId);
+				System.out.println(powersList.size()+"----");
 				return SUCCESS;
-			}else {
-				this.addFieldError("user", "用户不存在!");
-				return INPUT;
+		
 			}
 		
 	}
