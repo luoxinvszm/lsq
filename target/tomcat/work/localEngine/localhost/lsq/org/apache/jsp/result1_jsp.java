@@ -55,7 +55,7 @@ public final class result1_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<html>\r\n");
       out.write("<head>\r\n");
       out.write("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=ISO-8859-1\">\r\n");
-      out.write("<title>Insert title here</title>\r\n");
+      out.write("<title>创建成功</title>\r\n");
       out.write("</head>\r\n");
       out.write("<body>恭喜您 创建成功\r\n");
       out.write("username: ");

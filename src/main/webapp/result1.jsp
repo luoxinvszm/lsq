@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>创建成功</title>
 </head>
 <body>恭喜您 创建成功
 username: ${requestScope.username }<br>

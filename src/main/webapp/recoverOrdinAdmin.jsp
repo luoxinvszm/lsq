@@ -5,17 +5,15 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<title>后台管理系统</title>
+<title>Insert title here</title>
 </head>
 <body>
 
-	username: ${requestScope.username }
-	<br> password: ${requestScope.password }
-	<br>
-
-	<s:iterator value="powersList" id="id">
-	<a href="<s:property value="#id.getPowerAction()"/>"><s:property value="#id.getPowerName()"/></a>
+	<s:iterator value="usersList" id="id">
+	
+	<s:property value="#id.getUsername()"/><a href="editOrdinAdminAction!recoverUser.action?userId=<s:property value="#id.getUserId()"/>">恢复账号</a><br>
 	</s:iterator>
 
+	
 </body>
 </html>

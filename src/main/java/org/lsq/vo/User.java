@@ -1,6 +1,7 @@
 package org.lsq.vo;
 
 public class User {
+	private int userId;
 	private String username;
 	private String password;
 	private int roleId;
@@ -45,6 +46,14 @@ public class User {
 
 	public void setUserRemark(String userRemark) {
 		this.userRemark = userRemark;
+	}
+
+	public int getUserId() {
+		return userId;
+	}
+
+	public void setUserId(int userId) {
+		this.userId = userId;
 	}
 	
 }

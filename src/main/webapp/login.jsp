@@ -5,7 +5,7 @@
 <html>
 <head>
 
-<title>Insert title here</title>
+<title>管理员登陆界面</title>
 <script type="text/javascript">
 
 </script>

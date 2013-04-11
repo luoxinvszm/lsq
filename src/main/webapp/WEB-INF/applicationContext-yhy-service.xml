@@ -6,5 +6,8 @@
       <bean id="roleCastPowerService" class="org.lsq.service.impl.RoleCastPowerService">
     	<property name="roleCastPowerDAO" ref="roleCastPowerDAO"></property>
     </bean>  
+     <bean id="userService" class="org.lsq.service.impl.UserService">
+    	<property name="userDAO" ref="userDAO"></property>
+    </bean>  
 
 </beans>  

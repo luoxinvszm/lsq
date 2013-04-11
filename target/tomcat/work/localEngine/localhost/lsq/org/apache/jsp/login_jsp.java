@@ -60,7 +60,7 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<html>\r\n");
       out.write("<head>\r\n");
       out.write("\r\n");
-      out.write("<title>Insert title here</title>\r\n");
+      out.write("<title>管理员登陆界面</title>\r\n");
       out.write("<script type=\"text/javascript\">\r\n");
       out.write("\r\n");
       out.write("</script>\r\n");
