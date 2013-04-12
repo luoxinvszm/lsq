@@ -4,7 +4,7 @@
     "http://www.springframework.org/dtd/spring-beans.dtd">  
 <beans >  
 	<bean id="loginAction" class="org.lsq.action.LoginAction" singleton="false">  
-    	<property name="loginService" ref="loginService"></property>  
+    	<property name="userService" ref="userService"></property>  
     	<property name="roleCastPowerService" ref="roleCastPowerService"></property>
 	</bean> 
 
@@ -12,7 +12,7 @@
   	</bean>
 
   	<bean id="createOrdin" class="org.lsq.action.CreateOrdinManagerAction">
-  		<property name="addUserService" ref="addUserService"></property>
+  		<property name="userService" ref="userService"></property>
   	</bean>
  </beans>  
 

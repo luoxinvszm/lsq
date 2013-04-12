@@ -8,8 +8,8 @@ import java.util.List;
 import javax.servlet.http.HttpSession;
 
 import org.apache.struts2.ServletActionContext;
-import org.lsq.service.ILoginService;
 import org.lsq.service.IRoleCastPowerService;
+import org.lsq.service.IUserService;
 import org.lsq.vo.Power;
 
 import com.opensymphony.xwork2.ActionSupport;
@@ -22,7 +22,7 @@ public class LoginAction extends ActionSupport {
 	
 	private static final long serialVersionUID = 1L;
 	
-	private ILoginService loginService;
+	private IUserService userService;
 	
 	private IRoleCastPowerService roleCastPowerService;
 	
@@ -31,9 +31,11 @@ public class LoginAction extends ActionSupport {
 	public void setRoleCastPowerService(IRoleCastPowerService roleCastPowerService) {
 		this.roleCastPowerService = roleCastPowerService;
 	}
-	public void setLoginService(ILoginService loginService) {
-		this.loginService = loginService;
+
+	public void setUserService(IUserService userService) {
+		this.userService = userService;
 	}
+
 	private String auth;
 	public String getAuth() {
 		return auth;
@@ -69,7 +71,7 @@ public class LoginAction extends ActionSupport {
 			System.out.println(s+"-----------");
 			if(!auth.equals(s)){
 				this.addFieldError("auth", "验证码输入错误!");
-			}if(loginService.isLogin(username, password)==-1){
+			}if(userService.isLogin(username, password)==-1){
 				this.addFieldError("user", "用户不存在!");
 			}
 		}
@@ -79,7 +81,7 @@ public class LoginAction extends ActionSupport {
 		if(hasFieldErrors()){
 			return INPUT;
 		}else{
-				int roleId=loginService.isLogin(username, password);
+				int roleId=userService.isLogin(username, password);
 				HttpSession session=ServletActionContext.getRequest().getSession();
 				session.setAttribute("username", username);
 				session.setAttribute("password", password);
@@ -87,10 +89,7 @@ public class LoginAction extends ActionSupport {
 				powersList=roleCastPowerService.queryPowers(roleId);
 				System.out.println(powersList.size()+"----");
 				return SUCCESS;
-		
 			}
-		
 	}
-	
 	
 }

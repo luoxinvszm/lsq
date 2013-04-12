@@ -38,5 +38,24 @@ public class UserService implements IUserService{
 		}
 		return users;
 	}
+
+	public boolean isAddUser(String username, String password, String roleId) {
+		System.out.println("添加用户逻辑层-------");
+		boolean flag =false;
+		if(userDAO.AddUser(username, password, roleId)){
+			flag =true;
+		}
+		return flag;
+	}
 	
+	public int isLogin(String username, String password) {
+		User user=userDAO.queryUser(username, password);
+		if(user!=null && user.getUserStatus()==0){
+			return user.getRoleId();
+		}else{
+			return -1;
+		}
+
+	}
+
 }
