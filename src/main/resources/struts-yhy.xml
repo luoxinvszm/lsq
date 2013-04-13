@@ -3,11 +3,35 @@
 	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
 	"http://struts.apache.org/dtds/struts-2.3.dtd">
 <struts>
-	<package name="struts7" extends="struts-default">
+	<package name="struts9" extends="struts-default">
+	<interceptors>
+		<interceptor name="adminInterceptor" class="org.lsq.action.interceptor.AdminInterceptor"/>
+			<!-- 自定义拦截器栈 -->
+			<interceptor-stack name="myStack">
+				<interceptor-ref name="adminInterceptor">
+					<!-- 传递参数 -->
+					  <param name="username_session">username</param>
+					<!-- 如果没有成功，返回的路径 -->
+					<param name="reLoginResult">login</param>
+				</interceptor-ref>
+			<interceptor-ref name="defaultStack"/>
+		</interceptor-stack>
+	</interceptors>	
+	
+
+		<global-results>
+			<result name="login" type="redirect">/login.jsp</result>
+		</global-results>
+		
 	<action name="editOrdinAdminAction" class="editOrdinAdminAction">
 			<result name="delete">/cancleOrdinAdmin.jsp</result>
 			<result name="recover">/recoverOrdinAdmin.jsp</result>
 			<result name="input">/login.jsp</result>
+			<interceptor-ref name="myStack"></interceptor-ref>
+		</action>
+			<action name="createOrdin" class="createOrdin">
+			<result name="success">/result1.jsp</result>
+			<interceptor-ref name="myStack"></interceptor-ref>
 		</action>
 </package>
 </struts>

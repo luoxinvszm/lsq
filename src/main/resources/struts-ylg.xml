@@ -15,9 +15,6 @@
             <param name="inputName">inputStream</param> 
 			</result>
 		</action>
-		<action name="createOrdin" class="createOrdin">
-			<result name="success">/result1.jsp</result>
-		</action>
 	</package>
 	
 
