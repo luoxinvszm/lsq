@@ -9,5 +9,8 @@ import org.lsq.vo.Power;
  * @author yhy
  * */
 public interface IRoleCastPowerService {
+	/**
+	 * 查询指定角色的用户权限
+	 */
 	public List<Power> queryPowers(int id);
 }

@@ -1,5 +1,7 @@
 package org.lsq.vo;
-
+/**
+ * 用户实体类：User
+*/
 public class User {
 	private int userId;
 	private String username;

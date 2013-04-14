@@ -8,7 +8,10 @@ import java.util.Map;
 import org.lsq.dao.IUserDAO;
 import org.lsq.vo.User;
 import org.springframework.jdbc.core.JdbcTemplate;
-
+/**
+ *负责数据库user表访问类 ，实现IUserDAO
+ *@author ylg,yhy
+*/
 public class UserDAO implements IUserDAO {
 
 	private JdbcTemplate jdbcTemplate;

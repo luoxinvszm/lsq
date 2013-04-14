@@ -19,12 +19,12 @@ import javax.imageio.stream.ImageOutputStream;
 
 import com.opensymphony.xwork2.ActionContext;  
 import com.opensymphony.xwork2.ActionSupport;  
-  
+/**
+ * @author ylg
+ * 生成验证码的工具类
+ */
 public class AuthImgAction extends ActionSupport {  
-    /**
-     * @author ylg
-	 * 生成验证码的工具类
-	 */
+
 	private static final long serialVersionUID = 1L;
 	private ByteArrayInputStream inputStream;  
       
