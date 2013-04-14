@@ -1,6 +1,7 @@
 package org.lsq.dao.impl;
 
 import org.lsq.dao.IInsertMessageDAO;
+import org.lsq.util.IdBuilder;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 public class InsertMessageDAO implements IInsertMessageDAO {
@@ -15,7 +16,7 @@ public class InsertMessageDAO implements IInsertMessageDAO {
 			String publisherPhone, String publishTime, String msgRemark) {
 		
 		System.out.println("insertMessageDAO starting······");
-		int msgId = 1; //随机获取主键值
+		long msgId = IdBuilder.getNewId(); //随机获取主键值
 		String sql = "insert into message (msgId,msgConctent,publisherName,publisherPhone,publishTime,msgRemark,msgStatus) values ('"
 				+ msgId
 				+ "','"

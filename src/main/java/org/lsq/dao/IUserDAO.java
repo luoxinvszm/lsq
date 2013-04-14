@@ -19,7 +19,7 @@ public interface IUserDAO {
 	/**
 	 *设置user表中用户状态userStatus。
 	 */
-	public int setUserStatus(int userId,int status);
+	public int setUserStatus(long userId,int status);
 	/**
 	 *向user表中插入一条新记录
 	 */

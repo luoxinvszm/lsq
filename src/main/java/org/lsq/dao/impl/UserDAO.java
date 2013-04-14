@@ -7,6 +7,8 @@ import java.util.Map;
 
 import org.lsq.dao.IUserDAO;
 import org.lsq.util.NameUtil;
+import org.lsq.util.IdBuilder;
+
 import org.lsq.vo.User;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -54,8 +56,7 @@ public class UserDAO implements IUserDAO {
 				Map<String, Object> map=iter.next();
 				
 				User user=new User();
-				
-				user.setUserId(Integer.parseInt(map.get("userId").toString()));
+				user.setUserId(Long.parseLong(map.get("userId").toString()));
 				user.setUsername(map.get("userName").toString());
 				user.setPassword(map.get("userPassword").toString());
 				user.setRoleId(Integer.parseInt(map.get("roleId").toString()));
@@ -70,15 +71,15 @@ public class UserDAO implements IUserDAO {
 	}
 
 	//注销指定用户
-	public int setUserStatus(int userId,int status){
+	public int setUserStatus(long userId,int status){
 		String sql = "update user set userStatus=? where userid=?";
 		return jdbcTemplate.update(sql, new Object[]{status,userId});
 	}
 	
 	public boolean AddUser(String username, String password, String roleId) {
 		System.out.println("添加用户---------");
-		String sql = "insert into user (userName,userPassword,roleId) values(?,?,?)";
-		jdbcTemplate.update(sql, new Object[]{username,password,roleId});
+		String sql = "insert into user (userId,userName,userPassword,roleId) values(?,?,?,?)";
+		jdbcTemplate.update(sql, new Object[]{IdBuilder.getNewId(),username,password,roleId});
 		return true;
 	}
 	@SuppressWarnings("unused")

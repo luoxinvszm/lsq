@@ -72,6 +72,16 @@ public final class recoverOrdinAdmin_jsp extends org.apache.jasper.runtime.HttpJ
         return;
       out.write("\r\n");
       out.write("\r\n");
+
+	String username=session.getAttribute("username").toString();
+	String password=session.getAttribute("password").toString();
+
+      out.write("\r\n");
+      out.write("\t<a href=\"login?username=");
+      out.print(username);
+      out.write("& password=");
+      out.print(password);
+      out.write("\">返回首页</a>\r\n");
       out.write("\t\r\n");
       out.write("</body>\r\n");
       out.write("</html>");

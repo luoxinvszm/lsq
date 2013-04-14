@@ -9,10 +9,9 @@ import java.util.concurrent.locks.ReentrantLock;
  * 
 */
 public class IdBuilder {
-	//例子：生成Id并在控制台输出
+	//例子：生成Id
 	public static void main(String[] args) {
-		IdBuilder getId = new IdBuilder();
-		System.out.println(getId.getNewId());
+		System.out.println(IdBuilder.getNewId());
 	}
 	
 	

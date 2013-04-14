@@ -19,11 +19,11 @@ public interface IUserService {
 	/**
 	 * 冻结管理员账号
 	 */
-	public void cancelUser(int userId);
+	public void cancelUser(long userId);
 	/**
 	 * 恢复管理员账号
 	 */
-	public void recoverUser(int userId);
+	public void recoverUser(long userId);
 	/**
 	 * 创建管理员
 	 */
@@ -31,7 +31,7 @@ public interface IUserService {
 	/**
 	 * 查询userId
 	 */
-	public int getuserId(String username,String password);
+	public long getuserId(String username,String password);
 	/**
 	 * 修改密码
 	 * */

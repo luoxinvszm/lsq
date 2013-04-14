@@ -82,7 +82,7 @@ public class LoginAction extends ActionSupport {
 			return INPUT;
 		}else{
 				int roleId=userService.isLogin(username, password);
-				int userId=userService.getuserId(username, password);
+				long userId=userService.getuserId(username, password);
 				System.out.println(userId+"---------");
 				HttpSession session=ServletActionContext.getRequest().getSession();
 				//如果用户成功登陆，则将用户信息添加到session中

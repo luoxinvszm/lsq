@@ -21,10 +21,10 @@ public class UserService implements IUserService{
 		this.userDAO = userDAO;
 	}
 	
-	public void cancelUser(int userId){
+	public void cancelUser(long userId){
 		 userDAO.setUserStatus(userId, 1);
 	}
-	public void recoverUser(int userId){
+	public void recoverUser(long userId){
 		 userDAO.setUserStatus(userId, 0);
 	}
 	
@@ -58,7 +58,7 @@ public class UserService implements IUserService{
 			return -1;
 		}
 	}
-	public int getuserId(String username,String password){
+	public long getuserId(String username,String password){
 		User user = userDAO.queryUser(username, password);
 		if(user!=null && user.getUserStatus()==0){
 			return user.getUserId();

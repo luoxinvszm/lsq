@@ -15,7 +15,7 @@ import com.opensymphony.xwork2.ActionSupport;
 public class EditOrdinAdminAction extends ActionSupport{
 
 	private int roleId;
-	private int userId;
+	private long userId;
 	
 	private int userStatus;
 	
@@ -50,11 +50,11 @@ public class EditOrdinAdminAction extends ActionSupport{
 		this.roleId = roleId;
 	}
 	
-	public int getUserId() {
+	public long getUserId() {
 		return userId;
 	}
 
-	public void setUserId(int userId) {
+	public void setUserId(long userId) {
 		this.userId = userId;
 	}
 	
