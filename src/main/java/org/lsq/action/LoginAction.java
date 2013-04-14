@@ -71,23 +71,25 @@ public class LoginAction extends ActionSupport {
 			System.out.println(s+"-----------");
 			if(!auth.equals(s)){
 				this.addFieldError("auth", "验证码输入错误!");
-			}if(userService.isLogin(username, password)==-1){
-				this.addFieldError("user", "用户不存在!");
+			}
+			if(userService.isLogin(username, password)==-1){
+				this.addFieldError("user", "用户名或密码错误");
 			}
 		}
 	//execute方法
 	public String execute(){
-		
 		if(hasFieldErrors()){
 			return INPUT;
 		}else{
 				int roleId=userService.isLogin(username, password);
+				int userId=userService.getuserId(username, password);
+				System.out.println(userId+"---------");
 				HttpSession session=ServletActionContext.getRequest().getSession();
 				session.setAttribute("username", username);
 				session.setAttribute("password", password);
 				session.setAttribute("roleId", roleId);
+				session.setAttribute("userId", userId);
 				powersList=roleCastPowerService.queryPowers(roleId);
-				System.out.println(powersList.size()+"----");
 				return SUCCESS;
 			}
 	}

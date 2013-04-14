@@ -25,6 +25,7 @@ public class UserDAO implements IUserDAO {
 				password });
 		if(list!=null && list.size()>0){
 				User user=new User();
+				user.setUserId(Integer.parseInt(list.get(0).get("userId").toString()));
 				user.setUsername(list.get(0).get("userName").toString());
 				user.setPassword(list.get(0).get("userPassword").toString());
 				user.setRoleId(Integer.parseInt(list.get(0).get("roleId").toString()));
@@ -77,5 +78,13 @@ public class UserDAO implements IUserDAO {
 		jdbcTemplate.update(sql, new Object[]{username,password,roleId});
 		return true;
 	}
+	//修改密码
+	public boolean updatePassword(String password,int userId){
+		System.out.println("修改密码--------");
+		String sql="update user set userPassword=? where userid=?";
+		jdbcTemplate.update(sql,new Object[]{password,userId});
+		return true;
+	}
+	
 	
 }

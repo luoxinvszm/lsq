@@ -4,7 +4,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
 
-public final class result1_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class updatePasswordSuccess_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -40,7 +40,7 @@ public final class result1_jsp extends org.apache.jasper.runtime.HttpJspBase
 
 
     try {
-      response.setContentType("text/html; charset=utf-8");
+      response.setContentType("text/html; charset=UTF-8");
       pageContext = _jspxFactory.getPageContext(this, request, response,
       			null, true, 8192, true);
       _jspx_page_context = pageContext;
@@ -54,17 +54,11 @@ public final class result1_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">\r\n");
       out.write("<html>\r\n");
       out.write("<head>\r\n");
-      out.write("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=ISO-8859-1\">\r\n");
-      out.write("<title>创建成功</title>\r\n");
+      out.write("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\r\n");
+      out.write("<title>Insert title here</title>\r\n");
       out.write("</head>\r\n");
-      out.write("<body>恭喜您 创建成功\r\n");
-      out.write("username: ");
-      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${requestScope.username }", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
-      out.write("<br>\r\n");
-      out.write("password: ");
-      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${requestScope.password }", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
-      out.write(" \r\n");
-      out.write("<a href=\"login\">返回继续添加</a>\r\n");
+      out.write("<body>\r\n");
+      out.write("修改成功!\r\n");
       out.write("</body>\r\n");
       out.write("</html>");
     } catch (Throwable t) {

@@ -16,18 +16,17 @@ public class UpdateMessageStatusAction extends ActionSupport {
 	
 	private int  status;
 	private int mintus;
-	public int getMintus() {
-		return mintus;
-	}
-
-
-	public void setMintus(int mintus) {
-		this.mintus = mintus;
-	}
-
 	private String publisherPhone;
 	private String publishTime;
 	
+	public int getMintus() {
+		return mintus;
+	}
+	
+	
+	public void setMintus(int mintus) {
+		this.mintus = mintus;
+	}
 	
 	public int getStatus() {
 		return status;
@@ -71,6 +70,7 @@ public class UpdateMessageStatusAction extends ActionSupport {
 			i = updateMessageStatusService.modifiedMessagestatus(publisherPhone,
 					publishTime, status,mintus);
 		}
+
 
 		System.out.println(i);
 

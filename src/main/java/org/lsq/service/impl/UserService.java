@@ -55,7 +55,21 @@ public class UserService implements IUserService{
 		}else{
 			return -1;
 		}
-
+	}
+	public int getuserId(String username,String password){
+		User user = userDAO.queryUser(username, password);
+		if(user!=null && user.getUserStatus()==0){
+			return user.getUserId();
+		}else{
+			return -1;
+		}
+	}
+	public boolean updatePassword(String password,int userId){
+		if(userDAO.updatePassword(password, userId)){
+			return true;
+		}else{
+			return false;
+		}
 	}
 
 }

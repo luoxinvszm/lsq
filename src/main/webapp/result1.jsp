@@ -9,6 +9,6 @@
 <body>恭喜您 创建成功
 username: ${requestScope.username }<br>
 password: ${requestScope.password } 
-
+<a href="login">返回继续添加</a>
 </body>
 </html>

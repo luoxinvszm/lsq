@@ -7,6 +7,13 @@ import org.lsq.util.DateFormat;
 
 public class UpdateMessageStatusService implements IUpdateMessageStatusService,
 		Runnable {
+	private IUpdateMessageStatusDAO updateMessageStatusDao;
+
+	public void setUpdateMessageStatusDao(
+			IUpdateMessageStatusDAO updateMessageStatusDao) {
+		this.updateMessageStatusDao = updateMessageStatusDao;
+	}
+	
 	
 	String publisherPhone;
 	String publishTime;
@@ -23,12 +30,7 @@ public class UpdateMessageStatusService implements IUpdateMessageStatusService,
 	
 	
 	
-	private IUpdateMessageStatusDAO updateMessageStatusDao;
-
-	public void setUpdateMessageStatusDao(
-			IUpdateMessageStatusDAO updateMessageStatusDao) {
-		this.updateMessageStatusDao = updateMessageStatusDao;
-	}
+	
 
 	// 删除:管理员
 	public int deleteMessagestatus(String publisherPhone, String publishTime,
@@ -65,7 +67,7 @@ public class UpdateMessageStatusService implements IUpdateMessageStatusService,
 			i = updateMessageStatusDao.modifiedStatus(publisherPhone,
 					publishTime, modifiedDateTime, msgStatus);
 			Thread t = new Thread(new UpdateMessageStatusService( publisherPhone,
-					 publishTime,  msgStatus,  mintus));
+					modifiedDateTime,  msgStatus,  mintus));
 			t.start();
 			return i;
 		} else {

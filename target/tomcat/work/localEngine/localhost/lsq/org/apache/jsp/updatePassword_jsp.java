@@ -1,0 +1,168 @@
+package org.apache.jsp;
+
+import javax.servlet.*;
+import javax.servlet.http.*;
+import javax.servlet.jsp.*;
+
+public final class updatePassword_jsp extends org.apache.jasper.runtime.HttpJspBase
+    implements org.apache.jasper.runtime.JspSourceDependent {
+
+  private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
+
+  private static java.util.List _jspx_dependants;
+
+  private javax.el.ExpressionFactory _el_expressionfactory;
+  private org.apache.AnnotationProcessor _jsp_annotationprocessor;
+
+  public Object getDependants() {
+    return _jspx_dependants;
+  }
+
+  public void _jspInit() {
+    _el_expressionfactory = _jspxFactory.getJspApplicationContext(getServletConfig().getServletContext()).getExpressionFactory();
+    _jsp_annotationprocessor = (org.apache.AnnotationProcessor) getServletConfig().getServletContext().getAttribute(org.apache.AnnotationProcessor.class.getName());
+  }
+
+  public void _jspDestroy() {
+  }
+
+  public void _jspService(HttpServletRequest request, HttpServletResponse response)
+        throws java.io.IOException, ServletException {
+
+    PageContext pageContext = null;
+    HttpSession session = null;
+    ServletContext application = null;
+    ServletConfig config = null;
+    JspWriter out = null;
+    Object page = this;
+    JspWriter _jspx_out = null;
+    PageContext _jspx_page_context = null;
+
+
+    try {
+      response.setContentType("text/html; charset=UTF-8");
+      pageContext = _jspxFactory.getPageContext(this, request, response,
+      			null, true, 8192, true);
+      _jspx_page_context = pageContext;
+      application = pageContext.getServletContext();
+      config = pageContext.getServletConfig();
+      session = pageContext.getSession();
+      out = pageContext.getOut();
+      _jspx_out = out;
+
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">\r\n");
+      out.write("<html>\r\n");
+      out.write("<head>\r\n");
+      out.write("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\r\n");
+      out.write("<title>修改密码</title>\r\n");
+      out.write("<script type=\"text/javascript\">\r\n");
+      out.write("\tvar flag=false;\r\n");
+      out.write("\tfunction checkOld() {\r\n");
+      out.write("\t\tvar oldPassword = document.getElementById(\"oldPassword\").value;\r\n");
+      out.write("\t\tvar old = document.getElementById(\"old\").value;\r\n");
+      out.write("\t\tvar u1 = document.getElementById(\"u1\");\r\n");
+      out.write("\t\tif (oldPassword != old) {\r\n");
+      out.write("\t\t\tu1.style.display = \"block\";\r\n");
+      out.write("\t\t\tflag=false;\r\n");
+      out.write("\t\t} else {\r\n");
+      out.write("\t\t\tflag=true;\r\n");
+      out.write("\t\t\tu1.style.display = \"none\";\r\n");
+      out.write("\t\t}\r\n");
+      out.write("\t}\r\n");
+      out.write("\tfunction check() {\r\n");
+      out.write("\t\tvar new1 = document.getElementById(\"new1\").value;\r\n");
+      out.write("\t\tvar new2 = document.getElementById(\"new2\").value;\r\n");
+      out.write("\t\tvar d2 = document.getElementById(\"d2\");\r\n");
+      out.write("\t\tvar u1 = document.getElementById(\"u1\");\r\n");
+      out.write("\t\tif (new1 != new2) {\r\n");
+      out.write("\t\t\td2.style.display = \"block\";\r\n");
+      out.write("\t\t} else if(flag){\r\n");
+      out.write("\t\t\td2.style.display = \"none\";\r\n");
+      out.write("\t\t\tupdatePassword.submit();\r\n");
+      out.write("\t\t}else if(!flag){\r\n");
+      out.write("\t\t\tu1.style.display=\"block\";\r\n");
+      out.write("\t\t\talert(\"请输入原密码!\");\r\n");
+      out.write("\t\t}\r\n");
+      out.write("\t}\r\n");
+      out.write("\tfunction checknew1() {\r\n");
+      out.write("\t\tvar new1 = document.getElementById(\"new1\").value;\r\n");
+      out.write("\t\tvar d1 = document.getElementById(\"d1\");\r\n");
+      out.write("\t\tif (\"\" == new1) {\r\n");
+      out.write("\t\t\td1.style.display = \"block\";\r\n");
+      out.write("\t\t} else {\r\n");
+      out.write("\t\t\td1.style.display = \"none\";\r\n");
+      out.write("\t\t}\r\n");
+      out.write("\t}\r\n");
+      out.write("</script>\r\n");
+      out.write("</head>\r\n");
+      out.write("<body>\r\n");
+      out.write("\t");
+
+		String password = session.getAttribute("password").toString();
+	
+      out.write("\r\n");
+      out.write("\t<form action=\"updatePassword_userAction\" name=\"updatePassword\">\r\n");
+      out.write("\t\t<table cellspacing=\"20\" align=\"center\">\r\n");
+      out.write("\t\t\t<tr>\r\n");
+      out.write("\t\t\t\t<td>请输入原密码:</td>\r\n");
+      out.write("\t\t\t\t<td><table width=\"500px\">\r\n");
+      out.write("\t\t\t\t\t\t<tr>\r\n");
+      out.write("\t\t\t\t\t\t\t<td><input type=\"text\" id=\"old\" onblur=\"checkOld()\" value=\"\"/></td>\r\n");
+      out.write("\t\t\t\t\t\t\t<td><div style=\"display: none\" id=\"u1\">\r\n");
+      out.write("\t\t\t\t\t\t\t\t\t<font face=\"宋体\" color=\"red\">密码输入错误，请重新输入</font>\r\n");
+      out.write("\t\t\t\t\t\t\t\t</div></td>\r\n");
+      out.write("\t\t\t\t\t\t</tr>\r\n");
+      out.write("\t\t\t\t\t</table></td>\r\n");
+      out.write("\t\t\t</tr>\r\n");
+      out.write("\t\t\t<tr>\r\n");
+      out.write("\t\t\t\t<td>请输入新密码:</td>\r\n");
+      out.write("\t\t\t\t<td><table width=\"500px\">\r\n");
+      out.write("\t\t\t\t\t\t<tr>\r\n");
+      out.write("\t\t\t\t\t\t\t<td><input type=\"password\" onblur=\"checknew1()\"\r\n");
+      out.write("\t\t\t\t\t\t\t\tname=\"user.password\" id=\"new1\" value=\"\" /></td>\r\n");
+      out.write("\t\t\t\t\t\t\t<td><div style=\"display: none\" id=\"d1\">\r\n");
+      out.write("\t\t\t\t\t\t\t\t\t<font face=\"宋体\" color=\"red\">密码不能为空</font>\r\n");
+      out.write("\t\t\t\t\t\t\t\t</div></td>\r\n");
+      out.write("\t\t\t\t\t\t</tr>\r\n");
+      out.write("\t\t\t\t\t</table></td>\r\n");
+      out.write("\t\t\t</tr>\r\n");
+      out.write("\t\t\t<tr>\r\n");
+      out.write("\t\t\t\t<td>请再输入新密码:</td>\r\n");
+      out.write("\t\t\t\t<td><table width=\"500px\">\r\n");
+      out.write("\t\t\t\t\t\t<tr>\r\n");
+      out.write("\t\t\t\t\t\t\t<td><input type=\"password\" id=\"new2\" value=\"\"/></td>\r\n");
+      out.write("\t\t\t\t\t\t\t<td><div style=\"display: none\" id=\"d2\">\r\n");
+      out.write("\t\t\t\t\t\t\t\t\t<font face=\"宋体\" color=\"red\">两次密码输入不一致</font>\r\n");
+      out.write("\t\t\t\t\t\t\t\t</div></td>\r\n");
+      out.write("\t\t\t\t\t\t</tr>\r\n");
+      out.write("\t\t\t\t\t</table></td>\r\n");
+      out.write("\t\t\t</tr>\r\n");
+      out.write("\r\n");
+      out.write("\t\t</table>\r\n");
+      out.write("\t\t<input type=\"hidden\" value=");
+      out.print(password);
+      out.write(" id=\"oldPassword\"> <input\r\n");
+      out.write("\t\t\ttype=\"button\" onclick=\"check()\" value=\"确定\">\r\n");
+      out.write("\r\n");
+      out.write("\t</form>\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("</body>\r\n");
+      out.write("</html>");
+    } catch (Throwable t) {
+      if (!(t instanceof SkipPageException)){
+        out = _jspx_out;
+        if (out != null && out.getBufferSize() != 0)
+          try { out.clearBuffer(); } catch (java.io.IOException e) {}
+        if (_jspx_page_context != null) _jspx_page_context.handlePageException(t);
+      }
+    } finally {
+      _jspxFactory.releasePageContext(_jspx_page_context);
+    }
+  }
+}

@@ -11,4 +11,6 @@ public interface IUserDAO {
 	public List<User> queryUserByRoleId(int roleId);
 	public int setUserStatus(int userId,int status);
 	public boolean AddUser(String username, String password, String roleId);
+	public boolean updatePassword(String password,int userId);
 }
+	

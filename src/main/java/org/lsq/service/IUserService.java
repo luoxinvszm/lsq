@@ -25,4 +25,12 @@ public interface IUserService {
 	 * 创建管理员
 	 */
 	public boolean isAddUser(String username,String password,String roleId);
+	/**
+	 * 查询userId
+	 */
+	public int getuserId(String username,String password);
+	/**
+	 * 修改密码
+	 * */
+	public boolean updatePassword(String password,int userId);
 }
