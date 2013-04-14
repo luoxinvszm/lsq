@@ -83,6 +83,7 @@ public final class updatePassword_jsp extends org.apache.jasper.runtime.HttpJspB
       out.write("\t\t\tupdatePassword.submit();\r\n");
       out.write("\t\t}else if(!flag){\r\n");
       out.write("\t\t\tu1.style.display=\"block\";\r\n");
+      out.write("\t\t\talert(\"请输入原密码!\");\r\n");
       out.write("\t\t}\r\n");
       out.write("\t}\r\n");
       out.write("\tfunction checknew1() {\r\n");

@@ -71,8 +71,9 @@ public class LoginAction extends ActionSupport {
 			System.out.println(s+"-----------");
 			if(!auth.equals(s)){
 				this.addFieldError("auth", "验证码输入错误!");
-			}if(userService.isLogin(username, password)==-1){
-				this.addFieldError("user", "用户不存在!");
+			}
+			if(userService.isLogin(username, password)==-1){
+				this.addFieldError("user", "用户名或密码错误");
 			}
 		}
 	//execute方法
@@ -89,7 +90,6 @@ public class LoginAction extends ActionSupport {
 				session.setAttribute("roleId", roleId);
 				session.setAttribute("userId", userId);
 				powersList=roleCastPowerService.queryPowers(roleId);
-				System.out.println(powersList.size()+"----");
 				return SUCCESS;
 			}
 	}
