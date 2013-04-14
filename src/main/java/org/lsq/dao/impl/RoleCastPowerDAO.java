@@ -32,12 +32,12 @@ public class RoleCastPowerDAO implements IRoleCastPowerDAO{
 				power.setPowerAction(map.get("powerAction").toString());
 				power.setPowerStatus(Integer.parseInt(map.get("powerStatus").toString()));
 				power.setPowerRemark(map.get("powerRemark")==null?"":map.get("powerRemark").toString());
-				
 				powerList.add(power);
 			}
 			return powerList;
+		}else{
+			return null;
 		}
-		return null;
 	}
 
 }

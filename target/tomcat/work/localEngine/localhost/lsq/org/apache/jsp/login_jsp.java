@@ -104,10 +104,10 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("</script>\r\n");
       out.write("</head>\r\n");
       out.write("<body>\r\n");
-      out.write("\t<font color=\"red\" face=\"songti\">");
+      out.write("\t<h1 align=\"center\"><font color=\"red\" face=\"songti\">");
       if (_jspx_meth_s_005ffielderror_005f0(_jspx_page_context))
         return;
-      out.write("</font>\r\n");
+      out.write("</font></h1>\r\n");
       out.write("\t");
       if (_jspx_meth_s_005fform_005f0(_jspx_page_context))
         return;

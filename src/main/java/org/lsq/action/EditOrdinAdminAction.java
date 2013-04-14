@@ -10,6 +10,8 @@ import com.opensymphony.xwork2.ActionSupport;
 public class EditOrdinAdminAction extends ActionSupport{
 
 	/**
+	 * 编辑管理员
+	 * @author yhy
 	 * 
 	 */
 	private int roleId;

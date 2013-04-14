@@ -7,7 +7,6 @@ public class User {
 	private int roleId;
 	private int userStatus;
 	private String userRemark;
-
 	public String getUsername() {
 		return username;
 	}

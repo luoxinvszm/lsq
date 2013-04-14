@@ -77,15 +77,17 @@ public class LoginAction extends ActionSupport {
 		}
 	//execute方法
 	public String execute(){
-		
 		if(hasFieldErrors()){
 			return INPUT;
 		}else{
 				int roleId=userService.isLogin(username, password);
+				int userId=userService.getuserId(username, password);
+				System.out.println(userId+"---------");
 				HttpSession session=ServletActionContext.getRequest().getSession();
 				session.setAttribute("username", username);
 				session.setAttribute("password", password);
 				session.setAttribute("roleId", roleId);
+				session.setAttribute("userId", userId);
 				powersList=roleCastPowerService.queryPowers(roleId);
 				System.out.println(powersList.size()+"----");
 				return SUCCESS;

@@ -3,11 +3,5 @@
 	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
 	"http://struts.apache.org/dtds/struts-2.3.dtd">
 <struts>
-	<package name="struts7" extends="struts-default">
-	<action name="editOrdinAdminAction" class="editOrdinAdminAction">
-			<result name="delete">/cancleOrdinAdmin.jsp</result>
-			<result name="recover">/recoverOrdinAdmin.jsp</result>
-			<result name="input">/login.jsp</result>
-		</action>
-</package>
+	
 </struts>

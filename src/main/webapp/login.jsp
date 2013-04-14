@@ -45,7 +45,7 @@
 </script>
 </head>
 <body>
-	<font color="red" face="songti"><s:fielderror /></font>
+	<h1 align="center"><font color="red" face="songti"><s:fielderror /></font></h1>
 	<s:form action="login" method="post">
 		<table cellspacing="20" align="center">
 			<tr>
