@@ -8,12 +8,16 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+	
 	<s:iterator value="usersList" id="id">
 	
 	<s:property value="#id.getUsername()"/><a href="editOrdinAdminAction!deleteUser.action?userId=<s:property value="#id.getUserId()"/>">冻结账号</a><br>
 	</s:iterator>
-
+<%
+	String username=session.getAttribute("username").toString();
+	String password=session.getAttribute("password").toString();
+%>
+	<a href="login?username=<%=username%>& password=<%=password%>">返回首页</a>
 	
 </body>
 </html>

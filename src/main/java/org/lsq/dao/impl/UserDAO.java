@@ -6,18 +6,18 @@ import java.util.List;
 import java.util.Map;
 
 import org.lsq.dao.IUserDAO;
+import org.lsq.util.NameUtil;
 import org.lsq.vo.User;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 public class UserDAO implements IUserDAO {
 
 	private JdbcTemplate jdbcTemplate;
-
+	NameUtil n = new NameUtil();
 	public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
 		this.jdbcTemplate = jdbcTemplate;
 	}
-	
-
 	//查询指定用户信息
 	public User queryUser(String username, String password) {
 		String sql = "select * from user where userName=? and userPassword=? ";
@@ -78,6 +78,23 @@ public class UserDAO implements IUserDAO {
 		jdbcTemplate.update(sql, new Object[]{username,password,roleId});
 		return true;
 	}
+	@SuppressWarnings("unused")
+	public String createUsername(){
+		String name=n.generateName();
+		String sql="select * from user where userName='"+name+"'";
+		try {
+			List<Map<String,Object>> list= jdbcTemplate.queryForList(sql);
+			System.out.println("count="+list.size());
+			if(list==null && list.size()==0){
+				return createUsername();
+			}else{
+				return name;
+			}
+		} catch (EmptyResultDataAccessException  e) {
+			return null;
+		}
+	
+	}
 	//修改密码
 	public boolean updatePassword(String password,int userId){
 		System.out.println("修改密码--------");
@@ -85,6 +102,5 @@ public class UserDAO implements IUserDAO {
 		jdbcTemplate.update(sql,new Object[]{password,userId});
 		return true;
 	}
-	
 	
 }

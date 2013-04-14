@@ -71,5 +71,9 @@ public class UserService implements IUserService{
 			return false;
 		}
 	}
+	public String createUsername(){
+		String name=userDAO.createUsername();
+		return name;
+	}
 
 }

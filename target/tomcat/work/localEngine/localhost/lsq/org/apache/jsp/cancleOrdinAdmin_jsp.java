@@ -66,12 +66,22 @@ public final class cancleOrdinAdmin_jsp extends org.apache.jasper.runtime.HttpJs
       out.write("<title>Insert title here</title>\r\n");
       out.write("</head>\r\n");
       out.write("<body>\r\n");
-      out.write("\r\n");
+      out.write("\t\r\n");
       out.write("\t");
       if (_jspx_meth_s_005fiterator_005f0(_jspx_page_context))
         return;
+      out.write('\r');
+      out.write('\n');
+
+	String username=session.getAttribute("username").toString();
+	String password=session.getAttribute("password").toString();
+
       out.write("\r\n");
-      out.write("\r\n");
+      out.write("\t<a href=\"login?username=");
+      out.print(username);
+      out.write("& password=");
+      out.print(password);
+      out.write("\">返回首页</a>\r\n");
       out.write("\t\r\n");
       out.write("</body>\r\n");
       out.write("</html>");

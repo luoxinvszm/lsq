@@ -6,6 +6,10 @@ import com.opensymphony.xwork2.ActionInvocation;
 import com.opensymphony.xwork2.interceptor.MethodFilterInterceptor;
 
 public class AdminInterceptor extends MethodFilterInterceptor{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String username_session;
 	private String reLoginResult;
 	public String getReLoginResult() {

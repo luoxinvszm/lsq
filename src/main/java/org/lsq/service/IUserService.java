@@ -33,4 +33,8 @@ public interface IUserService {
 	 * 修改密码
 	 * */
 	public boolean updatePassword(String password,int userId);
+	/**
+	 * 创建账号
+	 * */
+	public String createUsername();
 }
