@@ -27,11 +27,11 @@ public class IdBuilder {
 	//上一次生成id的计数器部分
 	private static short lastCount = 0;
 	//计数器最大值，当计数器当前值超过最大值时计数器清0
-	private int maxSize=10000;
+	private static int maxSize=10000;
 	//新生成的id的时间部分
-	private long time;
+	private static long time;
 	//新生成的id的计数器部分
-	private short count;
+	private static short count;
 	
 	
 	
@@ -39,8 +39,8 @@ public class IdBuilder {
 	/**
 	 *得到新生成的Id 
 	 */	
-	public long getNewId(){
-
+	public static long getNewId(){
+		long newId;
 		LOCK.lock();
 		try {
 			boolean done = false;
@@ -62,10 +62,11 @@ public class IdBuilder {
 			}
 			time = lastTime;
 			count = lastCount++;
+			newId=time*maxSize+count;
 		} finally {
 			LOCK.unlock();
 		}
-		return time*maxSize+count;
+		return newId;
 	}
 	
 }
