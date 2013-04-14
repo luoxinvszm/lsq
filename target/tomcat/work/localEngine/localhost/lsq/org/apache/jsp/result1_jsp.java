@@ -55,7 +55,7 @@ public final class result1_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<html>\r\n");
       out.write("<head>\r\n");
       out.write("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=ISO-8859-1\">\r\n");
-      out.write("<title>Insert title here</title>\r\n");
+      out.write("<title>创建成功</title>\r\n");
       out.write("</head>\r\n");
       out.write("<body>恭喜您 创建成功\r\n");
       out.write("username: ");
@@ -64,7 +64,7 @@ public final class result1_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("password: ");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${requestScope.password }", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
       out.write(" \r\n");
-      out.write("\r\n");
+      out.write("<a href=\"login\">返回继续添加</a>\r\n");
       out.write("</body>\r\n");
       out.write("</html>");
     } catch (Throwable t) {

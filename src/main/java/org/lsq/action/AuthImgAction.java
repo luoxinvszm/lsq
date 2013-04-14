@@ -19,11 +19,12 @@ import javax.imageio.stream.ImageOutputStream;
 
 import com.opensymphony.xwork2.ActionContext;  
 import com.opensymphony.xwork2.ActionSupport;  
-  
+/**
+ * @author ylg
+ * 生成验证码的工具类
+ */
 public class AuthImgAction extends ActionSupport {  
-    /**
-	 * 生成验证码的工具类
-	 */
+
 	private static final long serialVersionUID = 1L;
 	private ByteArrayInputStream inputStream;  
       
@@ -89,7 +90,7 @@ public class AuthImgAction extends ActionSupport {
             g.drawString(String.valueOf(ctmp),15*i+10,14);  
   
         }  
-        ActionContext.getContext().getSession().put("authimg", sRand);  
+        ActionContext.getContext().getSession().put("rand", sRand);  
         g.dispose();  
         ByteArrayInputStream input=null;     
         ByteArrayOutputStream output = new ByteArrayOutputStream();     

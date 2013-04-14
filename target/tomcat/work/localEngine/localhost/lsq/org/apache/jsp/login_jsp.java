@@ -3,6 +3,7 @@ package org.apache.jsp;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
+import org.apache.struts2.ServletActionContext;
 
 public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
@@ -12,6 +13,7 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
   private static java.util.List _jspx_dependants;
 
   private org.apache.jasper.runtime.TagHandlerPool _005fjspx_005ftagPool_005fs_005ffielderror_005fnobody;
+  private org.apache.jasper.runtime.TagHandlerPool _005fjspx_005ftagPool_005fs_005fform_0026_005fmethod_005faction;
 
   private javax.el.ExpressionFactory _el_expressionfactory;
   private org.apache.AnnotationProcessor _jsp_annotationprocessor;
@@ -22,12 +24,14 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
 
   public void _jspInit() {
     _005fjspx_005ftagPool_005fs_005ffielderror_005fnobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
+    _005fjspx_005ftagPool_005fs_005fform_0026_005fmethod_005faction = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _el_expressionfactory = _jspxFactory.getJspApplicationContext(getServletConfig().getServletContext()).getExpressionFactory();
     _jsp_annotationprocessor = (org.apache.AnnotationProcessor) getServletConfig().getServletContext().getAttribute(org.apache.AnnotationProcessor.class.getName());
   }
 
   public void _jspDestroy() {
     _005fjspx_005ftagPool_005fs_005ffielderror_005fnobody.release();
+    _005fjspx_005ftagPool_005fs_005fform_0026_005fmethod_005faction.release();
   }
 
   public void _jspService(HttpServletRequest request, HttpServletResponse response)
@@ -55,27 +59,59 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_out = out;
 
       out.write("\r\n");
-      out.write("  \r\n");
+      out.write("\r\n");
+      out.write("\r\n");
       out.write("<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">\r\n");
       out.write("<html>\r\n");
       out.write("<head>\r\n");
       out.write("\r\n");
-      out.write("<title>Insert title here</title>\r\n");
+      out.write("<title>管理员登陆界面</title>\r\n");
       out.write("<script type=\"text/javascript\">\r\n");
+      out.write("\tfunction changeImage() {\r\n");
+      out.write("\t\tvar date = new Date();\r\n");
+      out.write("\t\tdocument.getElementById(\"auth\").src = 'authImg?id=' + date.getTime();\r\n");
+      out.write("\t}\r\n");
+      out.write("\tfunction check1() {\r\n");
       out.write("\r\n");
+      out.write("\t\tvar id = document.getElementById(\"pass1\");\r\n");
+      out.write("\t\tvar hid = document.getElementById(\"d1\");\r\n");
+      out.write("\t\tif (\"\" == id.value) {\r\n");
+      out.write("\t\t\thid.style.display = \"block\";\r\n");
+      out.write("\t\t} else {\r\n");
+      out.write("\r\n");
+      out.write("\t\t\thid.style.display = \"none\";\r\n");
+      out.write("\t\t}\r\n");
+      out.write("\t}\r\n");
+      out.write("\t\tfunction checkyan(){\r\n");
+      out.write("\t\tvar username=document.getElementById(\"yanzhengma\");\r\n");
+      out.write("\t\t\tvar u1 = document.getElementById(\"yan\");\r\n");
+      out.write("\t\t\tif(\"\"==username.value){\r\n");
+      out.write("\t\t\tu1.style.display=\"block\";\r\n");
+      out.write("\t\t\t}\r\n");
+      out.write("\t\t\telse{\r\n");
+      out.write("\t\t\tu1.style.display=\"none\";\r\n");
+      out.write("\t\t\t}\r\n");
+      out.write("\t\t}\r\n");
+      out.write("\tfunction checkuser() {\r\n");
+      out.write("\t\tvar username = document.getElementById(\"zh\");\r\n");
+      out.write("\t\tvar u1 = document.getElementById(\"u1\");\r\n");
+      out.write("\t\tif (\"\" == username.value) {\r\n");
+      out.write("\t\t\tu1.style.display = \"block\";\r\n");
+      out.write("\t\t} else {\r\n");
+      out.write("\t\t\tu1.style.display = \"none\";\r\n");
+      out.write("\t\t}\r\n");
+      out.write("\t}\r\n");
       out.write("</script>\r\n");
       out.write("</head>\r\n");
       out.write("<body>\r\n");
-      out.write("\t<font color=\"red\" face=\"songti\">");
+      out.write("\t<h1 align=\"center\"><font color=\"red\" face=\"songti\">");
       if (_jspx_meth_s_005ffielderror_005f0(_jspx_page_context))
         return;
-      out.write("</font>\r\n");
-      out.write("\t<form action=\"login\" method=\"post\">\r\n");
-      out.write("\t\t\r\n");
-      out.write("\t\t用户:<input type=\"text\" name=\"username\"><br>\r\n");
-      out.write("\t\t密码:<input type=\"password\" name=\"password\"><br>\r\n");
-      out.write("\t\t<input type=\"submit\" value=\"submit\" />\r\n");
-      out.write("\t</form>\r\n");
+      out.write("</font></h1>\r\n");
+      out.write("\t");
+      if (_jspx_meth_s_005fform_005f0(_jspx_page_context))
+        return;
+      out.write("\r\n");
       out.write("</body>\r\n");
       out.write("</html>");
     } catch (Throwable t) {
@@ -104,6 +140,97 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
       return true;
     }
     _005fjspx_005ftagPool_005fs_005ffielderror_005fnobody.reuse(_jspx_th_s_005ffielderror_005f0);
+    return false;
+  }
+
+  private boolean _jspx_meth_s_005fform_005f0(PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  s:form
+    org.apache.struts2.views.jsp.ui.FormTag _jspx_th_s_005fform_005f0 = (org.apache.struts2.views.jsp.ui.FormTag) _005fjspx_005ftagPool_005fs_005fform_0026_005fmethod_005faction.get(org.apache.struts2.views.jsp.ui.FormTag.class);
+    _jspx_th_s_005fform_005f0.setPageContext(_jspx_page_context);
+    _jspx_th_s_005fform_005f0.setParent(null);
+    // /login.jsp(49,1) name = action type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_s_005fform_005f0.setAction("login");
+    // /login.jsp(49,1) name = method type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_s_005fform_005f0.setMethod("post");
+    int _jspx_eval_s_005fform_005f0 = _jspx_th_s_005fform_005f0.doStartTag();
+    if (_jspx_eval_s_005fform_005f0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+      if (_jspx_eval_s_005fform_005f0 != javax.servlet.jsp.tagext.Tag.EVAL_BODY_INCLUDE) {
+        out = _jspx_page_context.pushBody();
+        _jspx_th_s_005fform_005f0.setBodyContent((javax.servlet.jsp.tagext.BodyContent) out);
+        _jspx_th_s_005fform_005f0.doInitBody();
+      }
+      do {
+        out.write("\r\n");
+        out.write("\t\t<table cellspacing=\"20\" align=\"center\">\r\n");
+        out.write("\t\t\t<tr>\r\n");
+        out.write("\t\t\t\t<td>请输入用户名:</td>\r\n");
+        out.write("\t\t\t\t<td><table width=\"500px\">\r\n");
+        out.write("\t\t\t\t\t\t<tr>\r\n");
+        out.write("\t\t\t\t\t\t\t<td><input type=\"text\" name=\"username\"\r\n");
+        out.write("\t\t\t\t\t\t\t\tstyle=\"width: 200px; height: 30px;\" onblur=\"checkuser()\" id=\"zh\" />\r\n");
+        out.write("\t\t\t\t\t\t\t</td>\r\n");
+        out.write("\t\t\t\t\t\t\t<td><div style=\"display: none\" id=\"u1\">\r\n");
+        out.write("\t\t\t\t\t\t\t\t\t<font face=\"宋体\" color=\"red\">用户名不能为空</font>\r\n");
+        out.write("\t\t\t\t\t\t\t\t</div>\r\n");
+        out.write("\t\t\t\t\t\t\t</td>\r\n");
+        out.write("\t\t\t\t\t\t</tr>\r\n");
+        out.write("\t\t\t\t\t</table>\r\n");
+        out.write("\t\t\t\t</td>\r\n");
+        out.write("\t\t\t</tr>\r\n");
+        out.write("\t\t\t<tr>\r\n");
+        out.write("\t\t\t\t<td>请输入密码</td>\r\n");
+        out.write("\t\t\t\t<td><table width=\"500px\">\r\n");
+        out.write("\t\t\t\t\t\t<tr>\r\n");
+        out.write("\t\t\t\t\t\t\t<td><input type=\"password\"\r\n");
+        out.write("\t\t\t\t\t\t\t\tstyle=\"width: 200px; height: 30px; bgcolor: yellow\"\r\n");
+        out.write("\t\t\t\t\t\t\t\tname=\"password\" onblur=\"check1()\" id=\"pass1\" />\r\n");
+        out.write("\t\t\t\t\t\t\t</td>\r\n");
+        out.write("\t\t\t\t\t\t\t<td><div style=\"display: none\" id=\"d1\">\r\n");
+        out.write("\t\t\t\t\t\t\t\t\t<font face=\"宋体\" color=\"red\">密码不能为空</font>\r\n");
+        out.write("\t\t\t\t\t\t\t\t</div>\r\n");
+        out.write("\t\t\t\t\t\t\t</td>\r\n");
+        out.write("\t\t\t\t\t\t</tr>\r\n");
+        out.write("\t\t\t\t\t</table>\r\n");
+        out.write("\t\t\t\t</td>\r\n");
+        out.write("\t\t\t</tr>\r\n");
+        out.write("\t\t\t<tr>\r\n");
+        out.write("\t\t\t\t<td>请输入验证码：</td>\r\n");
+        out.write("\t\t\t\t<td><table>\r\n");
+        out.write("\t\t\t\t\t\t<tr>\r\n");
+        out.write("\t\t\t\t\t\t\t<td><input type=\"text\" name=\"auth\" onblur=\"checkyan()\"\r\n");
+        out.write("\t\t\t\t\t\t\t\tid=\"yanzhengma\" />\r\n");
+        out.write("\t\t\t\t\t\t\t</td>\r\n");
+        out.write("\t\t\t\t\t\t\t<td><img src=\"authImg\" name=\"auth\" id=\"auth\"/><a\r\n");
+        out.write("\t\t\t\t\t\t\t\thref=\"javascript:void(0)\" onclick=\"changeImage()\">看不清</a>\r\n");
+        out.write("\t\t\t\t\t\t\t</td>\r\n");
+        out.write("\t\t\t\t\t\t\t<td><div style=\"display: none\" id=\"yan\">\r\n");
+        out.write("\t\t\t\t\t\t\t\t\t<font face=\"宋体\" color=\"red\">验证码不能为空</font>\r\n");
+        out.write("\t\t\t\t\t\t\t\t</div>\r\n");
+        out.write("\t\t\t\t\t\t\t</td>\r\n");
+        out.write("\t\t\t\t\t\t</tr>\r\n");
+        out.write("\t\t\t\t\t</table>\r\n");
+        out.write("\t\t\t\t</td>\r\n");
+        out.write("\t\t\t</tr>\r\n");
+        out.write("\t\t\r\n");
+        out.write("\t\t<tr><td align=\"center\"><input type=\"submit\" value=\"submit\" /></td></tr>\r\n");
+        out.write("\t</table>\r\n");
+        out.write("\t");
+        int evalDoAfterBody = _jspx_th_s_005fform_005f0.doAfterBody();
+        if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+          break;
+      } while (true);
+      if (_jspx_eval_s_005fform_005f0 != javax.servlet.jsp.tagext.Tag.EVAL_BODY_INCLUDE) {
+        out = _jspx_page_context.popBody();
+      }
+    }
+    if (_jspx_th_s_005fform_005f0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _005fjspx_005ftagPool_005fs_005fform_0026_005fmethod_005faction.reuse(_jspx_th_s_005fform_005f0);
+      return true;
+    }
+    _005fjspx_005ftagPool_005fs_005fform_0026_005fmethod_005faction.reuse(_jspx_th_s_005fform_005f0);
     return false;
   }
 }

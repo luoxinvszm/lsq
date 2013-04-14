@@ -3,7 +3,16 @@ package org.lsq.vo;
 public class Message {
 	private int msgId;
 	private int msgTypeId;
+	private int msgStatus;
 	private String msgConctent;
+	public int getMsgStatus() {
+		return msgStatus;
+	}
+
+	public void setMsgStatus(int msgStatus) {
+		this.msgStatus = msgStatus;
+	}
+
 	private String publisherName;
 	private String publisherPhone;
 	private String publishTime;

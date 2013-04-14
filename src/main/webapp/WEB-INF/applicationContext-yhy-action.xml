@@ -3,5 +3,7 @@
     "-//SPRING//DTD BEAN//EN"   
     "http://www.springframework.org/dtd/spring-beans.dtd">
 <beans>
-
+<bean id="editOrdinAdminAction" class="org.lsq.action.EditOrdinAdminAction">
+  		<property name="userService" ref="userService"></property>
+  	</bean>
 </beans>  

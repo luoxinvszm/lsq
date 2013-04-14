@@ -2,22 +2,40 @@ package org.lsq.action;
 
 
 
-import org.lsq.service.ILoginService;
+
+import java.util.List;
+
+import javax.servlet.http.HttpSession;
+
+import org.apache.struts2.ServletActionContext;
+import org.lsq.service.IRoleCastPowerService;
+import org.lsq.service.IUserService;
+import org.lsq.vo.Power;
 
 import com.opensymphony.xwork2.ActionSupport;
-
+/**
+ * @author ylg yhy
+ * 管理员登录Action
+ */
 
 public class LoginAction extends ActionSupport {
-	/**
-	 * 
-	 */
+	
 	private static final long serialVersionUID = 1L;
-	private ILoginService loginService;
 	
+	private IUserService userService;
 	
-	public void setLoginService(ILoginService loginService) {
-		this.loginService = loginService;
+	private IRoleCastPowerService roleCastPowerService;
+	
+	private List<Power> powersList;
+	
+	public void setRoleCastPowerService(IRoleCastPowerService roleCastPowerService) {
+		this.roleCastPowerService = roleCastPowerService;
 	}
+
+	public void setUserService(IUserService userService) {
+		this.userService = userService;
+	}
+
 	private String auth;
 	public String getAuth() {
 		return auth;
@@ -39,15 +57,42 @@ public class LoginAction extends ActionSupport {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public String execute(){
-			if(loginService.isLogin(username, password)){
-				return SUCCESS;
-			}else if(!loginService.isLogin(username, password)){
-				this.addFieldError("user", "用户不存在!");
-				return INPUT;
-			}
-		
-		return SUCCESS;
-		
+	public List<Power> getPowersList() {
+		return powersList;
 	}
+	public void setPowersList(List<Power> powersList) {
+		this.powersList = powersList;
+	}
+	//重新validate方法 进行数据校验
+		public void validate(){
+			System.out.println(auth);
+			HttpSession session =ServletActionContext.getRequest().getSession();
+			String s = session.getAttribute("rand").toString();
+			System.out.println(s+"-----------");
+			if(!auth.equals(s)){
+				this.addFieldError("auth", "验证码输入错误!");
+			}
+			if(userService.isLogin(username, password)==-1){
+				this.addFieldError("user", "用户名或密码错误");
+			}
+		}
+	//execute方法
+	public String execute(){
+		if(hasFieldErrors()){
+			return INPUT;
+		}else{
+				int roleId=userService.isLogin(username, password);
+				int userId=userService.getuserId(username, password);
+				System.out.println(userId+"---------");
+				HttpSession session=ServletActionContext.getRequest().getSession();
+				//如果用户成功登陆，则将用户信息添加到session中
+				session.setAttribute("username", username);
+				session.setAttribute("password", password);
+				session.setAttribute("roleId", roleId);
+				session.setAttribute("userId", userId);
+				powersList=roleCastPowerService.queryPowers(roleId);
+				return SUCCESS;
+			}
+	}
+	
 }
