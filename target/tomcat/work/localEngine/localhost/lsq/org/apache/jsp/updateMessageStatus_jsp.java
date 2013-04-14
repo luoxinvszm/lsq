@@ -59,7 +59,9 @@ public final class updateMessageStatus_jsp extends org.apache.jasper.runtime.Htt
       out.write("<body>\r\n");
       out.write("\t<form action=\"updateMessageStatus\">\r\n");
       out.write("\t\t\r\n");
-      out.write("\t\t\r\n");
+      out.write("\t\t<input type=\"text\" name=\"status\" value=\"status\">\r\n");
+      out.write("\t\t<input type=\"text\" name=publisherPhone value=\"publisherPhone\">\r\n");
+      out.write("\t\t<input type=\"text\" name=\"publishTime\" value=\"publishTime\">\r\n");
       out.write("\t\t<input type=\"submit\" value=\"搜索\">\r\n");
       out.write("\t</form>\r\n");
       out.write("</body>\r\n");
