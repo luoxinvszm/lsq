@@ -69,10 +69,10 @@ public class LoginAction extends ActionSupport {
 			HttpSession session =ServletActionContext.getRequest().getSession();
 			String s = session.getAttribute("rand").toString();
 			System.out.println(s+"-----------");
-			if(!auth.equals(s)){
+			if(session.getAttribute("username")==null && !auth.equals(s)){
 				this.addFieldError("auth", "验证码输入错误!");
 			}
-			if(userService.isLogin(username, password)==-1){
+			if(session.getAttribute("username")==null && userService.isLogin(username, password)==-1){
 				this.addFieldError("user", "用户名或密码错误");
 			}
 		}
@@ -82,7 +82,7 @@ public class LoginAction extends ActionSupport {
 			return INPUT;
 		}else{
 				int roleId=userService.isLogin(username, password);
-				int userId=userService.getuserId(username, password);
+				long userId=userService.getuserId(username, password);
 				System.out.println(userId+"---------");
 				HttpSession session=ServletActionContext.getRequest().getSession();
 				//如果用户成功登陆，则将用户信息添加到session中

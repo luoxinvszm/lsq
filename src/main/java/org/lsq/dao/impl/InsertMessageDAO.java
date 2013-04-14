@@ -16,11 +16,12 @@ public class InsertMessageDAO implements IInsertMessageDAO {
 			String publisherPhone, String publishTime, String msgRemark) {
 		
 		System.out.println("insertMessageDAO starting······");
-		//long msgId = IdBuilder.getNewId(); //随机获取主键值
-		int msgId = 4;
-		System.out.println(msgId);
-		String sql = "insert into message (msgId,msgConctent,publisherName,publisherPhone,publishTime,msgRemark,msgStatus) values ('"
+
+		long msgId = IdBuilder.getNewId(); //随机获取主键值
+		String sql = "insert into message (msgId,msgTypeId,msgConctent,publisherName,publisherPhone,publishTime,msgRemark,msgStatus) values ('"
 				+ msgId
+				+ "','"
+				+ 1
 				+ "','"
 				+ messageContext
 				+ "','"

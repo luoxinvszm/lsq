@@ -2,7 +2,6 @@ package org.lsq.action;
 
 import org.lsq.service.IUserService;
 
-import org.lsq.util.NameUtil;
 
 import com.opensymphony.xwork2.ActionSupport;
 /**
@@ -45,7 +44,7 @@ public class CreateOrdinManagerAction extends ActionSupport{
 	}
 	//execute方法()
 	public String execute(){
-		username=new NameUtil().generateName();
+		username=userService.createUsername();
 		password="111111";
 		roleId="2";
 		System.out.println(username);

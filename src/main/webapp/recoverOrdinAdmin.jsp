@@ -14,6 +14,11 @@
 	<s:property value="#id.getUsername()"/><a href="editOrdinAdminAction!recoverUser.action?userId=<s:property value="#id.getUserId()"/>">恢复账号</a><br>
 	</s:iterator>
 
+<%
+	String username=session.getAttribute("username").toString();
+	String password=session.getAttribute("password").toString();
+%>
+	<a href="login?username=<%=username%>& password=<%=password%>">返回首页</a>
 	
 </body>
 </html>

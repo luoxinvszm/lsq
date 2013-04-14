@@ -58,13 +58,23 @@ public final class result1_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<title>创建成功</title>\r\n");
       out.write("</head>\r\n");
       out.write("<body>恭喜您 创建成功\r\n");
+
+	String username=session.getAttribute("username").toString();
+	String password=session.getAttribute("password").toString();
+
+      out.write("\r\n");
       out.write("username: ");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${requestScope.username }", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
       out.write("<br>\r\n");
       out.write("password: ");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${requestScope.password }", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
       out.write(" \r\n");
-      out.write("<a href=\"login\">返回继续添加</a>\r\n");
+      out.write("<a href=\"login?username=");
+      out.print(username);
+      out.write("& password=");
+      out.print(password);
+      out.write("\">返回继续添加</a>\r\n");
+      out.write("\r\n");
       out.write("</body>\r\n");
       out.write("</html>");
     } catch (Throwable t) {

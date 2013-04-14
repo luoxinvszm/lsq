@@ -3,7 +3,7 @@ package org.lsq.vo;
  * 用户实体类：User
 */
 public class User {
-	private int userId;
+	private long userId;
 	private String username;
 	private String password;
 	private int roleId;
@@ -49,11 +49,11 @@ public class User {
 		this.userRemark = userRemark;
 	}
 
-	public int getUserId() {
+	public long getUserId() {
 		return userId;
 	}
 
-	public void setUserId(int userId) {
+	public void setUserId(long userId) {
 		this.userId = userId;
 	}
 	
