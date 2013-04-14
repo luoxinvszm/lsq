@@ -15,7 +15,7 @@ import org.lsq.vo.Power;
 import com.opensymphony.xwork2.ActionSupport;
 /**
  * @author ylg yhy
- * 登录Action
+ * 管理员登录Action
  */
 
 public class LoginAction extends ActionSupport {
@@ -85,6 +85,7 @@ public class LoginAction extends ActionSupport {
 				int userId=userService.getuserId(username, password);
 				System.out.println(userId+"---------");
 				HttpSession session=ServletActionContext.getRequest().getSession();
+				//如果用户成功登陆，则将用户信息添加到session中
 				session.setAttribute("username", username);
 				session.setAttribute("password", password);
 				session.setAttribute("roleId", roleId);

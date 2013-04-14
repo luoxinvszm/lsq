@@ -1,5 +1,7 @@
 package org.lsq.vo;
-
+/**
+ * 权限实体类：Power
+*/
 public class Power {
 	
 	private int powerId;
