@@ -4,7 +4,11 @@ import java.util.Map;
 
 import com.opensymphony.xwork2.ActionInvocation;
 import com.opensymphony.xwork2.interceptor.MethodFilterInterceptor;
-
+/**
+ * 类名：管理员登陆拦截器
+ * 作用：未登陆的用户，无法访问管理员权限的aciton
+ * @author yhy
+*/
 public class AdminInterceptor extends MethodFilterInterceptor{
 	/**
 	 * 
@@ -25,6 +29,7 @@ public class AdminInterceptor extends MethodFilterInterceptor{
 	public void setUsername_session(String username_session) {
 		this.username_session = username_session;
 	}
+	//登陆拦截方法
 	@Override
 	protected String doIntercept(ActionInvocation invocation) throws Exception {
 		Map<String, Object> session = invocation.getInvocationContext()

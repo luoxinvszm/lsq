@@ -7,7 +7,9 @@ import java.util.List;
 import org.lsq.dao.IUserDAO;
 import org.lsq.service.IUserService;
 import org.lsq.vo.User;
-
+/**UserService负责对用户进行业务处理,实现IUserService接口
+ * @author ylg,yhy
+*/
 public class UserService implements IUserService{
 	private IUserDAO userDAO;
 

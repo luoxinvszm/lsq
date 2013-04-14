@@ -10,7 +10,10 @@ import org.lsq.util.NameUtil;
 import org.lsq.vo.User;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
-
+/**
+ *负责数据库user表访问类 ，实现IUserDAO
+ *@author ylg,yhy
+*/
 public class UserDAO implements IUserDAO {
 
 	private JdbcTemplate jdbcTemplate;

@@ -23,7 +23,6 @@ public class RoleCastPowerService implements IRoleCastPowerService{
 
 
 	public List<Power> queryPowers(int id) {
-		// TODO Auto-generated method stub
 		return  roleCastPowerDAO.queryPowerByRoleId(id);
 	}
 }
