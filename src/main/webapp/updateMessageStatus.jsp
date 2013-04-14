@@ -7,7 +7,7 @@
 </head>
 <body>
 	<form action="updateMessageStatus">
-		<input type="text" name="mintus" value="mintus">
+		<input type="text" name="mintus" value="1">
 		<input type="text" name="status" value="status">
 		<input type="text" name=publisherPhone value="publisherPhone">
 		<input type="text" name="publishTime" value="publishTime">

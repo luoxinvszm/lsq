@@ -20,16 +20,19 @@ public class UpdateMessageStatusService implements IUpdateMessageStatusService,
 	int msgStatus;
 	int mintus;
 	//构造函数
+	
 	public UpdateMessageStatusService(String publisherPhone,
-			String publishTime, int msgStatus, int mintus){
+			String publishTime, int msgStatus, int mintus,IUpdateMessageStatusDAO updateMessageStatusDao){
 		this.publisherPhone = publisherPhone;
 		this.publishTime = publishTime;
 		this.msgStatus = msgStatus;
 		this.mintus = mintus;
+		this.updateMessageStatusDao=updateMessageStatusDao;
 	}
 	
-	
-	
+	//无参数构造函数
+	public UpdateMessageStatusService(
+		){}
 	
 
 	// 删除:管理员
@@ -67,7 +70,7 @@ public class UpdateMessageStatusService implements IUpdateMessageStatusService,
 			i = updateMessageStatusDao.modifiedStatus(publisherPhone,
 					publishTime, modifiedDateTime, msgStatus);
 			Thread t = new Thread(new UpdateMessageStatusService( publisherPhone,
-					modifiedDateTime,  msgStatus,  mintus));
+					modifiedDateTime,  msgStatus,  mintus,updateMessageStatusDao));
 			t.start();
 			return i;
 		} else {
@@ -84,7 +87,8 @@ public class UpdateMessageStatusService implements IUpdateMessageStatusService,
 		
 		try {
 			Thread.sleep(mintus * 60 * 1000);
-			updateMessageStatusDao.deleteStatus(publisherPhone, publishTime,msgStatus);
+			int i =updateMessageStatusDao.deleteStatus(publisherPhone, publishTime,3);
+			System.out.println(i);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

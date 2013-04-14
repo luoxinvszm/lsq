@@ -61,14 +61,14 @@ public class UpdateMessageStatusAction extends ActionSupport {
 	public String execute() {
 		System.out.println("updateMessageAction starting······");
 		// 对状态进行判断，如果是删除状态（3）则应用delete，否则就是修改
-		
+		int date = mintus*24*60;
 		int i;
 		if (status == 3) {
 			i = updateMessageStatusService.deleteMessagestatus(publisherPhone,
 					publishTime, status);
 		} else {
 			i = updateMessageStatusService.modifiedMessagestatus(publisherPhone,
-					publishTime, status,mintus);
+					publishTime, status,date);
 		}
 
 
