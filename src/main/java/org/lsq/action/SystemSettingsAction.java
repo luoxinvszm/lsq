@@ -42,9 +42,11 @@ public class SystemSettingsAction extends ActionSupport {
 	public String UpdateSystemSettings() {
 		System.out.println("……");
 		System.out.println(method);
+		//每人每天发送信息次数限制
 		if (method.equals("sendMsgNum")) {
 			settingsId = 1;
 		}
+		//每条信息字数限制
 		if (method.equals("perMsgWords")) {
 			settingsId = 2;
 		}

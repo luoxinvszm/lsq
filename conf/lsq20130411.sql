@@ -122,3 +122,21 @@ CREATE TABLE `user` (
 -- ----------------------------
 -- Records of user
 -- ----------------------------
+SET FOREIGN_KEY_CHECKS=0;
+-- ----------------------------
+-- Table structure for settings
+-- ----------------------------
+DROP TABLE IF EXISTS `settings`;
+CREATE TABLE `settings` (
+  `settingsId` int(11) NOT NULL auto_increment,
+  `settingsName` varchar(255) default NULL,
+  `settingsValue` int(11) NOT NULL default '0',
+  `settingsRemark` text,
+  PRIMARY KEY  (`settingsId`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records 
+-- ----------------------------
+INSERT INTO `settings` VALUES ('1', 'SendMsgNum', '999', '每人每天发送信息此时限制');
+INSERT INTO `settings` VALUES ('2', 'PerMsgWords', '20', '每条信息字数限制');
