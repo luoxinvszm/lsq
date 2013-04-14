@@ -3,7 +3,7 @@
     "-//SPRING//DTD BEAN//EN"   
     "http://www.springframework.org/dtd/spring-beans.dtd">
 <beans>
-	<bean id="MessageSettingsService" class="org.lsq.service.impl.MessageSettingsService">
-	<property name="messageSettingsDAO" ref="MessageSettingsDAO"></property>
+	<bean id="SystemSettingsService" class="org.lsq.service.impl.SystemSettingsService">
+	<property name="systemSettingsDAO" ref="SystemSettingsDAO"></property>
 	</bean>
 </beans>  
