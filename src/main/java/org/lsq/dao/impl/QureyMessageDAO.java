@@ -120,7 +120,7 @@ public class QureyMessageDAO implements IQureyMessageDAO {
 			
 			//获得map中的每个key对应的value值
 			
-			int msgId = (Integer) messageMap.get("msgId");
+			long msgId = (Long) messageMap.get("msgId");
 			int msgTypeId = (Integer) messageMap.get("msgTypeId");
 			int msgStatus1 = (Integer) messageMap.get("msgStatus");
 			String msgConctent = (String) messageMap.get("msgConctent");
