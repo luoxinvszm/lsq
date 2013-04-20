@@ -18,7 +18,7 @@
 	
 	<package name="qh" extends="json-default">
 		<action name="qureyMessage" class="QueryMessageAction">
-			<result name="success" type="json"></result>
+			<result name="success" type="json">/qt-xinxixianshi.jsp</result>
 		</action>
 	</package>
 </struts>

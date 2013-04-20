@@ -75,18 +75,19 @@ public class QueryMessageAction extends ActionSupport {
 
 		System.out.println("qureymessageaction starting····" );
 
-		messageList = qureyMessageService.checkQuery(publisherPhone,publishTime,msgStatus);
-		for (Message m : messageList) {
-			System.out.println(m.getMsgId());
-			System.out.println(m.getMsgTypeId());
-			System.out.println(m.getPublisherName());
-			System.out.println(m.getPublisherPhone());
-			System.out.println(m.getMsgRemark());
-			System.out.println(m.getPublishTime());
-			System.out.println(m.getMsgConctent());
-			System.out.println(m.getMsgStatus());
+//		messageList = qureyMessageService.checkQuery(publisherPhone,publishTime,msgStatus);
+//		for (Message m : messageList) {
+//			System.out.println(m.getMsgId());
+//			System.out.println(m.getMsgTypeId());
+//			System.out.println(m.getPublisherName());
+//			System.out.println(m.getPublisherPhone());
+//			System.out.println(m.getMsgRemark());
+//			System.out.println(m.getPublishTime());
+//			System.out.println(m.getMsgConctent());
+//			System.out.println(m.getMsgStatus());
+			System.out.println("publishTime="+publishTime);
 			System.out.println("***************************************");
-		}
+		//}
 		return SUCCESS;
 
 	}
