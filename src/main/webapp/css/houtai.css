@@ -1,0 +1,83 @@
+@charset "utf-8";
+/* CSS Document */
+
+body { padding:0; margin:0; background:#fff; text-align:center;}
+* { padding:0; margin:0; text-decoration:none; list-style:none;}
+.btn1 { padding:3px 10px!important; padding:5px 8px 0px 8px; background:url(../image/ht-navbg.jpg) repeat-x center center; border:1px #fff solid!important; color:#d6d7d7; line-height:14px;}
+.tlt { width:770px; height:45px; margin-bottom:0px; padding-left:10px; background:#98c3f0; border-bottom:1px #7ca1c8 solid; color:#000066; font-size:18px; text-align:left; line-height:35px; font-weight:bold; font-family:"方正楷体_GBK";}
+p { text-align:center; padding-top:30px; font-size:12px;}
+.bg { background:none;}
+.file { border:1px #999999 solid;}
+.text { width:200px; height:30px; margin-top:10px; padding-left:3px; background:#eee; border:1px #999999 solid; color:#ccc;}
+
+/*------------------ header ----------------------*/
+.header { width:1024px; height:78px; margin:0 auto; background:url(../image/ht-headerbg.jpg) no-repeat; border-bottom:4px #c7d4e2 solid;}
+h1 { display:block; float:left; width:700px; height:53px; margin-top:20px; color:#fff; font-size:36px; font-family:"华文行楷"; text-align:center; line-height:50px;}
+.header .btnbox { float:right; width:300px; height:30px; padding-top:10px; text-align:right;}
+.header .btnbox input { margin:0 10px;}
+.header p { display:block; float:right; width:150px; height:35px; margin:0 auto; padding:5px 10px 0 0; color:#fff; font-size:12px; text-align:right; line-height:16px; font-weight:bold;}
+
+/*contents*/
+.contents { width:1024px; margin:0 auto;}
+.contents p { display:block; height:30px; padding:10px 0 0 40px; line-height:20px; text-align:left;}
+.contents p input { margin-right:10px;}
+/*------------------- left ----------------------*/
+#left { float:left; width:240px; font-family:"宋体";}
+#left ul { margin:0px; padding:0px;}
+#left ul li{ display:block; height:35px; padding:5px 5px 5px 0.5em; background:url(../image/ht-libg.jpg) repeat-x; border-left:12px solid #011b46; border-right:1px solid #06396f; border-bottom:1px solid #207899; text-align:left;}
+#left ul li a { padding-left:20px; background:url(../image/ht-pcde_188.png) no-repeat; color:#fff; line-height:30px;}
+#left ul li a:hover { text-decoration:underline; color:red; font-size:16px;}
+
+/*------------------right----------------------*/
+
+/*right1*/
+#right1 { display:block; float:left; width:780px; text-align:center;}
+
+/*right2*/
+#right2 { display:none; float:left; width:780px;}
+
+/* right3 */
+#right3 { display:none; float:left; width:780px;}
+
+/* right4 */
+#right4 { display:none; float:left; width:780px;}
+
+/* right5 */
+#right5 { display:none; float:left; width:780px;}
+#right5 label { margin-top:10px; margin-left:20px;}
+#right5 .btn { width:50px; height:30px; margin-top:30px;}
+
+/* right6 */
+#right6 { display:none; float:left; width:780px;}
+
+/* right7 */
+#right7 { display:none; float:left; width:780px;}
+
+/* right8 */
+#right8 { display:none; float:left; width:780px;}
+#right8 dl { width:700px; margin-left:20px;}
+#right8 dl dt { float:left; width:250px; height:50px; padding-right:5px; line-height:50px; text-align:right;}
+#right8 dl dd { float:left; width:400px; height:50px; text-align:left; }
+#right8 dl dd .text { width:40px; }
+#right8 dl dd .btn { width:40px; height:30px; margin-left:8px;}
+
+/* right9 */
+#right9 { display:none; float:left; width:780px;}
+
+
+/*table*/
+table { width:770px; margin:0 auto; border-bottom:1px #c7d4e2 solid; border-right:1px #c7d4e2 solid;}
+table th { height:25px; padding:0; background:#d5e4f3; border-left:1px #c7d4e2 solid; border-top:1px #c7d4e2 solid; color:#009; font-size:14px; line-height:25px;
+text-align:center;}
+table td{ height:100px; padding-left:3px; border-left:1px #c7d4e2 solid; color:#0000FF; border-top:1px #c7d4e2 solid; line-height:25px; font-size:12px; text-align:left;}
+table td textarea { width:300px; height:25px; border:1px #cbd7e3 solid;}
+table td span { padding:0 5px; color:#f00;}
+table td input { margin-bottom:10px; margin-right:8px;}
+
+.page { padding:10px 0 20px 0; text-align:center; font-size:12px;}
+.page span { padding:0 3px;}
+
+.table1 { width:700px; margin:0 auto; border-bottom:1px #c7d4e2 solid; border-right:1px #c7d4e2 solid;}
+.table1 th { height:25px; padding:0; background:#d5e4f3; border-left:1px #c7d4e2 solid; border-top:1px #c7d4e2 solid; color:#009; font-size:14px; line-height:25px;
+text-align:center;}
+.table1 td{ height:20px; padding-left:3px; padding-top:10px; border-left:1px #c7d4e2 solid; color:#0000FF; border-top:1px #c7d4e2 solid; line-height:25px; font-size:12px; text-align:center;}
