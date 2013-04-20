@@ -74,7 +74,7 @@ public class QureyMessageDAO implements IQureyMessageDAO {
 		String sql="select * from message where publisherPhone='"+publisherPhone+"' and publishTime like '"+publishTime+"%' and msgStatus= "+msgStatus+";";
 		
 		System.out.println(sql);
-		
+		System.out.println("yzp="+getMessages(sql).size());
 		return getMessages(sql);
 	}
 	
@@ -102,7 +102,6 @@ public class QureyMessageDAO implements IQureyMessageDAO {
 	}
 	// ****************************************************************************
 	//获得message集合的转换方法，将map的转换成list
-	@SuppressWarnings("rawtypes")
 	public List<Message> getMessages(String sql){
 		
 		// 返回的messages集合
@@ -110,25 +109,27 @@ public class QureyMessageDAO implements IQureyMessageDAO {
 		List<Message> messages = new ArrayList<Message>();
 		
 		//对sql语句进行处理
+		System.out.println("sssssssssssssssssssssssssssssssssssssssssssss");
 		List rows = jdbcTemplate.queryForList(sql);
-
 		//对返回的list进行遍历
 		Iterator it = rows.iterator();
-
+		System.out.println("dddddddddddddddddddddddddddddddddddd");
 		while (it.hasNext()) {
 			Map messageMap = (Map) it.next();
 			
+			System.out.println("nnnnnnnnnnnnnnnnnn");
 			//获得map中的每个key对应的value值
 			
 			long msgId = (Long) messageMap.get("msgId");
+			System.out.println("map id.......................");
 			int msgTypeId = (Integer) messageMap.get("msgTypeId");
+			System.out.println("map typeId.......................");
 			int msgStatus1 = (Integer) messageMap.get("msgStatus");
 			String msgConctent = (String) messageMap.get("msgConctent");
 			String publisherName = (String) messageMap.get("publisherName");
 			String publisherPhone = (String) messageMap.get("publisherPhone");
 			String publishTime = (String) messageMap.get("publishTime");
 			String msgRemark = (String) messageMap.get("msgRemark");
-			
 			//  创建对象
 			
 			Message message = new Message();
@@ -143,12 +144,11 @@ public class QureyMessageDAO implements IQureyMessageDAO {
 			message.setPublishTime(publishTime);
 			message.setMsgRemark(msgRemark);
 			message.setMsgStatus(msgStatus1);
-			
 			//将对象添加到messages集合中
 			
 			messages.add(message);
 		}
-
+		System.out.println("end.......................");
 		return messages;
 	}
 
