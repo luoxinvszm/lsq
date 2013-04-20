@@ -1,10 +1,10 @@
 function submit() {
-	var jqueryobj = $("#publishTime");
-	var publishTime = jqueryobj.val();
-	if (publishTime == "" || publishTime == null) {
-		alert("publishTime不能为空");
+	var jqueryobj = $("#queryExp");
+	var queryExpVal = jqueryobj.val();
+	if (queryExpVal == "" || queryExpVal == null) {
+		alert("queryExpVal");
 	} else {
-		$.getJSON("qureyMessage?publishTime=" + publishTime, function(data) {//向action请求提交数据
+		$.getJSON("qureyMessage?publishTime=" + queryExpVal, function(data) {//向action请求提交数据
 			var resultObj = $("#result");
 			resultObj.html("");//清空result
 			resultObj.html(data.publishTime);//json方式解析由action返回的数据,并在页面显示,其他解析方式如下
