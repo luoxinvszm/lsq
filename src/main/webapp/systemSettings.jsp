@@ -13,7 +13,7 @@
 			<tr>
 				<td>字数设置
 				<td>
-				<td><form action="systemSettings.action">
+				<td><form action="systemSettings.action" method="post">
 						<input type="hidden" value="perMsgWords" name="method"> <input
 							type="text" name="settingsValue"> <input type="submit"
 							value="提交修改" />
@@ -22,31 +22,21 @@
 			<tr>
 				<td>发送次数限制设置
 				<td>
-				<td><form action="systemSettings.action">
+				<td><form action="systemSettings.action" method="post">
 						<input type="hidden" value="sendMsgNum" name="method"> <input
 							type="text" name="settingsValue"> <input type="submit"
 							value="提交修改" />
 					</form></td>
 			</tr>
 			<tr>
-				<td>删除已发布信息时间设置
+				<td>默认密码设置
 				<td>
-				<td><form action="systemSettings.action">
-						<input type="hidden" value="delReleasedMsgLong" name="method">
+				<td><form action="systemSettings.action" method="post">
+						<input type="hidden" value="defaultPasswords" name="method">
 						<input type="text" name="settingsValue"> <input
 							type="submit" value="提交修改" />
 					</form></td>
 			</tr>
-			<tr>
-				<td>删除未通过信息时间设置
-				<td>
-				<td><form action="systemSettings.action">
-						<input type="hidden" value="delUnpassedMsgLong" name="method">
-						<input type="text" name="settingsValue"> <input
-							type="submit" value="提交修改" />
-					</form></td>
-			</tr>
-
 		</table>
 	</fieldset>
 </body>
