@@ -50,11 +50,8 @@ public class SystemSettingsAction extends ActionSupport {
 		if (method.equals("perMsgWords")) {
 			settingsId = 2;
 		}
-		if (method.equals("delReleasedMsgLong")) {
+		if (method.equals("defaultPasswords")) {
 			settingsId = 3;
-		}
-		if (method.equals("delUnpassedMsgLong")) {
-			settingsId = 4;
 		}
 		System.out.println(settingsValue);
 		systemSettingsService.UpdateSystemSettings(settingsId,

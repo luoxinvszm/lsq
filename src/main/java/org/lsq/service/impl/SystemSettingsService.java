@@ -17,7 +17,7 @@ public class SystemSettingsService implements ISystemSettingsService {
 	public int UpdateSystemSettings(int settingsId, int settingsValue) {
 		// TODO Auto-generated method stub
 		System.out.println("MessageSettingsService……");
-		//systemSettingsDAO.UpdateSystemSettings(settingsId, settingsValue);
+		systemSettingsDAO.UpdateSystemSettings(settingsId, settingsValue);
 		return 0;
 	}
 

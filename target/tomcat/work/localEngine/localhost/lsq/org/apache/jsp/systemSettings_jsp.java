@@ -64,7 +64,11 @@ public final class systemSettings_jsp extends org.apache.jasper.runtime.HttpJspB
       out.write("\t\t\t<tr>\r\n");
       out.write("\t\t\t\t<td>字数设置\r\n");
       out.write("\t\t\t\t<td>\r\n");
+<<<<<<< HEAD
+      out.write("\t\t\t\t<td><form action=\"systemSettings.action\" method=\"post\">\r\n");
+=======
       out.write("\t\t\t\t<td><form action=\"systemSettings.action\">\r\n");
+>>>>>>> 3ad80f1d7a0511bd9a32b7e82b3c564384b46d50
       out.write("\t\t\t\t\t\t<input type=\"hidden\" value=\"perMsgWords\" name=\"method\"> <input\r\n");
       out.write("\t\t\t\t\t\t\ttype=\"text\" name=\"settingsValue\"> <input type=\"submit\"\r\n");
       out.write("\t\t\t\t\t\t\tvalue=\"提交修改\" />\r\n");
@@ -73,21 +77,34 @@ public final class systemSettings_jsp extends org.apache.jasper.runtime.HttpJspB
       out.write("\t\t\t<tr>\r\n");
       out.write("\t\t\t\t<td>发送次数限制设置\r\n");
       out.write("\t\t\t\t<td>\r\n");
+<<<<<<< HEAD
+      out.write("\t\t\t\t<td><form action=\"systemSettings.action\" method=\"post\">\r\n");
+=======
       out.write("\t\t\t\t<td><form action=\"systemSettings.action\">\r\n");
+>>>>>>> 3ad80f1d7a0511bd9a32b7e82b3c564384b46d50
       out.write("\t\t\t\t\t\t<input type=\"hidden\" value=\"sendMsgNum\" name=\"method\"> <input\r\n");
       out.write("\t\t\t\t\t\t\ttype=\"text\" name=\"settingsValue\"> <input type=\"submit\"\r\n");
       out.write("\t\t\t\t\t\t\tvalue=\"提交修改\" />\r\n");
       out.write("\t\t\t\t\t</form></td>\r\n");
       out.write("\t\t\t</tr>\r\n");
       out.write("\t\t\t<tr>\r\n");
+<<<<<<< HEAD
+      out.write("\t\t\t\t<td>默认密码设置\r\n");
+      out.write("\t\t\t\t<td>\r\n");
+      out.write("\t\t\t\t<td><form action=\"systemSettings.action\" method=\"post\">\r\n");
+      out.write("\t\t\t\t\t\t<input type=\"hidden\" value=\"defaultPasswords\" name=\"method\">\r\n");
+=======
       out.write("\t\t\t\t<td>删除已发布信息时间设置\r\n");
       out.write("\t\t\t\t<td>\r\n");
       out.write("\t\t\t\t<td><form action=\"systemSettings.action\">\r\n");
       out.write("\t\t\t\t\t\t<input type=\"hidden\" value=\"delReleasedMsgLong\" name=\"method\">\r\n");
+>>>>>>> 3ad80f1d7a0511bd9a32b7e82b3c564384b46d50
       out.write("\t\t\t\t\t\t<input type=\"text\" name=\"settingsValue\"> <input\r\n");
       out.write("\t\t\t\t\t\t\ttype=\"submit\" value=\"提交修改\" />\r\n");
       out.write("\t\t\t\t\t</form></td>\r\n");
       out.write("\t\t\t</tr>\r\n");
+<<<<<<< HEAD
+=======
       out.write("\t\t\t<tr>\r\n");
       out.write("\t\t\t\t<td>删除未通过信息时间设置\r\n");
       out.write("\t\t\t\t<td>\r\n");
@@ -98,6 +115,7 @@ public final class systemSettings_jsp extends org.apache.jasper.runtime.HttpJspB
       out.write("\t\t\t\t\t</form></td>\r\n");
       out.write("\t\t\t</tr>\r\n");
       out.write("\r\n");
+>>>>>>> 3ad80f1d7a0511bd9a32b7e82b3c564384b46d50
       out.write("\t\t</table>\r\n");
       out.write("\t</fieldset>\r\n");
       out.write("</body>\r\n");
