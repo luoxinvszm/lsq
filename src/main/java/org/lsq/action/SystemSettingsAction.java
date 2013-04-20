@@ -1,6 +1,9 @@
 package org.lsq.action;
 
+import java.util.List;
+
 import org.lsq.service.ISystemSettingsService;
+import org.lsq.vo.Settings;
 
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -31,7 +34,7 @@ public class SystemSettingsAction extends ActionSupport {
 		this.settingsValue = settingsValue;
 	}
 
-	public String getMethod() {
+public String getMethod() {
 		return method;
 	}
 
@@ -40,7 +43,7 @@ public class SystemSettingsAction extends ActionSupport {
 	}
 
 	public String UpdateSystemSettings() {
-		System.out.println("……");
+	System.out.println("……");
 		System.out.println(method);
 		//每人每天发送信息次数限制
 		if (method.equals("sendMsgNum")) {
@@ -56,6 +59,13 @@ public class SystemSettingsAction extends ActionSupport {
 		System.out.println(settingsValue);
 		systemSettingsService.UpdateSystemSettings(settingsId,
 				Integer.parseInt(settingsValue));
-		return INPUT;
+		return SUCCESS;
+	}
+	public String QuerySystemSettings() {
+		System.out.println("查询设置");
+		List<Settings> settings=systemSettingsService.QuerySystemSetting();
+		System.out.println(settings.size());
+		System.out.println(settings.get(0).getSettingsName());
+		return SUCCESS;
 	}
 }

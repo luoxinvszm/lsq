@@ -1,0 +1,14 @@
+@charset "utf-8";
+/* CSS Document */
+body { margin:0 auto; padding:0; background:#a7dffa url(../image/ht-login_bodybg.jpg) repeat-x top; text-align:center;}
+* { margin:0; padding:0; list-style:none; border:none;}
+.wrap { position:relative; width:370px; height:270px; margin:0 auto; margin-top:100px; background:url(../image/ht-login_wrapbg.jpg) repeat-x top;}
+
+h1 { height:110px!important; height:120px; padding-top:15px;}
+.img { position:absolute; left:-18px; top:70px;}
+dl { width:280px; padding-left:35px!important; padding-left:20px;}
+dl dt { display:block; float:left; width:60px; height:45px; color:#393335; line-height:45px; font-size:14px; font-family:"宋体";}
+dl dd { display:block; float:left; width:200px; height:35px!important; height:45px; padding-top:10px;}
+dl dd .text { width:160px; height:28px; padding-left:3px; border:1px #a8a8a8 solid; line-height:28px;}
+.btnbox { clear:both; width:270px; height:55px; padding-top:15px; text-align:right; }
+.btnbox .btn { width:79px; height:30px; background:#424242; color:#fff; font-size:16px; font-weight:bold; font-family:"微软雅黑";}

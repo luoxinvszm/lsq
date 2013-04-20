@@ -3,11 +3,16 @@
 	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
 	"http://struts.apache.org/dtds/struts-2.3.dtd">
 <struts>
-	<package name="struts4" extends="struts-default">
+	<package name="struts4" extends="json-default">
 
 		<action name="systemSettings" class="SystemSettingsAction" method="UpdateSystemSettings">
-			<result name="success">/systemSettings.jsp</result>
-			<result name="input">/systemSettings.jsp</result>
+			<result name="success" type="json"></result>
+		</action>
+	</package>
+	<package name="querySettings" extends="json-default">
+
+		<action name="querySettings" class="SystemSettingsAction" method="QuerySystemSettings">
+			<result name="success" type="json"></result>
 		</action>
 	</package>
 </struts>

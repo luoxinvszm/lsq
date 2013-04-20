@@ -2,7 +2,12 @@
 <!DOCTYPE beans PUBLIC    
     "-//SPRING//DTD BEAN//EN"   
     "http://www.springframework.org/dtd/spring-beans.dtd">  
-<beans >  
-    
+<beans>  
+      <bean id="roleCastPowerService" class="org.lsq.service.impl.RoleCastPowerService">
+    	<property name="roleCastPowerDAO" ref="roleCastPowerDAO"></property>
+    </bean>  
+     <bean id="userService" class="org.lsq.service.impl.UserService">
+    	<property name="userDAO" ref="userDAO"></property>
+    </bean>  
 
 </beans>  

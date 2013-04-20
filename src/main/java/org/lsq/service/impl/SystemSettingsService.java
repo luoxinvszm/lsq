@@ -1,7 +1,10 @@
 package org.lsq.service.impl;
 
+import java.util.List;
+
 import org.lsq.dao.ISystemSettingsDAO;
 import org.lsq.service.ISystemSettingsService;
+import org.lsq.vo.Settings;
 
 public class SystemSettingsService implements ISystemSettingsService {
 	private ISystemSettingsDAO systemSettingsDAO;
@@ -19,6 +22,9 @@ public class SystemSettingsService implements ISystemSettingsService {
 		System.out.println("MessageSettingsService……");
 		systemSettingsDAO.UpdateSystemSettings(settingsId, settingsValue);
 		return 0;
+	}
+	public List<Settings> QuerySystemSetting(){
+		return systemSettingsDAO.QuerySystemSetting();
 	}
 
 }

@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE beans PUBLIC    
     "-//SPRING//DTD BEAN//EN"   
-    "http://www.springframework.org/dtd/spring-beans.dtd">  
-<beans>  
-
-  	<!-- 这个是sxl的action ,MessageSettingsAction-->
-  	<bean id="MessageSettingsAction" class="org.lsq.action.MessageSettingsAction"></bean>
-	<!-- ****************************************************************** -->
-
+    "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="SystemSettingsAction" class="org.lsq.action.SystemSettingsAction">
+		<property name="systemSettingsService" ref="SystemSettingsService"></property>
+	</bean>
 </beans>  
