@@ -26,11 +26,44 @@ public class QueryMessageAction extends ActionSupport {
 	public String getName() {
 		return name;
 	}*/
+	//*****************************************************************
+	private String publisherPhone;
+	private String publishTime ;
+	private int msgStatus;
+
+	public String getPublisherPhone() {
+		return publisherPhone;
+	}
+
+	public void setPublisherPhone(String publisherPhone) {
+		this.publisherPhone = publisherPhone;
+	}
+
+	public String getPublishTime() {
+		return publishTime;
+	}
+
+	public void setPublishTime(String publishTime) {
+		this.publishTime = publishTime;
+	}
+
+	public int getMsgStatus() {
+		return msgStatus;
+	}
+
+	public void setMsgStatus(int msgStatus) {
+		this.msgStatus = msgStatus;
+	}
+
 	
+	//*****************************************************************
 
 	// 集合的注入
 	private List<Message> messageList;
 
+	public void setMessageList(List<Message> messageList) {
+		this.messageList = messageList;
+	}
 	
 
 	public List<Message> getMessageList() {
@@ -42,7 +75,7 @@ public class QueryMessageAction extends ActionSupport {
 
 		System.out.println("qureymessageaction starting····" );
 
-		messageList = qureyMessageService.checkQuery("123","",0);
+		messageList = qureyMessageService.checkQuery(publisherPhone,publishTime,msgStatus);
 		for (Message m : messageList) {
 			System.out.println(m.getMsgId());
 			System.out.println(m.getMsgTypeId());
