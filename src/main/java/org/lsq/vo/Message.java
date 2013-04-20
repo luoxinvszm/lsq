@@ -1,7 +1,7 @@
 package org.lsq.vo;
 
 public class Message {
-	private int msgId;
+	private long msgId;
 	private int msgTypeId;
 	private int msgStatus;
 	private String msgConctent;
@@ -18,11 +18,13 @@ public class Message {
 	private String publishTime;
 	private String msgRemark;
 
-	public int getMsgId() {
+	
+
+	public long getMsgId() {
 		return msgId;
 	}
 
-	public void setMsgId(int msgId) {
+	public void setMsgId(long msgId) {
 		this.msgId = msgId;
 	}
 
