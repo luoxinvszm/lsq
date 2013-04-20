@@ -1,0 +1,43 @@
+@charset "utf-8";
+/* CSS Document */
+body { margin:0; padding:0; background:#fff; font-size:12px; color:#000; text-align:center; font-family:"微软雅黑";}
+* { margin:0; padding:0; list-style:none; border:none; text-decoration:none;}
+a:hover { text-decoration:underline;}
+.wrap { width:1024px; margin:0 auto;}
+
+/* header */
+.header { width:1024px; height:150px; background:url(../image/qt-headerbg.jpg) repeat-x top; text-align:left;}
+.header .tlt { float:left; width:620px; height:90px; padding:11px 0 0 16px;}
+.header p { float:right; width:180px; padding-right:10px; color:#00b8d5; line-height:36px; text-align:right; }
+.header .link { float:right; width:160px; padding-top:10px; background:url(../image/qt-header_linkbg.gif) no-repeat center 12px; }
+.header .link li { float:right; width:80px; text-align:center;}
+.header .link li a { color:#00b8d5;}
+.header .search { float:right; width:260px; height:40px; padding-right:8px; }
+.header .search .text { float:right; width:195px; height:32px; padding-left:20px; background:url(../image/qt-textbg.gif) no-repeat left top; line-height:32px;}
+.header .search .btn { float:right; width:36px; height:32px; background:url(../image/qt-btnbg.gif) no-repeat left top;}
+.header .meun { float:left; width:720px; padding-left:14px; text-align:center;} 
+.header .meun li { display:inline; line-height:40px; font-size:18px; margin:0 3px; }
+.header .meun li a { display:block; float:left; width:170px; height:40px; background:url(../image/qt-meun_libg.png) no-repeat center top; color:#00b8d5;}
+.header .meun li a:hover { color:#fa9a2c; text-decoration:none;}
+
+/* contents */
+.contents { overflow:hidden; clear:both; width:1004px; margin-bottom:13px; padding:13px 10px 0; background:url(../image/qt-contentsbg.jpg) repeat-x top;}
+.contents .mian { width:1004px; height:380px;}
+.contents h2 { width:auto; height:29px; padding-left:43px; background:url(../image/qt-h2bg.png) no-repeat left; line-height:29px; color:#4ac8dc; font-size:14px; text-align:left;}
+.contents .aboutus { float:left; width:555px; height:172px;}
+.contents .aboutus .word { width:553px; height:130px; padding:5px 0 0 0; border:1px #cddcdd solid;}
+.contents .aboutus p { padding:0 8px; line-height:25px; color:#808281; text-indent:2em; text-align:left;}
+.contents .aboutus p a { color:#4ac8dc;}
+.contents .systemintrduce { float:right; width:438px; height:172px;}
+.contents .systemintrduce .word { width:436px; height:130px; padding:5px 0 0 0; border:1px #cddcdd solid; }
+.contents .systemintrduce p { padding:0 8px; line-height:25px; color:#808281; text-indent:2em; text-align:left;}
+.contents .systemintrduce p a { color:#4ac8dc;}
+
+/* footer */
+
+.footer { width:1024px; height:61px; margin:0 auto; padding-top:20px; background:url(../image/qt-footerbg.jpg) repeat-x top;}
+.footer .p1{ float:left; width:600px; line-height:25px; color:#56c5e0; padding:0 8px; text-align:left;}
+.footer ul{ float:right; width:386px; line-height:25px; color:#56c5e0; padding:0 8px; text-align:left;}
+.footer ul li { display:inline; padding:0 5px; background:url(../image/qt-ul_ling.jpg) no-repeat right center; line-height:25px;}
+.footer ul li.bg { background:none;}
+.footer ul li a { color:4ac8dc;}
