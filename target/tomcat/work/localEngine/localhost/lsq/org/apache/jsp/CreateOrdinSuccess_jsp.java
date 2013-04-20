@@ -4,7 +4,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
 
-public final class CreateOrdinSuccess_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class createOrdinSuccess_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -60,7 +60,6 @@ public final class CreateOrdinSuccess_jsp extends org.apache.jasper.runtime.Http
       out.write("</head>\r\n");
       out.write("<body>恭喜您 创建成功\r\n");
 
-	response.setCharacterEncoding("utf-8");
 	String username=session.getAttribute("username").toString();
 	String password=session.getAttribute("password").toString();
 

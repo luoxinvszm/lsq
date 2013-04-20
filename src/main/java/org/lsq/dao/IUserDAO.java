@@ -23,7 +23,7 @@ public interface IUserDAO {
 	/**
 	 *向user表中插入一条新记录
 	 */
-	public boolean AddUser(String username, String password, String roleId);
+	public boolean AddUser(String username, String password, String roleId,String userRealName,String time);
 	/**
 	 *修改user表中userPassword字段
 	 */

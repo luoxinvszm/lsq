@@ -9,7 +9,6 @@
 </head>
 <body>恭喜您 创建成功
 <%
-	response.setCharacterEncoding("utf-8");
 	String username=session.getAttribute("username").toString();
 	String password=session.getAttribute("password").toString();
 %>

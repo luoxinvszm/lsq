@@ -76,10 +76,10 @@ public class UserDAO implements IUserDAO {
 		return jdbcTemplate.update(sql, new Object[]{status,userId});
 	}
 	
-	public boolean AddUser(String username, String password, String roleId) {
+	public boolean AddUser(String username, String password, String roleId,String userRealName,String time) {
 		System.out.println("添加用户---------");
-		String sql = "insert into user (userId,userName,userPassword,roleId) values(?,?,?,?)";
-		jdbcTemplate.update(sql, new Object[]{IdBuilder.getNewId(),username,password,roleId});
+		String sql = "insert into user (userId,userName,userPassword,roleId,userRealName,userCreateTime) values(?,?,?,?,?,?)";
+		jdbcTemplate.update(sql, new Object[]{IdBuilder.getNewId(),username,password,roleId,userRealName,time});
 		return true;
 	}
 	@SuppressWarnings("unused")

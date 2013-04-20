@@ -27,7 +27,7 @@ public interface IUserService {
 	/**
 	 * 创建管理员
 	 */
-	public boolean isAddUser(String username,String password,String roleId);
+	public boolean isAddUser(String username,String password,String roleId,String userRealName,String time);
 	/**
 	 * 查询userId
 	 */

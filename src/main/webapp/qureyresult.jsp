@@ -5,19 +5,27 @@
 <html>
 <head>
 <title>Insert title here</title>
+<script type="text/javascript">
+function loadInfo() {
+    $.getJSON("QueryMessageAction", function(data) {
+        $("#info").html("");//清空info内容
+        $.each(data.messageList, function(i, item) {
+            $("#info").append(
+                    "<div>" + item.msgId + "</div>" + 
+                    "<div>" + item.msgTypeId + "</div>" + 
+                    "<div>" + item.msgStatus + "</div>" + 
+                    "<div>" + item.msgConctent + "</div>" + 
+                    "<div>" + item.publisherName + "</div>" + 
+                    "<div>" + item.publisherPhone + "</div>" + 
+                    "<div>" + item.msgRemark + "</div>" + 
+                    "<div>" + item.publishTime + "</div><hr/>");
+        });
+        });
+}
+</script>
 </head>
 <body>
-	<ol>
-		<s:iterator value="messageList" >；
-			<s:property value="msgId"/>：
-			<s:property value="msgTypeId" />；
-			<s:property value="msgConctent" />：
-			<s:property value="publisherName" />；
-			<s:property value="publisherPhone" />：
-			<s:property value="publishTime" />；
-			<s:property value="msgRemark" />
-			
-		</s:iterator>
-	</ol>
+	<input type="button" value="查查！"  onclick="loadInfo()" >
+	<div id="info"></div>
 </body>
 </html>

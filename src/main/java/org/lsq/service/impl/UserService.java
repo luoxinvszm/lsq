@@ -41,10 +41,10 @@ public class UserService implements IUserService{
 		return users;
 	}
 
-	public boolean isAddUser(String username, String password, String roleId) {
+	public boolean isAddUser(String username, String password, String roleId,String userRealName,String time) {
 		System.out.println("添加用户逻辑层-------");
 		boolean flag =false;
-		if(userDAO.AddUser(username, password, roleId)){
+		if(userDAO.AddUser(username, password, roleId,userRealName,time)){
 			flag =true;
 		}
 		return flag;
