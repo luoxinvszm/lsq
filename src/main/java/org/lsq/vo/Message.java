@@ -2,7 +2,7 @@ package org.lsq.vo;
 
 public class Message {
 	private long msgId;
-	private int msgTypeId;
+	private long msgTypeId;
 	private int msgStatus;
 	private String msgConctent;
 	public int getMsgStatus() {
@@ -28,11 +28,12 @@ public class Message {
 		this.msgId = msgId;
 	}
 
-	public int getMsgTypeId() {
+
+	public long getMsgTypeId() {
 		return msgTypeId;
 	}
 
-	public void setMsgTypeId(int msgTypeId) {
+	public void setMsgTypeId(long msgTypeId) {
 		this.msgTypeId = msgTypeId;
 	}
 

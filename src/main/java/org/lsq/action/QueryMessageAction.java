@@ -7,8 +7,11 @@ import org.lsq.vo.Message;
 
 import com.opensymphony.xwork2.ActionSupport;
 
-@SuppressWarnings("serial")
 public class QueryMessageAction extends ActionSupport {
+	
+	 private static final long serialVersionUID = 7443363719737618408L;
+
+	
 	// 接口的注入
 	private IQureyMessageService qureyMessageService;
 
@@ -61,9 +64,7 @@ public class QueryMessageAction extends ActionSupport {
 	// 集合的注入
 	private List<Message> messageList;
 
-	public void setMessageList(List<Message> messageList) {
-		this.messageList = messageList;
-	}
+	
 	
 
 	public List<Message> getMessageList() {
@@ -75,8 +76,8 @@ public class QueryMessageAction extends ActionSupport {
 
 		System.out.println("qureymessageaction starting····" );
 
-		messageList = qureyMessageService.checkQuery("11111111111",publishTime,1);
-		System.out.println("messageList.size()"+messageList.size());
+		messageList = qureyMessageService.checkQuery(publisherPhone,publishTime,msgStatus);
+		
 		for (Message m : messageList) {
 			System.out.println(m.getMsgId());
 			System.out.println(m.getMsgTypeId());
