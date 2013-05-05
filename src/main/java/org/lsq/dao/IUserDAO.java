@@ -36,5 +36,17 @@ public interface IUserDAO {
 	 * 密码重置
 	 * */
 	public boolean resetPassword(long userId);
+	/**
+	 * 删除管理员
+	 * */
+	public boolean deleteUser(long userId);
+	/**
+	 * 批量删除管理员
+	 * */
+	public void batchDeleteUsers(final long userIds[]);
+	/**
+	 * 批量修改管理员状态(可用，冻结)
+	 * */
+	public void batchSetUserStatus(final long userIds[],final int status);
 }
 	
