@@ -77,5 +77,12 @@ public class UserService implements IUserService{
 		String name=userDAO.createUsername();
 		return name;
 	}
+	public boolean resetPassword(long userId){
+		if(userDAO.resetPassword(userId)){
+			return true;
+		}else{
+			return false;
+		}
+	}
 
 }

@@ -23,6 +23,7 @@
 				data : params,
 				dataType : "json", //ajax返回值设置为json格式
 				success : function(json) { //返回的json
+						$("#info").html("");
 					 $.each(json.messageList, function(i, item) { //messageList是action中的list对的是get方法 
 						 $("#info").append(
 				                    "<div>" + item.msgId + "</div>" + 

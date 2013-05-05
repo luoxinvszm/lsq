@@ -60,18 +60,30 @@ public final class queryResultMessage_jsp extends org.apache.jasper.runtime.Http
       out.write("<link type=\"text/css\" href=\"../css/qt-lrtk.css\" rel=\"stylesheet\" />\r\n");
       out.write("<link type=\"text/css\" href=\"../css/qt-style.css\" rel=\"stylesheet\" />\r\n");
       out.write("<link href=\"css/qt-IE6.css\" rel=\"stylesheet\" type=\"text/css\" media=\"all\" />\r\n");
+<<<<<<< HEAD
       out.write("<script type=\"text/javascript\" src=\"../js/curDate.js\"></script>\r\n");
       out.write("</head>\r\n");
       out.write("<body onLoad=\"getEClock(clock)\">\r\n");
+=======
+      out.write("</head>\r\n");
+      out.write("<body>\r\n");
+>>>>>>> a1d7bb633038e6a4f0cfdc234f1266f70b5a585b
       out.write("\t<div class=\"wrap\">\r\n");
       out.write("\t\t<!-- header -->\r\n");
       out.write("\t\t<div class=\"header\">\r\n");
       out.write("\t\t\t<div class=\"tlt\"><img src=\"../image/qt-titlt.png\" alt=\"校园信息自主发布平台\" /></div>\r\n");
       out.write("\t\t\t<ul class=\"link\">\r\n");
+<<<<<<< HEAD
       out.write("\t\t\t\t<li><a href=\"#\" onclick=\"this.style.behavior='url(#default#homepage)';this.setHomePage('http://www.ttlsq.com/');\"> 设为首页</a></li>\r\n");
       out.write("\t\t\t\t<li><a href='#' onclick='window.external.AddFavorite(\"http://www.ttlsq.com/welcome.jsp\",\"天天乐上墙\")'> 加入收藏</a></li>\r\n");
       out.write("\t\t\t</ul>\r\n");
       out.write("\t\t\t<p id=\"clock\"></p>\r\n");
+=======
+      out.write("\t\t\t\t<li><a href=\"#\">设为首页</a></li>\r\n");
+      out.write("\t\t\t\t<li><a href=\"#\">加入收藏</a></li>\r\n");
+      out.write("\t\t\t</ul>\r\n");
+      out.write("\t\t\t<p>2013年4月19日 星期五</p>\r\n");
+>>>>>>> a1d7bb633038e6a4f0cfdc234f1266f70b5a585b
       out.write("\t\t\t<ul class=\"meun\">\r\n");
       out.write("\t\t\t\t<li><a href=\"#\">首页</a></li>\r\n");
       out.write("\t\t\t\t<li><a href=\"#\">发布信息</a></li>\r\n");

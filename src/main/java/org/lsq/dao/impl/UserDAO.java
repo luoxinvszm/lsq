@@ -106,5 +106,12 @@ public class UserDAO implements IUserDAO {
 		jdbcTemplate.update(sql,new Object[]{password,userId});
 		return true;
 	}
+	//密码重置
+	public boolean resetPassword(long userId){
+		System.out.println("密码重置--------");
+		String sql = "update user set password='111111' where userid=?";
+		jdbcTemplate.update(sql,new Object[]{userId});
+		return true;
+	}
 	
 }
