@@ -21,8 +21,8 @@
 		<div class="header">
 			<div class="tlt"><img src="../image/qt-titlt.png" alt="校园信息自主发布平台" /></div>
 			<ul class="link">
-				<li><a href="#">设为首页</a></li>
-				<li><a href="#">加入收藏</a></li>
+				<li><a href="#" onclick="this.style.behavior='url(#default#homepage)';this.setHomePage('http://www.ttlsq.com/');"> 设为首页</a></li>
+				<li><a href='#' onclick='window.external.AddFavorite("http://www.ttlsq.com/welcome.jsp","天天乐上墙")'> 加入收藏</a></li>
 			</ul>
 			<p>2013年4月19日 星期五</p>
 			<ul class="meun">
