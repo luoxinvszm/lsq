@@ -78,5 +78,4 @@
 		<!-- // footer -->
 	</div>
 </body>
-</body>
 </html>
