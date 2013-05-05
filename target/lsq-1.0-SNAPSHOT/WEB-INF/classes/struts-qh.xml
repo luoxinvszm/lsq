@@ -13,12 +13,18 @@
 		<action name="updateMessageStatus" class="UpdateMessageStatusAction">
 			<result name="success">/login.jsp</result>
 		</action>
+		
+		<!-- <action name="qureyMessage" class="QueryMessageAction">
+			<result name="success" type="json"></result>
+		</action> -->
 	</package>
 	
 	
-	<package name="qh" extends="json-default">
+	<!--qh-->  
+	<package name="json" extends="json-default">
 		<action name="qureyMessage" class="QueryMessageAction">
-			<result name="success" type="json">/qt-xinxixianshi.jsp</result>
+			<result name="success" type="json"></result>
 		</action>
 	</package>
+	
 </struts>
