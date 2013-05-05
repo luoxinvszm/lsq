@@ -13,4 +13,8 @@
     	<property name="qureyMessageService" ref="QureyMessageService"></property>  
 	</bean>
 	
+	<bean id="UpdateMessageStatusAction" class="org.lsq.action.UpdateMessageStatusAction">  
+    	<property name="updateMessageStatusService" ref="UpdateMessageStatusService"></property>  
+	</bean>
+	
 </beans>  

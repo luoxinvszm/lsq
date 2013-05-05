@@ -12,10 +12,11 @@
 <script type="text/javascript" src="../js/qt-lrtk.js"></script>
 <script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
 <script type="text/javascript" src="../js/qh.js"></script>
-<script type="text/javascript">
-</script>
+<script type="text/javascript" src="../js/curDate.js"></script>
 </head>
-<body>
+
+<body onLoad="getEClock(clock)">
+
 	<div class="wrap">
 		<!-- header -->
 		<div class="header">
@@ -24,7 +25,7 @@
 				<li><a href="#" onclick="this.style.behavior='url(#default#homepage)';this.setHomePage('http://www.ttlsq.com/');"> 设为首页</a></li>
 				<li><a href='#' onclick='window.external.AddFavorite("http://www.ttlsq.com/welcome.jsp","天天乐上墙")'> 加入收藏</a></li>
 			</ul>
-			<p>2013年4月19日 星期五</p>
+			<p id="clock"></p>
 			<ul class="meun">
 				<li><a href="#">首页</a></li>
 				<li><a href="#">发布信息</a></li>

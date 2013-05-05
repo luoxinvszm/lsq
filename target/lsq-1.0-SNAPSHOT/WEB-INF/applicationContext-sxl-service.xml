@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE beans PUBLIC    
     "-//SPRING//DTD BEAN//EN"   
-    "http://www.springframework.org/dtd/spring-beans.dtd">  
-<beans>  
-
+    "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="SystemSettingsService" class="org.lsq.service.impl.SystemSettingsService">
+	<property name="systemSettingsDAO" ref="SystemSettingsDAO"></property>
+	</bean>
 </beans>  

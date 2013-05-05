@@ -1,7 +1,10 @@
 package org.lsq.action;
 
-import org.lsq.service.IUserService;
+import java.io.UnsupportedEncodingException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
+import org.lsq.service.IUserService;
 
 import com.opensymphony.xwork2.ActionSupport;
 /**
@@ -14,7 +17,21 @@ public class CreateOrdinManagerAction extends ActionSupport{
 	private IUserService userService;
 	private String username;
 	private String password;
+	private String userRealName;
+	private String sname;
 	
+	public String getUserRealName() {
+		return userRealName;
+	}
+	public void setUserRealName(String userRealName) {
+		this.userRealName = userRealName;
+	}
+	public String getSname() {
+		return sname;
+	}
+	public void setSname(String sname) {
+		this.sname = sname;
+	}
 	private String roleId;
 	
 	public String getUsername() {
@@ -47,11 +64,23 @@ public class CreateOrdinManagerAction extends ActionSupport{
 		username=userService.createUsername();
 		password="111111";
 		roleId="2";
-		System.out.println(username);
-		if(userService.isAddUser(username, password, roleId)){
-			return SUCCESS;
+		byte[] temp;
+		try {
+			temp = userRealName.getBytes("iso-8859-1");
+			String name = new String(temp,"utf-8");
+			sname=name;
+			String time =new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
+			System.out.println(sname+"========");
+			if(userService.isAddUser(username, password, roleId,name,time)){
+				System.out.println("success");
+				return SUCCESS;
+			}
+			
+			return INPUT;
+		} catch (UnsupportedEncodingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
-		
 		return INPUT;
 	}
 

@@ -56,9 +56,9 @@ public final class qureyMessage_jsp extends org.apache.jasper.runtime.HttpJspBas
       out.write("<head>\r\n");
       out.write("<title>Insert title here</title>\r\n");
       out.write("\r\n");
-      out.write("<script type=\"text/javascript\">\r\n");
+      out.write("<!-- <script type=\"text/javascript\">\r\n");
       out.write("function loadInfo() {\r\n");
-      out.write("/* \tdocument.qureyMessage.submit(); */\r\n");
+      out.write("\tdocument.qureyMessage.submit(); \r\n");
       out.write("\t/* $(\"#info\").load(\"QueryMessageAction\"); */\r\n");
       out.write("   $.getJSON(\"QueryMessageAction\", function(data) {\r\n");
       out.write("        $(\"#info\").html(\"\");//清空info内容\r\n");
@@ -76,7 +76,7 @@ public final class qureyMessage_jsp extends org.apache.jasper.runtime.HttpJspBas
       out.write("        }); \r\n");
       out.write("}\r\n");
       out.write("\r\n");
-      out.write("</script>\r\n");
+      out.write("</script> -->\r\n");
       out.write("</head>\r\n");
       out.write("<body>\r\n");
       out.write("\t<form name=\"qureyMessage\" action=\"qureyMessage\">\r\n");
@@ -84,7 +84,7 @@ public final class qureyMessage_jsp extends org.apache.jasper.runtime.HttpJspBas
       out.write("\t\t<input type=\"text\" name=\"publisherPhone\" value=\"publisherPhone\">\r\n");
       out.write("\t\t<input type=\"text\" name=\"publishTime\" value=\"publishTime\">\r\n");
       out.write("\t\t<input type=\"text\" name=\"msgStatus\" value=\"msgStatus\">\r\n");
-      out.write("\t\t<input type=\"button\" value=\"查查！\"  onclick=\"loadInfo()\" >\r\n");
+      out.write("\t\t<input type=\"submit\" value=\"查查！\" >\r\n");
       out.write("\t</form>\r\n");
       out.write("\t<div id=\"info\"></div>\r\n");
       out.write("</body>\r\n");

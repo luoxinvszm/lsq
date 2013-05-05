@@ -16,7 +16,7 @@
 			</result>
 		</action>
 		<action name="createOrdin" class="createOrdin">
-			<result name="success">/result1.jsp</result>
+			<result name="success">/createOrdinSuccess.jsp</result>
 		</action>
 		<action name="editOrdinAdminAction" class="editOrdinAdminAction">
 			<result name="delete">/cancleOrdinAdmin.jsp</result>
