@@ -40,4 +40,8 @@ public interface IUserService {
 	 * 创建账号
 	 * */
 	public String createUsername();
+	/**
+	 * 密码重置
+	 * */
+	public boolean resetPassword(long userId);
 }

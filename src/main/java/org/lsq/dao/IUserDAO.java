@@ -28,6 +28,13 @@ public interface IUserDAO {
 	 *修改user表中userPassword字段
 	 */
 	public boolean updatePassword(String password,int userId);
+	/**
+	 * 创建user
+	 * */
 	public String createUsername();
+	/**
+	 * 密码重置
+	 * */
+	public boolean resetPassword(long userId);
 }
 	
