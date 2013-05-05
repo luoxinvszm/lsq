@@ -1,0 +1,22 @@
+@charset "utf-8";
+
+#zSlider{ width:1004px; height:390px; overflow:hidden;}
+#picshow{position:relative;}
+#picshow,#picshow_img{ float:right; width:740px; height:390px; overflow:hidden;}
+#picshow_img li{ width:740px; height:377px; overflow:hidden; float:left; display:none;}
+#picshow_img .message { position:relative; width:739px; height:377px; background:#cddcdd url(../image/qt-divbg.jpg) no-repeat top right; border:1px #cddcdd solid;}
+#picshow_img .message p { display:block; width:700px; height:45px; margin-left:10px; padding-left:20px; border-bottom:1px #00b8d5 dashed; background:url(../image/qt-p_icon.jpg) no-repeat 7px center; line-height:45px; text-align:right; font-size:14px;}
+#picshow_img .message p a { float:left; color:#000;}
+#picshow_img .message .more { position:absolute; bottom:0px; left:0; clear:both; width:743px; height:40px;  text-align:center;}
+#picshow_img .message .more span { padding:0 3px;}
+#picshow_img .message .more span a { color:#fa9a2c;}
+#select_btn{ float:right; width:260px; height:370px; color:#111; display:inline;}
+#select_btn li{ width:261px; height:125px; background:url(../image/qt-btn_libg.png) no-repeat left top; cursor:pointer;}
+#select_btn li:hover{ background:url(../image/qt-btn_lihover.png) no-repeat;}
+#select_btn li.current{ background:url(../image/qt-btn_lihover.png) no-repeat;}
+#select_btn li.current:hover{ background:url(../image/qt-btn_lihover.png) no-repeat;}
+#select_btn a{ color:#fff;}
+#select_btn .tlt { width:200px; height:80px; padding-left:60px; background:url(../image/qt-li_icon.jpg) no-repeat 20px 15px; line-height:45px; font-size:18px; text-align:left; color:#fa9a2c;}
+#select_btn .select_text{ display:block; width:220px; height:25px; margin-left:10px; background:#4ac8dc; color:#fff; line-height:25px; font-size:14px;}
+#select_btn .select_text:hover{ text-decoration:underline; background:#fa9a2c;}
+#select_btn .select_date{ height:23px; line-height:23px; overflow:hidden; display:block;}

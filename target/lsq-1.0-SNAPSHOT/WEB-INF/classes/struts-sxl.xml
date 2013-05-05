@@ -3,12 +3,11 @@
 	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
 	"http://struts.apache.org/dtds/struts-2.3.dtd">
 <struts>
-	<package name="struts4"   extends="struts-default">
+	<package name="struts4" extends="struts-default">
 
-		<action name="messageSettings" class="MessageSettingsAction">
-			<result name="success">/result.jsp</result>
-			<result name="input">/messageSettings.jsp</result>
+		<action name="systemSettings" class="SystemSettingsAction" method="UpdateSystemSettings">
+			<result name="success">/systemSettings.jsp</result>
+			<result name="input">/systemSettings.jsp</result>
 		</action>
-
 	</package>
 </struts>

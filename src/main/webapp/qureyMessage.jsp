@@ -5,7 +5,7 @@
 <head>
 <title>Insert title here</title>
 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 function loadInfo() {
 	document.qureyMessage.submit(); 
 	/* $("#info").load("QueryMessageAction"); */
@@ -25,7 +25,7 @@ function loadInfo() {
         }); 
 }
 
-</script>
+</script> -->
 </head>
 <body>
 	<form name="qureyMessage" action="qureyMessage">
@@ -33,7 +33,7 @@ function loadInfo() {
 		<input type="text" name="publisherPhone" value="publisherPhone">
 		<input type="text" name="publishTime" value="publishTime">
 		<input type="text" name="msgStatus" value="msgStatus">
-		<input type="button" value="查查！"  onclick="loadInfo()" >
+		<input type="submit" value="查查！" >
 	</form>
 	<div id="info"></div>
 </body>

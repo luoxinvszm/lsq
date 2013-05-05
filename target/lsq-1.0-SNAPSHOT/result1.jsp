@@ -4,11 +4,16 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>创建成功</title>
 </head>
 <body>恭喜您 创建成功
+<%
+	String username=session.getAttribute("username").toString();
+	String password=session.getAttribute("password").toString();
+%>
 username: ${requestScope.username }<br>
 password: ${requestScope.password } 
+<a href="login?username=<%=username%>& password=<%=password%>">返回继续添加</a>
 
 </body>
 </html>

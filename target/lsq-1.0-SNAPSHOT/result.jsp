@@ -5,23 +5,17 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<title>Insert title here</title>
+<title>后台管理系统</title>
 </head>
 <body>
 
 	username: ${requestScope.username }
 	<br> password: ${requestScope.password }
-	<a href="CreateManager.action">创建普通管理员</a>
+	<br>
 
-
-
-
-
-username: ${requestScope.username }<br>
-password: ${requestScope.password } 
-<a href="createOrdin.action">创建普通管理员</a>
-<a href="createSuper.action">创建超级管理员</a>
-
+	<s:iterator value="powersList" id="id">
+	<a href="<s:property value="#id.getPowerAction()"/>"><s:property value="#id.getPowerName()"/></a>
+	</s:iterator>
 
 </body>
 </html>

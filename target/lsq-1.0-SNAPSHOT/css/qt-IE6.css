@@ -1,0 +1,9 @@
+@charset "utf-8";
+/* CSS Document */
+.header .meun { clear:both; width:750px; margin-top:10px; padding-left:14px; text-align:center;} 
+.header .search { float:right; width:260px; height:40px; padding-right:8px; padding-top:10px; }
+.header p { display:block; float:right; width:180px; height:95px; padding-right:10px; color:#00b8d5; line-height:36px; text-align:right;}
+#picshow_img .message p { display:block; width:700px; height:45px; margin-left:-5px; padding-left:20px; border-bottom:1px #00b8d5 dashed; background:url(../image/qt-p_icon.jpg) no-repeat 7px center; line-height:45px; text-align:right; font-size:14px;}
+#select_btn .select_text{ display:block; width:220px; height:25px; margin-left:-20px; background:#4ac8dc; color:#fff; line-height:25px; font-size:14px;}
+.left { float:left; width:755px; margin-right:7px; margin-bottom:20px; margin-left:-3px;} 
+.right .list { margin-right:-3px;}
