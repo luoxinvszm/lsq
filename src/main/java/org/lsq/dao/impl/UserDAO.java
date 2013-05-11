@@ -1,5 +1,7 @@
 package org.lsq.dao.impl;
 
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -11,6 +13,7 @@ import org.lsq.util.IdBuilder;
 
 import org.lsq.vo.User;
 import org.springframework.dao.EmptyResultDataAccessException;
+import org.springframework.jdbc.core.BatchPreparedStatementSetter;
 import org.springframework.jdbc.core.JdbcTemplate;
 /**
  *负责数据库user表访问类 ，实现IUserDAO
@@ -112,6 +115,57 @@ public class UserDAO implements IUserDAO {
 		String sql = "update user set password='111111' where userid=?";
 		jdbcTemplate.update(sql,new Object[]{userId});
 		return true;
+	}
+	//删除管理员
+	public boolean deleteUser(long userId){
+		System.out.println("删除管理员------");
+		String sql= "delete from user where userId=?";
+		jdbcTemplate.update(sql,new Object[]{userId});
+		return true;	
+	}
+	//批量删除
+	public boolean deleteBatchUser(long[] userId){
+		System.out.println("批量删除");
+		String id="";
+		for (int i = 0; i < userId.length; i++) {
+			if(i!=userId.length-1){
+			id+=userId[i]+",";
+			}else{
+				id+=userId[i];
+			}
+		}
+		String sql = "delete from user where userId in ("+id+")";
+		jdbcTemplate.update(sql);
+		return true;
+	}
+	//批量删除
+	public  void batchDeleteUsers(final long userIds[]){
+		String sql="delete from user where userId=?";
+		BatchPreparedStatementSetter pss=new BatchPreparedStatementSetter() {
+			
+			public void setValues(PreparedStatement ps, int i) throws SQLException {
+				ps.setLong(1, userIds[i]);
+			}
+			
+			public int getBatchSize() {
+				return userIds.length;
+			}
+		};
+		jdbcTemplate.batchUpdate(sql, pss);
+	}
+	//批量修改状态
+	public void batchSetUserStatus(final long userIds[],final int status){
+		String sql="update user set userStatus=? where userid=?";
+		BatchPreparedStatementSetter pss=new BatchPreparedStatementSetter() {
+			public void setValues(PreparedStatement ps, int i) throws SQLException {
+				ps.setInt(1, status);
+				ps.setLong(2, userIds[i]);
+			}
+			public int getBatchSize() {
+				return userIds.length;
+			}
+		};
+		jdbcTemplate.batchUpdate(sql, pss);
 	}
 	
 }

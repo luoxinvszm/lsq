@@ -44,4 +44,20 @@ public interface IUserService {
 	 * 密码重置
 	 * */
 	public boolean resetPassword(long userId);
+	/**
+	 * 删除管理员
+	 * */
+	public boolean deleteUser(long userId);
+	/**
+	 * 批量删除管理员
+	 * */
+	public void batchDeleteUsers(final long userIds[]);
+	/**
+	 * 批量冻结管理员
+	 * */
+	public void batchCancelUser(long userIds[]);
+	/**
+	 * 批量激活管理员
+	 * */
+	public void batchRecoverUser(long userIds[]);
 }

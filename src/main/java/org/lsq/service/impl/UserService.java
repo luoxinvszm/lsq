@@ -84,5 +84,22 @@ public class UserService implements IUserService{
 			return false;
 		}
 	}
+	public boolean deleteUser(long userId){
+		if(userDAO.deleteUser(userId)){
+			return true;
+		}else{
+			return false;
+		}
+	}
+	public void batchDeleteUsers(final long userIds[]){
+		userDAO.batchDeleteUsers(userIds);
+	}
 
+	public void batchCancelUser(long userIds[]){
+		 userDAO.batchSetUserStatus(userIds, 1);
+	}
+	public void batchRecoverUser(long userIds[]){
+		 userDAO.batchSetUserStatus(userIds, 0);
+	}
+	
 }
