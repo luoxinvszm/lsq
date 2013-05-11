@@ -23,16 +23,18 @@
 			<result name="login" type="redirect">/login.jsp</result>
 		</global-results>
 		
-	<action name="editOrdinAdminAction" class="editOrdinAdminAction">
-			<result name="delete">/cancleOrdinAdmin.jsp</result>
-			<result name="recover">/recoverOrdinAdmin.jsp</result>
-			<result name="input">/login.jsp</result>
-			<interceptor-ref name="myStack"></interceptor-ref>
-		</action>
+	
 			<action name="createOrdin" class="createOrdin">
 			<result name="success">/result1.jsp</result>
 			<interceptor-ref name="myStack"></interceptor-ref>
 		</action>
 </package>
 
+	<package name="yhy_json" extends="json-default">
+	    
+	    <action name="editOrdinAdminAction" class="editOrdinAdminAction">
+	  		 <result type="json"></result>
+		</action>
+	</package>
+	
 </struts>

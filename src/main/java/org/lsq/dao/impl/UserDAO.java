@@ -39,6 +39,7 @@ public class UserDAO implements IUserDAO {
 				user.setRoleId(Integer.parseInt(list.get(0).get("roleId").toString()));
 				user.setUserStatus(Integer.parseInt(list.get(0).get("userStatus").toString()));
 				user.setUserRemark(list.get(0).get("userRemark")==null?"":list.get(0).get("userRemark").toString());
+				user.setUserRealName(list.get(0).get("userRealName").toString());
 				return user;
 		}
 		return null;

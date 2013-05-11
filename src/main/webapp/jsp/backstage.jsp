@@ -9,6 +9,8 @@
 <script src="../js/houtai.js" type="text/javascript"></script>
 <script src="../js/jquery-1.9.1.min.js" type="text/javascript"></script>
 <script src="../js/backstage.js" type="text/javascript"></script>
+<script src="../js/yhy/yhy.js" type="text/javascript"></script>
+
 </head>
 <body>
 	<!-- header -->
@@ -374,83 +376,14 @@
 				批量操作： <input type="checkbox" /><input type="button" value="删除" /><input
 					type="button" value="冻结" />
 			</p>
-			<table cellpadding="0" cellspacing="0" class="table1">
+			<table cellpadding="0" cellspacing="0" class="table1" id="usingAdminList">
 				<tr>
 					<th width="50">序号</th>
 					<th width="200">账号</th>
 					<th width="200">昵称</th>
 					<th width="250">操作</th>
 				</tr>
-				<tr>
-					<td><input type="checkbox" />1</td>
-					<td>11111</td>
-					<td>昵称</td>
-					<td><input type="button" value="冻结" /><input type="button"
-						value="信息重置" /><input type="button" value="删除" /></td>
-				</tr>
-				<tr>
-					<td><input type="checkbox" />2</td>
-					<td>11111</td>
-					<td>昵称</td>
-					<td><input type="button" value="冻结" /><input type="button"
-						value="信息重置" /><input type="button" value="删除" /></td>
-				</tr>
-				<tr>
-					<td><input type="checkbox" />3</td>
-					<td>11111</td>
-					<td>昵称</td>
-					<td><input type="button" value="冻结" /><input type="button"
-						value="信息重置" /><input type="button" value="删除" /></td>
-				</tr>
-				<tr>
-					<td><input type="checkbox" />4</td>
-					<td>11111</td>
-					<td>昵称</td>
-					<td><input type="button" value="冻结" /><input type="button"
-						value="信息重置" /><input type="button" value="删除" /></td>
-				</tr>
-				<tr>
-					<td><input type="checkbox" />5</td>
-					<td>11111</td>
-					<td>昵称</td>
-					<td><input type="button" value="冻结" /><input type="button"
-						value="信息重置" /><input type="button" value="删除" /></td>
-				</tr>
-				<tr>
-					<td><input type="checkbox" />6</td>
-					<td>11111</td>
-					<td>昵称</td>
-					<td><input type="button" value="冻结" /><input type="button"
-						value="信息重置" /><input type="button" value="删除" /></td>
-				</tr>
-				<tr>
-					<td><input type="checkbox" />7</td>
-					<td>11111</td>
-					<td>昵称</td>
-					<td><input type="button" value="冻结" /><input type="button"
-						value="信息重置" /><input type="button" value="删除" /></td>
-				</tr>
-				<tr>
-					<td><input type="checkbox" />8</td>
-					<td>11111</td>
-					<td>昵称</td>
-					<td><input type="button" value="冻结" /><input type="button"
-						value="信息重置" /><input type="button" value="删除" /></td>
-				</tr>
-				<tr>
-					<td><input type="checkbox" />9</td>
-					<td>11111</td>
-					<td>昵称</td>
-					<td><input type="button" value="冻结" /><input type="button"
-						value="信息重置" /><input type="button" value="删除" /></td>
-				</tr>
-				<tr>
-					<td><input type="checkbox" />10</td>
-					<td>11111</td>
-					<td>昵称</td>
-					<td><input type="button" value="冻结" /><input type="button"
-						value="信息重置" /><input type="button" value="删除" /></td>
-				</tr>
+			
 			</table>
 			<div class="page">
 				<span><a href="#">首页</a></span> <span><a href="#">上一页</a></span> <span><a

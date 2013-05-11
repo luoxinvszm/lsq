@@ -9,6 +9,7 @@ public class User {
 	private int roleId;
 	private int userStatus;
 	private String userRemark;
+	private String userRealName;
 	public String getUsername() {
 		return username;
 	}
@@ -55,6 +56,14 @@ public class User {
 
 	public void setUserId(long userId) {
 		this.userId = userId;
+	}
+
+	public String getUserRealName() {
+		return userRealName;
+	}
+
+	public void setUserRealName(String name) {
+		this.userRealName = name;
 	}
 	
 }
