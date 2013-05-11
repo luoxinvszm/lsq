@@ -8,7 +8,36 @@
 <link type="text/css" href="../css/qt-index.css"   rel="stylesheet" />
 <link type="text/css" href="../css/qt-lrtk.css" rel="stylesheet" />
 <link type="text/css" href="../css/qt-style.css" rel="stylesheet" />
+<script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
 <link href="css/qt-IE6.css" rel="stylesheet" type="text/css" media="all" />
+<script type="text/javascript">
+	$(function() {
+		$("#btnGet").click(function() {
+
+			//提交的参数，name和inch是和struts action中对应的接收变量
+			var params = {
+				publisherPhone : $("#publisherPhone").val(),
+				publishTime : "",
+				msgStatus : 1
+			};
+			$.ajax({
+				type : "POST",
+				url : "qureyMessage.action",
+				data : params,
+				dataType : "json", //ajax返回值设置为json格式
+				success : function(json) { //返回的json
+						$("#info").html("");
+					 $.each(json.messageList, function(i, item) { //messageList是action中的list对的是get方法 
+						 $("#info").append(
+				                    "<li><a href='#'>" + item.msgConctent + "</a>"+item.publishTime+"</li>"  );
+					   }); 
+				}
+			});
+		});
+	});
+</script>
+
+
 </head>
 <body>
 	<div class="wrap">
@@ -27,8 +56,8 @@
 				<li><a href="#">关于我们</a></li>
 			</ul>
 			<div class="search">
-				<input type="button" value=" " class="btn" />
-				<input type="text" class="text" />
+				<input type="button" value=" huoqu" class="btn" id="btnGet" />
+				<input type="text" class="text" id="publisherPhone" value="publisherPhone">
 			</div>
 		</div>
 		<!-- // header -->
@@ -37,14 +66,14 @@
 			<!-- left -->
 			<div class="left">
 				<h2>查询结果</h2>
-				<ul class="list">
+				<ul class="list" id="info">
+					<!-- <li><a href="#">查找到的信息 查找到的信息 查找到的信 查找到的信 查找到的信 查找到的信</a>2013-4-5</li>
 					<li><a href="#">查找到的信息 查找到的信息 查找到的信 查找到的信 查找到的信 查找到的信</a>2013-4-5</li>
 					<li><a href="#">查找到的信息 查找到的信息 查找到的信 查找到的信 查找到的信 查找到的信</a>2013-4-5</li>
 					<li><a href="#">查找到的信息 查找到的信息 查找到的信 查找到的信 查找到的信 查找到的信</a>2013-4-5</li>
 					<li><a href="#">查找到的信息 查找到的信息 查找到的信 查找到的信 查找到的信 查找到的信</a>2013-4-5</li>
 					<li><a href="#">查找到的信息 查找到的信息 查找到的信 查找到的信 查找到的信 查找到的信</a>2013-4-5</li>
-					<li><a href="#">查找到的信息 查找到的信息 查找到的信 查找到的信 查找到的信 查找到的信</a>2013-4-5</li>
-					<li><a href="#">查找到的信息 查找到的信息 查找到的信 查找到的信 查找到的信 查找到的信</a>2013-4-5</li>
+					<li><a href="#">查找到的信息 查找到的信息 查找到的信 查找到的信 查找到的信 查找到的信</a>2013-4-5</li> -->
 				</ul>
 				<p class="page">
 					<span><a href="#">首页</a></span>

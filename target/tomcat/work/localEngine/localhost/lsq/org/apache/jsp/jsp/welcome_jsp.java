@@ -79,8 +79,8 @@ public final class welcome_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t\t<p id=\"clock\"></p>\r\n");
       out.write("\t\t\t<ul class=\"meun\">\r\n");
       out.write("\t\t\t\t<li><a href=\"#\">首页</a></li>\r\n");
-      out.write("\t\t\t\t<li><a href=\"#\">发布信息</a></li>\r\n");
-      out.write("\t\t\t\t<li><a href=\"browseMessage.jsp\">浏览信息</a></li>\r\n");
+      out.write("\t\t\t\t<li><a href=\"publishMessage.jsp\">发布信息</a></li>\r\n");
+      out.write("\t\t\t\t<li><a href=\"#browseMessage.jsp\">浏览信息</a></li>\r\n");
       out.write("\t\t\t\t<li><a href=\"#\">关于我们</a></li>\r\n");
       out.write("\t\t\t</ul>\r\n");
       out.write("\t\t\t<div class=\"search\">\r\n");

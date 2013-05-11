@@ -22,6 +22,13 @@ public class InsertMessageAction extends ActionSupport {
 	private String publisherName;
 	private String publisherPhone;
 	private String msgRemark;
+	private int result;//i为0时前台则会跳转其他的界面
+
+	
+
+	public int getResult() {
+		return result;
+	}
 
 	public String getMessageContext() {
 		return messageContext;
@@ -62,6 +69,7 @@ public class InsertMessageAction extends ActionSupport {
 
 		if (insertMessageService.isInsertMessage(messageContext, publisherName,
 				publisherPhone,publishTime, msgRemark) != 0) {
+			result=0;
 			return SUCCESS;
 		}
 		return INPUT;

@@ -102,12 +102,12 @@ public final class qt_002dxinxixianshi_jsp extends org.apache.jasper.runtime.Htt
       out.write("\t\t\t<p>2013年4月19日 星期五</p>\r\n");
       out.write("\t\t\t<ul class=\"meun\">\r\n");
       out.write("\t\t\t\t<li><a href=\"#\">首页</a></li>\r\n");
-      out.write("\t\t\t\t<li><a href=\"#\">发布信息</a></li>\r\n");
+      out.write("\t\t\t\t<li><a href=\"#publishMessage.jsp\">发布信息</a></li>\r\n");
       out.write("\t\t\t\t<li><a href=\"#\">浏览信息</a></li>\r\n");
       out.write("\t\t\t\t<li><a href=\"#\">关于我们</a></li>\r\n");
       out.write("\t\t\t</ul>\r\n");
       out.write("\t\t\t<div class=\"search\">\r\n");
-      out.write("\t\t\t\t<input type=\"button\" value=\" huoqu\" class=\"btn\" id=\"btnGet\" />\r\n");
+      out.write("\t\t\t\t<input type=\"button\" class=\"btn\" id=\"btnGet\" />\r\n");
       out.write("\t\t\t\t<input type=\"text\" class=\"text\" id=\"publisherPhone\" value=\"publisherPhone\">\r\n");
       out.write("\t\t\t</div>\r\n");
       out.write("\t\t</div>\r\n");
