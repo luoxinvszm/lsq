@@ -38,10 +38,6 @@ public class EditOrdinAdminAction extends ActionSupport{
 		return usersList;
 	}
 
-	public void setUsersList(List<User> usersList) {
-		this.usersList = usersList;
-	}
-
 	public int getRoleId() {
 		return roleId;
 	}
@@ -81,8 +77,13 @@ public class EditOrdinAdminAction extends ActionSupport{
 	//execute方法
 	public String execute(){
 		//调用UserService中的方法，查询普通管理员的信息
+		System.out.println("调用UserService中的方法，查询普通管理员的信息");
 		usersList=userService.queryUsersByRoleId(2,userStatus);
 		//如果管理员状态为可用，则注销管理员，
+		for(User u : usersList){
+			
+			System.out.println(u.getUsername());
+		}
 		return SUCCESS;
 	}
 
