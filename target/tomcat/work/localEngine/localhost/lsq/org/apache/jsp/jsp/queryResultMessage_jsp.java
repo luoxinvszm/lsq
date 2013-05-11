@@ -60,6 +60,7 @@ public final class queryResultMessage_jsp extends org.apache.jasper.runtime.Http
       out.write("<link type=\"text/css\" href=\"../css/qt-lrtk.css\" rel=\"stylesheet\" />\r\n");
       out.write("<link type=\"text/css\" href=\"../css/qt-style.css\" rel=\"stylesheet\" />\r\n");
       out.write("<script type=\"text/javascript\" src=\"../js/jquery-1.9.1.min.js\"></script>\r\n");
+<<<<<<< HEAD
       out.write("<link href=\"css/qt-IE6.css\" rel=\"stylesheet\" type=\"text/css\" media=\"all\" />\r\n");
       out.write("<script type=\"text/javascript\">\r\n");
       out.write("\t$(function() {\r\n");
@@ -87,6 +88,11 @@ public final class queryResultMessage_jsp extends org.apache.jasper.runtime.Http
       out.write("\t\t});\r\n");
       out.write("\t});\r\n");
       out.write("</script>\r\n");
+=======
+      out.write("<script type=\"text/javascript\" src=\"../js/qh/queryResultMessage.js\"></script>\r\n");
+      out.write("<link href=\"css/qt-IE6.css\" rel=\"stylesheet\" type=\"text/css\" media=\"all\" />\r\n");
+      out.write("\r\n");
+>>>>>>> 3b1f663b0f9dda2396a8ee5ee64563d77ac64504
       out.write("\r\n");
       out.write("\r\n");
       out.write("</head>\r\n");

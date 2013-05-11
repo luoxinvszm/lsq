@@ -10,7 +10,7 @@
 <link type="text/css" href="../css/qt-style.css" rel="stylesheet" />
 <link href="css/qt-IE6.css" rel="stylesheet" type="text/css" media="all" />
 <script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
-<script type="text/javascript" src="../js/qh.js"></script>
+<script type="text/javascript" src="../js/qh/publishMessage.js"></script>
 
 </head>
 <body>
