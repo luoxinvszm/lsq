@@ -59,31 +59,23 @@ public final class queryResultMessage_jsp extends org.apache.jasper.runtime.Http
       out.write("<link type=\"text/css\" href=\"../css/qt-index.css\"   rel=\"stylesheet\" />\r\n");
       out.write("<link type=\"text/css\" href=\"../css/qt-lrtk.css\" rel=\"stylesheet\" />\r\n");
       out.write("<link type=\"text/css\" href=\"../css/qt-style.css\" rel=\"stylesheet\" />\r\n");
+      out.write("<script type=\"text/javascript\" src=\"../js/jquery-1.9.1.min.js\"></script>\r\n");
+      out.write("<script type=\"text/javascript\" src=\"../js/qh/queryResultMessage.js\"></script>\r\n");
       out.write("<link href=\"css/qt-IE6.css\" rel=\"stylesheet\" type=\"text/css\" media=\"all\" />\r\n");
-<<<<<<< HEAD
-      out.write("<script type=\"text/javascript\" src=\"../js/curDate.js\"></script>\r\n");
-      out.write("</head>\r\n");
-      out.write("<body onLoad=\"getEClock(clock)\">\r\n");
-=======
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
       out.write("</head>\r\n");
       out.write("<body>\r\n");
->>>>>>> a1d7bb633038e6a4f0cfdc234f1266f70b5a585b
       out.write("\t<div class=\"wrap\">\r\n");
       out.write("\t\t<!-- header -->\r\n");
       out.write("\t\t<div class=\"header\">\r\n");
       out.write("\t\t\t<div class=\"tlt\"><img src=\"../image/qt-titlt.png\" alt=\"校园信息自主发布平台\" /></div>\r\n");
       out.write("\t\t\t<ul class=\"link\">\r\n");
-<<<<<<< HEAD
-      out.write("\t\t\t\t<li><a href=\"#\" onclick=\"this.style.behavior='url(#default#homepage)';this.setHomePage('http://www.ttlsq.com/');\"> 设为首页</a></li>\r\n");
-      out.write("\t\t\t\t<li><a href='#' onclick='window.external.AddFavorite(\"http://www.ttlsq.com/welcome.jsp\",\"天天乐上墙\")'> 加入收藏</a></li>\r\n");
-      out.write("\t\t\t</ul>\r\n");
-      out.write("\t\t\t<p id=\"clock\"></p>\r\n");
-=======
       out.write("\t\t\t\t<li><a href=\"#\">设为首页</a></li>\r\n");
       out.write("\t\t\t\t<li><a href=\"#\">加入收藏</a></li>\r\n");
       out.write("\t\t\t</ul>\r\n");
       out.write("\t\t\t<p>2013年4月19日 星期五</p>\r\n");
->>>>>>> a1d7bb633038e6a4f0cfdc234f1266f70b5a585b
       out.write("\t\t\t<ul class=\"meun\">\r\n");
       out.write("\t\t\t\t<li><a href=\"#\">首页</a></li>\r\n");
       out.write("\t\t\t\t<li><a href=\"#\">发布信息</a></li>\r\n");
@@ -91,8 +83,8 @@ public final class queryResultMessage_jsp extends org.apache.jasper.runtime.Http
       out.write("\t\t\t\t<li><a href=\"#\">关于我们</a></li>\r\n");
       out.write("\t\t\t</ul>\r\n");
       out.write("\t\t\t<div class=\"search\">\r\n");
-      out.write("\t\t\t\t<input type=\"button\" value=\" \" class=\"btn\" />\r\n");
-      out.write("\t\t\t\t<input type=\"text\" class=\"text\" />\r\n");
+      out.write("\t\t\t\t<input type=\"button\" value=\" huoqu\" class=\"btn\" id=\"btnGet\" />\r\n");
+      out.write("\t\t\t\t<input type=\"text\" class=\"text\" id=\"publisherPhone\" value=\"publisherPhone\">\r\n");
       out.write("\t\t\t</div>\r\n");
       out.write("\t\t</div>\r\n");
       out.write("\t\t<!-- // header -->\r\n");
@@ -101,14 +93,14 @@ public final class queryResultMessage_jsp extends org.apache.jasper.runtime.Http
       out.write("\t\t\t<!-- left -->\r\n");
       out.write("\t\t\t<div class=\"left\">\r\n");
       out.write("\t\t\t\t<h2>查询结果</h2>\r\n");
-      out.write("\t\t\t\t<ul class=\"list\">\r\n");
+      out.write("\t\t\t\t<ul class=\"list\" id=\"info\">\r\n");
+      out.write("\t\t\t\t\t<!-- <li><a href=\"#\">查找到的信息 查找到的信息 查找到的信 查找到的信 查找到的信 查找到的信</a>2013-4-5</li>\r\n");
       out.write("\t\t\t\t\t<li><a href=\"#\">查找到的信息 查找到的信息 查找到的信 查找到的信 查找到的信 查找到的信</a>2013-4-5</li>\r\n");
       out.write("\t\t\t\t\t<li><a href=\"#\">查找到的信息 查找到的信息 查找到的信 查找到的信 查找到的信 查找到的信</a>2013-4-5</li>\r\n");
       out.write("\t\t\t\t\t<li><a href=\"#\">查找到的信息 查找到的信息 查找到的信 查找到的信 查找到的信 查找到的信</a>2013-4-5</li>\r\n");
       out.write("\t\t\t\t\t<li><a href=\"#\">查找到的信息 查找到的信息 查找到的信 查找到的信 查找到的信 查找到的信</a>2013-4-5</li>\r\n");
       out.write("\t\t\t\t\t<li><a href=\"#\">查找到的信息 查找到的信息 查找到的信 查找到的信 查找到的信 查找到的信</a>2013-4-5</li>\r\n");
-      out.write("\t\t\t\t\t<li><a href=\"#\">查找到的信息 查找到的信息 查找到的信 查找到的信 查找到的信 查找到的信</a>2013-4-5</li>\r\n");
-      out.write("\t\t\t\t\t<li><a href=\"#\">查找到的信息 查找到的信息 查找到的信 查找到的信 查找到的信 查找到的信</a>2013-4-5</li>\r\n");
+      out.write("\t\t\t\t\t<li><a href=\"#\">查找到的信息 查找到的信息 查找到的信 查找到的信 查找到的信 查找到的信</a>2013-4-5</li> -->\r\n");
       out.write("\t\t\t\t</ul>\r\n");
       out.write("\t\t\t\t<p class=\"page\">\r\n");
       out.write("\t\t\t\t\t<span><a href=\"#\">首页</a></span>\r\n");
