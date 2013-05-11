@@ -10,11 +10,11 @@ import java.util.concurrent.locks.ReentrantLock;
 */
 public class IdBuilder {
 	//例子：生成Id并在控制台输出
-	public static void main(String[] args) {
-		IdBuilder getId = new IdBuilder();
-		System.out.println(getId.getNewId());
+	//public static void main(String[] args) {
+		//IdBuilder getId = new IdBuilder();
+		//System.out.println(getId.getNewId());
 		
-	}
+//}
 	
 	
 	/**
@@ -40,6 +40,7 @@ public class IdBuilder {
 	/**
 	 *得到新生成的Id 
 	 */	
+	@SuppressWarnings("static-access")
 	public static long getNewId(){
 		long newId;
 		LOCK.lock();

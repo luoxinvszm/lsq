@@ -8,19 +8,47 @@
 <link type="text/css" href="../css/qt-index.css"   rel="stylesheet" />
 <link type="text/css" href="../css/qt-lrtk.css" rel="stylesheet" />
 <link type="text/css" href="../css/qt-style.css" rel="stylesheet" />
+<script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
 <link href="css/qt-IE6.css" rel="stylesheet" type="text/css" media="all" />
-<script type="text/javascript" src="../js/curDate.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$("#btnGet").click(function() {
+
+			//提交的参数，name和inch是和struts action中对应的接收变量
+			var params = {
+				publisherPhone : $("#publisherPhone").val(),
+				publishTime : "",
+				msgStatus : 1
+			};
+			$.ajax({
+				type : "POST",
+				url : "qureyMessage.action",
+				data : params,
+				dataType : "json", //ajax返回值设置为json格式
+				success : function(json) { //返回的json
+						$("#info").html("");
+					 $.each(json.messageList, function(i, item) { //messageList是action中的list对的是get方法 
+						 $("#info").append(
+				                    "<li><a href='#'>" + item.msgConctent + "</a>"+item.publishTime+"</li>"  );
+					   }); 
+				}
+			});
+		});
+	});
+</script>
+
+
 </head>
-<body onLoad="getEClock(clock)">
+<body>
 	<div class="wrap">
 		<!-- header -->
 		<div class="header">
 			<div class="tlt"><img src="../image/qt-titlt.png" alt="校园信息自主发布平台" /></div>
 			<ul class="link">
-				<li><a href="#" onclick="this.style.behavior='url(#default#homepage)';this.setHomePage('http://www.ttlsq.com/');"> 设为首页</a></li>
-				<li><a href='#' onclick='window.external.AddFavorite("http://www.ttlsq.com/welcome.jsp","天天乐上墙")'> 加入收藏</a></li>
+				<li><a href="#">设为首页</a></li>
+				<li><a href="#">加入收藏</a></li>
 			</ul>
-			<p id="clock"></p>
+			<p>2013年4月19日 星期五</p>
 			<ul class="meun">
 				<li><a href="#">首页</a></li>
 				<li><a href="#">发布信息</a></li>
@@ -28,8 +56,8 @@
 				<li><a href="#">关于我们</a></li>
 			</ul>
 			<div class="search">
-				<input type="button" value=" " class="btn" />
-				<input type="text" class="text" />
+				<input type="button" value=" huoqu" class="btn" id="btnGet" />
+				<input type="text" class="text" id="publisherPhone" value="publisherPhone">
 			</div>
 		</div>
 		<!-- // header -->
@@ -38,14 +66,14 @@
 			<!-- left -->
 			<div class="left">
 				<h2>查询结果</h2>
-				<ul class="list">
+				<ul class="list" id="info">
+					<!-- <li><a href="#">查找到的信息 查找到的信息 查找到的信 查找到的信 查找到的信 查找到的信</a>2013-4-5</li>
 					<li><a href="#">查找到的信息 查找到的信息 查找到的信 查找到的信 查找到的信 查找到的信</a>2013-4-5</li>
 					<li><a href="#">查找到的信息 查找到的信息 查找到的信 查找到的信 查找到的信 查找到的信</a>2013-4-5</li>
 					<li><a href="#">查找到的信息 查找到的信息 查找到的信 查找到的信 查找到的信 查找到的信</a>2013-4-5</li>
 					<li><a href="#">查找到的信息 查找到的信息 查找到的信 查找到的信 查找到的信 查找到的信</a>2013-4-5</li>
 					<li><a href="#">查找到的信息 查找到的信息 查找到的信 查找到的信 查找到的信 查找到的信</a>2013-4-5</li>
-					<li><a href="#">查找到的信息 查找到的信息 查找到的信 查找到的信 查找到的信 查找到的信</a>2013-4-5</li>
-					<li><a href="#">查找到的信息 查找到的信息 查找到的信 查找到的信 查找到的信 查找到的信</a>2013-4-5</li>
+					<li><a href="#">查找到的信息 查找到的信息 查找到的信 查找到的信 查找到的信 查找到的信</a>2013-4-5</li> -->
 				</ul>
 				<p class="page">
 					<span><a href="#">首页</a></span>
@@ -78,5 +106,6 @@
 		</div>
 		<!-- // footer -->
 	</div>
+</body>
 </body>
 </html>
