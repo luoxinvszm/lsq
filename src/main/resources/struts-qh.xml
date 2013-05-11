@@ -5,10 +5,10 @@
 <struts>
 	<package name="struts3" extends="struts-default">
 
-		<action name="insertMessage" class="InsertMessageAction">
+		<!-- <action name="insertMessage" class="InsertMessageAction">
 			<result name="success">/result.jsp</result>
 			<result name="input">/login.jsp</result>
-		</action>
+		</action> -->
 		
 		<action name="updateMessageStatus" class="UpdateMessageStatusAction">
 			<result name="success">/login.jsp</result>
@@ -23,6 +23,10 @@
 	<!--qh-->  
 	<package name="json" extends="json-default">
 		<action name="qureyMessage" class="QueryMessageAction">
+			<result name="success" type="json"></result>
+		</action>
+		
+		<action name="insertMessage" class="InsertMessageAction">
 			<result name="success" type="json"></result>
 		</action>
 	</package>

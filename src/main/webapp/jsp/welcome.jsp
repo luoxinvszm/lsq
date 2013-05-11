@@ -28,8 +28,8 @@
 			<p id="clock"></p>
 			<ul class="meun">
 				<li><a href="#">首页</a></li>
-				<li><a href="#">发布信息</a></li>
-				<li><a href="browseMessage.jsp">浏览信息</a></li>
+				<li><a href="publishMessage.jsp">发布信息</a></li>
+				<li><a href="#browseMessage.jsp">浏览信息</a></li>
 				<li><a href="#">关于我们</a></li>
 			</ul>
 			<div class="search">

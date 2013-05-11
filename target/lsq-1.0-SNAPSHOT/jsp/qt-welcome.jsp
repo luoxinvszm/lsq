@@ -11,7 +11,6 @@
 <script type="text/javascript" src="../js/qt-jquery.js"></script>
 <script type="text/javascript" src="../js/qt-lrtk.js"></script>
 <script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
-<script type="text/javascript" src="../js/qh.js"></script>
 <script type="text/javascript">
 </script>
 </head>

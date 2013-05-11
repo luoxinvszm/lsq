@@ -1,30 +1,28 @@
-function submit() {
-	var jqueryobj = $("#queryExp");
-	var queryExpVal = jqueryobj.val();
-	if (queryExpVal == "" || queryExpVal == null) {
-		alert("queryExpVal");
-	} else {
-		$.getJSON("qureyMessage?publishTime=" + queryExpVal, function(data) {//向action请求提交数据
-			var resultObj = $("#result");
-			resultObj.html("");//清空result
-			resultObj.html(data.publishTime);//json方式解析由action返回的数据,并在页面显示,其他解析方式如下
-			// document.getElementById("result").innerHTML="username:"+data.username;
+//发送信息的方法
+$(function() {
+		$("#btnGet").click(function() {
+
+			//提交的参数，name和inch是和struts action中对应的接收变量
+			var params = {
+				publisherPhone : $("#publisherPhone").val(),
+				publisherName :$("#publisherName").val(),
+				messageContext : $("#messageContext").val(),
+				msgRemark:""
+			};
+			$.ajax({
+				type : "POST",
+				url : "insertMessage.action",
+				data : params,
+				dataType : "json", //ajax返回值设置为json格式
+				success : function(json) { //返回的json
+					var i = json.result;
+					if(i==0){
+						alert("发送成功，等待管理员审核");
+						window.location.href="welcome.jsp";
+					}
+				}
+			});
 		});
-	}
-}
-//------------------json数据解析------------------
-//$.getJSON("loginAction", function(data) {
-// $("#result").html("");//清空info内容
-//-----------------直接对数据解析------------------
-// $("#result").append(data.username);
-//-----------------数组,list的解析方式-------------
-// $.each(data.users, function(i, item) {
-//   $("#info").append(
-//        "<div>" + item.username + "</div>" + 
-//         "<div>" + item.password+ "</div><hr/>");
-//  });
-//-----------------解析map数据--------------
-//  $.each(data.usersMap,function(key,value){
-//      $("#mapinfo").append(key+"----"+value+"<br/><hr/>");
-//   });
-// });
+	});
+
+
