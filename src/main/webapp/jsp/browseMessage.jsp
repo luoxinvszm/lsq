@@ -23,9 +23,9 @@
 			</ul>
 			<p>2013年4月19日 星期五</p>
 			<ul class="meun">
-				<li><a href="#">首页</a></li>
-				<li><a href="#publishMessage.jsp">发布信息</a></li>
-				<li><a href="#">浏览信息</a></li>
+				<li><a href="welcome.jsp">首页</a></li>
+				<li><a href="publishMessage.jsp">发布信息</a></li>
+				<li><a href="queryResultMessage.jsp">浏览信息</a></li>
 				<li><a href="#">关于我们</a></li>
 			</ul>
 			<div class="search">

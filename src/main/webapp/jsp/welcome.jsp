@@ -11,7 +11,6 @@
 <script type="text/javascript" src="../js/qt-jquery.js"></script>
 <script type="text/javascript" src="../js/qt-lrtk.js"></script>
 <script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
-<script type="text/javascript" src="../js/qh.js"></script>
 <script type="text/javascript" src="../js/curDate.js"></script>
 </head>
 
@@ -27,9 +26,9 @@
 			</ul>
 			<p id="clock"></p>
 			<ul class="meun">
-				<li><a href="#">首页</a></li>
-				<li><a href="publishMessage.jsp">发布信息</a></li>
-				<li><a href="#browseMessage.jsp">浏览信息</a></li>
+				<li><a href="welcome.jsp">首页</a></li>
+				<li><a href="publishMessage.jsp" >发布信息</a></li>
+				<li><a href="queryResultMessage.jsp">浏览信息</a></li>
 				<li><a href="#">关于我们</a></li>
 			</ul>
 			<div class="search">

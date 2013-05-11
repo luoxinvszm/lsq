@@ -62,7 +62,6 @@ public final class welcome_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<script type=\"text/javascript\" src=\"../js/qt-jquery.js\"></script>\r\n");
       out.write("<script type=\"text/javascript\" src=\"../js/qt-lrtk.js\"></script>\r\n");
       out.write("<script type=\"text/javascript\" src=\"../js/jquery-1.9.1.min.js\"></script>\r\n");
-      out.write("<script type=\"text/javascript\" src=\"../js/qh.js\"></script>\r\n");
       out.write("<script type=\"text/javascript\" src=\"../js/curDate.js\"></script>\r\n");
       out.write("</head>\r\n");
       out.write("\r\n");
@@ -78,9 +77,9 @@ public final class welcome_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t\t</ul>\r\n");
       out.write("\t\t\t<p id=\"clock\"></p>\r\n");
       out.write("\t\t\t<ul class=\"meun\">\r\n");
-      out.write("\t\t\t\t<li><a href=\"#\">首页</a></li>\r\n");
-      out.write("\t\t\t\t<li><a href=\"publishMessage.jsp\">发布信息</a></li>\r\n");
-      out.write("\t\t\t\t<li><a href=\"#browseMessage.jsp\">浏览信息</a></li>\r\n");
+      out.write("\t\t\t\t<li><a href=\"welcome.jsp\">首页</a></li>\r\n");
+      out.write("\t\t\t\t<li><a href=\"publishMessage.jsp\" >发布信息</a></li>\r\n");
+      out.write("\t\t\t\t<li><a href=\"queryResultMessage.jsp\">浏览信息</a></li>\r\n");
       out.write("\t\t\t\t<li><a href=\"#\">关于我们</a></li>\r\n");
       out.write("\t\t\t</ul>\r\n");
       out.write("\t\t\t<div class=\"search\">\r\n");
