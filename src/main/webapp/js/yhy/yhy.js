@@ -7,11 +7,12 @@ function searchUsingAdmin(stat) {
 	var btn="";
 	if(stat==0){
 		target="#usingAdminList";
-		btn="<td><input type=\"button\" value=\"冻结\" />";
+		btn="冻结";
 	}else if(stat==1){
 		target="#deletedAdminList";
-		btn="<td><input type=\"button\" value=\"激活\" />";
+		btn="激活";
 	}
+	
 	$.ajax({
 		type : "POST",
 		url : "editOrdinAdminAction.action",
@@ -23,7 +24,7 @@ function searchUsingAdmin(stat) {
 				 $(target).append(
 		                    "<tr><td><input type=\"checkbox\" />"+i+"</td><td>"+item.username  +"</td>" +
 		                    "<td>"+item.userRealName+"</td>" +
-		                    btn +
+		                    "<td><input type=\"button\" value=\""+btn+"\" onclick=\"\" />" +
 		                    "<input type=\"button\" value=\"信息重置\" />" +
 		                    "<input type=\"button\" value=\"删除\"/></td></tr>");
 			   }); 
