@@ -8,12 +8,51 @@
 <link type="text/css" href="../css/qt-index.css"   rel="stylesheet" />
 <link type="text/css" href="../css/qt-lrtk.css" rel="stylesheet" />
 <link type="text/css" href="../css/qt-style.css" rel="stylesheet" />
-<script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+<link type="text/css" href="../css/qt-IE6.css" rel="stylesheet" media="all" />
+<link type="text/css" href="../css/pagination.css" rel="stylesheet"  />
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script type="text/javascript" src="../js/jquery.pagination.js"></script>
+<script type="text/javascript" src="../js/members.js"></script>
 <script type="text/javascript" src="../js/qh/queryResultMessage.js"></script>
-<link href="css/qt-IE6.css" rel="stylesheet" type="text/css" media="all" />
+ <script type="text/javascript">
+         
+            function pageselectCallback(page_index, jq){
+            	//alert("pageselectCallback");
+			    var items_per_page = 5;//每页显示记录数
+                var max_elem = Math.min((page_index+1) * items_per_page, members.length);
+                var newcontent = '';
+				//将集合数据拼装成HTML，然后在前台显示
+                for(var i=page_index*items_per_page;i<max_elem;i++)
+                {
+                    newcontent += '<dt>' + members[i][0] + '</dt>';
+                    newcontent += '<dd class="state">' + members[i][2] + '</dd>';
+                    newcontent += '<dd class="party">' + members[i][3] + '</dd>';
+                }
+                $("#Searchresult").html(newcontent);
+                return false;
+            }
+			//手动设置分页中的各参数值
+			  function getPageOptions(){
+				 // alert("getPageOptions");
+                var opt = {callback: pageselectCallback};
+					 opt["num_display_entries"] = 5;//中间页数
+					 opt["num_edge_entries"] = 2;//前后边界页数
+					 opt["prev_text"] = '上一页';//上一页 文本 
+					 opt["next_text"] = '下一页';//下一页 文本
+                return opt;
+            }
+			
+            // 页面加载执行此函数
+            
+            $(document).ready(function(){
+            	//alert("ready(function");
+				var optInit= getPageOptions();//分页参数组
+				//alert(members.length);
+                $("#Pagination").pagination(members.length,optInit);
+				//alert(members.length);
+            });
 
-
-
+        </script>
 </head>
 <body onload="getInfo()">
 	<div class="wrap">
@@ -57,6 +96,10 @@
 					<span><a href="#">下一页</a></span>
 					<span><a href="#">尾页</a></span>
 				</p>
+				<dl id="Searchresult">
+                <dt>Search Results will be inserted here ...</dt>
+                </dl>
+				 <div id="Pagination" class="pagination"></div>
 			</div>
 			<!-- // left -->
 			<!-- right -->
