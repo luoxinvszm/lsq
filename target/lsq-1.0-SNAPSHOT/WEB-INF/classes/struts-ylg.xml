@@ -18,11 +18,6 @@
 		<action name="createOrdin" class="createOrdin">
 			<result name="success">/createOrdinSuccess.jsp</result>
 		</action>
-		<action name="editOrdinAdminAction" class="editOrdinAdminAction">
-			<result name="delete">/cancleOrdinAdmin.jsp</result>
-			<result name="recover">/recoverOrdinAdmin.jsp</result>
-			<result name="input">/login.jsp</result>
-		</action>
 		<action name="*_userAction" class="userAction" method="{1}">
 			<result name="updatePassword">/updatePasswordSuccess.jsp</result>
 		</action>
