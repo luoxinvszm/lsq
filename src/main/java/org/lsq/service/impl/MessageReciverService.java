@@ -11,7 +11,11 @@ import javax.comm.UnsupportedCommOperationException;
 
 import org.lsq.dao.IInsertMessageDAO;
 import org.lsq.util.DateFormat;
-
+/**
+ * 类名：MessageReciverService
+ * 功能：打开串口，并且监听发送来的数据，将接收到的数据插入的数据库message表中
+ * 
+ * */
 public class MessageReciverService extends Thread{
 	private IInsertMessageDAO insertMessageDAO;
 	private CommPortIdentifier portId = null;
