@@ -66,6 +66,7 @@ public class UpdateMessageStatusService implements IUpdateMessageStatusService,
 			int msgStatus,int mintus) {
 		int i;
 		if (msgStatus == 1) {
+			System.out.println("updateMessageServiceStarting····");
 			String modifiedDateTime = DateFormat.dateToString();
 			i = updateMessageStatusDao.modifiedStatus(publisherPhone,
 					publishTime, modifiedDateTime, msgStatus);

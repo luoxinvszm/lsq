@@ -4,7 +4,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
 
-public final class updateMessageStatus_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class sxltest_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -40,7 +40,7 @@ public final class updateMessageStatus_jsp extends org.apache.jasper.runtime.Htt
 
 
     try {
-      response.setContentType("text/html; charset=UTF-8");
+      response.setContentType("text/html; charset=utf-8");
       pageContext = _jspxFactory.getPageContext(this, request, response,
       			null, true, 8192, true);
       _jspx_page_context = pageContext;
@@ -54,27 +54,15 @@ public final class updateMessageStatus_jsp extends org.apache.jasper.runtime.Htt
       out.write("<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">\r\n");
       out.write("<html>\r\n");
       out.write("<head>\r\n");
+      out.write("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\r\n");
       out.write("<title>Insert title here</title>\r\n");
-      out.write("<script type=\"text/javascript\" src=\"js/jquery-1.9.1.min.js\"></script>\r\n");
-      out.write("<script type=\"text/javascript\">\r\n");
-      out.write("function a(m){\r\n");
-      out.write("\tvar id = m.id;\r\n");
-      out.write("\talert(id);\r\n");
-      out.write("\t\r\n");
-      out.write("}\r\n");
-      out.write("\r\n");
-      out.write("</script>\r\n");
       out.write("</head>\r\n");
       out.write("<body>\r\n");
-      out.write("\t<form action=\"updateMessageStatus\">\r\n");
-      out.write("\t\t<input type=\"text\" name=\"mintus\" value=\"1\">\r\n");
-      out.write("\t\t<input type=\"text\" name=\"status\" value=\"status\">\r\n");
-      out.write("\t\t<input type=\"text\" name=publisherPhone value=\"publisherPhone\">\r\n");
-      out.write("\t\t<input type=\"text\" name=\"publishTime\" value=\"publishTime\">\r\n");
-      out.write("\t\t<input type=\"submit\" value=\"搜索\">\r\n");
+      out.write("\t<form action=\"autoMessages.action\">\r\n");
+      out.write("\t\t<input value=\"提交\"  type=\"submit\"/>\r\n");
       out.write("\t</form>\r\n");
-      out.write("\t<span id=\"f\">11111</span>\r\n");
-      out.write("\t<input id=\"n\" class=\"aa\" type=\"button\" value=\"get\" onclick=\"a(this)\">\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
       out.write("</body>\r\n");
       out.write("</html>");
     } catch (Throwable t) {

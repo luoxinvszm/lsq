@@ -18,105 +18,136 @@ public class QureyMessageDAO implements IQureyMessageDAO {
 	}
 
 	// **********************通过电话查询*********************************
-	
-	//不带状态的
+
+	// 不带状态的
 	public List<Message> qureyMessagesByPhone(String publisherPhone) {
-		System.out.println("qureyMessagesDAObyphone starting······ "+publisherPhone);
+		System.out.println("qureyMessagesDAObyphone starting······ "
+				+ publisherPhone);
 
-		String sql = "select * from message where publisherPhone='"+ publisherPhone + "';";
+		String sql = "select * from message where publisherPhone='"
+				+ publisherPhone + "';";
 
 		System.out.println(sql);
-		
+
 		return getMessages(sql);
 	}
-	
-	//带状态的
-	public List<Message> qureyMessagesByPhone(String publisherPhone,int msgStatus) {
-		
-		System.out.println("qureyMessagesDAObyphone (include msgStatus) starting······ "+publisherPhone);
-		
-		String sql ="select * from message where publisherPhone= '"+publisherPhone+"' and msgStatus= "+msgStatus+";";
-		
+
+	// 带状态的
+	public List<Message> qureyMessagesByPhone(String publisherPhone,
+			int msgStatus) {
+
+		System.out
+				.println("qureyMessagesDAObyphone (include msgStatus) starting······ "
+						+ publisherPhone);
+
+		String sql = "select * from message where publisherPhone= '"
+				+ publisherPhone + "' and msgStatus= " + msgStatus + ";";
+
 		System.out.println(sql);
-		
+
 		return getMessages(sql);
 	}
+
 	// **************************通过时间查询**********************************
-	
-	//不带状态的
+
+	// 不带状态的
 	public List<Message> qureyMessagesByTime(String publishTime) {
-	
+
 		System.out.println("qureyMessagesDAObytime starting······ ");
-	
-		String sql ="select * from message where publishTime like '"+publishTime+"%' ;";
-		
+
+		String sql = "select * from message where publishTime like '"
+				+ publishTime + "%' ;";
+
 		System.out.println(sql);
-		
+
 		return getMessages(sql);
 	}
-	
-	//带状态的
+
+	// 带状态的
 	public List<Message> qureyMessagesByTime(String publishTime, int msgStatus) {
-		System.out.println("qureyMessagesDAObyTime (include msgStatus) starting······ "+publishTime);
-		
-		String sql ="select * from message where publishTime like '"+publishTime+"%' and msgStatus= "+msgStatus+";";
-		
+		System.out
+				.println("qureyMessagesDAObyTime (include msgStatus) starting······ "
+						+ publishTime);
+
+		String sql = "select * from message where publishTime like '"
+				+ publishTime + "%' and msgStatus= " + msgStatus + ";";
+
 		System.out.println(sql);
-		
+
 		return getMessages(sql);
 	}
+
 	// **************************通过时间和电话查询所有************************************
-	//带状态的
+	// 带状态的
 	public List<Message> qureyMessagesByPhoneAndTime(String publisherPhone,
 			String publishTime, int msgStatus) {
-		System.out.println("qureyMessagesDAO(include publisherPhone,publishTime,msgStatus) starting······ ");
-		
-		String sql="select * from message where publisherPhone='"+publisherPhone+"' and publishTime like '"+publishTime+"%' and msgStatus= "+msgStatus+";";
-		
+		System.out
+				.println("qureyMessagesDAO(include publisherPhone,publishTime,msgStatus) starting······ ");
+
+		String sql = "select * from message where publisherPhone='"
+				+ publisherPhone + "' and publishTime like '" + publishTime
+				+ "%' and msgStatus= " + msgStatus + ";";
+
 		System.out.println(sql);
 		return getMessages(sql);
 	}
-	
-	//不带状态的
+
+	// 不带状态的
 	public List<Message> qureyMessagesByPhoneAndTime(String publisherPhone,
 			String publishTime) {
-		System.out.println("qureyMessagesDAO(include publisherPhone,publishTime) starting······ ");
-		
-		String sql="select * from message where publisherPhone='"+publisherPhone+"' and publishTime like '"+publishTime+"%' ;";
-		
+		System.out
+				.println("qureyMessagesDAO(include publisherPhone,publishTime) starting······ ");
+
+		String sql = "select * from message where publisherPhone='"
+				+ publisherPhone + "' and publishTime like '" + publishTime
+				+ "%' ;";
+
 		System.out.println(sql);
-		
+
 		return getMessages(sql);
 	}
+
 	// **************************通过状态查询所有************************************
 	public List<Message> qureyMessages(int msgStatus) {
 
 		System.out.println("qureyMessagesDAO starting······ ");
 
-		String sql = "select * from message where msgStatus="+msgStatus+";";
+		String sql = "select * from message where msgStatus=" + msgStatus + ";";
 
 		System.out.println(sql);
-		
+
 		return getMessages(sql);
 	}
+
+	// **************************通过关键字模糊查询*********************************
+	public List<Message> qureyMessagesByLike(String msgLike) {
+		String keywords = "%";
+		for (int i = 0; i < msgLike.length(); i++) {
+			keywords += msgLike.charAt(i) + "%";
+		}
+		String sql = "select * from message where msgConctent like '"
+				+ keywords + "';";
+		return getMessages(sql);
+	}
+
 	// ****************************************************************************
-	//获得message集合的转换方法，将map的转换成list
-	public List<Message> getMessages(String sql){
-		
+	// 获得message集合的转换方法，将map的转换成list
+	public List<Message> getMessages(String sql) {
+
 		// 返回的messages集合
-		
+
 		List<Message> messages = new ArrayList<Message>();
-		
-		//对sql语句进行处理
+
+		// 对sql语句进行处理
 		List rows = jdbcTemplate.queryForList(sql);
-		//对返回的list进行遍历
+		// 对返回的list进行遍历
 		Iterator it = rows.iterator();
-		
+
 		while (it.hasNext()) {
 			Map messageMap = (Map) it.next();
-			
-			//获得map中的每个key对应的value值
-			
+
+			// 获得map中的每个key对应的value值
+
 			long msgId = (Long) messageMap.get("msgId");
 			long msgTypeId = (Long) messageMap.get("msgTypeId");
 			int msgStatus1 = (Integer) messageMap.get("msgStatus");
@@ -125,12 +156,12 @@ public class QureyMessageDAO implements IQureyMessageDAO {
 			String publisherPhone = (String) messageMap.get("publisherPhone");
 			String publishTime = (String) messageMap.get("publishTime");
 			String msgRemark = (String) messageMap.get("msgRemark");
-			//  创建对象
-			
+			// 创建对象
+
 			Message message = new Message();
-			
-			 //将值放到对象中
-			
+
+			// 将值放到对象中
+
 			message.setMsgId(msgId);
 			message.setMsgTypeId(msgTypeId);
 			message.setMsgConctent(msgConctent);
@@ -139,13 +170,11 @@ public class QureyMessageDAO implements IQureyMessageDAO {
 			message.setPublishTime(publishTime);
 			message.setMsgRemark(msgRemark);
 			message.setMsgStatus(msgStatus1);
-			//将对象添加到messages集合中
-			
+			// 将对象添加到messages集合中
+
 			messages.add(message);
 		}
 		return messages;
 	}
 
-	
-	
 }

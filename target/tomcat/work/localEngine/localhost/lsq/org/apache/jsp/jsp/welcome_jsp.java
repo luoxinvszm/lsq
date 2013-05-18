@@ -62,6 +62,9 @@ public final class welcome_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<script type=\"text/javascript\" src=\"../js/qt-jquery.js\"></script>\r\n");
       out.write("<script type=\"text/javascript\" src=\"../js/qt-lrtk.js\"></script>\r\n");
       out.write("<script type=\"text/javascript\" src=\"../js/jquery-1.9.1.min.js\"></script>\r\n");
+      out.write("<script type=\"text/javascript\" src=\"../js/sxl/jquery-ui-1.9.2.custom.js\"></script>\r\n");
+      out.write("<script type=\"text/javascript\" src=\"../js/sxl/autoMessage.js\"></script>\r\n");
+      out.write(" <link  rel=\"stylesheet\" type=\"text/css\" href=\"../css/jquery-ui-1.9.2.custom.css\" />\r\n");
       out.write("<script type=\"text/javascript\" src=\"../js/curDate.js\"></script>\r\n");
       out.write("</head>\r\n");
       out.write("\r\n");
@@ -84,7 +87,7 @@ public final class welcome_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t\t</ul>\r\n");
       out.write("\t\t\t<div class=\"search\">\r\n");
       out.write("\t\t\t\t<input type=\"button\" value=\"\" class=\"btn\"/>\r\n");
-      out.write("\t\t\t\t<input type=\"text\" class=\"text\" id=\"\"/>\r\n");
+      out.write("\t\t\t\t<input type=\"text\" class=\"text\" id=\"tags\" onkeyup=\"autoMessages()\"/>\r\n");
       out.write("\t\t\t\t<div id=\"result\"></div>\r\n");
       out.write("\t\t\t</div>\r\n");
       out.write("\t\t</div>\r\n");

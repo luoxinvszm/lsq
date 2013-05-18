@@ -25,6 +25,7 @@ public class SystemSettingsAction extends ActionSupport {
 	private String method;
 	private int settingsId = 0;
 	private String settingsValue;
+	private List<Settings> settings;
 
 	public String getSettingsValue() {
 		return settingsValue;
@@ -63,9 +64,13 @@ public String getMethod() {
 	}
 	public String QuerySystemSettings() {
 		System.out.println("查询设置");
-		List<Settings> settings=systemSettingsService.QuerySystemSetting();
+		 settings=systemSettingsService.QuerySystemSetting();
 		System.out.println(settings.size());
 		System.out.println(settings.get(0).getSettingsName());
 		return SUCCESS;
+	}
+
+	public List<Settings> getSettings() {
+		return settings;
 	}
 }
