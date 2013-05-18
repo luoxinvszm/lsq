@@ -58,6 +58,10 @@ public class QureyMessageService implements IQureyMessageService {
 		}
 	}
 
-	
+
+	public List<Message> qureyMessagesByLike(String msgLike) {
+		// TODO Auto-generated method stub
+		return qureyMessageDao.qureyMessagesByLike(msgLike);
+	}
 
 }

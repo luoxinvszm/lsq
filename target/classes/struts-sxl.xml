@@ -15,4 +15,9 @@
 			<result name="success" type="json"></result>
 		</action>
 	</package>
+	<package name="queryMessageByLike"  extends="json-default">
+		<action name="autoMessages" class="QueryMessageAction" method="AutoMessages">
+			<result name="success" type="json"></result>
+		</action>
+	</package>
 </struts>
