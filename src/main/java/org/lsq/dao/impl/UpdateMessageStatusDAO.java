@@ -31,7 +31,7 @@ public class UpdateMessageStatusDAO implements IUpdateMessageStatusDAO{
 		System.out.println("modifiedMessageStatusDAO(including pubilsherPhone) starting·······");
 		
 		int i = jdbcTemplate.update("update message set msgStatus = ? ,publishTime = ?where publisherPhone = ? and publishTime = ?", new Object[] {msgStatus,modifiedDateTime, publisherPhone,publishTime});
-		
+		System.out.println("********"+i);
 		return i;
 	}
 	

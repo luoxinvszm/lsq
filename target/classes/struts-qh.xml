@@ -10,10 +10,10 @@
 			<result name="input">/login.jsp</result>
 		</action> -->
 		
-		<action name="updateMessageStatus" class="UpdateMessageStatusAction">
+		<!-- <action name="updateMessageStatus" class="UpdateMessageStatusAction">
 			<result name="success">/login.jsp</result>
 		</action>
-		
+		 -->
 		<!-- <action name="qureyMessage" class="QueryMessageAction">
 			<result name="success" type="json"></result>
 		</action> -->
@@ -23,6 +23,10 @@
 	<!--qh-->  
 	<package name="json" extends="json-default">
 		<action name="qureyMessage" class="QueryMessageAction">
+			<result name="success" type="json"></result>
+		</action>
+		
+		<action name="updateMessageStatus" class="UpdateMessageStatusAction">
 			<result name="success" type="json"></result>
 		</action>
 		
