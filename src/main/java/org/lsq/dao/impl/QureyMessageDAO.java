@@ -125,8 +125,8 @@ public class QureyMessageDAO implements IQureyMessageDAO {
 		for (int i = 0; i < msgLike.length(); i++) {
 			keywords += msgLike.charAt(i) + "%";
 		}
-		String sql = "select * from message where msgConctent like '"
-				+ keywords + "';";
+		String sql = "select * from message where msgConctent like'"
+				+ keywords + "' limit 0,10;";
 		return getMessages(sql);
 	}
 

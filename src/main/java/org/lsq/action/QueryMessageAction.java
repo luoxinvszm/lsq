@@ -31,6 +31,15 @@ public class QueryMessageAction extends ActionSupport {
 	private String publisherPhone;
 	private String publishTime;
 	private int msgStatus;
+	private String inMessage;
+	public String getInMessage() {
+		return inMessage;
+	}
+
+	public void setInMessage(String inMessage) {
+		this.inMessage = inMessage;
+	}
+
 	public String getPublisherPhone() {
 		return publisherPhone;
 	}
@@ -87,8 +96,8 @@ public class QueryMessageAction extends ActionSupport {
 
 	public String AutoMessages() {
 		msgContextList=new ArrayList<String>();
-		System.out.println("自动补全");
-		messageList =qureyMessageService.qureyMessagesByLike("你");
+		System.out.println("自动补全"+inMessage);
+		messageList =qureyMessageService.qureyMessagesByLike(inMessage);
 		
 		for(Message m:messageList){
 			msgContextList.add(m.getMsgConctent());
