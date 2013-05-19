@@ -1,60 +1,85 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>校园信息自主发布平台</title>
-<link type="text/css" href="../css/qt-index.css"   rel="stylesheet" />
-<link type="text/css" href="../css/qt-lrtk.css" rel="stylesheet" />
-<link type="text/css" href="../css/qt-style.css" rel="stylesheet" />
-<link type="text/css" href="../css/qt-IE6.css" rel="stylesheet" media="all" />
-<link type="text/css" href="../css/pagination.css" rel="stylesheet"  />
-<script type="text/javascript" src="../js/jquery.min.js"></script>
-<script type="text/javascript" src="../js/jquery.pagination.js"></script>
-<script type="text/javascript" src="../js/members.js"></script>
-<script type="text/javascript" src="../js/qh/queryResultMessage.js"></script>
- <script type="text/javascript">
-         
-            function pageselectCallback(page_index, jq){
-            	//alert("pageselectCallback");
-			    var items_per_page = 5;//每页显示记录数
-                var max_elem = Math.min((page_index+1) * items_per_page, members.length);
-                var newcontent = '';
-				//将集合数据拼装成HTML，然后在前台显示
-                for(var i=page_index*items_per_page;i<max_elem;i++)
-                {
-                    newcontent += '<dt>' + members[i][0] + '</dt>';
-                    newcontent += '<dd class="state">' + members[i][2] + '</dd>';
-                    newcontent += '<dd class="party">' + members[i][3] + '</dd>';
-                }
-                $("#Searchresult").html(newcontent);
-                return false;
-            }
-			//手动设置分页中的各参数值
-			  function getPageOptions(){
-				 // alert("getPageOptions");
-                var opt = {callback: pageselectCallback};
-					 opt["num_display_entries"] = 5;//中间页数
-					 opt["num_edge_entries"] = 2;//前后边界页数
-					 opt["prev_text"] = '上一页';//上一页 文本 
-					 opt["next_text"] = '下一页';//下一页 文本
-                return opt;
-            }
-			
-            // 页面加载执行此函数
-            
-            $(document).ready(function(){
-            	//alert("ready(function");
-				var optInit= getPageOptions();//分页参数组
-				//alert(members.length);
-                $("#Pagination").pagination(members.length,optInit);
-				//alert(members.length);
-            });
-
-        </script>
+<link type="text/css" href="<%=path %>/css/qt-index.css"   rel="stylesheet" />
+<link type="text/css" href="<%=path %>/css/qt-lrtk.css" rel="stylesheet" />
+<link type="text/css" href="<%=path %>/css/qt-style.css" rel="stylesheet" />
+<link type="text/css" href="<%=path %>/css/qt-IE6.css" rel="stylesheet" media="all" />
+<!--<script type="text/javascript" src="<%=path %>/js/jquery.min.js"></script>
+<script type="text/javascript" src="<%=path %>/js/qh/queryResultMessage.js"></script>
+<script type="text/javascript" src="<%=path %>/js/jquery-1.9.1.min.js"></script>-->
+<script type="text/javascript" src="<%=path %>/js/yzp/jquery-1.4.3.js"></script>
+		<script type="text/javascript" src="<%=path %>/js/yzp/json2.js"></script>
+		<script type="text/javascript" src="<%=path %>/js/yzp/asynPage.js"></script>
+		<style type="text/css">
+			#paging{
+				float:right;
+			}
+			#paging ul li{
+				float:left;
+			}
+			#paging ul li a{
+				outline:none;
+				blr:expression(this.onFocus=this.blur()));
+				text-decoration:none;
+				display:inline-block;
+				border:1px solid #d5d5d5;
+				margin-right:5px;
+				padding:2px 5px 1px;
+				text-align:center;
+				color:#1a66b3;
+				font-size:11px;
+			}
+			#paging ul li a.current{
+				border:0px none #d5d5d5;
+				color:black;
+				font-weight:bold;
+			}
+			#paging ul li a.last,#paging ul li a.first{
+				text-decoration:none;
+				display:inline-block;
+				border:1px solid #d5d5d5;
+				margin-right:5px;
+				padding:3px 5px 1px;
+				text-align:center;
+				color:#1a66b3;
+				font-size:11px;
+			}
+			#paging .total{
+				border:0px none #d5d5d5;
+				padding:3px 5px 1px;
+				text-align:center;
+				font-size:12px;
+			}
+		</style>
+		
+		<script type="text/javascript">
+			$(document).ready(function(){
+				var params = "";
+		    	$("#paging").asynPage("qureyMessage.action",params,"#datas",buildHtml,5,"messageList","totalSize");
+    		});
+			function buildHtml(messageList){
+				$.each(messageList,function(i,message){
+					var str = [
+                	 	message.msgConctent,'<br/>',
+                  		message.publishTime,'<br/>',
+                  		'<br/>',
+            		].join('');
+            		$("#datas").append(str);
+            	});
+			}
+		</script>
 </head>
-<body onload="getInfo()">
+<body onload="">
+
 	<div class="wrap">
 		<!-- header -->
 		<div class="header">
@@ -90,16 +115,11 @@
 					<li><a href="#">查找到的信息 查找到的信息 查找到的信 查找到的信 查找到的信 查找到的信</a>2013-4-5</li>
 					<li><a href="#">查找到的信息 查找到的信息 查找到的信 查找到的信 查找到的信 查找到的信</a>2013-4-5</li> -->
 				</ul>
-				<p class="page">
-					<span><a href="#">首页</a></span>
-					<span><a href="#">上一页</a></span>
-					<span><a href="#">下一页</a></span>
-					<span><a href="#">尾页</a></span>
-				</p>
-				<dl id="Searchresult">
-                <dt>Search Results will be inserted here ...</dt>
-                </dl>
-				 <div id="Pagination" class="pagination"></div>
+			
+			<div id="datas">data...............</div>
+
+		<div id="paging" class="page">s</div>
+				
 			</div>
 			<!-- // left -->
 			<!-- right -->
