@@ -4,6 +4,15 @@
 <html>
 <head>
 <title>Insert title here</title>
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript">
+function a(m){
+	var id = m.id;
+	alert(id);
+	
+}
+
+</script>
 </head>
 <body>
 	<form action="updateMessageStatus">
@@ -13,5 +22,7 @@
 		<input type="text" name="publishTime" value="publishTime">
 		<input type="submit" value="搜索">
 	</form>
+	<span id="f">11111</span>
+	<input id="n" class="aa" type="button" value="get" onclick="a(this)">
 </body>
 </html>
