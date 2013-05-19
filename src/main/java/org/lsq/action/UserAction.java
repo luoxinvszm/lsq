@@ -40,4 +40,5 @@ public class UserAction extends ActionSupport{
 			return INPUT;
 		}
 	}
+	
 }

@@ -1,3 +1,5 @@
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="java.util.*"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -14,14 +16,20 @@
 
 </head>
 <body>
+<%
+	String userRealName=session.getAttribute("userRealName").toString();
+	String time = new SimpleDateFormat("yyyy年MM月dd日 EE").format(new Date());
+
+	String password = session.getAttribute("password").toString();
+%>
 	<!-- header -->
 	<div class="header">
 		<h1>信息管理系统</h1>
-		<p>2012年8月1日 星期六</p>
-		<p>hello 管理员名字</p>
+		<p><%=time%></p>
+		<p>欢迎您 &nbsp;&nbsp;&nbsp;<%=userRealName%></p>
 		<div class="btnbox">
-			<input type="button" value="修改密码" class="btn1" /><input
-				type="button" value="安全退出" class="btn1" />
+			<input type="button" value="修改密码" class="btn1" onclick="Tab(10)"/><input
+				type="button" value="安全退出" class="btn1" onclick="exit()"/>
 		</div>
 	</div>
 	<!-- // header -->
@@ -132,17 +140,19 @@
 		<div id="right6">
 			<div class="tlt">当前位置：使用中管理员</div>
 			<p>
-				批量操作： <input type="checkbox" /><input type="button" value="删除" /><input
-					type="button" value="冻结" />
+				批量操作： <input type="button" value="全选" onclick="checkAll()"/>
+				 <input type="button" value="取消全选" onclick="uncheckAll()"/><input type="button" value="删除" onclick="batchdelete()" /><input
+					type="button" value="冻结" onclick="batchcancle()"/>
 			</p>
-			<table cellpadding="0" cellspacing="0" class="table1" id="usingAdminList">
+			<table cellpadding="0" cellspacing="0" class="table1" id="usingAdminList" id="table">
+			<tbody id="tb">
 				<tr>
 					<th width="50">序号</th>
 					<th width="200">账号</th>
 					<th width="200">昵称</th>
 					<th width="250">操作</th>
 				</tr>
-			
+			</tbody>
 			</table>
 			<div class="page">
 				<span><a href="#">首页</a></span> <span><a href="#">上一页</a></span> <span><a
@@ -154,8 +164,9 @@
 		<div id="right7">
 			<div class="tlt">当前位置：已冻结管理员</div>
 			<p>
-				批量操作： <input type="checkbox" /><input type="button" value="删除" /><input
-					type="button" value="激活" />
+				批量操作： <input type="button" value="全选" onclick="checkAll()"/>
+				 <input type="button" value="取消全选" onclick="uncheckAll()"/><input type="button" value="删除" onclick="batchdelete()"/><input
+					type="button" value="激活" onclick="batchrecover()" />
 			</p>
 			<table cellpadding="0" cellspacing="0" class="table1" id="deletedAdminList">
 				<tr>
@@ -198,6 +209,40 @@
 			</dl>
 		</div>
 		<!-- //right9 -->
-	</div>
+	<div id="right10">
+			<div class="tlt">当前位置：修改密码</div>
+			<form action="updatePassword_userAction" name="updatePassword">
+		
+请输入原密码:<input type="text" id="old" onblur="checkOld()" value=""/>
+						<div style="display: none" id="u1">
+									<font face="宋体" color="red">密码输入错误，请重新输入</font>
+									</div>
+									<br/>
+									
+				请输入新密码:
+							<input type="password" onblur="checknew1()"
+								name="user.password" id="new1" value="" />
+							<div style="display: none" id="d1">
+									<font face="宋体" color="red">密码不能为空</font>
+								</div>
+								<br/>
+			
+			请再输入新密码:
+							<input type="password" id="new2" value=""/>
+							<div style="display: none" id="d2">
+									<font face="宋体" color="red">两次密码输入不一致</font>
+								</div>
+
+	<br/>
+		<input type="hidden" value=<%=password%> id="oldPassword"> <input
+			type="button" onclick="check()" value="确定">
+			
+	</form>
+		</div>
+		</div>
+		<div id="r1">
+		<div class="tlt">当前位置：修改密码</div>
+			修改成功
+		</div>
 </body>
 </html>

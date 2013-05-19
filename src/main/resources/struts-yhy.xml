@@ -32,6 +32,21 @@
 	    <action name="editOrdinAdminAction" class="editOrdinAdminAction">
 	  		 <result name="success" type="json"></result>
 		</action>
+		<action name="deleteUserAction" class="deleteUserAction">
+	  		 <result name="success" type="json"></result>
+		</action>
+		<action name="batchdeleteUserAction" class="batchdeleteUserAction">
+	  		 <result name="success" type="json"></result>
+		</action>
+		<action name="cancleUserAction" class="cancleUserAction">
+	  		 <result name="success" type="json"></result>
+		</action>
+		<action name="batchcancleUserAction" class="batchcancleUserAction">
+	  		 <result name="success" type="json"></result>
+		</action>
+		<action name="resetUserAction" class="resetUserAction">
+	  		 <result name="success" type="json"></result>
+		</action>
 	</package>
 	
 </struts>

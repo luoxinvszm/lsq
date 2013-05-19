@@ -21,6 +21,10 @@ public interface IUserDAO {
 	 */
 	public int setUserStatus(long userId,int status);
 	/**
+	 *设置user表中用户状态userStatus。
+	 */
+	public int setUserStatuss(String username,int status);
+	/**
 	 *向user表中插入一条新记录
 	 */
 	public boolean AddUser(String username, String password, String roleId,String userRealName,String time);
@@ -35,18 +39,18 @@ public interface IUserDAO {
 	/**
 	 * 密码重置
 	 * */
-	public boolean resetPassword(long userId);
+	public boolean resetPassword(String username);
 	/**
 	 * 删除管理员
 	 * */
-	public boolean deleteUser(long userId);
+	public boolean deleteUser(String username);
 	/**
 	 * 批量删除管理员
 	 * */
-	public void batchDeleteUsers(final long userIds[]);
+	public void batchDeleteUsers(final String usernames[]);
 	/**
 	 * 批量修改管理员状态(可用，冻结)
 	 * */
-	public void batchSetUserStatus(final long userIds[],final int status);
+	public void batchSetUserStatus(final String username[],final int status);
 }
 	

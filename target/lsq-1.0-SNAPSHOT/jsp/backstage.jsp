@@ -9,6 +9,9 @@
 <script src="../js/houtai.js" type="text/javascript"></script>
 <script src="../js/jquery-1.9.1.min.js" type="text/javascript"></script>
 <script src="../js/backstage.js" type="text/javascript"></script>
+<script src="../js/yhy/yhy.js" type="text/javascript"></script>
+<script src="../js/yhy/queryMessage.js" type="text/javascript"></script>
+
 </head>
 <body>
 	<!-- header -->
@@ -44,68 +47,11 @@
 				批量操作： <input type="checkbox" /><input type="button" value="发布" />
 				<input type="button" value="不通过" />
 			</p>
-			<table cellpadding="0" cellspacing="0">
+			<table cellpadding="0" cellspacing="0" id="messsageList0">
 				<tr>
 					<th width="50">编号</th>
 					<th width="690">信息内容</th>
 					<th width="70">操作</th>
-				</tr>
-				<tr>
-					<td><input type="checkbox" />1</td>
-					<td>信息 信息信息<br /> <span>署名：####</span><span>电话：187****000</span><span>提交时间：2013-4-17</span></td>
-					<td><span><input type="button" value="发布" /></span><br>
-						<span><input type="button" value="不通过" /></span></td>
-				</tr>
-				<tr>
-					<td><input type="checkbox" />2</td>
-					<td>信息 信息信息<br /> <span>署名：####</span><span>电话：187****000</span><span>提交时间：2013-4-17</span></td>
-					<td><span><input type="button" value="发布" /></span><br>
-						<span><input type="button" value="不通过" /></span></td>
-				</tr>
-				<tr>
-					<td><input type="checkbox" />3</td>
-					<td>信息 信息信息<br /> <span>署名：####</span><span>电话：187****000</span><span>提交时间：2013-4-17</span></td>
-					<td><span><input type="button" value="发布" /></span><br>
-						<span><input type="button" value="不通过" /></span></td>
-				</tr>
-				<tr>
-					<td><input type="checkbox" />4</td>
-					<td>信息 信息信息<br /> <span>署名：####</span><span>电话：187****000</span><span>提交时间：2013-4-17</span></td>
-					<td><span><input type="button" value="发布" /></span><br>
-						<span><input type="button" value="不通过" /></span></td>
-				</tr>
-				<tr>
-					<td><input type="checkbox" />5</td>
-					<td>信息 信息信息<br /> <span>署名：####</span><span>电话：187****000</span><span>提交时间：2013-4-17</span></td>
-					<td><span><input type="button" value="发布" /></span><br>
-						<span><input type="button" value="不通过" /></span></td>
-				</tr>
-				<tr>
-					<td><input type="checkbox" />6</td>
-					<td>信息 信息信息<br /> <span>署名：####</span><span>电话：187****000</span><span>提交时间：2013-4-17</span></td>
-					<td><span><input type="button" value="发布" /></span><br>
-						<span><input type="button" value="不通过" /></span></td>
-				</tr>
-				<tr>
-					<td><input type="checkbox" />7</td>
-					<td>信息 信息信息<br /> <span>署名：####</span><span>电话：187****000</span><span>提交时间：2013-4-17</span></td>
-					<td><span><input type="button" value="发布" /></span><br>
-						<span><input type="button" value="不通过" /></span></td>
-				</tr>
-				<tr>
-					<td><input type="checkbox" />8</td>
-					<td>信息 信息信息<br /> <span>署名：####</span><span>电话：187****000</span><span>提交时间：2013-4-17</span></td>
-					<td><span><input type="button" value="发布" /></span><br>
-						<span><input type="button" value="不通过" /></span></td>
-				</tr>
-				<tr>
-					<td><input type="checkbox" />1</td>
-					<td>信息 信息信息信息 信息信息信息 信息信息信息 信息信息信息 信息信息信息 信息信息信息 信息信息信息 信息信息信息
-						信息信息信息 信息信息信息 信息信息信息 信息信息信息 信息信息信息 信息信息信息 信息信息信息 信息信息信息 信息信息信息
-						信息信息信息 信息信息信息 信息信息信息 信息信息信息 信息信息信息 信息信息信息 信息信息信息 信息信息<br /> <span>署名：####</span><span>电话：187****000</span><span>提交时间：2013-4-17</span>
-					</td>
-					<td><span><input type="button" value="发布" /></span><br>
-						<span><input type="button" value="不通过" /></span></td>
 				</tr>
 			</table>
 			<div class="page">
@@ -121,78 +67,13 @@
 				批量操作： <input type="checkbox" /><input type="button" value="删除信息" /><input
 					type="button" value="撤销发布" />
 			</p>
-			<table cellpadding="0" cellspacing="0">
+			<table cellpadding="0" cellspacing="0" id="messsageList1">
 				<tr>
 					<th width="50">编号</th>
 					<th width="670">信息内容</th>
 					<th width="50">操作</th>
 				</tr>
-				<tr>
-					<td><input type="checkbox" />1</td>
-					<td>信息 信息信息<br> <span>署名：####</span><span>电话：187****000</span><span>提交时间：2013-4-17</span><span>审核通过时间：2013-4-17</span></td>
-					<td><span><input type="button" value="删除信息" /></span> <span><input
-							type="button" value="撤销发布" /></span></td>
-				</tr>
-				<tr>
-					<td><input type="checkbox" />2</td>
-					<td>信息 信息信息<br> <span>署名：####</span><span>电话：187****000</span><span>提交时间：2013-4-17</span><span>审核通过时间：2013-4-17</span></td>
-					<td><span><input type="button" value="删除信息" /></span> <span><input
-							type="button" value="撤销发布" /></span></td>
-				</tr>
-				<tr>
-					<td><input type="checkbox" />3</td>
-					<td>信息 信息信息<br> <span>署名：####</span><span>电话：187****000</span><span>提交时间：2013-4-17</span><span>审核通过时间：2013-4-17</span></td>
-					<td><span><input type="button" value="删除信息" /></span> <span><input
-							type="button" value="撤销发布" /></span></td>
-				</tr>
-				<tr>
-					<td><input type="checkbox" />4</td>
-					<td>信息 信息信息<br> <span>署名：####</span><span>电话：187****000</span><span>提交时间：2013-4-17</span><span>审核通过时间：2013-4-17</span></td>
-					<td><span><input type="button" value="删除信息" /></span> <span><input
-							type="button" value="撤销发布" /></span></td>
-				</tr>
-				<tr>
-					<td><input type="checkbox" />5</td>
-					<td>信息 信息信息<br> <span>署名：####</span><span>电话：187****000</span><span>提交时间：2013-4-17</span><span>审核通过时间：2013-4-17</span></td>
-					<td><span><input type="button" value="删除信息" /></span> <span><input
-							type="button" value="撤销发布" /></span></td>
-				</tr>
-				<tr>
-					<td><input type="checkbox" />6</td>
-					<td>信息 信息信息<br> <span>署名：####</span><span>电话：187****000</span><span>提交时间：2013-4-17</span><span>审核通过时间：2013-4-17</span></td>
-					<td><span><input type="button" value="删除信息" /></span> <span><input
-							type="button" value="撤销发布" /></span></td>
-				</tr>
-				<tr>
-					<td><input type="checkbox" />7</td>
-					<td>信息 信息信息<br> <span>署名：####</span><span>电话：187****000</span><span>提交时间：2013-4-17</span><span>审核通过时间：2013-4-17</span></td>
-					<td><span><input type="button" value="删除信息" /></span> <span><input
-							type="button" value="撤销发布" /></span></td>
-				</tr>
-				<tr>
-					<td><input type="checkbox" />8</td>
-					<td>信息 信息信息<br> <span>署名：####</span><span>电话：187****000</span><span>提交时间：2013-4-17</span><span>审核通过时间：2013-4-17</span></td>
-					<td><span><input type="button" value="删除信息" /></span> <span><input
-							type="button" value="撤销发布" /></span></td>
-				</tr>
-				<tr>
-					<td><input type="checkbox" />9</td>
-					<td>信息 信息信息<br> <span>署名：####</span><span>电话：187****000</span><span>提交时间：2013-4-17</span><span>审核通过时间：2013-4-17</span></td>
-					<td><span><input type="button" value="删除信息" /></span> <span><input
-							type="button" value="撤销发布" /></span></td>
-				</tr>
-				<tr>
-					<td><input type="checkbox" />1</td>
-					<td>信息 信息信息<br> <span>署名：####</span><span>电话：187****000</span><span>提交时间：2013-4-17</span><span>审核通过时间：2013-4-17</span></td>
-					<td><span><input type="button" value="删除信息" /></span> <span><input
-							type="button" value="撤销发布" /></span></td>
-				</tr>
-				<tr>
-					<td><input type="checkbox" />1</td>
-					<td>信息 信息信息<br> <span>署名：####</span><span>电话：187****000</span><span>提交时间：2013-4-17</span><span>审核通过时间：2013-4-17</span></td>
-					<td><span><input type="button" value="删除信息" /></span> <span><input
-							type="button" value="撤销发布" /></span></td>
-				</tr>
+				
 			</table>
 			<div class="page">
 				<span><a href="#">首页</a></span> <span><a href="#">上一页</a></span> <span><a
@@ -207,78 +88,13 @@
 				批量操作： <input type="checkbox" /><input type="button" value="删除" /><input
 					type="button" value="待审" />
 			</p>
-			<table cellpadding="0" cellspacing="0">
+			<table cellpadding="0" cellspacing="0" id="messsageList2">
 				<tr>
 					<th width="50">编号</th>
 					<th width="670">信息内容</th>
 					<th width="50">操作</th>
 				</tr>
-				<tr>
-					<td><input type="checkbox" />1</td>
-					<td>信息 信息信息<br> <span>署名：####</span><span>电话：187****000</span><span>提交时间：2013-4-17</span><span>审核未通过时间：2013-4-17</span></td>
-					<td><span><input type="button" value="删除" /></span> <span><input
-							type="button" value="待审" /></span></td>
-				</tr>
-				<tr>
-					<td><input type="checkbox" />2</td>
-					<td>信息 信息信息<br> <span>署名：####</span><span>电话：187****000</span><span>提交时间：2013-4-17</span><span>审核未通过时间：2013-4-17</span></td>
-					<td><span><input type="button" value="删除" /></span> <span><input
-							type="button" value="待审" /></span></td>
-				</tr>
-				<tr>
-					<td><input type="checkbox" />3</td>
-					<td>信息 信息信息<br> <span>署名：####</span><span>电话：187****000</span><span>提交时间：2013-4-17</span><span>审核未通过时间：2013-4-17</span></td>
-					<td><span><input type="button" value="删除" /></span> <span><input
-							type="button" value="待审" /></span></td>
-				</tr>
-				<tr>
-					<td><input type="checkbox" />4</td>
-					<td>信息 信息信息<br> <span>署名：####</span><span>电话：187****000</span><span>提交时间：2013-4-17</span><span>审核未通过时间：2013-4-17</span></td>
-					<td><span><input type="button" value="删除" /></span> <span><input
-							type="button" value="待审" /></span></td>
-				</tr>
-				<tr>
-					<td><input type="checkbox" />5</td>
-					<td>信息 信息信息<br> <span>署名：####</span><span>电话：187****000</span><span>提交时间：2013-4-17</span><span>审核未通过时间：2013-4-17</span></td>
-					<td><span><input type="button" value="删除" /></span> <span><input
-							type="button" value="待审" /></span></td>
-				</tr>
-				<tr>
-					<td><input type="checkbox" />6</td>
-					<td>信息 信息信息<br> <span>署名：####</span><span>电话：187****000</span><span>提交时间：2013-4-17</span><span>审核未通过时间：2013-4-17</span></td>
-					<td><span><input type="button" value="删除" /></span> <span><input
-							type="button" value="待审" /></span></td>
-				</tr>
-				<tr>
-					<td><input type="checkbox" />7</td>
-					<td>信息 信息信息<br> <span>署名：####</span><span>电话：187****000</span><span>提交时间：2013-4-17</span><span>审核未通过时间：2013-4-17</span></td>
-					<td><span><input type="button" value="删除" /></span> <span><input
-							type="button" value="待审" /></span></td>
-				</tr>
-				<tr>
-					<td><input type="checkbox" />8</td>
-					<td>信息 信息信息<br> <span>署名：####</span><span>电话：187****000</span><span>提交时间：2013-4-17</span><span>审核未通过时间：2013-4-17</span></td>
-					<td><span><input type="button" value="删除" /></span> <span><input
-							type="button" value="待审" /></span></td>
-				</tr>
-				<tr>
-					<td><input type="checkbox" />9</td>
-					<td>信息 信息信息<br> <span>署名：####</span><span>电话：187****000</span><span>提交时间：2013-4-17</span><span>审核未通过时间：2013-4-17</span></td>
-					<td><span><input type="button" value="删除" /></span> <span><input
-							type="button" value="待审" /></span></td>
-				</tr>
-				<tr>
-					<td><input type="checkbox" />10</td>
-					<td>信息 信息信息<br> <span>署名：####</span><span>电话：187****000</span><span>提交时间：2013-4-17</span><span>审核未通过时间：2013-4-17</span></td>
-					<td><span><input type="button" value="删除" /></span> <span><input
-							type="button" value="待审" /></span></td>
-				</tr>
-				<tr>
-					<td><input type="checkbox" />1</td>
-					<td>信息 信息信息<br> <span>署名：####</span><span>电话：187****000</span><span>提交时间：2013-4-17</span><span>审核未通过时间：2013-4-17</span></td>
-					<td><span><input type="button" value="删除" /></span> <span><input
-							type="button" value="待审" /></span></td>
-				</tr>
+			
 			</table>
 			<div class="page">
 				<span><a href="#">首页</a></span> <span><a href="#">上一页</a></span> <span><a
@@ -292,66 +108,11 @@
 			<p>
 				批量操作： <input type="checkbox" /><input type="button" value="删除" />
 			</p>
-			<table cellpadding="0" cellspacing="0">
+			<table cellpadding="0" cellspacing="0" id="messsageList3">
 				<tr>
 					<th width="50">编号</th>
 					<th width="670">信息内容</th>
 					<th width="50">操作</th>
-				</tr>
-				<tr>
-					<td><input type="checkbox" />1</td>
-					<td>信息 信息信息<br> <span>署名：####</span><span>电话：187****000</span><span>提交时间：2013-4-17</span><span>到期时间：2013-4-17</span></td>
-					<td><span><input type="button" value="删除" /></span></td>
-				</tr>
-				<tr>
-					<td><input type="checkbox" />2</td>
-					<td>信息 信息信息<br> <span>署名：####</span><span>电话：187****000</span><span>提交时间：2013-4-17</span><span>到期时间：2013-4-17</span></td>
-					<td><span><input type="button" value="删除" /></span></td>
-				</tr>
-				<tr>
-					<td><input type="checkbox" />3</td>
-					<td>信息 信息信息<br> <span>署名：####</span><span>电话：187****000</span><span>提交时间：2013-4-17</span><span>到期时间：2013-4-17</span></td>
-					<td><span><input type="button" value="删除" /></span></td>
-				</tr>
-				<tr>
-					<td><input type="checkbox" />4</td>
-					<td>信息 信息信息<br> <span>署名：####</span><span>电话：187****000</span><span>提交时间：2013-4-17</span><span>到期时间：2013-4-17</span></td>
-					<td><span><input type="button" value="删除" /></span></td>
-				</tr>
-				<tr>
-					<td><input type="checkbox" />5</td>
-					<td>信息 信息信息<br> <span>署名：####</span><span>电话：187****000</span><span>提交时间：2013-4-17</span><span>到期时间：2013-4-17</span></td>
-					<td><span><input type="button" value="删除" /></span></td>
-				</tr>
-				<tr>
-					<td><input type="checkbox" />6</td>
-					<td>信息 信息信息<br> <span>署名：####</span><span>电话：187****000</span><span>提交时间：2013-4-17</span><span>到期时间：2013-4-17</span></td>
-					<td><span><input type="button" value="删除" /></span></td>
-				</tr>
-				<tr>
-					<td><input type="checkbox" />7</td>
-					<td>信息 信息信息<br> <span>署名：####</span><span>电话：187****000</span><span>提交时间：2013-4-17</span><span>到期时间：2013-4-17</span></td>
-					<td><span><input type="button" value="删除" /></span></td>
-				</tr>
-				<tr>
-					<td><input type="checkbox" />8</td>
-					<td>信息 信息信息<br> <span>署名：####</span><span>电话：187****000</span><span>提交时间：2013-4-17</span><span>到期时间：2013-4-17</span></td>
-					<td><span><input type="button" value="删除" /></span></td>
-				</tr>
-				<tr>
-					<td><input type="checkbox" />9</td>
-					<td>信息 信息信息<br> <span>署名：####</span><span>电话：187****000</span><span>提交时间：2013-4-17</span><span>到期时间：2013-4-17</span></td>
-					<td><span><input type="button" value="删除" /></span></td>
-				</tr>
-				<tr>
-					<td><input type="checkbox" />10</td>
-					<td>信息 信息信息<br> <span>署名：####</span><span>电话：187****000</span><span>提交时间：2013-4-17</span><span>到期时间：2013-4-17</span></td>
-					<td><span><input type="button" value="删除" /></span></td>
-				</tr>
-				<tr>
-					<td><input type="checkbox" />1</td>
-					<td>信息 信息信息<br> <span>署名：####</span><span>电话：187****000</span><span>提交时间：2013-4-17</span><span>到期时间：2013-4-17</span></td>
-					<td><span><input type="button" value="删除" /></span></td>
 				</tr>
 			</table>
 			<div class="page">
@@ -374,83 +135,14 @@
 				批量操作： <input type="checkbox" /><input type="button" value="删除" /><input
 					type="button" value="冻结" />
 			</p>
-			<table cellpadding="0" cellspacing="0" class="table1">
+			<table cellpadding="0" cellspacing="0" class="table1" id="usingAdminList">
 				<tr>
 					<th width="50">序号</th>
 					<th width="200">账号</th>
 					<th width="200">昵称</th>
 					<th width="250">操作</th>
 				</tr>
-				<tr>
-					<td><input type="checkbox" />1</td>
-					<td>11111</td>
-					<td>昵称</td>
-					<td><input type="button" value="冻结" /><input type="button"
-						value="信息重置" /><input type="button" value="删除" /></td>
-				</tr>
-				<tr>
-					<td><input type="checkbox" />2</td>
-					<td>11111</td>
-					<td>昵称</td>
-					<td><input type="button" value="冻结" /><input type="button"
-						value="信息重置" /><input type="button" value="删除" /></td>
-				</tr>
-				<tr>
-					<td><input type="checkbox" />3</td>
-					<td>11111</td>
-					<td>昵称</td>
-					<td><input type="button" value="冻结" /><input type="button"
-						value="信息重置" /><input type="button" value="删除" /></td>
-				</tr>
-				<tr>
-					<td><input type="checkbox" />4</td>
-					<td>11111</td>
-					<td>昵称</td>
-					<td><input type="button" value="冻结" /><input type="button"
-						value="信息重置" /><input type="button" value="删除" /></td>
-				</tr>
-				<tr>
-					<td><input type="checkbox" />5</td>
-					<td>11111</td>
-					<td>昵称</td>
-					<td><input type="button" value="冻结" /><input type="button"
-						value="信息重置" /><input type="button" value="删除" /></td>
-				</tr>
-				<tr>
-					<td><input type="checkbox" />6</td>
-					<td>11111</td>
-					<td>昵称</td>
-					<td><input type="button" value="冻结" /><input type="button"
-						value="信息重置" /><input type="button" value="删除" /></td>
-				</tr>
-				<tr>
-					<td><input type="checkbox" />7</td>
-					<td>11111</td>
-					<td>昵称</td>
-					<td><input type="button" value="冻结" /><input type="button"
-						value="信息重置" /><input type="button" value="删除" /></td>
-				</tr>
-				<tr>
-					<td><input type="checkbox" />8</td>
-					<td>11111</td>
-					<td>昵称</td>
-					<td><input type="button" value="冻结" /><input type="button"
-						value="信息重置" /><input type="button" value="删除" /></td>
-				</tr>
-				<tr>
-					<td><input type="checkbox" />9</td>
-					<td>11111</td>
-					<td>昵称</td>
-					<td><input type="button" value="冻结" /><input type="button"
-						value="信息重置" /><input type="button" value="删除" /></td>
-				</tr>
-				<tr>
-					<td><input type="checkbox" />10</td>
-					<td>11111</td>
-					<td>昵称</td>
-					<td><input type="button" value="冻结" /><input type="button"
-						value="信息重置" /><input type="button" value="删除" /></td>
-				</tr>
+			
 			</table>
 			<div class="page">
 				<span><a href="#">首页</a></span> <span><a href="#">上一页</a></span> <span><a
@@ -465,82 +157,12 @@
 				批量操作： <input type="checkbox" /><input type="button" value="删除" /><input
 					type="button" value="激活" />
 			</p>
-			<table cellpadding="0" cellspacing="0" class="table1">
+			<table cellpadding="0" cellspacing="0" class="table1" id="deletedAdminList">
 				<tr>
 					<th width="50">序号</th>
 					<th width="200">账号</th>
 					<th width="200">昵称</th>
 					<th width="250">操作</th>
-				</tr>
-				<tr>
-					<td><input type="checkbox" />1</td>
-					<td>11111</td>
-					<td>昵称</td>
-					<td><input type="button" value="激活" /><input type="button"
-						value="信息重置" /><input type="button" value="删除" /></td>
-				</tr>
-				<tr>
-					<td><input type="checkbox" />2</td>
-					<td>11111</td>
-					<td>昵称</td>
-					<td><input type="button" value="激活" /><input type="button"
-						value="信息重置" /><input type="button" value="删除" /></td>
-				</tr>
-				<tr>
-					<td><input type="checkbox" />3</td>
-					<td>11111</td>
-					<td>昵称</td>
-					<td><input type="button" value="激活" /><input type="button"
-						value="信息重置" /><input type="button" value="删除" /></td>
-				</tr>
-				<tr>
-					<td><input type="checkbox" />4</td>
-					<td>11111</td>
-					<td>昵称</td>
-					<td><input type="button" value="激活" /><input type="button"
-						value="信息重置" /><input type="button" value="删除" /></td>
-				</tr>
-				<tr>
-					<td><input type="checkbox" />5</td>
-					<td>11111</td>
-					<td>昵称</td>
-					<td><input type="button" value="激活" /><input type="button"
-						value="信息重置" /><input type="button" value="删除" /></td>
-				</tr>
-				<tr>
-					<td><input type="checkbox" />6</td>
-					<td>11111</td>
-					<td>昵称</td>
-					<td><input type="button" value="激活" /><input type="button"
-						value="信息重置" /><input type="button" value="删除" /></td>
-				</tr>
-				<tr>
-					<td><input type="checkbox" />7</td>
-					<td>11111</td>
-					<td>昵称</td>
-					<td><input type="button" value="激活" /><input type="button"
-						value="信息重置" /><input type="button" value="删除" /></td>
-				</tr>
-				<tr>
-					<td><input type="checkbox" />8</td>
-					<td>11111</td>
-					<td>昵称</td>
-					<td><input type="button" value="激活" /><input type="button"
-						value="信息重置" /><input type="button" value="删除" /></td>
-				</tr>
-				<tr>
-					<td><input type="checkbox" />9</td>
-					<td>11111</td>
-					<td>昵称</td>
-					<td><input type="button" value="激活" /><input type="button"
-						value="信息重置" /><input type="button" value="删除" /></td>
-				</tr>
-				<tr>
-					<td><input type="checkbox" />10</td>
-					<td>11111</td>
-					<td>昵称</td>
-					<td><input type="button" value="激活" /><input type="button"
-						value="信息重置" /><input type="button" value="删除" /></td>
 				</tr>
 			</table>
 			<div class="page">

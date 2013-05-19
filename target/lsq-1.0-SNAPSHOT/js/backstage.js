@@ -28,4 +28,3 @@ function updatedefaultPasswords()
 function querySettings() {
 	$.getJSON("querySettings");
 }
-

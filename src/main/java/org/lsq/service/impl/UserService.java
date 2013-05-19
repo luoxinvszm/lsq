@@ -27,7 +27,12 @@ public class UserService implements IUserService{
 	public void recoverUser(long userId){
 		 userDAO.setUserStatus(userId, 0);
 	}
-	
+	public void cancelUsers(String username){
+		 userDAO.setUserStatuss(username, 1);
+	}
+	public void recoverUsers(String username){
+		 userDAO.setUserStatuss(username, 0);
+	}
 	public List<User> queryUsersByRoleId(int roleId,int status){
 		List<User> users=new ArrayList<User>();
 		List<User> result=userDAO.queryUserByRoleId(roleId);
@@ -37,6 +42,7 @@ public class UserService implements IUserService{
 			if(user.getUserStatus()==status){
 				users.add(user);
 			}
+			System.out.println(user.getUserId()+"======"+user.getUserRealName());
 		}
 		return users;
 	}
@@ -77,29 +83,32 @@ public class UserService implements IUserService{
 		String name=userDAO.createUsername();
 		return name;
 	}
-	public boolean resetPassword(long userId){
-		if(userDAO.resetPassword(userId)){
+	public boolean resetPassword(String username){
+		if(userDAO.resetPassword(username)){
 			return true;
 		}else{
 			return false;
 		}
 	}
-	public boolean deleteUser(long userId){
-		if(userDAO.deleteUser(userId)){
+	public boolean deleteUser(String username){
+		if(userDAO.deleteUser(username)){
 			return true;
 		}else{
 			return false;
 		}
 	}
-	public void batchDeleteUsers(final long userIds[]){
-		userDAO.batchDeleteUsers(userIds);
+	public void batchDeleteUsers(final String usernames[]){
+		userDAO.batchDeleteUsers(usernames);
 	}
 
-	public void batchCancelUser(long userIds[]){
-		 userDAO.batchSetUserStatus(userIds, 1);
+	public void batchCancelUser(String usernames[]){
+		 userDAO.batchSetUserStatus(usernames, 1);
 	}
-	public void batchRecoverUser(long userIds[]){
-		 userDAO.batchSetUserStatus(userIds, 0);
+	public void batchRecoverUser(String usernames[]){
+		 userDAO.batchSetUserStatus(usernames, 0);
 	}
-	
+	public User queryUser(String username,String password){
+		User user = userDAO.queryUser(username, password);
+		return user;
+	}
 }
