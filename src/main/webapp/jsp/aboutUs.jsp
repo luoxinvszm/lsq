@@ -9,33 +9,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>校园信息自主发布平台</title>
-<link type="text/css"  rel="stylesheet" href="<%=path %>/css/qt-index.css"    />
-<link type="text/css"  rel="stylesheet" href="<%=path %>/css/qt-style.css"  />
-<link type="text/css"  rel="stylesheet" href="<%=path %>/css/pagination.css"  />
-
-<!--<script type="text/javascript" src="<%=path %>/js/qh/queryResultMessage.js"></script>-->
-<script type="text/javascript" src="<%=path %>/js/yzp/jquery-1.4.3.js"></script>
-<script type="text/javascript" src="<%=path %>/js/yzp/json2.js"></script>
-<script type="text/javascript" src="<%=path %>/js/yzp/asynPage-Msg.js"></script>
+<link type="text/css" rel="stylesheet"  href="<%=path %>/css/qt-index.css"    />
+<link type="text/css" rel="stylesheet"  href="<%=path %>/css/qt-style.css" />
 <script type="text/javascript" src="<%=path %>/js/yzp/curDate.js"></script>
-<script type="text/javascript">
-			$(document).ready(function(){
-				var params = "";
-		    	$("#paging").asynPage("qureyMessage.action",params,"#datas",buildHtml,5,"messageList","totalSize");
-    		});
-			function buildHtml(messageList){
-				$.each(messageList,function(i,message){
-					var str = [
-					    '<li><a href="#">',
-                	 	message.msgConctent,'</a>',
-                  		message.publishTime,'</li>'
-            		].join('');
-            		$("#datas").append(str);
-            	});
-			}
-		</script>
 </head>
-<body onLoad="getEClock(clock)">
+<body  onLoad="getEClock(clock)">
 	<div class="wrap">
 		<!-- header -->
 		<div class="header">
@@ -51,30 +29,29 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<li><a href="<%=path %>/jsp/browseMessage.jsp">浏览信息</a></li>
 				<li><a href="<%=path %>/jsp/aboutUs.jsp">关于我们</a></li>
 			</ul>
-			<div class="search">
-				<input type="button" class="btn" id="btnGet" />
-				<input type="text" class="text" id="publisherPhone" >
-				<input type="text" class="text1" value="时间"/>
-			</div>
+			
+		
 		</div>
 		<!-- // header -->
 		<!-- contents -->
 		<div class="contents">
 			<!-- left -->
 			<div class="left">
-				<h2>查询结果</h2>
+				<h2>关于我们</h2>
 				<ul  id="datas" class="list">
-					<li style="margin-right: 290px;margin-top: 60px"><font>正在努力加载数据...</font></li>
+					<li><a>关于我们关于我们关于我们关于我们关于我们关于我们关于我们关于我们</a></li>
+					<li><a>关于我们关于我们关于我们关于我们关于我们关于我们关于我们关于我们</a></li>
+					<li><a>关于我们关于我们关于我们关于我们关于我们关于我们关于我们关于我们</a></li>
+					
 				</ul>
-				<!--分页控件 -->
-					<div id="paging" class="paging"></div>
 			</div>
 			<!-- // left -->
 			<!-- right -->
 			<div class="right">
 				<h2>发布协议</h2>
 				<p>协议内容协议内容协议内容协议内容协议内容协议内容协议内容协议内容协议内容协议内容协议内容协议内容协议内容协议内容</p>
-				<p>协议内容协议内容协议内容协议内容协议内容协议内容协议内容协议内容协议内容协议内容协议内容协议内内容协议内容协议内内容协议内容协议内内容协议内容协议内内容协议内容协议内内容协议内容协议内内容协议内容协议内容协议内容协议内容</p><br>
+				<p>协议内容协议内容协议内容协议内容协议内容协议内容协议内容协议内容协议内容协议内容协议内容协议内内容协议内容协议内内容协议内容协议内内容
+				协议内容协议内内容协议内容协议内内容协议内容协议内内容协议内容协议内容协议内容协议内容</p><br>
 			</div>
 			<!-- // right -->
 		</div>
@@ -92,6 +69,5 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		</div>
 		<!-- // footer -->
 	</div>
-</body>
 </body>
 </html>

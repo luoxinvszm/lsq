@@ -1,16 +1,21 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
+<%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>校园信息自主发布平台管理系统</title>
-<link href="../css/houtai.css" rel="stylesheet" type="text/css" />
-<script src="../js/houtai.js" type="text/javascript"></script>
-<script src="../js/jquery-1.9.1.min.js" type="text/javascript"></script>
-<script src="../js/backstage.js" type="text/javascript"></script>
-<script src="../js/yhy/yhy.js" type="text/javascript"></script>
-<script src="../js/yhy/queryMessage.js" type="text/javascript"></script>
+<link type="text/css" rel="stylesheet" href="<%=path %>/css/houtai.css" />
+
+<script type="text/javascript" src="<%=path %>/js/houtai.js" ></script>
+<script type="text/javascript" src="<%=path %>/js/jquery-1.9.1.min.js" ></script>
+<script type="text/javascript" src="<%=path %>/js/backstage.js" ></script>
+<script type="text/javascript" src="<%=path %>/js/yhy/yhy.js" ></script>
+<script type="text/javascript" src="<%=path %>/js/yhy/queryMessage.js" ></script>
 
 </head>
 <body>
