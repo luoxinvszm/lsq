@@ -10,12 +10,12 @@
     	<property name="userDAO" ref="userDAO"></property>
     </bean>  
 
-     <!-- 读取串口 -->
+     <!-- 
     <bean id="ComListening" class="org.lsq.commlistening.ComListening" >
         <property name="messageReciverService" ref="messageReciverService"></property>
     </bean>
     <bean id="messageReciverService" class="org.lsq.service.impl.MessageReciverService" >
         <property name="insertMessageDAO" ref="InsertMessageDAO"></property>
     </bean>
-     <!-- 读取串口 -->
+      -->
 </beans>  
