@@ -11,6 +11,7 @@ public final class ht_002dlogin_jsp extends org.apache.jasper.runtime.HttpJspBas
 
   private static java.util.List _jspx_dependants;
 
+  private org.apache.jasper.runtime.TagHandlerPool _005fjspx_005ftagPool_005fs_005ffielderror_005fnobody;
   private org.apache.jasper.runtime.TagHandlerPool _005fjspx_005ftagPool_005fs_005fform_0026_005fmethod_005faction;
 
   private javax.el.ExpressionFactory _el_expressionfactory;
@@ -21,12 +22,14 @@ public final class ht_002dlogin_jsp extends org.apache.jasper.runtime.HttpJspBas
   }
 
   public void _jspInit() {
+    _005fjspx_005ftagPool_005fs_005ffielderror_005fnobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _005fjspx_005ftagPool_005fs_005fform_0026_005fmethod_005faction = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _el_expressionfactory = _jspxFactory.getJspApplicationContext(getServletConfig().getServletContext()).getExpressionFactory();
     _jsp_annotationprocessor = (org.apache.AnnotationProcessor) getServletConfig().getServletContext().getAttribute(org.apache.AnnotationProcessor.class.getName());
   }
 
   public void _jspDestroy() {
+    _005fjspx_005ftagPool_005fs_005ffielderror_005fnobody.release();
     _005fjspx_005ftagPool_005fs_005fform_0026_005fmethod_005faction.release();
   }
 
@@ -56,7 +59,13 @@ public final class ht_002dlogin_jsp extends org.apache.jasper.runtime.HttpJspBas
 
       out.write("\r\n");
       out.write("\t\r\n");
+<<<<<<< HEAD
  String path = request.getContextPath();
+=======
+      out.write("\t");
+
+String path = request.getContextPath();
+>>>>>>> f49d7f6096a0a086bcfb8252efa06b7021b99c7c
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 
       out.write("\r\n");
@@ -107,9 +116,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       out.write("<body>\r\n");
       out.write("\t<div class=\"wrap\">\r\n");
       out.write("\t\t<h1>\r\n");
-      out.write("\t\t\t<img src=\"../image/ht-login_h1.gif\" alt=\"校园信息自主发布平台\" />\r\n");
+      out.write("\t\t\t<img src=\"");
+      out.print(path );
+      out.write("/image/ht-login_h1.gif\" alt=\"校园信息自主发布平台\" />\r\n");
       out.write("\t\t</h1>\r\n");
-      out.write("\t\t<img src=\"../image/ht-login_img.gif\" alt=\"login\" class=\"img\" />\r\n");
+      out.write("\t\t<img src=\"");
+      out.print(path );
+      out.write("/image/login_img.gif\" alt=\"login\" class=\"img\" />\r\n");
+      out.write("\t\t<font color=\"red\" face=\"songti\">");
+      if (_jspx_meth_s_005ffielderror_005f0(_jspx_page_context))
+        return;
+      out.write("</font>\r\n");
       out.write("\t\t");
       if (_jspx_meth_s_005fform_005f0(_jspx_page_context))
         return;
@@ -129,6 +146,23 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     }
   }
 
+  private boolean _jspx_meth_s_005ffielderror_005f0(PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  s:fielderror
+    org.apache.struts2.views.jsp.ui.FieldErrorTag _jspx_th_s_005ffielderror_005f0 = (org.apache.struts2.views.jsp.ui.FieldErrorTag) _005fjspx_005ftagPool_005fs_005ffielderror_005fnobody.get(org.apache.struts2.views.jsp.ui.FieldErrorTag.class);
+    _jspx_th_s_005ffielderror_005f0.setPageContext(_jspx_page_context);
+    _jspx_th_s_005ffielderror_005f0.setParent(null);
+    int _jspx_eval_s_005ffielderror_005f0 = _jspx_th_s_005ffielderror_005f0.doStartTag();
+    if (_jspx_th_s_005ffielderror_005f0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _005fjspx_005ftagPool_005fs_005ffielderror_005fnobody.reuse(_jspx_th_s_005ffielderror_005f0);
+      return true;
+    }
+    _005fjspx_005ftagPool_005fs_005ffielderror_005fnobody.reuse(_jspx_th_s_005ffielderror_005f0);
+    return false;
+  }
+
   private boolean _jspx_meth_s_005fform_005f0(PageContext _jspx_page_context)
           throws Throwable {
     PageContext pageContext = _jspx_page_context;
@@ -137,9 +171,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     org.apache.struts2.views.jsp.ui.FormTag _jspx_th_s_005fform_005f0 = (org.apache.struts2.views.jsp.ui.FormTag) _005fjspx_005ftagPool_005fs_005fform_0026_005fmethod_005faction.get(org.apache.struts2.views.jsp.ui.FormTag.class);
     _jspx_th_s_005fform_005f0.setPageContext(_jspx_page_context);
     _jspx_th_s_005fform_005f0.setParent(null);
+<<<<<<< HEAD
     // /jsp/ht-login.jsp(55,2) name = action type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fform_005f0.setAction("login");
     // /jsp/ht-login.jsp(55,2) name = method type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+=======
+    // /jsp/ht-login.jsp(57,2) name = action type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_s_005fform_005f0.setAction("login");
+    // /jsp/ht-login.jsp(57,2) name = method type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+>>>>>>> f49d7f6096a0a086bcfb8252efa06b7021b99c7c
     _jspx_th_s_005fform_005f0.setMethod("post");
     int _jspx_eval_s_005fform_005f0 = _jspx_th_s_005fform_005f0.doStartTag();
     if (_jspx_eval_s_005fform_005f0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
@@ -154,34 +194,42 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         out.write("\t\t\t\t<dt>用户名：</dt>\r\n");
         out.write("\t\t\t\t<dd>\r\n");
         out.write("\t\t\t\t\t<input type=\"text\" name=\"username\"\r\n");
-        out.write("\t\t\t\t\t\tstyle=\"width: 200px; height: 30px;\" onblur=\"checkuser()\" id=\"zh\" />\r\n");
-        out.write("\t\t\t\t\t<div style=\"display: none\" id=\"u1\">\r\n");
+        out.write("\t\t\t\t\t\tonblur=\"checkuser()\" id=\"zh\" class=\"text\" />\r\n");
+        out.write("\t\t\t\t\t<div style=\"display: none\" id=\"u1\" class=\"font\">\r\n");
         out.write("\t\t\t\t\t\t<font face=\"宋体\" color=\"red\">用户名不能为空</font>\r\n");
         out.write("\t\t\t\t\t</div>\r\n");
         out.write("\t\t\t\t</dd>\r\n");
         out.write("\t\t\t\t<dt>密码:</dt>\r\n");
         out.write("\t\t\t\t<dd>\r\n");
         out.write("\t\t\t\t\t<input type=\"password\"\r\n");
-        out.write("\t\t\t\t\t\tstyle=\"width: 200px; height: 30px; bgcolor: yellow\"\r\n");
-        out.write("\t\t\t\t\t\tname=\"password\" onblur=\"check1()\" id=\"pass1\" />\r\n");
-        out.write("\t\t\t\t\t<div style=\"display: none\" id=\"d1\">\r\n");
+        out.write("\t\t\t\t\t\tname=\"password\" onblur=\"check1()\" id=\"pass1\" class=\"text\" />\r\n");
+        out.write("\t\t\t\t\t<div style=\"display: none\" id=\"d1\" class=\"font\">\r\n");
         out.write("\t\t\t\t\t\t<font face=\"宋体\" color=\"red\">密码不能为空</font>\r\n");
         out.write("\t\t\t\t\t</div>\r\n");
         out.write("\t\t\t\t</dd>\r\n");
         out.write("\r\n");
         out.write("\t\t\t\t<dt>验证码:</dt>\r\n");
+<<<<<<< HEAD
         out.write("\t\t\t\t<dd>\r\n");
         out.write("\t\t\t\t\t<table>\r\n");
         out.write("\t\t\t\t\t\t<tr>\r\n");
         out.write("\t\t\t\t\t\t\t<td><input type=\"text\" name=\"auth\" onblur=\"checkyan()\"\r\n");
-        out.write("\t\t\t\t\t\t\t\tid=\"yanzhengma\" /></td>\r\n");
+        out.write("\t\t\t\t\t\t\t\tid=\"yanzhengma\"  width=\"10px\" border=\" 1px solid red\"/></td>\r\n");
         out.write("\t\t\t\t\t\t\t<td><img src=\"authImg\" name=\"auth\" id=\"auth\" /><a\r\n");
         out.write("\t\t\t\t\t\t\t\thref=\"javascript:void(0)\" onclick=\"changeImage()\">看不清</a></td>\r\n");
         out.write("\t\t\t\t\t\t\t<td><div style=\"display: none\" id=\"yan\">\r\n");
+=======
+        out.write("\t\t\t\t<dd class=\"dd\">\r\n");
+        out.write("\t\t\t\t\t<input type=\"text\" name=\"auth\" onblur=\"checkyan()\"\r\n");
+        out.write("\t\t\t\t\t\t\t\tid=\"yanzhengma\" class=\"text\" />\r\n");
+        out.write("\t\t\t\t\t\t\t<div class=\"img1\">\r\n");
+        out.write("\t\t\t\t\t\t\t\t<img src=\"authImg\" name=\"auth\" id=\"auth\" /><a\r\n");
+        out.write("\t\t\t\t\t\t\t\thref=\"javascript:void(0)\" onclick=\"changeImage()\">看不清</a>\r\n");
+        out.write("\t\t\t\t\t\t\t</div>\r\n");
+        out.write("\t\t\t\t\t\t\t<div style=\"display: none\" id=\"yan\" class=\"font\">\r\n");
+>>>>>>> 0a513bc82f7bf8ffcab1364d89cbe26dfadab728
         out.write("\t\t\t\t\t\t\t\t\t<font face=\"宋体\" color=\"red\">验证码不能为空</font>\r\n");
-        out.write("\t\t\t\t\t\t\t\t</div></td>\r\n");
-        out.write("\t\t\t\t\t\t</tr>\r\n");
-        out.write("\t\t\t\t\t</table>\r\n");
+        out.write("\t\t\t\t\t\t\t\t</div>\r\n");
         out.write("\t\t\t\t</dd>\r\n");
         out.write("\t\t\t</dl>\r\n");
         out.write("\r\n");

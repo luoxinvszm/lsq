@@ -40,14 +40,14 @@ public class AuthImgAction extends ActionSupport {
     public String execute() throws Exception {  
                   
         // 在内在中创建图象  
-        int width = 70;  
-        int height = 17;  
+        int width = 110;  
+        int height = 20;  
         BufferedImage image = new BufferedImage(width, height,  
                 BufferedImage.TYPE_INT_RGB);  
         Graphics g = image.getGraphics();  
         Graphics2D g2d=(Graphics2D)g;  
         Random random = new Random();  
-        Font mFont = new Font("华文宋体", Font.BOLD, 17);  
+        Font mFont = new Font("华文宋体", Font.BOLD, 20);  
         g.setColor(getRandColor(200, 250));  
         g.fillRect(0, 0, width, height);  
         g.setFont(mFont);  

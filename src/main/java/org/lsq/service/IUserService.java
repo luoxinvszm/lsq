@@ -25,6 +25,14 @@ public interface IUserService {
 	 */
 	public void recoverUser(long userId);
 	/**
+	 * 冻结管理员账号
+	 */
+	public void cancelUsers(String uername);
+	/**
+	 * 恢复管理员账号
+	 */
+	public void recoverUsers(String username);
+	/**
 	 * 创建管理员
 	 */
 	public boolean isAddUser(String username,String password,String roleId,String userRealName,String time);
@@ -43,21 +51,25 @@ public interface IUserService {
 	/**
 	 * 密码重置
 	 * */
-	public boolean resetPassword(long userId);
+	public boolean resetPassword(String username);
 	/**
 	 * 删除管理员
 	 * */
-	public boolean deleteUser(long userId);
+	public boolean deleteUser(String username);
 	/**
 	 * 批量删除管理员
 	 * */
-	public void batchDeleteUsers(final long userIds[]);
+	public void batchDeleteUsers(final String usernames[]);
 	/**
 	 * 批量冻结管理员
 	 * */
-	public void batchCancelUser(long userIds[]);
+	public void batchCancelUser(String usernames[]);
 	/**
 	 * 批量激活管理员
 	 * */
-	public void batchRecoverUser(long userIds[]);
+	public void batchRecoverUser(String usernames[]);
+	/**
+	 * 查询用户信息(根据账号和密码)
+	 * */
+	public User queryUser(String username,String password);
 }

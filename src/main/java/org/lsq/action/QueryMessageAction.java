@@ -38,6 +38,7 @@ public class QueryMessageAction extends ActionSupport {
 	private Integer totalSize;
 
 	private String inMessage;
+
 	public String getInMessage() {
 		return inMessage;
 	}
@@ -83,14 +84,12 @@ public class QueryMessageAction extends ActionSupport {
 	
 	// 集合的注入
 	private List<Message> messageList;
-
-	private List<String> msgContextList=null;
+	private List<String> msgPhoneList=null;
 	
 	
 	public void setMessageList(List<Message> messageList) {
 		this.messageList = messageList;
 	}
-
 	public List<Message> getMessageList() {
 		return messageList;
 	}
@@ -102,8 +101,19 @@ public class QueryMessageAction extends ActionSupport {
 		try{
 			HttpServletRequest request = ServletActionContext.getRequest();
 			Integer[] args = PagingUtil.getPagingParameter(request);
-			messageList = qureyMessageService.checkQuery(publisherPhone, publishTime,0, args[2], args[1]);
+			messageList = qureyMessageService.checkQuery(publisherPhone, publishTime,msgStatus, args[2], args[1]);
 			totalSize = qureyMessageService.checkQuery(publisherPhone, publishTime, msgStatus, 0, 0).size();
+			for (Message m : messageList) {
+				System.out.println(m.getMsgId());
+				System.out.println(m.getMsgTypeId());
+				System.out.println(m.getPublisherName());
+				System.out.println(m.getPublisherPhone());
+				System.out.println(m.getMsgRemark());
+				System.out.println(m.getPublishTime());
+				System.out.println(m.getMsgConctent());
+				System.out.println(m.getMsgStatus());
+				System.out.println("***************************************");
+			}
 		}catch(Exception e){
 			e.printStackTrace();
 		}
@@ -111,40 +121,27 @@ public class QueryMessageAction extends ActionSupport {
 		/*qh*/
 //		messageList = qureyMessageService.checkQuery(publisherPhone,
 //				publishTime, msgStatus);
-//		for (Message m : messageList) {
-//			System.out.println(m.getMsgId());
-//			System.out.println(m.getMsgTypeId());
-//			System.out.println(m.getPublisherName());
-//			System.out.println(m.getPublisherPhone());
-//			System.out.println(m.getMsgRemark());
-//			System.out.println(m.getPublishTime());
-//			System.out.println(m.getMsgConctent());
-//			System.out.println(m.getMsgStatus());
-//			System.out.println("***************************************");
-//		}
+
 		return SUCCESS;
 	}
 
 	public String AutoMessages() {
-		msgContextList=new ArrayList<String>();
-		System.out.println("自动补全"+inMessage);
-		messageList =qureyMessageService.qureyMessagesByLike(inMessage);
-		
-		for(Message m:messageList){
-			msgContextList.add(m.getMsgConctent());
+		msgPhoneList = new ArrayList<String>();
+		messageList = qureyMessageService.qureyMessagesByPhoneLike(inMessage);
+
+		for (Message m : messageList) {
+			msgPhoneList.add(m.getPublisherPhone());
+
 		}
-		System.out.println("size="+msgContextList.size());
 		return SUCCESS;
 	}
 
-	public List<String> getMsgContextList() {
-		return msgContextList;
+	public List<String> getmsgPhoneList() {
+		return msgPhoneList;
 	}
 
-	public void setMsgContextList(List<String> msgContextList) {
-		this.msgContextList = msgContextList;
+	public void setmsgPhoneList(List<String> msgPhoneList) {
+		this.msgPhoneList = msgPhoneList;
 	}
-	
-	
-	
+
 }

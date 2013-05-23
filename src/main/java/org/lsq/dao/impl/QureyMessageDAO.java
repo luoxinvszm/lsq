@@ -20,13 +20,15 @@ public class QureyMessageDAO implements IQureyMessageDAO {
 	// **********************通过电话查询*********************************
 
 	// 不带状态的
-	public List<Message> qureyMessagesByPhone(String publisherPhone) {
+	public List<Message> qureyMessagesByPhone(String publisherPhone,int first,int max) {
 		System.out.println("qureyMessagesDAObyphone starting······ "
 				+ publisherPhone);
 
 		String sql = "select * from message where publisherPhone='"
-				+ publisherPhone + "';";
-
+				+ publisherPhone ;
+		if(max>0){
+			sql += " limit "+first+","+max+ ";";
+		}
 		System.out.println(sql);
 
 		return getMessages(sql);
@@ -34,15 +36,17 @@ public class QureyMessageDAO implements IQureyMessageDAO {
 
 	// 带状态的
 	public List<Message> qureyMessagesByPhone(String publisherPhone,
-			int msgStatus) {
+			int msgStatus,int first,int max) {
 
 		System.out
 				.println("qureyMessagesDAObyphone (include msgStatus) starting······ "
 						+ publisherPhone);
 
 		String sql = "select * from message where publisherPhone= '"
-				+ publisherPhone + "' and msgStatus= " + msgStatus + ";";
-
+				+ publisherPhone + "' and msgStatus= " + msgStatus ;
+		if(max>0){
+			sql += " limit "+first+","+max+ ";";
+		}
 		System.out.println(sql);
 
 		return getMessages(sql);
@@ -51,27 +55,31 @@ public class QureyMessageDAO implements IQureyMessageDAO {
 	// **************************通过时间查询**********************************
 
 	// 不带状态的
-	public List<Message> qureyMessagesByTime(String publishTime) {
+	public List<Message> qureyMessagesByTime(String publishTime,int first,int max) {
 
 		System.out.println("qureyMessagesDAObytime starting······ ");
 
 		String sql = "select * from message where publishTime like '"
-				+ publishTime + "%' ;";
-
+				+ publishTime + "%' ";
+		if(max>0){
+			sql += " limit "+first+","+max+ ";";
+		}
 		System.out.println(sql);
 
 		return getMessages(sql);
 	}
 
 	// 带状态的
-	public List<Message> qureyMessagesByTime(String publishTime, int msgStatus) {
+	public List<Message> qureyMessagesByTime(String publishTime, int msgStatus,int first,int max) {
 		System.out
 				.println("qureyMessagesDAObyTime (include msgStatus) starting······ "
 						+ publishTime);
 
 		String sql = "select * from message where publishTime like '"
-				+ publishTime + "%' and msgStatus= " + msgStatus + ";";
-
+				+ publishTime + "%' and msgStatus= " + msgStatus ;
+		if(max>0){
+			sql += " limit "+first+","+max+ ";";
+		}
 		System.out.println(sql);
 
 		return getMessages(sql);
@@ -80,28 +88,32 @@ public class QureyMessageDAO implements IQureyMessageDAO {
 	// **************************通过时间和电话查询所有************************************
 	// 带状态的
 	public List<Message> qureyMessagesByPhoneAndTime(String publisherPhone,
-			String publishTime, int msgStatus) {
+			String publishTime, int msgStatus,int first,int max) {
 		System.out
 				.println("qureyMessagesDAO(include publisherPhone,publishTime,msgStatus) starting······ ");
 
 		String sql = "select * from message where publisherPhone='"
 				+ publisherPhone + "' and publishTime like '" + publishTime
-				+ "%' and msgStatus= " + msgStatus + ";";
-
+				+ "%' and msgStatus= " + msgStatus ;
+		if(max>0){
+			sql += " limit "+first+","+max+ ";";
+		}
 		System.out.println(sql);
 		return getMessages(sql);
 	}
 
 	// 不带状态的
 	public List<Message> qureyMessagesByPhoneAndTime(String publisherPhone,
-			String publishTime) {
+			String publishTime,int first,int max) {
 		System.out
 				.println("qureyMessagesDAO(include publisherPhone,publishTime) starting······ ");
 
 		String sql = "select * from message where publisherPhone='"
 				+ publisherPhone + "' and publishTime like '" + publishTime
-				+ "%' ;";
-
+				+ "%' ";
+		if(max>0){
+			sql += " limit "+first+","+max+ ";";
+		}
 		System.out.println(sql);
 
 		return getMessages(sql);
@@ -119,13 +131,13 @@ public class QureyMessageDAO implements IQureyMessageDAO {
 		return getMessages(sql);
 	}
 
-	// **************************通过关键字模糊查询*********************************
-	public List<Message> qureyMessagesByLike(String msgLike) {
+	// **************************通过电话号模糊查询*********************************
+	public List<Message> qureyMessagesByPhoneLike(String msgLike) {
 		String keywords = "%";
 		for (int i = 0; i < msgLike.length(); i++) {
 			keywords += msgLike.charAt(i) + "%";
 		}
-		String sql = "select * from message where msgConctent like'"
+		String sql = "select * from message where publisherPhone like'"
 				+ keywords + "' limit 0,10;";
 		return getMessages(sql);
 	}

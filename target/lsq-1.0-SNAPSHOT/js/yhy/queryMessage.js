@@ -13,6 +13,18 @@ function queryMessage(stat){
 	var oper="";
 	if(stat==0){
 		target="#messsageList0";
+<<<<<<< HEAD
+		oper="<td><span><input type=\"button\" value=\"发布\" /></span><br>" +
+        "<span><input type=\"button\" value=\"不通过\" /></span></td>"
+	}else if(stat==1){
+		target="#messsageList1";
+		oper="<td><span><input type=\"button\" value=\"删除信息\" /></span><br>" +
+        "<span><input type=\"button\" value=\"撤销发布\" /></span></td>"
+	}else if(stat==2){
+		target="#messsageList2";
+		oper="<td><span><input type=\"button\" value=\"删除\" /></span><br>" +
+        "<span><input type=\"button\" value=\"待审\" /></span></td>"
+=======
 		oper="<td><span><input class=\"messageList0\" type=\"button\" value=\"发布\" onclick=\"publishMessageStatus(this)\"/></span><br>" +
         "<span><input class=\"messageList01\" type=\"button\" value=\"不通过\" onclick=\"unpublishMessageStatus(this)\"/></span></td>";
 	}else if(stat==1){
@@ -23,6 +35,7 @@ function queryMessage(stat){
 		target="#messsageList2";
 		oper="<td><span><input class=\"messageList20\" type=\"button\" value=\"删除\"  onclick=\"deleteMessage2(this)\"/></span><br>" +
         "<span><input class=\"messageList21\"  type=\"button\" value=\"待审\"  onclick=\"waitMessage(this)\"/></span></td>";
+>>>>>>> a6a2aa3f0b2bfc3a7d9aae1e4ed3ffacc7d9f0d9
 	}else if(stat==3){
 		target="#messsageList3";
 		oper="<td></td>"
@@ -40,6 +53,15 @@ function queryMessage(stat){
 					"</tr>");
 			 $.each(json.messageList, function(i, item) { //messageList是action中的list对的是get方法 
 				 $(target).append(
+<<<<<<< HEAD
+		                    "<tr><td><input type=\"checkbox\" />"+i+"</td>" +
+		                    "<td>"+item.msgConctent+"<br /> <span>署名："+item.publisherName+"</span><span>电话："+item.publisherPhone+"</span><span>提交时间："+item.publishTime+"</span></td>" +
+		                    oper);
+			   }); 
+		}
+	});
+}
+=======
 		                    "<tr id=\"tr"+i+"\"><td><input type=\"checkbox\" />"+i+"</td>" +
 		                    "<td>"+item.msgConctent+"<br /> <span>署名："+item.publisherName+"</span>电话：<span id=\"publisherPhone"+i+"\">"+item.publisherPhone+"</span>提交时间：<span id=\"publishTime"+i+"\">"+item.publishTime+"</span></td>" +
 		                    oper+"</tr>");
@@ -306,3 +328,4 @@ function waitMessage(m){
 		}
 	}
 }
+>>>>>>> a6a2aa3f0b2bfc3a7d9aae1e4ed3ffacc7d9f0d9

@@ -11,12 +11,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <title>校园信息自主发布平台</title>
 <link type="text/css" rel="stylesheet" href="<%=path %>/css/qt-index.css"   />
 <link type="text/css" rel="stylesheet" href="<%=path %>/css/qt-style.css" />
-<link type="text/css" rel="stylesheet" href="<%=path %>/css/jquery-ui-1.9.2.custom.css" />
-
 <script type="text/javascript" src="<%=path %>/js/jquery-1.9.1.min.js"></script>
 <script type="text/javascript" src="<%=path %>/js/qh/publishMessage.js"></script>
-<script type="text/javascript" src="<%=path %>/js/sxl/jquery-ui-1.9.2.custom.js"></script>
-<script type="text/javascript" src="<%=path %>/js/sxl/autoMessage.js"></script>
 <script type="text/javascript" src="<%=path %>/js/yzp/curDate.js"></script>
 </head>
 <body onLoad="getEClock(clock)">
