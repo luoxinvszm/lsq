@@ -18,6 +18,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <!--<script type="text/javascript" src="<%=path %>/js/sxl/jquery-ui-1.9.2.custom.js"></script>-->
 <script type="text/javascript" src="<%=path %>/js/sxl/autoMessage.js"></script>
 <script type="text/javascript" src="<%=path %>/js/yzp/curDate.js"></script>
+<script type="text/javascript" src="<%=path %>/js/WdatePicker.js"></script>
 </head>
 <body onLoad="getEClock(clock)">
 
@@ -36,13 +37,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<li><a href="<%=path %>/jsp/browseMessage.jsp">浏览信息</a></li>
 				<li><a href="<%=path %>/jsp/aboutUs.jsp">关于我们</a></li>
 			</ul>
-			<div class="search">
-				<input type="button" value="" class="btn"/>
-				<input type="text" class="text1" value="2013-05-22"/>
-				<input type="text" class="text" id="tags" onkeyup="autoMessages()"  value="信息"/>
-				<div id="result"></div>
-				
-			</div>
+			<form action="qureyMessageform" method="post">
+				<div class="search">
+					<input type="submit" value="" class="btn"/>
+					<input type="hidden" name="msgStatus" value="1">
+					<input type="text" class="text1" value="日期"  name="publishTime" onClick="WdatePicker()"/>
+					<input type="text" class="text" id="tags" name="publisherPhone" onkeyup="autoMessages()"  value="电话号码"/>
+					<div id="result"></div>
+				</div>
+			</form>
 		</div>
 		<!-- // header -->
 		<!-- contents -->
