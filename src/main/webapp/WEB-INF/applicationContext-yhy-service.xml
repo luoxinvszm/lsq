@@ -10,12 +10,18 @@
     	<property name="userDAO" ref="userDAO"></property>
     </bean>  
 
-     <!-- 
-    <bean id="ComListening" class="org.lsq.commlistening.ComListening" >
+
+
+   
+
+     <!-- 接收PC机发来的信息 -->
+    <bean id="MessageListening" class="org.lsq.messagelistening.MessageListening" >
+
         <property name="messageReciverService" ref="messageReciverService"></property>
     </bean>
     <bean id="messageReciverService" class="org.lsq.service.impl.MessageReciverService" >
         <property name="insertMessageDAO" ref="InsertMessageDAO"></property>
     </bean>
-      -->
+
+  <!-- 接收PC机发来的信息 -->
 </beans>  

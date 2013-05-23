@@ -29,6 +29,6 @@
 
 .right { float:right; width:200px; padding-bottom:20px; border:2px #cdcece solid; border-top:none;}
 .right h2 { height:38px; margin-bottom:15px; padding:0; background:url(../image/qt-right_h2bg.png) repeat-x; font-size:16px; color:#35a9ff; font-weight:bold; line-height:38px; text-align:center;}
-.right p {  padding:0 8px; line-height:25px; color:#808281; font-size:14px; text-indent:2em; text-align:left; }
+.right p {  padding:0 8px; line-height:25px; color:#000; font-size:14px; text-indent:2em; text-align:left; }
 .right .p { padding-right:10px; text-align:right;}
 .right .p a { font-size:14px; color:#35a9ff; text-decoration:underline;}

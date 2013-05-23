@@ -20,4 +20,17 @@ public interface IQureyMessageService {
 	 * @return List
 	 */
 	public List<Message> qureyMessagesByLike(String msgLike);
+	
+	
+	/*yzp 2013-05-19*/
+	/**
+	 * 通过传入的参数判断使用哪种方法查询
+	 * @param publisherPhone
+	 * @param publishTime
+	 * @param msgStatus
+	 * @param first
+	 * @param max
+	 * @return	List
+	 */
+	public List<Message> checkQuery(String publisherPhone,String publishTime,int msgStatus,int first,int max);
 }

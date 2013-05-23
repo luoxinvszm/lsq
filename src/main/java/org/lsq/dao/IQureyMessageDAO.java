@@ -76,4 +76,16 @@ public interface IQureyMessageDAO {
 	 * @return List
 	 */
 	public List<Message> qureyMessagesByLike(String msgLike);
+	
+	
+	/*yzp 2013-05-17*/
+	/**
+	 * 查询所有信息(某一个状态)+分页参数
+	 * @param msgStatus
+	 * @param first
+	 * @param max
+	 * @return	List
+	 */
+	public List<Message> qureyMessages(int msgStatus,int first,int max);
+	
 }

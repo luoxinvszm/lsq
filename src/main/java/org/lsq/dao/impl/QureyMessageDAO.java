@@ -125,8 +125,8 @@ public class QureyMessageDAO implements IQureyMessageDAO {
 		for (int i = 0; i < msgLike.length(); i++) {
 			keywords += msgLike.charAt(i) + "%";
 		}
-		String sql = "select * from message where msgConctent like '"
-				+ keywords + "';";
+		String sql = "select * from message where msgConctent like'"
+				+ keywords + "' limit 0,10;";
 		return getMessages(sql);
 	}
 
@@ -175,6 +175,25 @@ public class QureyMessageDAO implements IQureyMessageDAO {
 			messages.add(message);
 		}
 		return messages;
+	}
+	
+	// **************************通过状态查询所有+分页************************************
+	
+	public List<Message> qureyMessages(int msgStatus,int first,int max){
+		
+		System.out.println("qureyMessagesDAO starting /*yzp 2013-05-19*/······ ");
+		
+		String sql = "select * from message where msgStatus="+msgStatus;
+		
+		if(max>0){
+			
+			sql += " limit "+first+","+max;
+		}
+		
+		System.out.println(sql);
+		
+		return getMessages(sql);
+		
 	}
 
 }

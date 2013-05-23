@@ -59,6 +59,37 @@ public class QureyMessageService implements IQureyMessageService {
 	}
 
 
+	
+	/*yzp 2013-05-19*/
+	public List<Message> checkQuery(String publisherPhone, String publishTime,
+			int msgStatus,int first,int max) {
+	
+		if(publisherPhone==null &&publishTime==null){
+			
+			System.out.println("qureyMessageService (including msgStatus) starting /*yzp 2013-05-19*/·····");
+			
+			return qureyMessageDao.qureyMessages(msgStatus,first,max);//只有这里改了
+		}
+		else if(publisherPhone!=null&&publishTime!=null){
+			
+			System.out.println("qureyMessageService (including publisherPhone,publishTime,msgStatus) starting·····");
+			
+			return qureyMessageDao.qureyMessagesByPhoneAndTime(publisherPhone, publishTime, msgStatus);
+		}
+		else if(publisherPhone!=null&&publishTime==null){
+			
+			System.out.println("qureyMessageService (including publisherPhone,msgStatus) starting·····");
+			
+			return qureyMessageDao.qureyMessagesByPhone(publisherPhone, msgStatus);
+		}
+		else{
+			
+			System.out.println("qureyMessageService (including publisherPhone,msgStatus) starting·····");
+			
+			return qureyMessageDao.qureyMessagesByTime(publishTime, msgStatus);
+
+		}
+	}
 	public List<Message> qureyMessagesByLike(String msgLike) {
 		// TODO Auto-generated method stub
 		return qureyMessageDao.qureyMessagesByLike(msgLike);
