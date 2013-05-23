@@ -1,6 +1,9 @@
 package org.lsq.action;
 
+import java.util.List;
+
 import org.lsq.service.IUserService;
+import org.lsq.vo.User;
 
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -13,6 +16,13 @@ public class BatchCancleUserAction extends ActionSupport{
 	private String userIds;
 	private IUserService userService;
 	private String sta;
+	private List<User> usersList;
+	public List<User> getUsersList() {
+		return usersList;
+	}
+	public void setUsersList(List<User> usersList) {
+		this.usersList = usersList;
+	}
 	public String getSta() {
 		return sta;
 	}

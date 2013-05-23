@@ -11,6 +11,12 @@
 <script type="text/javascript" src="../js/qt-jquery.js"></script>
 <script type="text/javascript" src="../js/qt-lrtk.js"></script>
 <script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+<<<<<<< HEAD
+=======
+<script type="text/javascript" src="../js/sxl/jquery-ui-1.9.2.custom.js"></script>
+<script type="text/javascript" src="../js/sxl/autoMessage.js"></script>
+ <link  rel="stylesheet" type="text/css" href="../css/jquery-ui-1.9.2.custom.css" />
+>>>>>>> a6a2aa3f0b2bfc3a7d9aae1e4ed3ffacc7d9f0d9
 <script type="text/javascript" src="../js/curDate.js"></script>
 </head>
 
@@ -33,7 +39,7 @@
 			</ul>
 			<div class="search">
 				<input type="button" value="" class="btn"/>
-				<input type="text" class="text" id=""/>
+				<input type="text" class="text" id="tags" onkeyup="autoMessages()"/>
 				<div id="result"></div>
 			</div>
 		</div>

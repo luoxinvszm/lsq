@@ -6,8 +6,8 @@
 <package name="struts2" extends="struts-default">
 
 		<action name="login" class="loginAction">
-			<result name="success">/result.jsp</result>
-			<result name="input">/login.jsp</result>
+			<result name="success">/jsp/backstage.jsp</result>
+			<result name="input">ht-login.jsp</result>
 		</action>
 		<action name="authImg" class="AuthImg">
 			<result type="stream">
@@ -15,9 +15,7 @@
             <param name="inputName">inputStream</param> 
 			</result>
 		</action>
-		<action name="createOrdin" class="createOrdin">
-			<result name="success">/createOrdinSuccess.jsp</result>
-		</action>
+		
 		<action name="*_userAction" class="userAction" method="{1}">
 			<result name="updatePassword">backstage.jsp</result>
 		</action>

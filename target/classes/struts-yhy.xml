@@ -47,6 +47,9 @@
 		<action name="resetUserAction" class="resetUserAction">
 	  		 <result name="success" type="json"></result>
 		</action>
+		<action name="createOrdin" class="createOrdin">
+			<result name="success" type="json"></result>
+		</action>
 	</package>
 	
 </struts>

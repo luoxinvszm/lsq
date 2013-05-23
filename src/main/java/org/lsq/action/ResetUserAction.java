@@ -26,8 +26,11 @@ public class ResetUserAction extends ActionSupport{
 	}
 	public String execute(){
 		System.out.println(username+"username");
-		userService.resetPassword(username);
-		return SUCCESS;
+		if(userService.resetPassword(username)){
+			return SUCCESS;
+		}
+		return null;
+		
 	}
 	
 }

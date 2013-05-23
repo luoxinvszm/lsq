@@ -26,5 +26,15 @@ function updatedefaultPasswords()
 	}	
 }
 function querySettings() {
-	$.getJSON("querySettings");
+	// $.getJSON("querySettings");
+	$.ajax({
+		type : "POST",
+		url : "querySettings.action",
+		dataType : "json", 
+		success : function(json) {
+			$("#sendMsgNum").val(json.settings[0].settingsValue);
+			$("#perMsgWords").val(json.settings[1].settingsValue);
+			$("#defaultPasswords").val(json.settings[2].settingsValue);
+			}
+		});
 }

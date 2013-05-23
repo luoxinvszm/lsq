@@ -10,10 +10,10 @@
 			<result name="input">/login.jsp</result>
 		</action> -->
 		
-		<action name="updateMessageStatus" class="UpdateMessageStatusAction">
+		<!-- <action name="updateMessageStatus" class="UpdateMessageStatusAction">
 			<result name="success">/login.jsp</result>
 		</action>
-		
+		 -->
 		<!-- <action name="qureyMessage" class="QueryMessageAction">
 			<result name="success" type="json"></result>
 		</action> -->
@@ -26,6 +26,13 @@
 			<result name="success" type="json"></result>
 		</action>
 		
+<<<<<<< HEAD
+=======
+		<action name="updateMessageStatus" class="UpdateMessageStatusAction">
+			<result name="success" type="json"></result>
+		</action>
+		
+>>>>>>> a6a2aa3f0b2bfc3a7d9aae1e4ed3ffacc7d9f0d9
 		<action name="insertMessage" class="InsertMessageAction">
 			<result name="success" type="json"></result>
 		</action>

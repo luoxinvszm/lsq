@@ -62,7 +62,9 @@ public final class publishMessage_jsp extends org.apache.jasper.runtime.HttpJspB
       out.write("<link href=\"css/qt-IE6.css\" rel=\"stylesheet\" type=\"text/css\" media=\"all\" />\r\n");
       out.write("<script type=\"text/javascript\" src=\"../js/jquery-1.9.1.min.js\"></script>\r\n");
       out.write("<script type=\"text/javascript\" src=\"../js/qh/publishMessage.js\"></script>\r\n");
-      out.write("\r\n");
+      out.write("<script type=\"text/javascript\" src=\"../js/sxl/jquery-ui-1.9.2.custom.js\"></script>\r\n");
+      out.write("<script type=\"text/javascript\" src=\"../js/sxl/autoMessage.js\"></script>\r\n");
+      out.write(" <link  rel=\"stylesheet\" type=\"text/css\" href=\"../css/jquery-ui-1.9.2.custom.css\" />\r\n");
       out.write("</head>\r\n");
       out.write("<body>\r\n");
       out.write("\t<div class=\"wrap\">\r\n");
@@ -82,7 +84,7 @@ public final class publishMessage_jsp extends org.apache.jasper.runtime.HttpJspB
       out.write("\t\t\t</ul>\r\n");
       out.write("\t\t\t<div class=\"search\">\r\n");
       out.write("\t\t\t\t<input type=\"button\" value=\" \" class=\"btn\" />\r\n");
-      out.write("\t\t\t\t<input type=\"text\" class=\"text\" />\r\n");
+      out.write("\t\t\t\t<input type=\"text\" class=\"text\" id=\"tags\" onkeyup=\"autoMessages()\"/>\r\n");
       out.write("\t\t\t</div>\r\n");
       out.write("\t\t</div>\r\n");
       out.write("\t\t<!-- // header -->\r\n");

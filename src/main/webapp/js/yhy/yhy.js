@@ -6,14 +6,17 @@ function searchUsingAdmin(stat) {
 	var target;
 	var btn="";
 	var oprea;
+	var s ;
 	if(stat==0){
 		target="#usingAdminList";
 		btn="冻结";
 		oprea="cancle";
+		s ="deleteuser"
 	}else if(stat==1){
 		target="#deletedAdminList";
 		btn="激活";
 		oprea="recover";
+		s="deleteusers"
 	}
 	
 	$.ajax({
@@ -25,18 +28,19 @@ function searchUsingAdmin(stat) {
 				$(target).html("");
 			 $.each(json.usersList, function(i, item) { //messageList是action中的list对的是get方法 
 				 $(target).append(
+						 	"<tbody id=\""+i+"\">"+
 		                    "<tr id=\"tr\"><td><input type=\"checkbox\" value=\""+item.username+"\" name=\"id\" id=\"userId\"/>"+(i+1)+"</td><td>"+item.username  +"</td>" +
 		                    "<td>"+item.userRealName+"</td>" +
-		                    "<td><input type=\"button\" value=\""+btn+"\" onclick=\""+oprea+"("+item.username+")\" />" +
+		                    "<td><input type=\"button\" value=\""+btn+"\" onclick=\""+oprea+"("+item.username+","+i+")\" />" +
 		                    "<input type=\"button\" value=\"密码重置\" onclick=\"resetPassword("+item.username+")\"/>" +
-		                    "<input type=\"button\" value=\"删除\" onclick=\"deleteuser("+item.username+")\" /></td></tr>");
+		                    "<input type=\"button\" value=\"删除\" onclick=\""+s+"("+item.username+","+i+")\" /></td></tr></tbody>");
 			   }); 
 		}
 	});
 }
 var a="";
-function deleteuser(a){
-	alert(a);
+function deleteuser(a,b){
+	var str = document.getElementById("usingAdminList");
 	var params={
 		userId:a
 	};
@@ -49,8 +53,35 @@ function deleteuser(a){
 		data : params,
 		dateType:"json",
 		success : function(s) { 
-			alert("删除成功");//返回的json
-			window.location.reload();
+			var tr= document.getElementById(b);
+	    	str.removeChild(tr);
+		},
+		error: function(){
+			alert("服务器繁忙，请稍后再试");
+			
+		}
+	});
+	}else{
+		
+	}
+	
+}
+function deleteusers(a,b){
+	var str = document.getElementById("deletedAdminList");
+	var params={
+		userId:a
+	};
+	var f = confirm("确定要删除吗？");
+	if(f){
+	var s = "删除成功";
+	$.ajax({
+		type : "POST",
+		url : "deleteUserAction.action",
+		data : params,
+		dateType:"json",
+		success : function(s) { 
+			var tr= document.getElementById(b);
+	    	str.removeChild(tr);
 		},
 		error: function(){
 			alert("服务器繁忙，请稍后再试");
@@ -76,7 +107,6 @@ function resetPassword(d){
 			dateType:"json",
 			success : function(s) { 
 				alert("重置成功");//返回的json
-				window.location.reload();
 			},
 			error: function(){
 				alert("服务器繁忙，请稍后再试");
@@ -88,7 +118,9 @@ function resetPassword(d){
 	
 }
 var d;
-function cancle(d){
+function cancle(d,t){
+	var str = document.getElementById("usingAdminList");
+	
 	var params={
 			username:d,
 			status:0
@@ -102,8 +134,8 @@ function cancle(d){
 			data : params,
 			dateType:"json",
 			success : function(s) { 
-				alert("冻结成功");//返回的json
-				window.location.reload();
+		    	var tr= document.getElementById(t);
+		    	str.removeChild(tr);
 			},
 			error: function(){
 				alert("服务器繁忙，请稍后再试");
@@ -115,7 +147,8 @@ function cancle(d){
 	
 }
 var w;
-function recover(w){
+function recover(w,r){
+	var str = document.getElementById("deletedAdminList");
 	var sta=1;
 		var params={
 			username:w,
@@ -130,8 +163,8 @@ function recover(w){
 			data : params,
 			dateType:"json",
 			success : function(s) { 
-				alert("激活成功");//返回的json
-				window.location.reload();
+				var tr= document.getElementById(r);
+		    	str.removeChild(tr);
 			},
 			error: function(){
 				alert("服务器繁忙，请稍后再试");
@@ -323,4 +356,33 @@ function batchrecover(){
 	di=0;
 	ids="";
 	id=null;
+}
+function checkcreate(){
+	var name=document.getElementById("name").value;
+	if(""==name ){
+		alert("请输入管理员姓名!");
+	}else{
+		var params= {
+				RealName:name
+		};
+		var flag =confirm("是否确定要创建？");
+		if(flag==true){
+			$.ajax({
+				type : "POST",
+				url : "createOrdin.action",
+				data : params,
+				dataType : "json", //ajax返回值设置为json格式
+				success : function(json) {//返回的json
+					window.location.reload();
+				},
+				error: function(){
+					alert("服务器繁忙，请稍后再试");
+					
+				}
+			});
+		}else{
+			return ;
+		}
+	}
+	
 }

@@ -65,6 +65,10 @@ public final class queryResultMessage_jsp extends org.apache.jasper.runtime.Http
       out.write("<script type=\"text/javascript\" src=\"../js/jquery.pagination.js\"></script>\r\n");
       out.write("<script type=\"text/javascript\" src=\"../js/members.js\"></script>\r\n");
       out.write("<script type=\"text/javascript\" src=\"../js/qh/queryResultMessage.js\"></script>\r\n");
+      out.write("<script type=\"text/javascript\" src=\"../js/jquery-1.9.1.min.js\"></script>\r\n");
+      out.write("<script type=\"text/javascript\" src=\"../js/sxl/jquery-ui-1.9.2.custom.js\"></script>\r\n");
+      out.write("<script type=\"text/javascript\" src=\"../js/sxl/autoMessage.js\"></script>\r\n");
+      out.write(" <link  rel=\"stylesheet\" type=\"text/css\" href=\"../css/jquery-ui-1.9.2.custom.css\" />\r\n");
       out.write(" <script type=\"text/javascript\">\r\n");
       out.write("         \r\n");
       out.write("            function pageselectCallback(page_index, jq){\r\n");

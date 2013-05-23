@@ -55,6 +55,15 @@ public final class updateMessageStatus_jsp extends org.apache.jasper.runtime.Htt
       out.write("<html>\r\n");
       out.write("<head>\r\n");
       out.write("<title>Insert title here</title>\r\n");
+      out.write("<script type=\"text/javascript\" src=\"js/jquery-1.9.1.min.js\"></script>\r\n");
+      out.write("<script type=\"text/javascript\">\r\n");
+      out.write("function a(m){\r\n");
+      out.write("\tvar id = m.id;\r\n");
+      out.write("\talert(id);\r\n");
+      out.write("\t\r\n");
+      out.write("}\r\n");
+      out.write("\r\n");
+      out.write("</script>\r\n");
       out.write("</head>\r\n");
       out.write("<body>\r\n");
       out.write("\t<form action=\"updateMessageStatus\">\r\n");
@@ -64,6 +73,8 @@ public final class updateMessageStatus_jsp extends org.apache.jasper.runtime.Htt
       out.write("\t\t<input type=\"text\" name=\"publishTime\" value=\"publishTime\">\r\n");
       out.write("\t\t<input type=\"submit\" value=\"搜索\">\r\n");
       out.write("\t</form>\r\n");
+      out.write("\t<span id=\"f\">11111</span>\r\n");
+      out.write("\t<input id=\"n\" class=\"aa\" type=\"button\" value=\"get\" onclick=\"a(this)\">\r\n");
       out.write("</body>\r\n");
       out.write("</html>");
     } catch (Throwable t) {

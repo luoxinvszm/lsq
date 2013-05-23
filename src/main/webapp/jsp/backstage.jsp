@@ -132,27 +132,23 @@
 		<!-- right5 -->
 		<div id="right5">
 			<div class="tlt">当前位置：创建管理员</div>
-			<label>超级管理员：</label><input type="text" value="昵称：yhy" class="text" />
-			<input type="button" value="创建" class="btn" />
+			<label>超级管理员：</label><input type="text" value="昵称：yhy" class="text" name="userRealName"/>
+			<input type="button" value="创建" class="btn" onclick="checkcreate()"/>
 		</div>
 		<!-- //right5 -->
 		<!-- right6 -->
 		<div id="right6">
 			<div class="tlt">当前位置：使用中管理员</div>
 			<p>
-				批量操作： <input type="button" value="全选" onclick="checkAll()"/>
-				 <input type="button" value="取消全选" onclick="uncheckAll()"/><input type="button" value="删除" onclick="batchdelete()" /><input
-					type="button" value="冻结" onclick="batchcancle()"/>
+				批量操作： <input type="button" value="全选" onclick="checkAll()" class="butt"/>
+				 <input type="button" value="取消全选" onclick="uncheckAll()"class="butt"/><input type="button" value="删除" onclick="batchdelete()" class="butt" /><input
+					type="button" value="冻结" onclick="batchcancle()" class="butt"/>
 			</p>
-			<table cellpadding="0" cellspacing="0" class="table1" id="usingAdminList" id="table">
-			<tbody id="tb">
-				<tr>
-					<th width="50">序号</th>
-					<th width="200">账号</th>
-					<th width="200">昵称</th>
-					<th width="250">操作</th>
-				</tr>
-			</tbody>
+				
+			<table cellpadding="0" cellspacing="0" class="table1" id="usingAdminList" >
+		
+				
+			
 			</table>
 			<div class="page">
 				<span><a href="#">首页</a></span> <span><a href="#">上一页</a></span> <span><a
@@ -218,7 +214,9 @@
 									<font face="宋体" color="red">密码输入错误，请重新输入</font>
 									</div>
 									<br/>
-									
+									<br/>
+									<br/>
+									<br/>
 				请输入新密码:
 							<input type="password" onblur="checknew1()"
 								name="user.password" id="new1" value="" />
@@ -226,7 +224,9 @@
 									<font face="宋体" color="red">密码不能为空</font>
 								</div>
 								<br/>
-			
+								<br/>
+								<br/>
+								<br/>
 			请再输入新密码:
 							<input type="password" id="new2" value=""/>
 							<div style="display: none" id="d2">

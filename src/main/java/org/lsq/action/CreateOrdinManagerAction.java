@@ -19,7 +19,14 @@ public class CreateOrdinManagerAction extends ActionSupport{
 	private String password;
 	private String userRealName;
 	private String sname;
+	private String RealName;
 	
+	public String getRealName() {
+		return RealName;
+	}
+	public void setRealName(String realName) {
+		RealName = realName;
+	}
 	public String getUserRealName() {
 		return userRealName;
 	}
@@ -66,7 +73,7 @@ public class CreateOrdinManagerAction extends ActionSupport{
 		roleId="2";
 		byte[] temp;
 		try {
-			temp = userRealName.getBytes("iso-8859-1");
+			temp = RealName.getBytes("iso-8859-1");
 			String name = new String(temp,"utf-8");
 			sname=name;
 			String time =new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
