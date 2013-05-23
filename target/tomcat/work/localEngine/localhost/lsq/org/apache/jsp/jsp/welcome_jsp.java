@@ -139,7 +139,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       out.write("\t\t\t\t\t<input type=\"submit\" value=\"\" class=\"btn\"/>\r\n");
       out.write("\t\t\t\t\t<input type=\"hidden\" name=\"msgStatus\" value=\"1\">\r\n");
       out.write("\t\t\t\t\t<input type=\"text\" class=\"text1\" value=\"日期\" id=\"publishTime\" name=\"publishTime\" onClick=\"WdatePicker()\"/>\r\n");
-      out.write("\t\t\t\t\t<input type=\"text\" class=\"text\" id=\"tags\" name=\"publisherPhone\" onkeyup=\"autoMessages()\"  value=\"电话号码\"/>\r\n");
+      out.write("\t\t\t\t\t<input type=\"text\" class=\"text\" id=\"publisherPhone\" name=\"publisherPhone\" onkeyup=\"autoPhone()\"  value=\"电话号码\"/>\r\n");
       out.write("\t\t\t\t\t<div id=\"result\"></div>\r\n");
       out.write("\t\t\t\t</div>\r\n");
       out.write("\t\t\t</form>\r\n");
