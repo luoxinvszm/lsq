@@ -17,8 +17,17 @@
 <script type="text/javascript" src="<%=path %>/js/yzp/json2.js"></script>
 <script type="text/javascript" src="<%=path %>/js/yzp/asynPage-Msg.js"></script>
 <script type="text/javascript" src="<%=path %>/js/yzp/curDate.js"></script>
+<<<<<<< HEAD
 <script type="text/javascript" src="<%=path %>/js/WdatePicker.js"></script>
 
+=======
+<!-- 电话号自动补全 -->
+<link type="text/css" rel="stylesheet" href="<%=path %>/css/jquery-ui-1.9.2.custom.css" />
+<script type="text/javascript" src="<%=path %>/js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="<%=path %>/js/qh/publishMessage.js"></script>
+<script type="text/javascript" src="<%=path %>/js/sxl/jquery-ui-1.9.2.custom.js"></script>
+<script type="text/javascript" src="<%=path %>/js/sxl/autoPhone.js"></script>
+>>>>>>> 47cfb7073804b1342abf3a65057535e306b76878
 <script type="text/javascript">
 			function GetRequest() {
 				   var url = location.search; //获取url中"?"符后的字串
@@ -77,9 +86,14 @@
 			</ul>
 			<div class="search">
 				<input type="button" value=" " class="btn" onclick="submit()" />
+<<<<<<< HEAD
 				<input type="text" class="text1" value="日期"name="publishTime" onClick="WdatePicker()"/>
 				<input type="text" class="text" id="queryExp" value="电话号码" />
 				
+=======
+				<input type="text" class="text1" value="2013-05-22"/>
+				<input type="text" class="text" id="publisherPhone" name="publisherPhone" onkeyup="autoPhone()"  value="电话号码"/>	
+>>>>>>> 47cfb7073804b1342abf3a65057535e306b76878
 			</div>
 		
 		</div>

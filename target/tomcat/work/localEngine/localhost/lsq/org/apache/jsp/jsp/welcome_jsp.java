@@ -67,27 +67,28 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       out.write("<link type=\"text/css\" rel=\"stylesheet\" href=\"");
       out.print(path );
       out.write("/css/qt-lrtk.css\"/>\r\n");
-      out.write("<link type=\"text/css\" rel=\"stylesheet\" href=\"");
-      out.print(path );
-      out.write("/css/jquery-ui-1.9.2.custom.css\" />\r\n");
-      out.write("\r\n");
       out.write("<script type=\"text/javascript\" src=\"");
       out.print(path );
       out.write("/js/qt-jquery.js\"></script>\r\n");
       out.write("<script type=\"text/javascript\" src=\"");
       out.print(path );
       out.write("/js/qt-lrtk.js\"></script>\r\n");
-      out.write("<!--<script type=\"text/javascript\" src=\"");
-      out.print(path );
-      out.write("/js/sxl/jquery-ui-1.9.2.custom.js\"></script>-->\r\n");
-      out.write("<script type=\"text/javascript\" src=\"");
-      out.print(path );
-      out.write("/js/sxl/autoMessage.js\"></script>\r\n");
       out.write("<script type=\"text/javascript\" src=\"");
       out.print(path );
       out.write("/js/yzp/curDate.js\"></script>\r\n");
       out.write("<script type=\"text/javascript\" src=\"");
       out.print(path );
+      out.write("/js/WdatePicker.js\"></script>\r\n");
+      out.write("<!-- 电话号自动补全 -->\r\n");
+      out.write("<link type=\"text/css\" rel=\"stylesheet\" href=\"");
+      out.print(path );
+      out.write("/css/jquery-ui-1.9.2.custom.css\" />\r\n");
+      out.write("<script type=\"text/javascript\" src=\"");
+      out.print(path );
+      out.write("/js/jquery-1.9.1.min.js\"></script>\r\n");
+      out.write("<script type=\"text/javascript\" src=\"");
+      out.print(path );
+<<<<<<< HEAD
       out.write("/js/WdatePicker.js\"></script>\r\n");
       out.write("<script type=\"text/javascript\">\r\n");
       out.write("\tfunction submitForm(form){\r\n");
@@ -100,6 +101,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       out.write("\t}\r\n");
       out.write("\r\n");
       out.write("</script>\r\n");
+=======
+      out.write("/js/qh/publishMessage.js\"></script>\r\n");
+      out.write("<script type=\"text/javascript\" src=\"");
+      out.print(path );
+      out.write("/js/sxl/jquery-ui-1.9.2.custom.js\"></script>\r\n");
+      out.write("<script type=\"text/javascript\" src=\"");
+      out.print(path );
+      out.write("/js/sxl/autoPhone.js\"></script>\r\n");
+>>>>>>> 47cfb7073804b1342abf3a65057535e306b76878
       out.write("</head>\r\n");
       out.write("<body onLoad=\"getEClock(clock)\">\r\n");
       out.write("\r\n");
@@ -132,8 +142,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       out.write("\t\t\t\t<div class=\"search\">\r\n");
       out.write("\t\t\t\t\t<input type=\"submit\" value=\"\" class=\"btn\"/>\r\n");
       out.write("\t\t\t\t\t<input type=\"hidden\" name=\"msgStatus\" value=\"1\">\r\n");
+<<<<<<< HEAD
       out.write("\t\t\t\t\t<input type=\"text\" class=\"text1\" value=\"日期\" id=\"publishTime\" name=\"publishTime\" onClick=\"WdatePicker()\"/>\r\n");
       out.write("\t\t\t\t\t<input type=\"text\" class=\"text\" id=\"tags\" name=\"publisherPhone\" onkeyup=\"autoMessages()\"  value=\"电话号码\"/>\r\n");
+=======
+      out.write("\t\t\t\t\t<input type=\"text\" class=\"text1\" value=\"日期\" name=\"publishTime\" onClick=\"WdatePicker()\"/>\r\n");
+      out.write("\t\t\t\t\t<input type=\"text\" class=\"text\" id=\"publisherPhone\" name=\"publisherPhone\" onkeydown=\"autoPhone()\"  value=\"电话号码\"/>\r\n");
+>>>>>>> 47cfb7073804b1342abf3a65057535e306b76878
       out.write("\t\t\t\t\t<div id=\"result\"></div>\r\n");
       out.write("\t\t\t\t</div>\r\n");
       out.write("\t\t\t</form>\r\n");
@@ -220,6 +235,23 @@ for(int i=0;i<3;i++){
       out.write("\t\t<!-- // footer -->\r\n");
       out.write("\t</div></body>\r\n");
       out.write("</body>\r\n");
+      out.write("<script language=\"JavaScript\" type=\"text/javascript\">\r\n");
+      out.write("\t\t\tfunction addListener(element,e,fn){    \r\n");
+      out.write("    \t \t\tif(element.addEventListener){    \r\n");
+      out.write("          \t\t\telement.addEventListener(e,fn,false);    \r\n");
+      out.write("     \t\t\t } else {    \r\n");
+      out.write("         \t \t\telement.attachEvent(\"on\" + e,fn);    \r\n");
+      out.write("     \t \t\t }    \r\n");
+      out.write("\t\t\t}\r\n");
+      out.write("\t\t\tvar publisherPhone = document.getElementById(\"publisherPhone\");\r\n");
+      out.write("\t\t\taddListener(publisherPhone,\"click\",function(){\r\n");
+      out.write("\t\t\t\tpublisherPhone.value = \"\";\r\n");
+      out.write("\t\t\t})\r\n");
+      out.write("\t\t\taddListener(publisherPhone,\"blur\",function(){\r\n");
+      out.write("\t\t\t\tpublisherPhone.value = \"电话号码\";\r\n");
+      out.write("\t\t\t})\r\n");
+      out.write("\r\n");
+      out.write("</script>\r\n");
       out.write("</html>");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){

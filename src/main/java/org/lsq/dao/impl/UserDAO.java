@@ -52,13 +52,9 @@ public class UserDAO implements IUserDAO {
 		List<Map<String, Object>> list= jdbcTemplate.queryForList(sql,new Object[] {roleId});
 		List<User> usersList=new ArrayList<User>();
 		if(list!=null && list.size()>0){
-			
 			Iterator<Map<String, Object>> iter=list.iterator();
-			
 			while(iter.hasNext()){
-				
 				Map<String, Object> map=iter.next();
-				
 				User user=new User();
 				user.setUserId(Long.parseLong(map.get("userId").toString()));
 				user.setUsername(map.get("userName").toString());
@@ -66,20 +62,24 @@ public class UserDAO implements IUserDAO {
 				user.setRoleId(Integer.parseInt(map.get("roleId").toString()));
 				user.setUserStatus(Integer.parseInt(map.get("userStatus").toString()));
 				user.setUserRemark(map.get("userRemark")==null?"":list.get(0).get("userRemark").toString());
-				
+				user.setUserRealName(map.get("userRealName").toString());
 				usersList.add(user);
+				System.out.println(user.getUserId()+"----------"+user.getUserRealName());
 			}
 			return usersList;
 		}
 		return null;
 	}
-
+	
 	//注销指定用户
 	public int setUserStatus(long userId,int status){
 		String sql = "update user set userStatus=? where userid=?";
 		return jdbcTemplate.update(sql, new Object[]{status,userId});
 	}
-	
+	public int setUserStatuss(String username,int status){
+		String sql = "update user set userStatus=? where userName=?";
+		return jdbcTemplate.update(sql, new Object[]{status,username});
+	}
 	public boolean AddUser(String username, String password, String roleId,String userRealName,String time) {
 		System.out.println("添加用户---------");
 		String sql = "insert into user (userId,userName,userPassword,roleId,userRealName,userCreateTime) values(?,?,?,?,?,?)";
@@ -111,17 +111,17 @@ public class UserDAO implements IUserDAO {
 		return true;
 	}
 	//密码重置
-	public boolean resetPassword(long userId){
+	public boolean resetPassword(String username){
 		System.out.println("密码重置--------");
-		String sql = "update user set password='111111' where userid=?";
-		jdbcTemplate.update(sql,new Object[]{userId});
+		String sql = "update user set userPassword='111111' where userName=?";
+		jdbcTemplate.update(sql,new Object[]{username});
 		return true;
 	}
 	//删除管理员
-	public boolean deleteUser(long userId){
+	public boolean deleteUser(String username){
 		System.out.println("删除管理员------");
-		String sql= "delete from user where userId=?";
-		jdbcTemplate.update(sql,new Object[]{userId});
+		String sql= "delete from user where userName=?";
+		jdbcTemplate.update(sql,new Object[]{username});
 		return true;	
 	}
 	//批量删除
@@ -140,30 +140,30 @@ public class UserDAO implements IUserDAO {
 		return true;
 	}
 	//批量删除
-	public  void batchDeleteUsers(final long userIds[]){
-		String sql="delete from user where userId=?";
+	public  void batchDeleteUsers(final String usernames[]){
+		String sql="delete from user where userName=?";
 		BatchPreparedStatementSetter pss=new BatchPreparedStatementSetter() {
 			
 			public void setValues(PreparedStatement ps, int i) throws SQLException {
-				ps.setLong(1, userIds[i]);
+				ps.setString(1, usernames[i]);
 			}
 			
 			public int getBatchSize() {
-				return userIds.length;
+				return usernames.length;
 			}
 		};
 		jdbcTemplate.batchUpdate(sql, pss);
 	}
 	//批量修改状态
-	public void batchSetUserStatus(final long userIds[],final int status){
-		String sql="update user set userStatus=? where userid=?";
+	public void batchSetUserStatus(final String usernames[],final int status){
+		String sql="update user set userStatus=? where userName=?";
 		BatchPreparedStatementSetter pss=new BatchPreparedStatementSetter() {
 			public void setValues(PreparedStatement ps, int i) throws SQLException {
 				ps.setInt(1, status);
-				ps.setLong(2, userIds[i]);
+				ps.setString(2, usernames[i]);
 			}
 			public int getBatchSize() {
-				return userIds.length;
+				return usernames.length;
 			}
 		};
 		jdbcTemplate.batchUpdate(sql, pss);

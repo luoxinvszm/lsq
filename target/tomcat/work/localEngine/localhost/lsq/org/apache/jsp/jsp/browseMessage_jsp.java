@@ -84,10 +84,29 @@ public final class browseMessage_jsp extends org.apache.jasper.runtime.HttpJspBa
       out.write("<script type=\"text/javascript\" src=\"");
       out.print(path );
       out.write("/js/yzp/curDate.js\"></script>\r\n");
+<<<<<<< HEAD
       out.write("<script type=\"text/javascript\" src=\"");
       out.print(path );
       out.write("/js/WdatePicker.js\"></script>\r\n");
       out.write("\r\n");
+=======
+      out.write("<!-- 电话号自动补全 -->\r\n");
+      out.write("<link type=\"text/css\" rel=\"stylesheet\" href=\"");
+      out.print(path );
+      out.write("/css/jquery-ui-1.9.2.custom.css\" />\r\n");
+      out.write("<script type=\"text/javascript\" src=\"");
+      out.print(path );
+      out.write("/js/jquery-1.9.1.min.js\"></script>\r\n");
+      out.write("<script type=\"text/javascript\" src=\"");
+      out.print(path );
+      out.write("/js/qh/publishMessage.js\"></script>\r\n");
+      out.write("<script type=\"text/javascript\" src=\"");
+      out.print(path );
+      out.write("/js/sxl/jquery-ui-1.9.2.custom.js\"></script>\r\n");
+      out.write("<script type=\"text/javascript\" src=\"");
+      out.print(path );
+      out.write("/js/sxl/autoPhone.js\"></script>\r\n");
+>>>>>>> 47cfb7073804b1342abf3a65057535e306b76878
       out.write("<script type=\"text/javascript\">\r\n");
       out.write("\t\t\tfunction GetRequest() {\r\n");
       out.write("\t\t\t\t   var url = location.search; //获取url中\"?\"符后的字串\r\n");
@@ -156,9 +175,14 @@ public final class browseMessage_jsp extends org.apache.jasper.runtime.HttpJspBa
       out.write("\t\t\t</ul>\r\n");
       out.write("\t\t\t<div class=\"search\">\r\n");
       out.write("\t\t\t\t<input type=\"button\" value=\" \" class=\"btn\" onclick=\"submit()\" />\r\n");
+<<<<<<< HEAD
       out.write("\t\t\t\t<input type=\"text\" class=\"text1\" value=\"日期\"name=\"publishTime\" onClick=\"WdatePicker()\"/>\r\n");
       out.write("\t\t\t\t<input type=\"text\" class=\"text\" id=\"queryExp\" value=\"电话号码\" />\r\n");
       out.write("\t\t\t\t\r\n");
+=======
+      out.write("\t\t\t\t<input type=\"text\" class=\"text1\" value=\"2013-05-22\"/>\r\n");
+      out.write("\t\t\t\t<input type=\"text\" class=\"text\" id=\"publisherPhone\" name=\"publisherPhone\" onkeyup=\"autoPhone()\"  value=\"电话号码\"/>\t\r\n");
+>>>>>>> 47cfb7073804b1342abf3a65057535e306b76878
       out.write("\t\t\t</div>\r\n");
       out.write("\t\t\r\n");
       out.write("\t\t</div>\r\n");

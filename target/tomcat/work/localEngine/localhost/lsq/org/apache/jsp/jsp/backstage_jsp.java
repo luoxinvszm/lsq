@@ -3,6 +3,8 @@ package org.apache.jsp.jsp;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 public final class backstage_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
@@ -50,8 +52,9 @@ public final class backstage_jsp extends org.apache.jasper.runtime.HttpJspBase
       out = pageContext.getOut();
       _jspx_out = out;
 
-      out.write('\r');
-      out.write('\n');
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
 
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -84,14 +87,25 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       out.write("\r\n");
       out.write("</head>\r\n");
       out.write("<body>\r\n");
+
+	String userRealName=session.getAttribute("userRealName").toString();
+	String time = new SimpleDateFormat("yyyy年MM月dd日 EE").format(new Date());
+
+	String password = session.getAttribute("password").toString();
+
+      out.write("\r\n");
       out.write("\t<!-- header -->\r\n");
       out.write("\t<div class=\"header\">\r\n");
       out.write("\t\t<h1>信息管理系统</h1>\r\n");
-      out.write("\t\t<p>2012年8月1日 星期六</p>\r\n");
-      out.write("\t\t<p>hello 管理员名字</p>\r\n");
+      out.write("\t\t<p>");
+      out.print(time);
+      out.write("</p>\r\n");
+      out.write("\t\t<p>欢迎您 &nbsp;&nbsp;&nbsp;");
+      out.print(userRealName);
+      out.write("</p>\r\n");
       out.write("\t\t<div class=\"btnbox\">\r\n");
-      out.write("\t\t\t<input type=\"button\" value=\"修改密码\" class=\"btn1\" /><input\r\n");
-      out.write("\t\t\t\ttype=\"button\" value=\"安全退出\" class=\"btn1\" />\r\n");
+      out.write("\t\t\t<input type=\"button\" value=\"修改密码\" class=\"btn1\" onclick=\"Tab(10)\"/><input\r\n");
+      out.write("\t\t\t\ttype=\"button\" value=\"安全退出\" class=\"btn1\" onclick=\"exit()\"/>\r\n");
       out.write("\t\t</div>\r\n");
       out.write("\t</div>\r\n");
       out.write("\t<!-- // header -->\r\n");
@@ -194,24 +208,25 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       out.write("\t\t<!-- right5 -->\r\n");
       out.write("\t\t<div id=\"right5\">\r\n");
       out.write("\t\t\t<div class=\"tlt\">当前位置：创建管理员</div>\r\n");
-      out.write("\t\t\t<label>超级管理员：</label><input type=\"text\" value=\"昵称：yhy\" class=\"text\" />\r\n");
-      out.write("\t\t\t<input type=\"button\" value=\"创建\" class=\"btn\" />\r\n");
+      out.write("\t\t\t<label>请输入管理员真是姓名：</label><input type=\"text\"  class=\"text\" name=\"userRealName\" id=\"name\"/>\r\n");
+      out.write("\t\t\t<input type=\"button\" value=\"创建\" class=\"btn\" onclick=\"checkcreate()\"/>\r\n");
+      out.write("\t\t\t<table id=\"createlist\">\r\n");
+      out.write("\t\t\t\t\r\n");
+      out.write("\t\t\t</table>\r\n");
       out.write("\t\t</div>\r\n");
       out.write("\t\t<!-- //right5 -->\r\n");
       out.write("\t\t<!-- right6 -->\r\n");
       out.write("\t\t<div id=\"right6\">\r\n");
       out.write("\t\t\t<div class=\"tlt\">当前位置：使用中管理员</div>\r\n");
       out.write("\t\t\t<p>\r\n");
-      out.write("\t\t\t\t批量操作： <input type=\"checkbox\" /><input type=\"button\" value=\"删除\" /><input\r\n");
-      out.write("\t\t\t\t\ttype=\"button\" value=\"冻结\" />\r\n");
+      out.write("\t\t\t\t批量操作： <input type=\"button\" value=\"全选\" onclick=\"checkAll()\" class=\"butt\"/>\r\n");
+      out.write("\t\t\t\t <input type=\"button\" value=\"取消全选\" onclick=\"uncheckAll()\"class=\"butt\"/><input type=\"button\" value=\"删除\" onclick=\"batchdelete()\" class=\"butt\" /><input\r\n");
+      out.write("\t\t\t\t\ttype=\"button\" value=\"冻结\" onclick=\"batchcancle()\" class=\"butt\"/>\r\n");
       out.write("\t\t\t</p>\r\n");
-      out.write("\t\t\t<table cellpadding=\"0\" cellspacing=\"0\" class=\"table1\" id=\"usingAdminList\">\r\n");
-      out.write("\t\t\t\t<tr>\r\n");
-      out.write("\t\t\t\t\t<th width=\"50\">序号</th>\r\n");
-      out.write("\t\t\t\t\t<th width=\"200\">账号</th>\r\n");
-      out.write("\t\t\t\t\t<th width=\"200\">昵称</th>\r\n");
-      out.write("\t\t\t\t\t<th width=\"250\">操作</th>\r\n");
-      out.write("\t\t\t\t</tr>\r\n");
+      out.write("\t\t\t\r\n");
+      out.write("\t\t\t<table cellpadding=\"0\" cellspacing=\"0\" class=\"table1\" id=\"usingAdminList\" >\r\n");
+      out.write("\t\t\r\n");
+      out.write("\t\t\t\t\r\n");
       out.write("\t\t\t\r\n");
       out.write("\t\t\t</table>\r\n");
       out.write("\t\t\t<div class=\"page\">\r\n");
@@ -224,8 +239,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       out.write("\t\t<div id=\"right7\">\r\n");
       out.write("\t\t\t<div class=\"tlt\">当前位置：已冻结管理员</div>\r\n");
       out.write("\t\t\t<p>\r\n");
-      out.write("\t\t\t\t批量操作： <input type=\"checkbox\" /><input type=\"button\" value=\"删除\" /><input\r\n");
-      out.write("\t\t\t\t\ttype=\"button\" value=\"激活\" />\r\n");
+      out.write("\t\t\t\t批量操作： <input type=\"button\" value=\"全选\" onclick=\"checkAll()\"/>\r\n");
+      out.write("\t\t\t\t <input type=\"button\" value=\"取消全选\" onclick=\"uncheckAll()\"/><input type=\"button\" value=\"删除\" onclick=\"batchdelete()\"/><input\r\n");
+      out.write("\t\t\t\t\ttype=\"button\" value=\"激活\" onclick=\"batchrecover()\" />\r\n");
       out.write("\t\t\t</p>\r\n");
       out.write("\t\t\t<table cellpadding=\"0\" cellspacing=\"0\" class=\"table1\" id=\"deletedAdminList\">\r\n");
       out.write("\t\t\t\t<tr>\r\n");
@@ -268,7 +284,47 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       out.write("\t\t\t</dl>\r\n");
       out.write("\t\t</div>\r\n");
       out.write("\t\t<!-- //right9 -->\r\n");
-      out.write("\t</div>\r\n");
+      out.write("\t<div id=\"right10\">\r\n");
+      out.write("\t\t\t<div class=\"tlt\">当前位置：修改密码</div>\r\n");
+      out.write("\t\t\t<form action=\"updatePassword_userAction\" name=\"updatePassword\">\r\n");
+      out.write("\t\t\r\n");
+      out.write("请输入原密码:<input type=\"text\" id=\"old\" onblur=\"checkOld()\" value=\"\"/>\r\n");
+      out.write("\t\t\t\t\t\t<div style=\"display: none\" id=\"u1\">\r\n");
+      out.write("\t\t\t\t\t\t\t\t\t<font face=\"宋体\" color=\"red\">密码输入错误，请重新输入</font>\r\n");
+      out.write("\t\t\t\t\t\t\t\t\t</div>\r\n");
+      out.write("\t\t\t\t\t\t\t\t\t<br/>\r\n");
+      out.write("\t\t\t\t\t\t\t\t\t<br/>\r\n");
+      out.write("\t\t\t\t\t\t\t\t\t<br/>\r\n");
+      out.write("\t\t\t\t\t\t\t\t\t<br/>\r\n");
+      out.write("\t\t\t\t请输入新密码:\r\n");
+      out.write("\t\t\t\t\t\t\t<input type=\"password\" onblur=\"checknew1()\"\r\n");
+      out.write("\t\t\t\t\t\t\t\tname=\"user.password\" id=\"new1\" value=\"\" />\r\n");
+      out.write("\t\t\t\t\t\t\t<div style=\"display: none\" id=\"d1\">\r\n");
+      out.write("\t\t\t\t\t\t\t\t\t<font face=\"宋体\" color=\"red\">密码不能为空</font>\r\n");
+      out.write("\t\t\t\t\t\t\t\t</div>\r\n");
+      out.write("\t\t\t\t\t\t\t\t<br/>\r\n");
+      out.write("\t\t\t\t\t\t\t\t<br/>\r\n");
+      out.write("\t\t\t\t\t\t\t\t<br/>\r\n");
+      out.write("\t\t\t\t\t\t\t\t<br/>\r\n");
+      out.write("\t\t\t请再输入新密码:\r\n");
+      out.write("\t\t\t\t\t\t\t<input type=\"password\" id=\"new2\" value=\"\"/>\r\n");
+      out.write("\t\t\t\t\t\t\t<div style=\"display: none\" id=\"d2\">\r\n");
+      out.write("\t\t\t\t\t\t\t\t\t<font face=\"宋体\" color=\"red\">两次密码输入不一致</font>\r\n");
+      out.write("\t\t\t\t\t\t\t\t</div>\r\n");
+      out.write("\r\n");
+      out.write("\t<br/>\r\n");
+      out.write("\t\t<input type=\"hidden\" value=");
+      out.print(password);
+      out.write(" id=\"oldPassword\"> <input\r\n");
+      out.write("\t\t\ttype=\"button\" onclick=\"check()\" value=\"确定\">\r\n");
+      out.write("\t\t\t\r\n");
+      out.write("\t</form>\r\n");
+      out.write("\t\t</div>\r\n");
+      out.write("\t\t</div>\r\n");
+      out.write("\t\t<div id=\"r1\">\r\n");
+      out.write("\t\t<div class=\"tlt\">当前位置：修改密码</div>\r\n");
+      out.write("\t\t\t修改成功\r\n");
+      out.write("\t\t</div>\r\n");
       out.write("</body>\r\n");
       out.write("</html>\r\n");
     } catch (Throwable t) {

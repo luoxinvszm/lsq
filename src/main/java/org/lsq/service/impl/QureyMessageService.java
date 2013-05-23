@@ -90,9 +90,9 @@ public class QureyMessageService implements IQureyMessageService {
 
 		}
 	}
-	public List<Message> qureyMessagesByLike(String msgLike) {
+	public List<Message> qureyMessagesByPhoneLike(String msgLike) {
 		// TODO Auto-generated method stub
-		return qureyMessageDao.qureyMessagesByLike(msgLike);
+		return qureyMessageDao.qureyMessagesByPhoneLike(msgLike);
 	}
 
 }

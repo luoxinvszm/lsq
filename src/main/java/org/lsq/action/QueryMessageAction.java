@@ -38,6 +38,7 @@ public class QueryMessageAction extends ActionSupport {
 	private Integer totalSize;
 
 	private String inMessage;
+
 	public String getInMessage() {
 		return inMessage;
 	}
@@ -83,14 +84,12 @@ public class QueryMessageAction extends ActionSupport {
 	
 	// 集合的注入
 	private List<Message> messageList;
-
-	private List<String> msgContextList=null;
+	private List<String> msgPhoneList=null;
 	
 	
 	public void setMessageList(List<Message> messageList) {
 		this.messageList = messageList;
 	}
-
 	public List<Message> getMessageList() {
 		return messageList;
 	}
@@ -127,25 +126,22 @@ public class QueryMessageAction extends ActionSupport {
 	}
 
 	public String AutoMessages() {
-		msgContextList=new ArrayList<String>();
-		System.out.println("自动补全"+inMessage);
-		messageList =qureyMessageService.qureyMessagesByLike(inMessage);
-		
-		for(Message m:messageList){
-			msgContextList.add(m.getMsgConctent());
+		msgPhoneList = new ArrayList<String>();
+		messageList = qureyMessageService.qureyMessagesByPhoneLike(inMessage);
+
+		for (Message m : messageList) {
+			msgPhoneList.add(m.getPublisherPhone());
+
 		}
-		System.out.println("size="+msgContextList.size());
 		return SUCCESS;
 	}
 
-	public List<String> getMsgContextList() {
-		return msgContextList;
+	public List<String> getmsgPhoneList() {
+		return msgPhoneList;
 	}
 
-	public void setMsgContextList(List<String> msgContextList) {
-		this.msgContextList = msgContextList;
+	public void setmsgPhoneList(List<String> msgPhoneList) {
+		this.msgPhoneList = msgPhoneList;
 	}
-	
-	
-	
+
 }
