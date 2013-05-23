@@ -11,14 +11,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <title>校园信息自主发布平台</title>
 <link type="text/css" rel="stylesheet" href="<%=path %>/css/qt-index.css" />
 <link type="text/css" rel="stylesheet" href="<%=path %>/css/qt-lrtk.css"/>
-<link type="text/css" rel="stylesheet" href="<%=path %>/css/jquery-ui-1.9.2.custom.css" />
-
 <script type="text/javascript" src="<%=path %>/js/qt-jquery.js"></script>
 <script type="text/javascript" src="<%=path %>/js/qt-lrtk.js"></script>
-<!--<script type="text/javascript" src="<%=path %>/js/sxl/jquery-ui-1.9.2.custom.js"></script>-->
-<script type="text/javascript" src="<%=path %>/js/sxl/autoMessage.js"></script>
 <script type="text/javascript" src="<%=path %>/js/yzp/curDate.js"></script>
 <script type="text/javascript" src="<%=path %>/js/WdatePicker.js"></script>
+<!-- 电话号自动补全 -->
+<link type="text/css" rel="stylesheet" href="<%=path %>/css/jquery-ui-1.9.2.custom.css" />
+<script type="text/javascript" src="<%=path %>/js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="<%=path %>/js/qh/publishMessage.js"></script>
+<script type="text/javascript" src="<%=path %>/js/sxl/jquery-ui-1.9.2.custom.js"></script>
+<script type="text/javascript" src="<%=path %>/js/sxl/autoPhone.js"></script>
 </head>
 <body onLoad="getEClock(clock)">
 
@@ -41,8 +43,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<div class="search">
 					<input type="submit" value="" class="btn"/>
 					<input type="hidden" name="msgStatus" value="1">
-					<input type="text" class="text1" value="日期"  name="publishTime" onClick="WdatePicker()"/>
-					<input type="text" class="text" id="tags" name="publisherPhone" onkeyup="autoMessages()"  value="电话号码"/>
+					<input type="text" class="text1" value="日期" name="publishTime" onClick="WdatePicker()"/>
+					<input type="text" class="text" id="publisherPhone" name="publisherPhone" onkeydown="autoPhone()"  value="电话号码"/>
 					<div id="result"></div>
 				</div>
 			</form>
@@ -121,4 +123,21 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<!-- // footer -->
 	</div></body>
 </body>
+<script language="JavaScript" type="text/javascript">
+			function addListener(element,e,fn){    
+    	 		if(element.addEventListener){    
+          			element.addEventListener(e,fn,false);    
+     			 } else {    
+         	 		element.attachEvent("on" + e,fn);    
+     	 		 }    
+			}
+			var publisherPhone = document.getElementById("publisherPhone");
+			addListener(publisherPhone,"click",function(){
+				publisherPhone.value = "";
+			})
+			addListener(publisherPhone,"blur",function(){
+				publisherPhone.value = "电话号码";
+			})
+
+</script>
 </html>

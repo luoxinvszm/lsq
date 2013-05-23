@@ -168,7 +168,7 @@ public final class ht_002dlogin_jsp extends org.apache.jasper.runtime.HttpJspBas
         out.write("\t\t\t\t\t<table>\r\n");
         out.write("\t\t\t\t\t\t<tr>\r\n");
         out.write("\t\t\t\t\t\t\t<td><input type=\"text\" name=\"auth\" onblur=\"checkyan()\"\r\n");
-        out.write("\t\t\t\t\t\t\t\tid=\"yanzhengma\" /></td>\r\n");
+        out.write("\t\t\t\t\t\t\t\tid=\"yanzhengma\"  width=\"10px\" border=\" 1px solid red\"/></td>\r\n");
         out.write("\t\t\t\t\t\t\t<td><img src=\"authImg\" name=\"auth\" id=\"auth\" /><a\r\n");
         out.write("\t\t\t\t\t\t\t\thref=\"javascript:void(0)\" onclick=\"changeImage()\">看不清</a></td>\r\n");
         out.write("\t\t\t\t\t\t\t<td><div style=\"display: none\" id=\"yan\">\r\n");

@@ -119,13 +119,13 @@ public class QureyMessageDAO implements IQureyMessageDAO {
 		return getMessages(sql);
 	}
 
-	// **************************通过关键字模糊查询*********************************
-	public List<Message> qureyMessagesByLike(String msgLike) {
+	// **************************通过电话号模糊查询*********************************
+	public List<Message> qureyMessagesByPhoneLike(String msgLike) {
 		String keywords = "%";
 		for (int i = 0; i < msgLike.length(); i++) {
 			keywords += msgLike.charAt(i) + "%";
 		}
-		String sql = "select * from message where msgConctent like'"
+		String sql = "select * from message where publisherPhone like'"
 				+ keywords + "' limit 0,10;";
 		return getMessages(sql);
 	}

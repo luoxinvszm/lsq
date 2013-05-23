@@ -14,12 +14,12 @@ public interface IQureyMessageService {
 	 */
 	public List<Message> checkQuery(String publisherPhone,String publishTime,int msgStatus);
 	/**
-	 * 根据关键字模糊查询
+	 * 根据电话号模糊查询
 	 * 
 	 * @param msgLike
 	 * @return List
 	 */
-	public List<Message> qureyMessagesByLike(String msgLike);
+	public List<Message> qureyMessagesByPhoneLike(String msgLike);
 	
 	
 	/*yzp 2013-05-19*/
