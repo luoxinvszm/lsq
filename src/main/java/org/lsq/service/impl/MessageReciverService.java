@@ -2,61 +2,50 @@ package org.lsq.service.impl;
 
 import java.io.IOException;
 import java.io.InputStream;
-
-import javax.comm.CommPortIdentifier;
-import javax.comm.NoSuchPortException;
-import javax.comm.PortInUseException;
-import javax.comm.SerialPort;
-import javax.comm.UnsupportedCommOperationException;
+import java.io.OutputStream;
+import java.net.ServerSocket;
+import java.net.Socket;
 
 import org.lsq.dao.IInsertMessageDAO;
 import org.lsq.util.DateFormat;
+
 /**
- * 类名：MessageReciverService
- * 功能：打开串口，并且监听发送来的数据，将接收到的数据插入的数据库message表中
+ * 类名：MessageReciverService 
+ * 功能：开启独立县城,建立ServerSocket对象，监听带有GSM模块的PC发来的信息
+ * 		并插入数据库。
  * 
  * */
-public class MessageReciverService extends Thread{
+public class MessageReciverService extends Thread {
 	private IInsertMessageDAO insertMessageDAO;
-	private CommPortIdentifier portId = null;
-	private SerialPort serialPort = null;
-	private InputStream in = null;
-//	private OutputStream out = null;
-	int newData;
-	
+	ServerSocket serverSocket = null;
+	InputStream in = null;
+	OutputStream out = null;
+
 	public void run() {
-		System.out.println("串口监听线程开始...");
-		while (newData != -1) {
-			try {
-				byte[] readBuffer = new byte[64];
-				int numBytes = in.read(readBuffer);
-				byte[] dataBuffer=new byte[numBytes];
-				System.out.println("recv byte nums=" + numBytes);
-				for (int i = 0; i < numBytes; i++) {
-					dataBuffer[i]=readBuffer[i];
-				}
-				String msg = new String(dataBuffer);
-				insertMessageDAO.insertMessage(msg, "读取串口", "读取串口", DateFormat.dateToString(), "");
-			} catch (IOException ex) {
+		try {
+			while(true){
+			byte[] tempBuf=new byte[2048];
+			Socket socket=serverSocket.accept();
+			in=socket.getInputStream();
+			out=socket.getOutputStream();
+			int recvLenght=in.read(tempBuf);
+			byte[] dataBuf=new byte[recvLenght];
+			for(int i=0;i<recvLenght;i++){
+				dataBuf[i]=tempBuf[i];
 			}
+			String msg=new String(dataBuf,"GB2312");
+			System.out.println(msg);
+			insertMessageDAO.insertMessage(msg, "串口接收", "串口com1发送", DateFormat.dateToString(), "");
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
 	}
 
 	public MessageReciverService() {
 		try {
-			portId = CommPortIdentifier.getPortIdentifier("COM1");
-			serialPort = (SerialPort) portId.open("Serial_Communication", 2000);
-			in = serialPort.getInputStream();
-//			out = serialPort.getOutputStream();
-			serialPort.setSerialPortParams(9600, SerialPort.DATABITS_8,
-					SerialPort.STOPBITS_1, SerialPort.PARITY_NONE);
-		} catch (NoSuchPortException e) {
-			e.printStackTrace();
-		} catch (PortInUseException e) {
-			e.printStackTrace();
+			serverSocket = new ServerSocket(9091);
 		} catch (IOException e) {
-			e.printStackTrace();
-		} catch (UnsupportedCommOperationException e) {
 			e.printStackTrace();
 		}
 	}
@@ -64,6 +53,5 @@ public class MessageReciverService extends Thread{
 	public void setInsertMessageDAO(IInsertMessageDAO insertMessageDAO) {
 		this.insertMessageDAO = insertMessageDAO;
 	}
-	
 
 }

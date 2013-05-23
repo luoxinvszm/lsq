@@ -2,17 +2,22 @@
 <%@page import="java.util.*"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
+<%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>校园信息自主发布平台管理系统</title>
-<link href="../css/houtai.css" rel="stylesheet" type="text/css" />
-<script src="../js/houtai.js" type="text/javascript"></script>
-<script src="../js/jquery-1.9.1.min.js" type="text/javascript"></script>
-<script src="../js/backstage.js" type="text/javascript"></script>
-<script src="../js/yhy/yhy.js" type="text/javascript"></script>
-<script src="../js/yhy/queryMessage.js" type="text/javascript"></script>
+<link type="text/css" rel="stylesheet" href="<%=path %>/css/houtai.css" />
+
+<script type="text/javascript" src="<%=path %>/js/houtai.js" ></script>
+<script type="text/javascript" src="<%=path %>/js/jquery-1.9.1.min.js" ></script>
+<script type="text/javascript" src="<%=path %>/js/backstage.js" ></script>
+<script type="text/javascript" src="<%=path %>/js/yhy/yhy.js" ></script>
+<script type="text/javascript" src="<%=path %>/js/yhy/queryMessage.js" ></script>
 
 </head>
 <body>
@@ -132,8 +137,11 @@
 		<!-- right5 -->
 		<div id="right5">
 			<div class="tlt">当前位置：创建管理员</div>
-			<label>超级管理员：</label><input type="text" value="昵称：yhy" class="text" name="userRealName"/>
+			<label>请输入管理员真是姓名：</label><input type="text"  class="text" name="userRealName" id="name"/>
 			<input type="button" value="创建" class="btn" onclick="checkcreate()"/>
+			<table id="createlist">
+				
+			</table>
 		</div>
 		<!-- //right5 -->
 		<!-- right6 -->
@@ -144,7 +152,7 @@
 				 <input type="button" value="取消全选" onclick="uncheckAll()"class="butt"/><input type="button" value="删除" onclick="batchdelete()" class="butt" /><input
 					type="button" value="冻结" onclick="batchcancle()" class="butt"/>
 			</p>
-				
+			
 			<table cellpadding="0" cellspacing="0" class="table1" id="usingAdminList" >
 		
 				

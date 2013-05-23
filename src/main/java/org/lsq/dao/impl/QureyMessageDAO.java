@@ -176,5 +176,24 @@ public class QureyMessageDAO implements IQureyMessageDAO {
 		}
 		return messages;
 	}
+	
+	// **************************通过状态查询所有+分页************************************
+	
+	public List<Message> qureyMessages(int msgStatus,int first,int max){
+		
+		System.out.println("qureyMessagesDAO starting /*yzp 2013-05-19*/······ ");
+		
+		String sql = "select * from message where msgStatus="+msgStatus;
+		
+		if(max>0){
+			
+			sql += " limit "+first+","+max;
+		}
+		
+		System.out.println(sql);
+		
+		return getMessages(sql);
+		
+	}
 
 }

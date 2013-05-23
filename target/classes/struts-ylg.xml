@@ -7,7 +7,7 @@
 
 		<action name="login" class="loginAction">
 			<result name="success">/jsp/backstage.jsp</result>
-			<result name="input">ht-login.jsp</result>
+			<result name="input">/jsp/ht-login.jsp</result>
 		</action>
 		<action name="authImg" class="AuthImg">
 			<result type="stream">
@@ -17,10 +17,10 @@
 		</action>
 		
 		<action name="*_userAction" class="userAction" method="{1}">
-			<result name="updatePassword">backstage.jsp</result>
+			<result name="updatePassword">/jsp/backstage.jsp</result>
 		</action>
 		<action name="SafeExitAction" class="SafeExitAction">
-			<result name="success">ht-login.jsp</result>
+			<result name="success">/jsp/ht-login.jsp</result>
 		</action>
 	</package>
 	

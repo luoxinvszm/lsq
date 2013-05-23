@@ -22,10 +22,7 @@
 			<result name="login" type="redirect">/login.jsp</result>
 		</global-results>
 		
-		<action name="createOrdin" class="createOrdin">
-			<result name="success">/result1.jsp</result>
-			<interceptor-ref name="myStack"></interceptor-ref>
-		</action>
+		
 	</package>
 
 	<package name="yhy_json" extends="json-default">

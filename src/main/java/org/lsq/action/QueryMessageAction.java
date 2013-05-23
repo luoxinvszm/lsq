@@ -3,7 +3,11 @@ package org.lsq.action;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
+import org.apache.struts2.ServletActionContext;
 import org.lsq.service.IQureyMessageService;
+import org.lsq.util.PagingUtil;
 import org.lsq.vo.Message;
 
 import com.opensymphony.xwork2.ActionSupport;
@@ -31,6 +35,8 @@ public class QueryMessageAction extends ActionSupport {
 	private String publisherPhone;
 	private String publishTime;
 	private int msgStatus;
+	private Integer totalSize;
+
 	private String inMessage;
 	public String getInMessage() {
 		return inMessage;
@@ -39,6 +45,7 @@ public class QueryMessageAction extends ActionSupport {
 	public void setInMessage(String inMessage) {
 		this.inMessage = inMessage;
 	}
+
 
 	public String getPublisherPhone() {
 		return publisherPhone;
@@ -63,34 +70,58 @@ public class QueryMessageAction extends ActionSupport {
 	public void setMsgStatus(int msgStatus) {
 		this.msgStatus = msgStatus;
 	}
+	
+	public Integer getTotalSize() {
+		return totalSize;
+	}
+
+	public void setTotalSize(Integer totalSize) {
+		this.totalSize = totalSize;
+	}
 
 	// *****************************************************************
-
+	
 	// 集合的注入
 	private List<Message> messageList;
 
 	private List<String> msgContextList=null;
 	
+	
+	public void setMessageList(List<Message> messageList) {
+		this.messageList = messageList;
+	}
+
 	public List<Message> getMessageList() {
 		return messageList;
 	}
 
 	// 主方法
 	public String execute() {
-		System.out.println("qureymessageaction starting····");
-		messageList = qureyMessageService.checkQuery(publisherPhone,
-				publishTime, msgStatus);
-		for (Message m : messageList) {
-			System.out.println(m.getMsgId());
-			System.out.println(m.getMsgTypeId());
-			System.out.println(m.getPublisherName());
-			System.out.println(m.getPublisherPhone());
-			System.out.println(m.getMsgRemark());
-			System.out.println(m.getPublishTime());
-			System.out.println(m.getMsgConctent());
-			System.out.println(m.getMsgStatus());
-			System.out.println("***************************************");
+		System.out.println("qureymessageaction starting yzp 2013-05-19····");
+		/*yzp 2013-05-19*/
+		try{
+			HttpServletRequest request = ServletActionContext.getRequest();
+			Integer[] args = PagingUtil.getPagingParameter(request);
+			messageList = qureyMessageService.checkQuery(publisherPhone, publishTime,0, args[2], args[1]);
+			totalSize = qureyMessageService.checkQuery(publisherPhone, publishTime, msgStatus, 0, 0).size();
+		}catch(Exception e){
+			e.printStackTrace();
 		}
+		
+		/*qh*/
+//		messageList = qureyMessageService.checkQuery(publisherPhone,
+//				publishTime, msgStatus);
+//		for (Message m : messageList) {
+//			System.out.println(m.getMsgId());
+//			System.out.println(m.getMsgTypeId());
+//			System.out.println(m.getPublisherName());
+//			System.out.println(m.getPublisherPhone());
+//			System.out.println(m.getMsgRemark());
+//			System.out.println(m.getPublishTime());
+//			System.out.println(m.getMsgConctent());
+//			System.out.println(m.getMsgStatus());
+//			System.out.println("***************************************");
+//		}
 		return SUCCESS;
 	}
 

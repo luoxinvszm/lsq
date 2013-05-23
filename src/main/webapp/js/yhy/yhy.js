@@ -25,7 +25,11 @@ function searchUsingAdmin(stat) {
 		data : params,
 		dataType : "json", //ajax返回值设置为json格式
 		success : function(json) { //返回的json
-				$(target).html("");
+				$(target).html("<tr>"+
+							"<th width=\"50\">序号</th>"+
+							"<th width=\"100\">用户名</th>"+"<th width=\"100\">昵称</th>"+
+							"<th width=\"200\">操作</th>"+
+							"</tr>");
 			 $.each(json.usersList, function(i, item) { //messageList是action中的list对的是get方法 
 				 $(target).append(
 						 	"<tbody id=\""+i+"\">"+
@@ -107,6 +111,7 @@ function resetPassword(d){
 			dateType:"json",
 			success : function(s) { 
 				alert("重置成功");//返回的json
+				window.location.reload();
 			},
 			error: function(){
 				alert("服务器繁忙，请稍后再试");
@@ -343,7 +348,6 @@ function batchrecover(){
 		dataType : "json", //ajax返回值设置为json格式
 		success : function(json) {
 			alert("冻结成功");//返回的json
-			window.location.reload();
 		},
 		error: function(){
 			alert("服务器繁忙，请稍后再试");
@@ -359,30 +363,38 @@ function batchrecover(){
 }
 function checkcreate(){
 	var name=document.getElementById("name").value;
+	alert(name);
 	if(""==name ){
 		alert("请输入管理员姓名!");
 	}else{
-		var params= {
-				RealName:name
-		};
+		var tag = "#createlist";
 		var flag =confirm("是否确定要创建？");
 		if(flag==true){
+			var params= {
+					RealName:name
+			};
 			$.ajax({
 				type : "POST",
 				url : "createOrdin.action",
 				data : params,
 				dataType : "json", //ajax返回值设置为json格式
-				success : function(json) {//返回的json
-					window.location.reload();
-				},
-				error: function(){
-					alert("服务器繁忙，请稍后再试");
-					
+				success : function(json) { //返回的json
+						$(tag).html("");
+					 $.each(json.list, function(i, item) { //messageList是action中的list对的是get方法 
+						 $(tag).append(
+								 "<tr><td>恭喜您,创建成功!</td></tr>" +
+								 "<tr><td>用户名:"+item.username+"</td></tr>"+
+								 "<tr><td>真实姓名:"+item.userRealName+"</td></tr>" +
+								 "<tr><td>初始密码:"+item.password+"</td></tr>");
+					   }); 
 				}
 			});
-		}else{
+			
+		}
+		else{
 			return ;
 		}
 	}
 	
+
 }
