@@ -18,7 +18,13 @@ public class PagingUtil {
 		
 		Integer[] args = new Integer[10];
 		//当前页
-		Integer currPageNum = Integer.parseInt(request.getParameter("currPageNum"));
+		Integer currPageNum ;
+		String object = request.getParameter("currPageNum");
+		if(null==object){
+			currPageNum = 1;
+		}else{
+			currPageNum = Integer.parseInt(object);
+		}
 		//每页条数limit的max
 		Integer pageRowSize = Integer.parseInt(request.getParameter("pageRowSize"));
 		//此页起始条数limit的first

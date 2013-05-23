@@ -199,6 +199,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         out.write("\t\t\t\t</dd>\r\n");
         out.write("\r\n");
         out.write("\t\t\t\t<dt>验证码:</dt>\r\n");
+<<<<<<< HEAD
+        out.write("\t\t\t\t<dd>\r\n");
+        out.write("\t\t\t\t\t<table>\r\n");
+        out.write("\t\t\t\t\t\t<tr>\r\n");
+        out.write("\t\t\t\t\t\t\t<td><input type=\"text\" name=\"auth\" onblur=\"checkyan()\"\r\n");
+        out.write("\t\t\t\t\t\t\t\tid=\"yanzhengma\"  width=\"10px\" border=\" 1px solid red\"/></td>\r\n");
+        out.write("\t\t\t\t\t\t\t<td><img src=\"authImg\" name=\"auth\" id=\"auth\" /><a\r\n");
+        out.write("\t\t\t\t\t\t\t\thref=\"javascript:void(0)\" onclick=\"changeImage()\">看不清</a></td>\r\n");
+        out.write("\t\t\t\t\t\t\t<td><div style=\"display: none\" id=\"yan\">\r\n");
+=======
         out.write("\t\t\t\t<dd class=\"dd\">\r\n");
         out.write("\t\t\t\t\t<input type=\"text\" name=\"auth\" onblur=\"checkyan()\"\r\n");
         out.write("\t\t\t\t\t\t\t\tid=\"yanzhengma\" class=\"text\" />\r\n");
@@ -207,6 +217,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         out.write("\t\t\t\t\t\t\t\thref=\"javascript:void(0)\" onclick=\"changeImage()\">看不清</a>\r\n");
         out.write("\t\t\t\t\t\t\t</div>\r\n");
         out.write("\t\t\t\t\t\t\t<div style=\"display: none\" id=\"yan\" class=\"font\">\r\n");
+>>>>>>> 0a513bc82f7bf8ffcab1364d89cbe26dfadab728
         out.write("\t\t\t\t\t\t\t\t\t<font face=\"宋体\" color=\"red\">验证码不能为空</font>\r\n");
         out.write("\t\t\t\t\t\t\t\t</div>\r\n");
         out.write("\t\t\t\t</dd>\r\n");

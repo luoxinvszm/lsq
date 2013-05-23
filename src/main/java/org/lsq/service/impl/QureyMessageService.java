@@ -29,7 +29,7 @@ public class QureyMessageService implements IQureyMessageService {
 	}
 
 //判断前台的参数符合那种条件
-	public List<Message> checkQuery(String publisherPhone, String publishTime,
+	/*public List<Message> checkQuery(String publisherPhone, String publishTime,
 			int msgStatus) {
 		if(publisherPhone.equals("") &&publishTime.equals("")){
 			
@@ -58,41 +58,41 @@ public class QureyMessageService implements IQureyMessageService {
 		}
 	}
 
-
+*/
 	
 	/*yzp 2013-05-19*/
 	public List<Message> checkQuery(String publisherPhone, String publishTime,
 			int msgStatus,int first,int max) {
 	
-		if(publisherPhone==null &&publishTime==null){
+		if(publisherPhone.equals("") &&publishTime.equals("")){
 			
 			System.out.println("qureyMessageService (including msgStatus) starting /*yzp 2013-05-19*/·····");
 			
 			return qureyMessageDao.qureyMessages(msgStatus,first,max);//只有这里改了
 		}
-		else if(publisherPhone!=null&&publishTime!=null){
+		else if(!publisherPhone.equals("")&&!publishTime.equals("")){
 			
 			System.out.println("qureyMessageService (including publisherPhone,publishTime,msgStatus) starting·····");
 			
-			return qureyMessageDao.qureyMessagesByPhoneAndTime(publisherPhone, publishTime, msgStatus);
+			return qureyMessageDao.qureyMessagesByPhoneAndTime(publisherPhone, publishTime, msgStatus,first,max);
 		}
-		else if(publisherPhone!=null&&publishTime==null){
+		else if(!publisherPhone.equals("")&&publishTime.equals("")){
 			
 			System.out.println("qureyMessageService (including publisherPhone,msgStatus) starting·····");
 			
-			return qureyMessageDao.qureyMessagesByPhone(publisherPhone, msgStatus);
+			return qureyMessageDao.qureyMessagesByPhone(publisherPhone, msgStatus,first,max);
 		}
 		else{
 			
 			System.out.println("qureyMessageService (including publisherPhone,msgStatus) starting·····");
 			
-			return qureyMessageDao.qureyMessagesByTime(publishTime, msgStatus);
+			return qureyMessageDao.qureyMessagesByTime(publishTime, msgStatus,first,max);
 
 		}
 	}
-	public List<Message> qureyMessagesByLike(String msgLike) {
+	public List<Message> qureyMessagesByPhoneLike(String msgLike) {
 		// TODO Auto-generated method stub
-		return qureyMessageDao.qureyMessagesByLike(msgLike);
+		return qureyMessageDao.qureyMessagesByPhoneLike(msgLike);
 	}
 
 }
