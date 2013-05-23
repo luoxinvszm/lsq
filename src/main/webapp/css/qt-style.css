@@ -14,7 +14,7 @@
 .left label { float:left; line-height:40px; color:#00b8d5; font-size:16px;} 
 .left .btn { float:right; width:157px; height:38px; margin-top:10px; background:url(../image/qt-left_btnbf.png) no-repeat left top; font-size:18px; text-align:center; color:#fff; font-weight:bold;}
 .left .list li { padding:0 15px; background:url(../image/qt-right_liicon.png) no-repeat 5px center; line-height:25px; text-align:right;}
-.left .list li a { float:left; color:#808281; font-size:14px;}
+.left .list li a { float:left; color:black; font-size:14px;}
 .left p { padding:0 10px; text-indent:2em; text-align:left; line-height:25px; color:#808281; font-size:14px;}
 .left .top { height:40px; line-height:30px; text-align:right; color:#35a9ff; font-size:12px;}
 .left .top span { padding:0 5px;}
