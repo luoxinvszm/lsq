@@ -102,8 +102,19 @@ public class QueryMessageAction extends ActionSupport {
 		try{
 			HttpServletRequest request = ServletActionContext.getRequest();
 			Integer[] args = PagingUtil.getPagingParameter(request);
-			messageList = qureyMessageService.checkQuery(publisherPhone, publishTime,0, args[2], args[1]);
+			messageList = qureyMessageService.checkQuery(publisherPhone, publishTime,msgStatus, args[2], args[1]);
 			totalSize = qureyMessageService.checkQuery(publisherPhone, publishTime, msgStatus, 0, 0).size();
+			for (Message m : messageList) {
+				System.out.println(m.getMsgId());
+				System.out.println(m.getMsgTypeId());
+				System.out.println(m.getPublisherName());
+				System.out.println(m.getPublisherPhone());
+				System.out.println(m.getMsgRemark());
+				System.out.println(m.getPublishTime());
+				System.out.println(m.getMsgConctent());
+				System.out.println(m.getMsgStatus());
+				System.out.println("***************************************");
+			}
 		}catch(Exception e){
 			e.printStackTrace();
 		}
@@ -111,17 +122,7 @@ public class QueryMessageAction extends ActionSupport {
 		/*qh*/
 //		messageList = qureyMessageService.checkQuery(publisherPhone,
 //				publishTime, msgStatus);
-//		for (Message m : messageList) {
-//			System.out.println(m.getMsgId());
-//			System.out.println(m.getMsgTypeId());
-//			System.out.println(m.getPublisherName());
-//			System.out.println(m.getPublisherPhone());
-//			System.out.println(m.getMsgRemark());
-//			System.out.println(m.getPublishTime());
-//			System.out.println(m.getMsgConctent());
-//			System.out.println(m.getMsgStatus());
-//			System.out.println("***************************************");
-//		}
+
 		return SUCCESS;
 	}
 

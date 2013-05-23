@@ -17,10 +17,35 @@
 <script type="text/javascript" src="<%=path %>/js/yzp/json2.js"></script>
 <script type="text/javascript" src="<%=path %>/js/yzp/asynPage-Msg.js"></script>
 <script type="text/javascript" src="<%=path %>/js/yzp/curDate.js"></script>
+<script type="text/javascript" src="<%=path %>/js/WdatePicker.js"></script>
+
 <script type="text/javascript">
+			function GetRequest() {
+				   var url = location.search; //获取url中"?"符后的字串
+				   var theRequest = new Object();
+				   if (url.indexOf("?") != -1) {
+				      var str = url.substr(1);
+				      strs = str.split("&");
+				      for(var i = 0; i < strs.length; i ++) {
+				         theRequest[strs[i].split("=")[0]]=unescape(strs[i].split("=")[1]);
+				      }
+				   }
+				   return theRequest;
+				}
+				//88888888888
+			var Request = new Object();
+			Request = GetRequest();
+			var publisherPhone,publishTime,msgStatus;
+			publisherPhone = Request['publisherPhone'];
+			publishTime = Request['publishTime'];
+			msgStatus = Request['msgStatus'];
+			/* alert(publisherPhone);
+			alert(publishTime);
+			alert(msgStatus); */
+
 			$(document).ready(function(){
-				var params = "";
-		    	$("#paging").asynPage("qureyMessage.action",params,"#datas",buildHtml,15,"messageList","totalSize");
+				var params = "msgStatus="+msgStatus+"&publishTime="+publishTime+"&publisherPhone="+publisherPhone;
+		    	$("#paging").asynPage("qureyMessage.action",params,"#datas",buildHtml,2,"messageList","totalSize");
     		});
 			function buildHtml(messageList){
 				$.each(messageList,function(i,message){
@@ -52,9 +77,8 @@
 			</ul>
 			<div class="search">
 				<input type="button" value=" " class="btn" onclick="submit()" />
-				<input type="text" class="text1" value="2013-05-22"/>
-				<input type="text" class="text" id="queryExp" value="信息" />
-				
+				<input type="text" class="text1" value="日期"name="publishTime" onClick="WdatePicker()"/>
+				<input type="text" class="text" id="queryExp" value="电话号码" />
 				
 			</div>
 		

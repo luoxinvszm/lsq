@@ -19,6 +19,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <script type="text/javascript" src="<%=path %>/js/sxl/autoMessage.js"></script>
 <script type="text/javascript" src="<%=path %>/js/yzp/curDate.js"></script>
 <script type="text/javascript" src="<%=path %>/js/WdatePicker.js"></script>
+<script type="text/javascript">
+	function submitForm(form){
+		
+		var datevalue = $("#publishTime").val();
+		if(datevalue=="日期"){
+			$("#publishTime").val("");
+		//alert("ssss");
+		}
+	}
+
+</script>
 </head>
 <body onLoad="getEClock(clock)">
 
@@ -37,11 +48,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<li><a href="<%=path %>/jsp/browseMessage.jsp">浏览信息</a></li>
 				<li><a href="<%=path %>/jsp/aboutUs.jsp">关于我们</a></li>
 			</ul>
-			<form action="qureyMessageform" method="post">
+			<form action="browseMessage.jsp" method="get" onsubmit="return submitForm(this);">
 				<div class="search">
 					<input type="submit" value="" class="btn"/>
 					<input type="hidden" name="msgStatus" value="1">
-					<input type="text" class="text1" value="日期"  name="publishTime" onClick="WdatePicker()"/>
+					<input type="text" class="text1" value="日期" id="publishTime" name="publishTime" onClick="WdatePicker()"/>
 					<input type="text" class="text" id="tags" name="publisherPhone" onkeyup="autoMessages()"  value="电话号码"/>
 					<div id="result"></div>
 				</div>

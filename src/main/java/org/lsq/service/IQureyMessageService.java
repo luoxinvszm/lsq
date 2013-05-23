@@ -12,7 +12,7 @@ public interface IQureyMessageService {
 	 * @param msgStatus
 	 * @return	List
 	 */
-	public List<Message> checkQuery(String publisherPhone,String publishTime,int msgStatus);
+	//public List<Message> checkQuery(String publisherPhone,String publishTime,int msgStatus);
 	/**
 	 * 根据关键字模糊查询
 	 * 

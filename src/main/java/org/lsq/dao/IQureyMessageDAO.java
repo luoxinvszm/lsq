@@ -11,7 +11,7 @@ public interface IQureyMessageDAO {
 	 * @param publisherPhone
 	 * @return List
 	 */
-	public List<Message> qureyMessagesByPhone(String publisherPhone);
+	public List<Message> qureyMessagesByPhone(String publisherPhone,int first,int max);
 
 	/**
 	 * 通过电话号码查询信息（管理员和用户通用）
@@ -21,7 +21,7 @@ public interface IQureyMessageDAO {
 	 * @return List
 	 */
 	public List<Message> qureyMessagesByPhone(String publsherPhone,
-			int msgStatus);
+			int msgStatus,int first,int max);
 
 	/**
 	 * 通过发布时间查询信息(管理员查询),包括所有状态
@@ -29,7 +29,7 @@ public interface IQureyMessageDAO {
 	 * @param publishTime
 	 * @return List
 	 */
-	public List<Message> qureyMessagesByTime(String publishTime);
+	public List<Message> qureyMessagesByTime(String publishTime,int first,int max);
 
 	/**
 	 * 通过发布时间查询信息（管理员和用户通用）
@@ -38,7 +38,7 @@ public interface IQureyMessageDAO {
 	 * @param msgStatus
 	 * @return List
 	 */
-	public List<Message> qureyMessagesByTime(String publishTime, int msgStatus);
+	public List<Message> qureyMessagesByTime(String publishTime, int msgStatus,int first,int max);
 
 	/**
 	 * 通过发布时间和电话查询信息（管理员和用户）
@@ -49,7 +49,7 @@ public interface IQureyMessageDAO {
 	 * @return List
 	 */
 	public List<Message> qureyMessagesByPhoneAndTime(String publisherPhone,
-			String publishTime, int msgStatus);
+			String publishTime, int msgStatus,int first,int max);
 
 	/**
 	 * 通过发布时间和电话查询信息(管理员，所有状态)
@@ -59,7 +59,7 @@ public interface IQureyMessageDAO {
 	 * @return List
 	 */
 	public List<Message> qureyMessagesByPhoneAndTime(String publisherPhone,
-			String publishTime);
+			String publishTime,int first,int max);
 
 	/**
 	 * 查询所有信息(某一个状态)
