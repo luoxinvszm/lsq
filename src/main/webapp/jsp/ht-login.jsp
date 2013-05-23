@@ -48,40 +48,38 @@
 		<h1>
 			<img src="../image/ht-login_h1.gif" alt="校园信息自主发布平台" />
 		</h1>
-		<img src="../image/ht-login_img.gif" alt="login" class="img" />
+		<img src="../image/login_img.gif" alt="login" class="img" />
+		<font color="red" face="songti"><s:fielderror /></font>
 		<s:form action="login" method="post">
 			<dl>
 				<dt>用户名：</dt>
 				<dd>
 					<input type="text" name="username"
-						style="width: 200px; height: 30px;" onblur="checkuser()" id="zh" />
-					<div style="display: none" id="u1">
+						onblur="checkuser()" id="zh" class="text" />
+					<div style="display: none" id="u1" class="font">
 						<font face="宋体" color="red">用户名不能为空</font>
 					</div>
 				</dd>
 				<dt>密码:</dt>
 				<dd>
 					<input type="password"
-						style="width: 200px; height: 30px; bgcolor: yellow"
-						name="password" onblur="check1()" id="pass1" />
-					<div style="display: none" id="d1">
+						name="password" onblur="check1()" id="pass1" class="text" />
+					<div style="display: none" id="d1" class="font">
 						<font face="宋体" color="red">密码不能为空</font>
 					</div>
 				</dd>
 
 				<dt>验证码:</dt>
-				<dd>
-					<table>
-						<tr>
-							<td><input type="text" name="auth" onblur="checkyan()"
-								id="yanzhengma" /></td>
-							<td><img src="authImg" name="auth" id="auth" /><a
-								href="javascript:void(0)" onclick="changeImage()">看不清</a></td>
-							<td><div style="display: none" id="yan">
+				<dd class="dd">
+					<input type="text" name="auth" onblur="checkyan()"
+								id="yanzhengma" class="text" />
+							<div class="img1">
+								<img src="authImg" name="auth" id="auth" /><a
+								href="javascript:void(0)" onclick="changeImage()">看不清</a>
+							</div>
+							<div style="display: none" id="yan" class="font">
 									<font face="宋体" color="red">验证码不能为空</font>
-								</div></td>
-						</tr>
-					</table>
+								</div>
 				</dd>
 			</dl>
 

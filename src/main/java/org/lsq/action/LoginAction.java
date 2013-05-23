@@ -11,6 +11,7 @@ import org.apache.struts2.ServletActionContext;
 import org.lsq.service.IRoleCastPowerService;
 import org.lsq.service.IUserService;
 import org.lsq.vo.Power;
+import org.lsq.vo.User;
 
 import com.opensymphony.xwork2.ActionSupport;
 /**
@@ -65,7 +66,7 @@ public class LoginAction extends ActionSupport {
 	}
 	//重新validate方法 进行数据校验
 		public void validate(){
-			System.out.println(auth);
+			System.out.println(auth+"auth-----");
 			HttpSession session =ServletActionContext.getRequest().getSession();
 			String s = session.getAttribute("rand").toString();
 			System.out.println(s+"-----------");
@@ -83,13 +84,16 @@ public class LoginAction extends ActionSupport {
 		}else{
 				int roleId=userService.isLogin(username, password);
 				long userId=userService.getuserId(username, password);
+				User user1 =userService.queryUser(username, password);
 				System.out.println(userId+"---------");
+				System.out.println(user1.getUserRealName()+"====");
 				HttpSession session=ServletActionContext.getRequest().getSession();
 				//如果用户成功登陆，则将用户信息添加到session中
 				session.setAttribute("username", username);
 				session.setAttribute("password", password);
 				session.setAttribute("roleId", roleId);
 				session.setAttribute("userId", userId);
+				session.setAttribute("userRealName", user1.getUserRealName());
 				powersList=roleCastPowerService.queryPowers(roleId);
 				return SUCCESS;
 			}

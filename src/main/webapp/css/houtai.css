@@ -35,9 +35,11 @@ h1 { display:block; float:left; width:700px; height:53px; margin-top:20px; color
 
 /*right2*/
 #right2 { display:none; float:left; width:780px;}
-
+/*right10*/
+#right10{ display:none; float:left; width:700px;}
 /* right3 */
 #right3 { display:none; float:left; width:780px;}
+#r1{display:none; float:left; width:780px;}
 
 /* right4 */
 #right4 { display:none; float:left; width:780px;}
