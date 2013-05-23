@@ -56,12 +56,18 @@ public final class ht_002dlogin_jsp extends org.apache.jasper.runtime.HttpJspBas
 
       out.write("\r\n");
       out.write("\t\r\n");
+ String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+
+      out.write("\r\n");
       out.write("<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">\r\n");
       out.write("<html>\r\n");
       out.write("<head>\r\n");
       out.write("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\r\n");
       out.write("<title>管理员登录</title>\r\n");
-      out.write("<link href=\"../css/ht-login.css\" rel=\"stylesheet\" type=\"text/css\" />\r\n");
+      out.write("<link href=\"");
+      out.print(path );
+      out.write("/css/ht-login.css\" rel=\"stylesheet\" type=\"text/css\" />\r\n");
       out.write("<script type=\"text/javascript\">\r\n");
       out.write("\tfunction changeImage() {\r\n");
       out.write("\t\tvar date = new Date();\r\n");
@@ -131,9 +137,9 @@ public final class ht_002dlogin_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.struts2.views.jsp.ui.FormTag _jspx_th_s_005fform_005f0 = (org.apache.struts2.views.jsp.ui.FormTag) _005fjspx_005ftagPool_005fs_005fform_0026_005fmethod_005faction.get(org.apache.struts2.views.jsp.ui.FormTag.class);
     _jspx_th_s_005fform_005f0.setPageContext(_jspx_page_context);
     _jspx_th_s_005fform_005f0.setParent(null);
-    // /jsp/ht-login.jsp(52,2) name = action type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /jsp/ht-login.jsp(55,2) name = action type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fform_005f0.setAction("login");
-    // /jsp/ht-login.jsp(52,2) name = method type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /jsp/ht-login.jsp(55,2) name = method type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fform_005f0.setMethod("post");
     int _jspx_eval_s_005fform_005f0 = _jspx_th_s_005fform_005f0.doStartTag();
     if (_jspx_eval_s_005fform_005f0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {

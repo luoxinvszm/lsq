@@ -50,18 +50,37 @@ public final class backstage_jsp extends org.apache.jasper.runtime.HttpJspBase
       out = pageContext.getOut();
       _jspx_out = out;
 
+      out.write('\r');
+      out.write('\n');
+
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+
       out.write("\r\n");
       out.write("<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">\r\n");
       out.write("<html>\r\n");
       out.write("<head>\r\n");
       out.write("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\r\n");
       out.write("<title>校园信息自主发布平台管理系统</title>\r\n");
-      out.write("<link href=\"../css/houtai.css\" rel=\"stylesheet\" type=\"text/css\" />\r\n");
-      out.write("<script src=\"../js/houtai.js\" type=\"text/javascript\"></script>\r\n");
-      out.write("<script src=\"../js/jquery-1.9.1.min.js\" type=\"text/javascript\"></script>\r\n");
-      out.write("<script src=\"../js/backstage.js\" type=\"text/javascript\"></script>\r\n");
-      out.write("<script src=\"../js/yhy/yhy.js\" type=\"text/javascript\"></script>\r\n");
-      out.write("<script src=\"../js/yhy/queryMessage.js\" type=\"text/javascript\"></script>\r\n");
+      out.write("<link type=\"text/css\" rel=\"stylesheet\" href=\"");
+      out.print(path );
+      out.write("/css/houtai.css\" />\r\n");
+      out.write("\r\n");
+      out.write("<script type=\"text/javascript\" src=\"");
+      out.print(path );
+      out.write("/js/houtai.js\" ></script>\r\n");
+      out.write("<script type=\"text/javascript\" src=\"");
+      out.print(path );
+      out.write("/js/jquery-1.9.1.min.js\" ></script>\r\n");
+      out.write("<script type=\"text/javascript\" src=\"");
+      out.print(path );
+      out.write("/js/backstage.js\" ></script>\r\n");
+      out.write("<script type=\"text/javascript\" src=\"");
+      out.print(path );
+      out.write("/js/yhy/yhy.js\" ></script>\r\n");
+      out.write("<script type=\"text/javascript\" src=\"");
+      out.print(path );
+      out.write("/js/yhy/queryMessage.js\" ></script>\r\n");
       out.write("\r\n");
       out.write("</head>\r\n");
       out.write("<body>\r\n");
