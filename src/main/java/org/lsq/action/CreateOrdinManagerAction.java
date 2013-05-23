@@ -22,7 +22,7 @@ public class CreateOrdinManagerAction extends ActionSupport{
 	private String userRealName;
 	private String sname;
 	private String RealName;
-	private List<User> list = new ArrayList<User>();
+	private List<User> list;
 	
 	public List<User> getList() {
 		return list;
@@ -84,9 +84,7 @@ public class CreateOrdinManagerAction extends ActionSupport{
 		roleId="2";
 		String time =new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
 		if(userService.isAddUser(username, password, roleId,RealName,time)){
-				User user = new User();
-				user = userService.queryUser(username, password);
-				list.add(user);
+
 				System.out.println("success");
 				return SUCCESS;
 	

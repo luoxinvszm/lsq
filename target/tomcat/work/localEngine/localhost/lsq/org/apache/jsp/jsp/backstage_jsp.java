@@ -208,7 +208,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       out.write("\t\t<!-- right5 -->\r\n");
       out.write("\t\t<div id=\"right5\">\r\n");
       out.write("\t\t\t<div class=\"tlt\">当前位置：创建管理员</div>\r\n");
-      out.write("\t\t\t<label>请输入管理员真是姓名：</label><input type=\"text\"  class=\"text\" name=\"userRealName\" id=\"name\"/>\r\n");
+      out.write("\t\t\t<label>请输入管理员姓名：</label><input type=\"text\"  class=\"text\" name=\"userRealName\" id=\"name\"/>\r\n");
       out.write("\t\t\t<input type=\"button\" value=\"创建\" class=\"btn\" onclick=\"checkcreate()\"/>\r\n");
       out.write("\t\t\t<table id=\"createlist\">\r\n");
       out.write("\t\t\t\t\r\n");

@@ -82,11 +82,10 @@ public class LoginAction extends ActionSupport {
 		if(hasFieldErrors()){
 			return INPUT;
 		}else{
+				System.out.println(username+"222"+password);
 				int roleId=userService.isLogin(username, password);
 				long userId=userService.getuserId(username, password);
 				User user1 =userService.queryUser(username, password);
-				System.out.println(userId+"---------");
-				System.out.println(user1.getUserRealName()+"====");
 				HttpSession session=ServletActionContext.getRequest().getSession();
 				//如果用户成功登陆，则将用户信息添加到session中
 				session.setAttribute("username", username);

@@ -1,12 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 	<%@ taglib prefix="s" uri="/struts-tags"%>
+	<%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>管理员登录</title>
-<link href="../css/ht-login.css" rel="stylesheet" type="text/css" />
+<link href="<%=path %>/css/ht-login.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript">
 	function changeImage() {
 		var date = new Date();
@@ -46,9 +50,9 @@
 <body>
 	<div class="wrap">
 		<h1>
-			<img src="../image/ht-login_h1.gif" alt="校园信息自主发布平台" />
+			<img src="<%=path%>/image/ht-login_h1.gif" alt="校园信息自主发布平台" />
 		</h1>
-		<img src="../image/login_img.gif" alt="login" class="img" />
+		<img src="<%=path %>/image/login_img.gif" alt="login" class="img" />
 		<font color="red" face="songti"><s:fielderror /></font>
 		<s:form action="login" method="post">
 			<dl>

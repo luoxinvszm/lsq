@@ -24,7 +24,7 @@ function searchUsingAdmin(stat) {
 		url : "editOrdinAdminAction.action",
 		data : params,
 		dataType : "json", //ajax返回值设置为json格式
-		success : function(json) { //返回的json
+		success : function(json) {//返回的json
 				$(target).html("<tr>"+
 							"<th width=\"50\">序号</th>"+
 							"<th width=\"100\">用户名</th>"+"<th width=\"100\">昵称</th>"+
@@ -191,6 +191,7 @@ function batchdelete(){
 			di++;
 		}
 	}
+	alert(ids);
 	if(di==0){
 		alert("请选中你要删除的信息!");
 		return ;
@@ -378,15 +379,20 @@ function checkcreate(){
 				url : "createOrdin.action",
 				data : params,
 				dataType : "json", //ajax返回值设置为json格式
-				success : function(json) { //返回的json
+				success : function(json) {//返回的json
 						$(tag).html("");
-					 $.each(json.list, function(i, item) { //messageList是action中的list对的是get方法 
+					 $.each(json.list, function(i, item) {
+						 alert(123);//messageList是action中的list对的是get方法 
 						 $(tag).append(
 								 "<tr><td>恭喜您,创建成功!</td></tr>" +
 								 "<tr><td>用户名:"+item.username+"</td></tr>"+
 								 "<tr><td>真实姓名:"+item.userRealName+"</td></tr>" +
 								 "<tr><td>初始密码:"+item.password+"</td></tr>");
 					   }); 
+				},
+				error: function(){
+					alert("服务器繁忙，请稍后再试");
+					
 				}
 			});
 			
