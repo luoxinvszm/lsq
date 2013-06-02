@@ -81,7 +81,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       out.write("/js/WdatePicker.js\"></script>\r\n");
       out.write("<script type=\"text/javascript\">\r\n");
       out.write("\tfunction submitForm(form){\r\n");
-      out.write("\t\t\r\n");
+      out.write("\t\t//var phone = $()\r\n");
       out.write("\t\tvar datevalue = $(\"#publishTime\").val();\r\n");
       out.write("\t\tif(datevalue==\"日期\"){\r\n");
       out.write("\t\t\t$(\"#publishTime\").val(\"\");\r\n");
@@ -129,7 +129,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       out.write("/jsp/publishMessage.jsp\" >发布信息</a></li>\r\n");
       out.write("\t\t\t\t<li><a href=\"");
       out.print(path );
-      out.write("/jsp/browseMessage.jsp\">浏览信息</a></li>\r\n");
+      out.write("/jsp/browseMessage.jsp?msgStatus=1&publishTime=&publisherPhone=\">浏览信息</a></li>\r\n");
       out.write("\t\t\t\t<li><a href=\"");
       out.print(path );
       out.write("/jsp/aboutUs.jsp\">关于我们</a></li>\r\n");
@@ -139,7 +139,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       out.write("\t\t\t\t\t<input type=\"submit\" value=\"\" class=\"btn\"/>\r\n");
       out.write("\t\t\t\t\t<input type=\"hidden\" name=\"msgStatus\" value=\"1\">\r\n");
       out.write("\t\t\t\t\t<input type=\"text\" class=\"text1\" value=\"日期\" id=\"publishTime\" name=\"publishTime\" onClick=\"WdatePicker()\"/>\r\n");
-      out.write("\t\t\t\t\t<input type=\"text\" class=\"text\" id=\"publisherPhone\" name=\"publisherPhone\" onkeyup=\"autoPhone()\"  value=\"电话号码\"/>\r\n");
+      out.write("\t\t\t\t\t<input type=\"text\" class=\"text\" id=\"publisherPhone\" name=\"publisherPhone\" onkeydown=\"autoPhone()\"  value=\"电话号码\"/>\r\n");
       out.write("\t\t\t\t\t<div id=\"result\"></div>\r\n");
       out.write("\t\t\t\t</div>\r\n");
       out.write("\t\t\t</form>\r\n");
@@ -169,7 +169,7 @@ for(int i=0;i<3;i++){
       out.write("\t\t\t\t\t\t\t\t<div class=\"more\">\r\n");
       out.write("\t\t\t\t\t\t\t\t\t\t<span><a href=\"");
       out.print(path );
-      out.write("/jsp/browseMessage.jsp\">more...</a></span>\r\n");
+      out.write("/jsp/browseMessage.jsp?msgStatus=1&publishTime=&publisherPhone=\">more...</a></span>\r\n");
       out.write("\t\t\t\t\t\t\t\t\t</div>\r\n");
       out.write("\t\t\t\t\t\t\t\t</div>\r\n");
       out.write("\t\t\t\t\t\t\t</li>\r\n");
@@ -216,7 +216,7 @@ for(int i=0;i<3;i++){
       out.write("\t\t\t\t\t&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\r\n");
       out.write("\t\t\t\t\t<a href=\"");
       out.print(path );
-      out.write("/jsp/browseMessage.jsp\" style=\"color:#fa9a2c\">more...</a></span>\r\n");
+      out.write("/jsp/browseMessage.jsp?msgStatus=1&publishTime=&publisherPhone=\" style=\"color:#fa9a2c\">more...</a></span>\r\n");
       out.write("\t\t\t\t</div>\r\n");
       out.write("\t\t\t</div>\r\n");
       out.write("\t\t\t<!-- aboutus -->\r\n");
@@ -245,7 +245,7 @@ for(int i=0;i<3;i++){
       out.write("\t\t\t\t\t&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\r\n");
       out.write("\t\t\t\t\t<a href=\"");
       out.print(path );
-      out.write("/jsp/browseMessage.jsp\" style=\"color:#fa9a2c\">\r\n");
+      out.write("/jsp/browseMessage.jsp?msgStatus=1&publishTime=&publisherPhone=\" style=\"color:#fa9a2c\">\r\n");
       out.write("\t\t\t\t\tmore...</a></span>\r\n");
       out.write("\t\t\t\t</div>\r\n");
       out.write("\t\t\t</div>\r\n");
@@ -276,9 +276,7 @@ for(int i=0;i<3;i++){
       out.write("\t\t\taddListener(publisherPhone,\"click\",function(){\r\n");
       out.write("\t\t\t\tpublisherPhone.value = \"\";\r\n");
       out.write("\t\t\t})\r\n");
-      out.write("\t\t\taddListener(publisherPhone,\"blur\",function(){\r\n");
-      out.write("\t\t\t\tpublisherPhone.value = \"电话号码\";\r\n");
-      out.write("\t\t\t})\r\n");
+      out.write("\t\t\r\n");
       out.write("\r\n");
       out.write("</script>\r\n");
       out.write("</html>");

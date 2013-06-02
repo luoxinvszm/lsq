@@ -17,7 +17,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <script type="text/javascript" src="<%=path %>/js/WdatePicker.js"></script>
 <script type="text/javascript">
 	function submitForm(form){
-		
+		//var phone = $()
 		var datevalue = $("#publishTime").val();
 		if(datevalue=="日期"){
 			$("#publishTime").val("");
@@ -47,7 +47,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<ul class="meun">
 				<li><a href="<%=path %>/jsp/welcome.jsp">首页</a></li>
 				<li><a href="<%=path %>/jsp/publishMessage.jsp" >发布信息</a></li>
-				<li><a href="<%=path %>/jsp/browseMessage.jsp">浏览信息</a></li>
+				<li><a href="<%=path %>/jsp/browseMessage.jsp?msgStatus=1&publishTime=&publisherPhone=">浏览信息</a></li>
 				<li><a href="<%=path %>/jsp/aboutUs.jsp">关于我们</a></li>
 			</ul>
 			<form action="browseMessage.jsp" method="get" onsubmit="return submitForm(this);">
@@ -79,7 +79,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								<p><a>今晚6点，东区二教8楼，adobe公司招聘会，有意者可以准时与会~</a>186****3367&nbsp;&nbsp;|&nbsp;&nbsp;2013-05-20</p>
 								<p><a>明天是我哥们大亮的生日，在这里祝我哥们生日快乐，前途似锦~小亮</a>132****1453&nbsp;&nbsp;|&nbsp;&nbsp;2013-05-20</p>
 								<div class="more">
-										<span><a href="<%=path %>/jsp/browseMessage.jsp">more...</a></span>
+										<span><a href="<%=path %>/jsp/browseMessage.jsp?msgStatus=1&publishTime=&publisherPhone=">more...</a></span>
 									</div>
 								</div>
 							</li>
@@ -114,7 +114,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<a href="<%=path %>/jsp/browseMessage.jsp" style="color:#fa9a2c">more...</a></span>
+					<a href="<%=path %>/jsp/browseMessage.jsp?msgStatus=1&publishTime=&publisherPhone=" style="color:#fa9a2c">more...</a></span>
 				</div>
 			</div>
 			<!-- aboutus -->
@@ -133,7 +133,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<a href="<%=path %>/jsp/browseMessage.jsp" style="color:#fa9a2c">
+					<a href="<%=path %>/jsp/browseMessage.jsp?msgStatus=1&publishTime=&publisherPhone=" style="color:#fa9a2c">
 					more...</a></span>
 				</div>
 			</div>
@@ -164,9 +164,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			addListener(publisherPhone,"click",function(){
 				publisherPhone.value = "";
 			})
-			addListener(publisherPhone,"blur",function(){
-				publisherPhone.value = "电话号码";
-			})
+		
 
 </script>
 </html>

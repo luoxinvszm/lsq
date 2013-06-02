@@ -26,7 +26,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<ul class="meun">
 				<li><a href="<%=path %>/jsp/welcome.jsp">首页</a></li>
 				<li><a href="<%=path %>/jsp/publishMessage.jsp">发布信息</a></li>
-				<li><a href="<%=path %>/jsp/browseMessage.jsp">浏览信息</a></li>
+				<li><a href="<%=path %>/jsp/browseMessage.jsp?msgStatus=1&publishTime=&publisherPhone=">浏览信息</a></li>
 				<li><a href="<%=path %>/jsp/aboutUs.jsp">关于我们</a></li>
 			</ul>
 			

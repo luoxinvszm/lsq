@@ -93,7 +93,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       out.write("/jsp/publishMessage.jsp\">发布信息</a></li>\r\n");
       out.write("\t\t\t\t<li><a href=\"");
       out.print(path );
-      out.write("/jsp/browseMessage.jsp\">浏览信息</a></li>\r\n");
+      out.write("/jsp/browseMessage.jsp?msgStatus=1&publishTime=&publisherPhone=\">浏览信息</a></li>\r\n");
       out.write("\t\t\t\t<li><a href=\"");
       out.print(path );
       out.write("/jsp/aboutUs.jsp\">关于我们</a></li>\r\n");

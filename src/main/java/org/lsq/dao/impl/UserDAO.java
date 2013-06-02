@@ -33,7 +33,7 @@ public class UserDAO implements IUserDAO {
 				password });
 		if(list!=null && list.size()>0){
 				User user=new User();
-				user.setUserId(Integer.parseInt(list.get(0).get("userId").toString()));
+				user.setUserId(Long.parseLong(list.get(0).get("userId").toString()));
 				user.setUsername(list.get(0).get("userName").toString());
 				user.setPassword(list.get(0).get("userPassword").toString());
 				user.setRoleId(Integer.parseInt(list.get(0).get("roleId").toString()));
