@@ -287,14 +287,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       out.write("\t<div id=\"right10\">\r\n");
       out.write("\t\t\t<div class=\"tlt\">当前位置：修改密码</div>\r\n");
       out.write("\t\t\t<form action=\"updatePassword_userAction\" name=\"updatePassword\">\r\n");
-      out.write("\t\t\r\n");
+      out.write("\t\t\t<div align=\"center\" >\r\n");
       out.write("请输入原密码:<input type=\"text\" id=\"old\" onblur=\"checkOld()\" value=\"\"/>\r\n");
       out.write("\t\t\t\t\t\t<div style=\"display: none\" id=\"u1\">\r\n");
       out.write("\t\t\t\t\t\t\t\t\t<font face=\"宋体\" color=\"red\">密码输入错误，请重新输入</font>\r\n");
       out.write("\t\t\t\t\t\t\t\t\t</div>\r\n");
-      out.write("\t\t\t\t\t\t\t\t\t<br/>\r\n");
-      out.write("\t\t\t\t\t\t\t\t\t<br/>\r\n");
-      out.write("\t\t\t\t\t\t\t\t\t<br/>\r\n");
+      out.write("\t\t\t\t\t\t\t\t\t\r\n");
       out.write("\t\t\t\t\t\t\t\t\t<br/>\r\n");
       out.write("\t\t\t\t请输入新密码:\r\n");
       out.write("\t\t\t\t\t\t\t<input type=\"password\" onblur=\"checknew1()\"\r\n");
@@ -302,10 +300,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       out.write("\t\t\t\t\t\t\t<div style=\"display: none\" id=\"d1\">\r\n");
       out.write("\t\t\t\t\t\t\t\t\t<font face=\"宋体\" color=\"red\">密码不能为空</font>\r\n");
       out.write("\t\t\t\t\t\t\t\t</div>\r\n");
-      out.write("\t\t\t\t\t\t\t\t<br/>\r\n");
-      out.write("\t\t\t\t\t\t\t\t<br/>\r\n");
-      out.write("\t\t\t\t\t\t\t\t<br/>\r\n");
-      out.write("\t\t\t\t\t\t\t\t<br/>\r\n");
+      out.write("\t\t\t\t\t\t\t<br/>\r\n");
       out.write("\t\t\t请再输入新密码:\r\n");
       out.write("\t\t\t\t\t\t\t<input type=\"password\" id=\"new2\" value=\"\"/>\r\n");
       out.write("\t\t\t\t\t\t\t<div style=\"display: none\" id=\"d2\">\r\n");
@@ -317,7 +312,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       out.print(password);
       out.write(" id=\"oldPassword\"> <input\r\n");
       out.write("\t\t\ttype=\"button\" onclick=\"check()\" value=\"确定\">\r\n");
-      out.write("\t\t\t\r\n");
+      out.write("\t\t\t</div>\r\n");
       out.write("\t</form>\r\n");
       out.write("\t\t</div>\r\n");
       out.write("\t\t</div>\r\n");

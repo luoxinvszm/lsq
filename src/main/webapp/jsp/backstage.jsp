@@ -216,14 +216,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<div id="right10">
 			<div class="tlt">当前位置：修改密码</div>
 			<form action="updatePassword_userAction" name="updatePassword">
-		
+			<div align="center" >
 请输入原密码:<input type="text" id="old" onblur="checkOld()" value=""/>
 						<div style="display: none" id="u1">
 									<font face="宋体" color="red">密码输入错误，请重新输入</font>
 									</div>
-									<br/>
-									<br/>
-									<br/>
+									
 									<br/>
 				请输入新密码:
 							<input type="password" onblur="checknew1()"
@@ -231,10 +229,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<div style="display: none" id="d1">
 									<font face="宋体" color="red">密码不能为空</font>
 								</div>
-								<br/>
-								<br/>
-								<br/>
-								<br/>
+							<br/>
 			请再输入新密码:
 							<input type="password" id="new2" value=""/>
 							<div style="display: none" id="d2">
@@ -244,7 +239,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<br/>
 		<input type="hidden" value=<%=password%> id="oldPassword"> <input
 			type="button" onclick="check()" value="确定">
-			
+			</div>
 	</form>
 		</div>
 		</div>
