@@ -20,7 +20,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <script type="text/javascript" src="<%=path %>/js/yhy/queryMessage.js" ></script>
 
 </head>
-<body>
+<body onload="">
 <%
 	String userRealName=session.getAttribute("userRealName").toString();
 	String time = new SimpleDateFormat("yyyy年MM月dd日 EE").format(new Date());
@@ -89,8 +89,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				
 			</table>
 			<div class="page">
-				<span><a href="#">首页</a></span> <span><a href="#">上一页</a></span> <span><a
-					href="#">下一页</a></span> <span><a href="#">尾页</a></span>
+				<div id="paging" class="paging"></div>
 			</div>
 		</div>
 		<!-- //right2 -->

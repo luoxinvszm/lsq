@@ -17,17 +17,14 @@
 <script type="text/javascript" src="<%=path %>/js/yzp/json2.js"></script>
 <script type="text/javascript" src="<%=path %>/js/yzp/asynPage-Msg.js"></script>
 <script type="text/javascript" src="<%=path %>/js/yzp/curDate.js"></script>
-<<<<<<< HEAD
 <script type="text/javascript" src="<%=path %>/js/WdatePicker.js"></script>
 
-=======
 <!-- 电话号自动补全 -->
 <link type="text/css" rel="stylesheet" href="<%=path %>/css/jquery-ui-1.9.2.custom.css" />
-<script type="text/javascript" src="<%=path %>/js/jquery-1.9.1.min.js"></script>
+<%-- <script type="text/javascript" src="<%=path %>/js/jquery-1.9.1.min.js"></script> --%>
 <script type="text/javascript" src="<%=path %>/js/qh/publishMessage.js"></script>
 <script type="text/javascript" src="<%=path %>/js/sxl/jquery-ui-1.9.2.custom.js"></script>
 <script type="text/javascript" src="<%=path %>/js/sxl/autoPhone.js"></script>
->>>>>>> 47cfb7073804b1342abf3a65057535e306b76878
 <script type="text/javascript">
 			function GetRequest() {
 				   var url = location.search; //获取url中"?"符后的字串
@@ -48,14 +45,22 @@
 			publisherPhone = Request['publisherPhone'];
 			publishTime = Request['publishTime'];
 			msgStatus = Request['msgStatus'];
-			/* alert(publisherPhone);
+			/*  alert(publisherPhone);
 			alert(publishTime);
-			alert(msgStatus); */
+			alert(msgStatus);  */
 
 			$(document).ready(function(){
 				var params = "msgStatus="+msgStatus+"&publishTime="+publishTime+"&publisherPhone="+publisherPhone;
-		    	$("#paging").asynPage("qureyMessage.action",params,"#datas",buildHtml,2,"messageList","totalSize");
+		    	$("#paging").asynPage("qureyMessage.action",params,"#datas",buildHtml,10,"messageList","totalSize");
     		});
+			
+			function result(){
+				var time = $("#publicTime1").val();
+				var phone = $("#queryExp").val();
+				var params = "msgStatus=1&publishTime="+time+"&publisherPhone="+phone;
+				$("#paging").asynPage("qureyMessage.action",params,"#datas",buildHtml,10,"messageList","totalSize");
+			}
+			
 			function buildHtml(messageList){
 				$.each(messageList,function(i,message){
 					var str = [
@@ -81,19 +86,13 @@
 			<ul class="meun">
 				<li><a href="<%=path %>/jsp/welcome.jsp">首页</a></li>
 				<li><a href="<%=path %>/jsp/publishMessage.jsp">发布信息</a></li>
-				<li><a href="<%=path %>/jsp/browseMessage.jsp">浏览信息</a></li>
+				<li><a href="<%=path %>/jsp/browseMessage.jsp?msgStatus=1&publishTime=&publisherPhone=">浏览信息</a></li>
 				<li><a href="<%=path %>/jsp/aboutUs.jsp">关于我们</a></li>
 			</ul>
 			<div class="search">
-				<input type="button" value=" " class="btn" onclick="submit()" />
-<<<<<<< HEAD
-				<input type="text" class="text1" value="日期"name="publishTime" onClick="WdatePicker()"/>
-				<input type="text" class="text" id="queryExp" value="电话号码" />
-				
-=======
-				<input type="text" class="text1" value="2013-05-22"/>
-				<input type="text" class="text" id="publisherPhone" name="publisherPhone" onkeyup="autoPhone()"  value="电话号码"/>	
->>>>>>> 47cfb7073804b1342abf3a65057535e306b76878
+				<input type="button" value=" " class="btn" onclick="result()" />
+				<input type="text" class="text1" id="publicTime1" value="日期"name="publishTime" onClick="WdatePicker()"/>
+				<input type="text" class="text" id="queryExp" value="电话号码" name="publisherPhone" />
 			</div>
 		
 		</div>
@@ -113,9 +112,16 @@
 			<!-- right -->
 			<div class="right">
 				<h2>发布协议</h2>
-				<p>协议内容协议内容协议内容协议内容协议内容协议内容协议内容协议内容协议内容协议内容协议内容协议内容协议内容协议内容</p>
-				<p>协议内容协议内容协议内容协议内容协议内容协议内容协议内容协议内容协议内容协议内容协议内容协议内内容协议内容协议内内容协议内容协议内内容
-				协议内容协议内内容协议内容协议内内容协议内容协议内内容协议内容协议内容协议内容协议内容</p><br>
+				<p><font size="2px" color="grey">天天乐上墙(ttlsq.com)-校园信息自主发布平台郑重提请用户，发布信息为公开信息请慎重填写，
+				并且发布信息必须填入个人验证信息才可提交，等待审核通过即可查询已公布信息，个人验证信息本平台将做到隐私保护，请用户放心。</font>
+				</p>
+				<p><font size="2px" color="grey">用户所发信息内容必须遵守国家有关法律规定，任何信息都不得含有以下内容： 
+					(1)违反宪法确定的基本原则的；
+					(2)危害国家安全，泄露国家秘密，颠覆国家政权，破坏国家统一的；
+					(3)损害国家荣誉和利益，攻击党和政府的信息;</font>
+					</p>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00b8d5"><strong><a>更多相关. . . .</a></strong></font>
+					
 			</div>
 			<!-- // right -->
 		</div>
@@ -125,9 +131,7 @@
 			<p class="p1">地址:吉林省 长春市 卫星里 7089号   | 邮编：130022</p>
 			<ul>
 				<li>友情链接：</li>
-				<li><a href="">长春理工大学</a></li>
-				<li><a href="">长春理工大学</a></li>
-				<li><a href="">长春理工大学</a></li>
+				<li><a href="http://www.cust.edu.cn/">长春理工大学</a></li>
 			</ul>
 			<p class="p1">Copyright @ 2013 ttlsp | 京ICP备13001629号</p>
 		</div>

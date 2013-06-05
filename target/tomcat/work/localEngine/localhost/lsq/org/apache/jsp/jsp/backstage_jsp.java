@@ -86,7 +86,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       out.write("/js/yhy/queryMessage.js\" ></script>\r\n");
       out.write("\r\n");
       out.write("</head>\r\n");
-      out.write("<body>\r\n");
+      out.write("<body onload=\"\">\r\n");
 
 	String userRealName=session.getAttribute("userRealName").toString();
 	String time = new SimpleDateFormat("yyyy年MM月dd日 EE").format(new Date());
@@ -160,8 +160,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       out.write("\t\t\t\t\r\n");
       out.write("\t\t\t</table>\r\n");
       out.write("\t\t\t<div class=\"page\">\r\n");
-      out.write("\t\t\t\t<span><a href=\"#\">首页</a></span> <span><a href=\"#\">上一页</a></span> <span><a\r\n");
-      out.write("\t\t\t\t\thref=\"#\">下一页</a></span> <span><a href=\"#\">尾页</a></span>\r\n");
+      out.write("\t\t\t\t<div id=\"paging\" class=\"paging\"></div>\r\n");
       out.write("\t\t\t</div>\r\n");
       out.write("\t\t</div>\r\n");
       out.write("\t\t<!-- //right2 -->\r\n");

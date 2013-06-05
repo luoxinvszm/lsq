@@ -84,19 +84,15 @@ public final class browseMessage_jsp extends org.apache.jasper.runtime.HttpJspBa
       out.write("<script type=\"text/javascript\" src=\"");
       out.print(path );
       out.write("/js/yzp/curDate.js\"></script>\r\n");
-<<<<<<< HEAD
       out.write("<script type=\"text/javascript\" src=\"");
       out.print(path );
       out.write("/js/WdatePicker.js\"></script>\r\n");
       out.write("\r\n");
-=======
       out.write("<!-- 电话号自动补全 -->\r\n");
       out.write("<link type=\"text/css\" rel=\"stylesheet\" href=\"");
       out.print(path );
       out.write("/css/jquery-ui-1.9.2.custom.css\" />\r\n");
-      out.write("<script type=\"text/javascript\" src=\"");
-      out.print(path );
-      out.write("/js/jquery-1.9.1.min.js\"></script>\r\n");
+      out.write("\r\n");
       out.write("<script type=\"text/javascript\" src=\"");
       out.print(path );
       out.write("/js/qh/publishMessage.js\"></script>\r\n");
@@ -106,7 +102,6 @@ public final class browseMessage_jsp extends org.apache.jasper.runtime.HttpJspBa
       out.write("<script type=\"text/javascript\" src=\"");
       out.print(path );
       out.write("/js/sxl/autoPhone.js\"></script>\r\n");
->>>>>>> 47cfb7073804b1342abf3a65057535e306b76878
       out.write("<script type=\"text/javascript\">\r\n");
       out.write("\t\t\tfunction GetRequest() {\r\n");
       out.write("\t\t\t\t   var url = location.search; //获取url中\"?\"符后的字串\r\n");
@@ -127,14 +122,22 @@ public final class browseMessage_jsp extends org.apache.jasper.runtime.HttpJspBa
       out.write("\t\t\tpublisherPhone = Request['publisherPhone'];\r\n");
       out.write("\t\t\tpublishTime = Request['publishTime'];\r\n");
       out.write("\t\t\tmsgStatus = Request['msgStatus'];\r\n");
-      out.write("\t\t\t/* alert(publisherPhone);\r\n");
+      out.write("\t\t\t/*  alert(publisherPhone);\r\n");
       out.write("\t\t\talert(publishTime);\r\n");
-      out.write("\t\t\talert(msgStatus); */\r\n");
+      out.write("\t\t\talert(msgStatus);  */\r\n");
       out.write("\r\n");
       out.write("\t\t\t$(document).ready(function(){\r\n");
       out.write("\t\t\t\tvar params = \"msgStatus=\"+msgStatus+\"&publishTime=\"+publishTime+\"&publisherPhone=\"+publisherPhone;\r\n");
-      out.write("\t\t    \t$(\"#paging\").asynPage(\"qureyMessage.action\",params,\"#datas\",buildHtml,2,\"messageList\",\"totalSize\");\r\n");
+      out.write("\t\t    \t$(\"#paging\").asynPage(\"qureyMessage.action\",params,\"#datas\",buildHtml,10,\"messageList\",\"totalSize\");\r\n");
       out.write("    \t\t});\r\n");
+      out.write("\t\t\t\r\n");
+      out.write("\t\t\tfunction result(){\r\n");
+      out.write("\t\t\t\tvar time = $(\"#publicTime1\").val();\r\n");
+      out.write("\t\t\t\tvar phone = $(\"#queryExp\").val();\r\n");
+      out.write("\t\t\t\tvar params = \"msgStatus=1&publishTime=\"+time+\"&publisherPhone=\"+phone;\r\n");
+      out.write("\t\t\t\t$(\"#paging\").asynPage(\"qureyMessage.action\",params,\"#datas\",buildHtml,10,\"messageList\",\"totalSize\");\r\n");
+      out.write("\t\t\t}\r\n");
+      out.write("\t\t\t\r\n");
       out.write("\t\t\tfunction buildHtml(messageList){\r\n");
       out.write("\t\t\t\t$.each(messageList,function(i,message){\r\n");
       out.write("\t\t\t\t\tvar str = [\r\n");
@@ -168,21 +171,15 @@ public final class browseMessage_jsp extends org.apache.jasper.runtime.HttpJspBa
       out.write("/jsp/publishMessage.jsp\">发布信息</a></li>\r\n");
       out.write("\t\t\t\t<li><a href=\"");
       out.print(path );
-      out.write("/jsp/browseMessage.jsp\">浏览信息</a></li>\r\n");
+      out.write("/jsp/browseMessage.jsp?msgStatus=1&publishTime=&publisherPhone=\">浏览信息</a></li>\r\n");
       out.write("\t\t\t\t<li><a href=\"");
       out.print(path );
       out.write("/jsp/aboutUs.jsp\">关于我们</a></li>\r\n");
       out.write("\t\t\t</ul>\r\n");
       out.write("\t\t\t<div class=\"search\">\r\n");
-      out.write("\t\t\t\t<input type=\"button\" value=\" \" class=\"btn\" onclick=\"submit()\" />\r\n");
-<<<<<<< HEAD
-      out.write("\t\t\t\t<input type=\"text\" class=\"text1\" value=\"日期\"name=\"publishTime\" onClick=\"WdatePicker()\"/>\r\n");
-      out.write("\t\t\t\t<input type=\"text\" class=\"text\" id=\"queryExp\" value=\"电话号码\" />\r\n");
-      out.write("\t\t\t\t\r\n");
-=======
-      out.write("\t\t\t\t<input type=\"text\" class=\"text1\" value=\"2013-05-22\"/>\r\n");
-      out.write("\t\t\t\t<input type=\"text\" class=\"text\" id=\"publisherPhone\" name=\"publisherPhone\" onkeyup=\"autoPhone()\"  value=\"电话号码\"/>\t\r\n");
->>>>>>> 47cfb7073804b1342abf3a65057535e306b76878
+      out.write("\t\t\t\t<input type=\"button\" value=\" \" class=\"btn\" onclick=\"result()\" />\r\n");
+      out.write("\t\t\t\t<input type=\"text\" class=\"text1\" id=\"publicTime1\" value=\"日期\"name=\"publishTime\" onClick=\"WdatePicker()\"/>\r\n");
+      out.write("\t\t\t\t<input type=\"text\" class=\"text\" id=\"queryExp\" value=\"电话号码\" name=\"publisherPhone\" />\r\n");
       out.write("\t\t\t</div>\r\n");
       out.write("\t\t\r\n");
       out.write("\t\t</div>\r\n");
@@ -202,9 +199,16 @@ public final class browseMessage_jsp extends org.apache.jasper.runtime.HttpJspBa
       out.write("\t\t\t<!-- right -->\r\n");
       out.write("\t\t\t<div class=\"right\">\r\n");
       out.write("\t\t\t\t<h2>发布协议</h2>\r\n");
-      out.write("\t\t\t\t<p>协议内容协议内容协议内容协议内容协议内容协议内容协议内容协议内容协议内容协议内容协议内容协议内容协议内容协议内容</p>\r\n");
-      out.write("\t\t\t\t<p>协议内容协议内容协议内容协议内容协议内容协议内容协议内容协议内容协议内容协议内容协议内容协议内内容协议内容协议内内容协议内容协议内内容\r\n");
-      out.write("\t\t\t\t协议内容协议内内容协议内容协议内内容协议内容协议内内容协议内容协议内容协议内容协议内容</p><br>\r\n");
+      out.write("\t\t\t\t<p><font size=\"2px\" color=\"grey\">天天乐上墙(ttlsq.com)-校园信息自主发布平台郑重提请用户，发布信息为公开信息请慎重填写，\r\n");
+      out.write("\t\t\t\t并且发布信息必须填入个人验证信息才可提交，等待审核通过即可查询已公布信息，个人验证信息本平台将做到隐私保护，请用户放心。</font>\r\n");
+      out.write("\t\t\t\t</p>\r\n");
+      out.write("\t\t\t\t<p><font size=\"2px\" color=\"grey\">用户所发信息内容必须遵守国家有关法律规定，任何信息都不得含有以下内容： \r\n");
+      out.write("\t\t\t\t\t(1)违反宪法确定的基本原则的；\r\n");
+      out.write("\t\t\t\t\t(2)危害国家安全，泄露国家秘密，颠覆国家政权，破坏国家统一的；\r\n");
+      out.write("\t\t\t\t\t(3)损害国家荣誉和利益，攻击党和政府的信息;</font>\r\n");
+      out.write("\t\t\t\t\t</p>\r\n");
+      out.write("\t\t\t\t\t&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color=\"#00b8d5\"><strong><a>更多相关. . . .</a></strong></font>\r\n");
+      out.write("\t\t\t\t\t\r\n");
       out.write("\t\t\t</div>\r\n");
       out.write("\t\t\t<!-- // right -->\r\n");
       out.write("\t\t</div>\r\n");
@@ -214,9 +218,7 @@ public final class browseMessage_jsp extends org.apache.jasper.runtime.HttpJspBa
       out.write("\t\t\t<p class=\"p1\">地址:吉林省 长春市 卫星里 7089号   | 邮编：130022</p>\r\n");
       out.write("\t\t\t<ul>\r\n");
       out.write("\t\t\t\t<li>友情链接：</li>\r\n");
-      out.write("\t\t\t\t<li><a href=\"\">长春理工大学</a></li>\r\n");
-      out.write("\t\t\t\t<li><a href=\"\">长春理工大学</a></li>\r\n");
-      out.write("\t\t\t\t<li><a href=\"\">长春理工大学</a></li>\r\n");
+      out.write("\t\t\t\t<li><a href=\"http://www.cust.edu.cn/\">长春理工大学</a></li>\r\n");
       out.write("\t\t\t</ul>\r\n");
       out.write("\t\t\t<p class=\"p1\">Copyright @ 2013 ttlsp | 京ICP备13001629号</p>\r\n");
       out.write("\t\t</div>\r\n");

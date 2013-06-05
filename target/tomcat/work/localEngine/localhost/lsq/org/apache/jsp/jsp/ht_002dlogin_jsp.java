@@ -59,9 +59,13 @@ public final class ht_002dlogin_jsp extends org.apache.jasper.runtime.HttpJspBas
 
       out.write("\r\n");
       out.write("\t\r\n");
+<<<<<<< HEAD
+ String path = request.getContextPath();
+=======
       out.write("\t");
 
 String path = request.getContextPath();
+>>>>>>> f49d7f6096a0a086bcfb8252efa06b7021b99c7c
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 
       out.write("\r\n");
@@ -167,9 +171,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     org.apache.struts2.views.jsp.ui.FormTag _jspx_th_s_005fform_005f0 = (org.apache.struts2.views.jsp.ui.FormTag) _005fjspx_005ftagPool_005fs_005fform_0026_005fmethod_005faction.get(org.apache.struts2.views.jsp.ui.FormTag.class);
     _jspx_th_s_005fform_005f0.setPageContext(_jspx_page_context);
     _jspx_th_s_005fform_005f0.setParent(null);
+<<<<<<< HEAD
+    // /jsp/ht-login.jsp(55,2) name = action type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_s_005fform_005f0.setAction("login");
+    // /jsp/ht-login.jsp(55,2) name = method type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+=======
     // /jsp/ht-login.jsp(57,2) name = action type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fform_005f0.setAction("login");
     // /jsp/ht-login.jsp(57,2) name = method type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+>>>>>>> f49d7f6096a0a086bcfb8252efa06b7021b99c7c
     _jspx_th_s_005fform_005f0.setMethod("post");
     int _jspx_eval_s_005fform_005f0 = _jspx_th_s_005fform_005f0.doStartTag();
     if (_jspx_eval_s_005fform_005f0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
