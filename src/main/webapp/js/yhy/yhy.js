@@ -125,7 +125,6 @@ function resetPassword(d){
 var d;
 function cancle(d,t){
 	var str = document.getElementById("usingAdminList");
-	
 	var params={
 			username:d,
 			status:0
@@ -191,7 +190,6 @@ function batchdelete(){
 			di++;
 		}
 	}
-	alert(ids);
 	if(di==0){
 		alert("请选中你要删除的信息!");
 		return ;
@@ -208,7 +206,6 @@ function batchdelete(){
 		dataType : "json", //ajax返回值设置为json格式
 		success : function(json) {
 			alert("删除成功");//返回的json
-			window.location.reload();
 		},
 		error: function(){
 			alert("服务器繁忙，请稍后再试");
@@ -310,7 +307,6 @@ function batchcancle(){
 		dataType : "json", //ajax返回值设置为json格式
 		success : function(json) {
 			alert("冻结成功");//返回的json
-			window.location.reload();
 		},
 		error: function(){
 			alert("服务器繁忙，请稍后再试");
@@ -348,7 +344,7 @@ function batchrecover(){
 		data : params,
 		dataType : "json", //ajax返回值设置为json格式
 		success : function(json) {
-			alert("冻结成功");//返回的json
+			alert("激活成功");//返回的json
 		},
 		error: function(){
 			alert("服务器繁忙，请稍后再试");
@@ -364,7 +360,6 @@ function batchrecover(){
 }
 function checkcreate(){
 	var name=document.getElementById("name").value;
-	alert(name);
 	if(""==name ){
 		alert("请输入管理员姓名!");
 	}else{
@@ -383,11 +378,11 @@ function checkcreate(){
 						$(tag).html("");
 					 $.each(json.list, function(i, item) {
 						 alert(123);//messageList是action中的list对的是get方法 
-						 $(tag).append(
-								 "<tr><td>恭喜您,创建成功!</td></tr>" +
-								 "<tr><td>用户名:"+item.username+"</td></tr>"+
-								 "<tr><td>真实姓名:"+item.userRealName+"</td></tr>" +
-								 "<tr><td>初始密码:"+item.password+"</td></tr>");
+						 alert(
+								 "恭喜您,创建成功!" +
+								 "用户名:"+item.username+""+
+								 "真实姓名:"+item.userRealName+"" +
+								 "初始密码:"+item.password+"");
 					   }); 
 				},
 				error: function(){

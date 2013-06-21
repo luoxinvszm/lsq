@@ -71,7 +71,7 @@ public class UpdateMessageStatusAction extends ActionSupport {
 		return messageList;
 	}
 	//查询时所需要的现时的状态
-	private int  nowStatus ;
+	/*private int  nowStatus ;
 	
 	
 	
@@ -82,7 +82,7 @@ public class UpdateMessageStatusAction extends ActionSupport {
 
 	public void setNowStatus(int nowStatus) {
 		this.nowStatus = nowStatus;
-	}
+	}*/
 
 //执行方法
 	public String execute() {
@@ -98,10 +98,10 @@ public class UpdateMessageStatusAction extends ActionSupport {
 					publishTime, status,date);
 				
 		}
-		messageList = qureyMessageService.checkQuery("", "", nowStatus,0,0);
+		//messageList = qureyMessageService.checkQuery("", "", nowStatus,0,0);
 		
-		//System.out.println(i);
-		System.out.println("#########################");
+		System.out.println(i);
+	/*	System.out.println("#########################");
 		for (Message m : messageList) {
 			System.out.println(m.getMsgId());
 			System.out.println(m.getMsgTypeId());
@@ -113,7 +113,7 @@ public class UpdateMessageStatusAction extends ActionSupport {
 			System.out.println(m.getMsgStatus());
 		}
 		System.out.println("#########################");
-
+*/
 		return SUCCESS;
 	}
 }

@@ -128,7 +128,7 @@ public final class browseMessage_jsp extends org.apache.jasper.runtime.HttpJspBa
       out.write("\r\n");
       out.write("\t\t\t$(document).ready(function(){\r\n");
       out.write("\t\t\t\tvar params = \"msgStatus=\"+msgStatus+\"&publishTime=\"+publishTime+\"&publisherPhone=\"+publisherPhone;\r\n");
-      out.write("\t\t    \t$(\"#paging\").asynPage(\"qureyMessage.action\",params,\"#datas\",buildHtml,10,\"messageList\",\"totalSize\");\r\n");
+      out.write("\t\t    \t$(\"#paging\").asynPage(\"qureyMessage.action\",params,\"#datas\",buildHtml,2,\"messageList\",\"totalSize\");\r\n");
       out.write("    \t\t});\r\n");
       out.write("\t\t\t\r\n");
       out.write("\t\t\tfunction result(){\r\n");

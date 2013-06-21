@@ -51,7 +51,7 @@
 
 			$(document).ready(function(){
 				var params = "msgStatus="+msgStatus+"&publishTime="+publishTime+"&publisherPhone="+publisherPhone;
-		    	$("#paging").asynPage("qureyMessage.action",params,"#datas",buildHtml,10,"messageList","totalSize");
+		    	$("#paging").asynPage("qureyMessage.action",params,"#datas",buildHtml,2,"messageList","totalSize");
     		});
 			
 			function result(){

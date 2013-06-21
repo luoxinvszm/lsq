@@ -13,11 +13,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <title>校园信息自主发布平台管理系统</title>
 <link type="text/css" rel="stylesheet" href="<%=path %>/css/houtai.css" />
 
+<script type="text/javascript" src="<%=path %>/js/yzp/jquery-1.4.3.js"></script>
+<script type="text/javascript" src="<%=path %>/js/yzp/json2.js"></script>
+<script type="text/javascript" src="<%=path %>/js/yzp/asynPage-Msg.js"></script>
 <script type="text/javascript" src="<%=path %>/js/houtai.js" ></script>
-<script type="text/javascript" src="<%=path %>/js/jquery-1.9.1.min.js" ></script>
 <script type="text/javascript" src="<%=path %>/js/backstage.js" ></script>
 <script type="text/javascript" src="<%=path %>/js/yhy/yhy.js" ></script>
-<script type="text/javascript" src="<%=path %>/js/yhy/queryMessage.js" ></script>
+<%-- <script type="text/javascript" src="<%=path %>/js/yhy/queryMessage.js" ></script> --%>
+<script type="text/javascript" src="<%=path %>/js/qh/backstageMessage.js" ></script>
 
 </head>
 <body onload="">
@@ -68,8 +71,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				</tr>
 			</table>
 			<div class="page">
-				<span><a href="#">首页</a></span> <span><a href="#">上一页</a></span> <span><a
-					href="#">下一页</a></span> <span><a href="#">尾页</a></span>
+				<div id="paging" class="paging"></div>
 			</div>
 		</div>
 		<!-- //right1 -->
@@ -89,7 +91,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				
 			</table>
 			<div class="page">
-				<div id="paging" class="paging"></div>
+				<div id="paging1" class="paging"></div>
 			</div>
 		</div>
 		<!-- //right2 -->
@@ -109,8 +111,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			
 			</table>
 			<div class="page">
-				<span><a href="#">首页</a></span> <span><a href="#">上一页</a></span> <span><a
-					href="#">下一页</a></span> <span><a href="#">尾页</a></span>
+				<div id="paging2" class="paging"></div>
 			</div>
 		</div>
 		<!-- //right3 -->
@@ -128,8 +129,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				</tr>
 			</table>
 			<div class="page">
-				<span><a href="#">首页</a></span> <span><a href="#">上一页</a></span> <span><a
-					href="#">下一页</a></span> <span><a href="#">尾页</a></span>
+				<div id="paging3" class="paging"></div>
 			</div>
 		</div>
 		<!-- //right4 -->
@@ -215,14 +215,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<div id="right10">
 			<div class="tlt">当前位置：修改密码</div>
 			<form action="updatePassword_userAction" name="updatePassword">
-		
+			<div align="center" >
 请输入原密码:<input type="text" id="old" onblur="checkOld()" value=""/>
 						<div style="display: none" id="u1">
 									<font face="宋体" color="red">密码输入错误，请重新输入</font>
 									</div>
-									<br/>
-									<br/>
-									<br/>
+									
 									<br/>
 				请输入新密码:
 							<input type="password" onblur="checknew1()"
@@ -230,10 +228,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<div style="display: none" id="d1">
 									<font face="宋体" color="red">密码不能为空</font>
 								</div>
-								<br/>
-								<br/>
-								<br/>
-								<br/>
+							<br/>
 			请再输入新密码:
 							<input type="password" id="new2" value=""/>
 							<div style="display: none" id="d2">
@@ -243,7 +238,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<br/>
 		<input type="hidden" value=<%=password%> id="oldPassword"> <input
 			type="button" onclick="check()" value="确定">
-			
+			</div>
 	</form>
 		</div>
 		</div>
