@@ -26,9 +26,6 @@ function updatedefaultPasswords()
 	}	
 }
 function querySettings() {
-<<<<<<< HEAD
-	$.getJSON("querySettings");
-=======
 	// $.getJSON("querySettings");
 	$.ajax({
 		type : "POST",
@@ -40,5 +37,4 @@ function querySettings() {
 			$("#defaultPasswords").val(json.settings[2].settingsValue);
 			}
 		});
->>>>>>> a6a2aa3f0b2bfc3a7d9aae1e4ed3ffacc7d9f0d9
 }

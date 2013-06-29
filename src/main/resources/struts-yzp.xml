@@ -3,5 +3,15 @@
 	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
 	"http://struts.apache.org/dtds/struts-2.3.dtd">
 <struts>
-    
+    <package name="json7" extends="json-default">
+        <action name="queryStuInfo" class="InfoAction" method="queryStuInfo">
+			<result name="success" type="json"></result>
+		</action>
+		<action name="querySchoolInfo" class="InfoAction" method="querySchoolInfo">
+			<result name="success" type="json"></result>
+		</action>
+		<action name="queryBusInfo" class="InfoAction" method="queryBusInfo">
+			<result name="success" type="json"></result>
+		</action>
+	</package>
 </struts>

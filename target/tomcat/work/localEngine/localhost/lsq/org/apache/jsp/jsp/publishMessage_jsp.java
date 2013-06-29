@@ -146,12 +146,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       out.write("\t\t<!-- // contents -->\r\n");
       out.write("\t\t<!-- footer -->\r\n");
       out.write("\t\t<div class=\"footer\">\r\n");
-      out.write("\t\t\t<p class=\"p1\">地址:吉林省 长春市 卫星里 7089号   | 邮编：130022</p>\r\n");
+      out.write("\t\t\t<p class=\"p1\">地址:吉林省 长春市 卫星路 7089号   | 邮编：130022</p>\r\n");
       out.write("\t\t\t<ul>\r\n");
       out.write("\t\t\t\t<li>友情链接：</li>\r\n");
       out.write("\t\t\t\t<li><a href=\"http://www.cust.edu.cn/\">长春理工大学</a></li>\r\n");
       out.write("\t\t\t</ul>\r\n");
-      out.write("\t\t\t<p class=\"p1\">Copyright @ 2013 ttlsp | 京ICP备13001629号</p>\r\n");
+      out.write("\t\t\t<p class=\"p1\">Copyright @ 2013 ttlsp | 吉ICP备13001629号</p>\r\n");
       out.write("\t\t</div>\r\n");
       out.write("\t\t<!-- // footer -->\r\n");
       out.write("\t</div>\r\n");

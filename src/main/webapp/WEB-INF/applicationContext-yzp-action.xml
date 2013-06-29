@@ -3,5 +3,8 @@
     "-//SPRING//DTD BEAN//EN"   
     "http://www.springframework.org/dtd/spring-beans.dtd">  
 <beans>  
-
+	<bean id="InfoAction" class="org.lsq.action.InfoAction">  
+    	<property name="infoService" ref="InfoService"></property>  
+    	<property name="queryMessageService" ref="QureyMessageService"></property>  
+	</bean>
 </beans>  
