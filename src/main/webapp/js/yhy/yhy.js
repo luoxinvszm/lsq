@@ -111,7 +111,6 @@ function resetPassword(d){
 			dateType:"json",
 			success : function(s) { 
 				alert("重置成功");//返回的json
-				window.location.reload();
 			},
 			error: function(){
 				alert("服务器繁忙，请稍后再试");
