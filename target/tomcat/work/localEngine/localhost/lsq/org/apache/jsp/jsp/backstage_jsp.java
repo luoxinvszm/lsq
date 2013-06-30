@@ -97,9 +97,14 @@ public final class backstage_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.print(path);
       out.write("/js/backstage.js\"></script>\r\n");
       out.write("<script type=\"text/javascript\" src=\"");
+<<<<<<< HEAD
       out.print(path);
       out.write("/js/yhy/yhy.js\"></script>\r\n");
       out.write("\r\n");
+=======
+      out.print(path );
+      out.write("/js/yhy/yhy.js\" ></script>\r\n");
+>>>>>>> 878fb4368633388329206ebe751b05668ba0c244
       out.write("<script type=\"text/javascript\" src=\"");
       out.print(path);
       out.write("/js/qh/backstageMessage.js\"></script>\r\n");
@@ -110,10 +115,16 @@ public final class backstage_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<body onload=\"\">\r\n");
       out.write("\t");
 
+<<<<<<< HEAD
 		String userRealName = session.getAttribute("userRealName")
 				.toString();
 		String time = new SimpleDateFormat("yyyy年MM月dd日 EE")
 				.format(new Date());
+=======
+	String userRealName=session.getAttribute("userRealName").toString();
+	String time = new SimpleDateFormat("yyyy年MM月dd日 EE").format(new Date());
+	String password = session.getAttribute("password").toString();
+>>>>>>> 878fb4368633388329206ebe751b05668ba0c244
 
 		String password = session.getAttribute("password").toString();
 	
