@@ -84,6 +84,8 @@ public class InfoDAO implements IInfoDAO{
 			return infos;
 		}
 		
+		// **************************插入校园资讯&广告************************************
+	
 		public int insertInfo(String infoTitle,String infoContent,String infoRemark,String infoDate,String userName,Integer infoType,Integer infoState  ){
 			System.out.println("insertInfo starting······");
 			int i = 0;
@@ -94,7 +96,13 @@ public class InfoDAO implements IInfoDAO{
 			return i;
 		}
 		
+		// **************************删除校园资讯&广告************************************
 		
+		public int delInfo(long infoId){
+			System.out.println("delInfo starting······");
+			int i = jdbcTemplate.update("update info set infoState = 1 where infoId = ?", new Object[] {infoId});
+			return i;
+		}
 		
 		
 		

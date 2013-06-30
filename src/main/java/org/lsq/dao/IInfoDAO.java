@@ -31,4 +31,11 @@ public  List<Info> queryInfo(int infoState,int infoType,int first,int max);
  * @return
  */
 public int insertInfo(String infoTitle,String infoContent,String infoRemark,String infoDate,String userName,Integer infoType,Integer infoState);
+
+/**
+ * 删除info根据infoId
+ * @param infoId
+ * @return
+ */
+public int delInfo(long infoId);
 }
