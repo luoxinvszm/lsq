@@ -12,6 +12,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>校园信息自主发布平台管理系统</title>
 <link type="text/css" rel="stylesheet" href="<%=path %>/css/houtai.css" />
+<link type="text/css"  rel="stylesheet" href="<%=path %>/css/pagination.css"  />
 
 <script type="text/javascript" src="<%=path %>/js/yzp/jquery-1.4.3.js"></script>
 <script type="text/javascript" src="<%=path %>/js/yzp/json2.js"></script>
@@ -19,7 +20,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <script type="text/javascript" src="<%=path %>/js/houtai.js" ></script>
 <script type="text/javascript" src="<%=path %>/js/backstage.js" ></script>
 <script type="text/javascript" src="<%=path %>/js/yhy/yhy.js" ></script>
-<%-- <script type="text/javascript" src="<%=path %>/js/yhy/queryMessage.js" ></script> --%>
 <script type="text/javascript" src="<%=path %>/js/qh/backstageMessage.js" ></script>
 
 </head>
@@ -59,10 +59,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<!-- right1 -->
 		<div id="right1">
 			<div class="tlt">当前位置：待审信息</div>
-			<p>
-				批量操作： <input type="checkbox" /><input type="button" value="发布" />
-				<input type="button" value="不通过" />
-			</p>
 			<table cellpadding="0" cellspacing="0" id="messsageList0">
 				<tr>
 					<th width="50">编号</th>
@@ -79,8 +75,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<div id="right2">
 			<div class="tlt">当前位置：已发布信息</div>
 			<p>
-				批量操作： <input type="checkbox" /><input type="button" value="删除信息" /><input
-					type="button" value="撤销发布" />
+				批量操作： <input type="checkbox" /><input type="button" value="删除信息" />
 			</p>
 			<table cellpadding="0" cellspacing="0" id="messsageList1">
 				<tr>
@@ -99,8 +94,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<div id="right3">
 			<div class="tlt">当前位置：未通过信息</div>
 			<p>
-				批量操作： <input type="checkbox" /><input type="button" value="删除" /><input
-					type="button" value="待审" />
+				批量操作： <input type="checkbox" /><input type="button" value="删除" />
 			</p>
 			<table cellpadding="0" cellspacing="0" id="messsageList2">
 				<tr>

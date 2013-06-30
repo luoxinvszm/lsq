@@ -1,5 +1,6 @@
 package org.lsq.messagelistening;
 
+import org.lsq.service.impl.LsqClientService;
 import org.lsq.service.impl.MessageReciverService;
 import org.springframework.beans.factory.InitializingBean;
 /**
@@ -10,13 +11,19 @@ import org.springframework.beans.factory.InitializingBean;
  * */
 public class MessageListening implements InitializingBean{
 	private MessageReciverService messageReciverService;
+	private LsqClientService lsqClientService;
 	
 	public void afterPropertiesSet() throws Exception {
-		System.out.println("socket监听...");
 		messageReciverService.start();
+		lsqClientService.start();
 	}
 
 	public void setMessageReciverService(MessageReciverService messageReciverService) {
 		this.messageReciverService = messageReciverService;
 	}
+
+	public void setLsqClientService(LsqClientService lsqClientService) {
+		this.lsqClientService = lsqClientService;
+	}
+	
 }

@@ -2,8 +2,10 @@ package org.lsq.action;
 
 import java.util.List;
 
+import org.lsq.service.IImageBuilderService;
 import org.lsq.service.IQureyMessageService;
 import org.lsq.service.IUpdateMessageStatusService;
+import org.lsq.service.impl.LsqClientService;
 import org.lsq.vo.Message;
 
 import com.opensymphony.xwork2.ActionSupport;
@@ -12,6 +14,7 @@ import com.opensymphony.xwork2.ActionSupport;
 public class UpdateMessageStatusAction extends ActionSupport {
 
 	private IUpdateMessageStatusService updateMessageStatusService;
+	private IImageBuilderService imageBuilderService;
 
 	public void setUpdateMessageStatusService(
 			IUpdateMessageStatusService updateMessageStatusService) {
@@ -26,6 +29,7 @@ public class UpdateMessageStatusAction extends ActionSupport {
 	private int mintus;
 	private String publisherPhone;
 	private String publishTime;
+	private String msg;
 	
 	public int getMintus() {
 		return mintus;
@@ -96,6 +100,9 @@ public class UpdateMessageStatusAction extends ActionSupport {
 		} else {
 			i = updateMessageStatusService.modifiedMessagestatus(publisherPhone,
 					publishTime, status,date);
+			if(status==1){
+				imageBuilderService.createImage(msg);
+			}
 				
 		}
 		
@@ -104,4 +111,29 @@ public class UpdateMessageStatusAction extends ActionSupport {
 	
 		return SUCCESS;
 	}
+
+
+	public IImageBuilderService getImageBuilderService() {
+		return imageBuilderService;
+	}
+
+
+	public void setImageBuilderService(IImageBuilderService imageBuilderService) {
+		this.imageBuilderService = imageBuilderService;
+	}
+
+
+	public String getMsg() {
+		return msg;
+	}
+
+
+	public void setMsg(String msg) {
+		this.msg = msg;
+	}
+
+	
 }
+
+
+
