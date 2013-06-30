@@ -30,9 +30,9 @@ function buildHtml0(messageList){
 	$.each(messageList,function(i,message){
 		var str = [
 		       '<tr id="tr'+i+'"><td><input type="checkbox"/>',
-		       i+1,'</td><td>',
+		       i+1,'</td><td><span id="messageContent'+i+'">',
 		      message.msgConctent,
-		      '<br /> <span>署名：',
+		      '</span><br /> <span>署名：',
 		      message.publisherName,
 		      '</span>电话：<span id="publisherPhone'+i+'">',
 		      message.publisherPhone,
@@ -57,13 +57,14 @@ function publishMessageStatus(m){
 			var publisherPhone1 = "#publisherPhone"+i;
 			var publishTime1	 = "#publishTime"+i;
 			var publishMintusLength = "#publishMintusLength"+i;
-			//alert($(publishMintusLength).val());
+			var messageContent1 = "#messageContent"+i;
+			//alert($(messageContent1).text());
 			var params1= {
 					publisherPhone:$(publisherPhone1).text(),
 					publishTime:$(publishTime1).text(),
 					status:1,
 					mintus:$(publishMintusLength).val(),
-					
+					msg:$(messageContent1).text()
 			};
 			$.ajax({
 				type : "POST",
@@ -74,7 +75,7 @@ function publishMessageStatus(m){
 					var stat=0;
 					var time ="";
 					var phone = "";
-					var params = "msgStatus="+stat+"&publishTime=" + time + "&publisherPhone=" + phone;
+					var params = "msgStatus="+stat+"publishTime=" + time + "&publisherPhone=" + phone;
 					$("#paging").asynPage("qureyMessage.action", params, "#messsageList0", buildHtml0,
 							4, "messageList", "totalSize");
 				}

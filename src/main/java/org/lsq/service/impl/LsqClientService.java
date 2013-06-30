@@ -17,6 +17,7 @@ public class LsqClientService extends Thread {
 				Socket socket=serverSocket.accept();
 				System.out.println("client socket connection....");
 				LsqClientSocket.setClientSocket(socket);
+				LsqClientSocket.setOut(socket.getOutputStream());
 			}
 		} catch (IOException e) {
 			e.printStackTrace();

@@ -10,12 +10,12 @@ import org.lsq.vo.LsqClientSocket;
 public class ImageBuilderService implements IImageBuilderService{
 	private OutputStream out;
 	public void createImage(String msg){
-		Socket socket=LsqClientSocket.getClientSocket();
 		try {
-			out=socket.getOutputStream();
+			out=LsqClientSocket.getOut();
+			System.out.println(msg);
 			out.write(msg.getBytes());
-			
 			out.flush();
+			System.out.println("flush....");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
