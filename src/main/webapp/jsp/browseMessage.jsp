@@ -51,7 +51,7 @@
 
 			$(document).ready(function(){
 				var params = "msgStatus="+msgStatus+"&publishTime="+publishTime+"&publisherPhone="+publisherPhone;
-		    	$("#paging").asynPage("qureyMessage.action",params,"#datas",buildHtml,10,"messageList","totalSize");
+		    	$("#paging").asynPage("qureyMessage.action",params,"#datas",buildHtml,2,"messageList","totalSize");
     		});
 			
 			function result(){
@@ -91,7 +91,7 @@
 			</ul>
 			<div class="search">
 				<input type="button" value=" " class="btn" onclick="result()" />
-				<input type="text" class="text1" id="publicTime1" value="日期"name="publishTime" onClick="WdatePicker()"/>
+				<input type="text" class="text1" id="publicTime1" name="publishTime" onClick="WdatePicker()"/>
 				<input type="text" class="text" id="queryExp" value="电话号码" name="publisherPhone" />
 			</div>
 		
@@ -128,12 +128,12 @@
 		<!-- // contents -->
 		<!-- footer -->
 		<div class="footer">
-			<p class="p1">地址:吉林省 长春市 卫星里 7089号   | 邮编：130022</p>
+			<p class="p1">地址:吉林省 长春市 卫星路 7089号   | 邮编：130022</p>
 			<ul>
 				<li>友情链接：</li>
 				<li><a href="http://www.cust.edu.cn/">长春理工大学</a></li>
 			</ul>
-			<p class="p1">Copyright @ 2013 ttlsp | 京ICP备13001629号</p>
+			<p class="p1">Copyright @ 2013 ttlsp | 吉ICP备13001629号</p>
 		</div>
 		<!-- // footer -->
 	</div>

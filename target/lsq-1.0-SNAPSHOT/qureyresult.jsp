@@ -15,7 +15,7 @@
 			var params = {
 				publisherPhone : $("#publisherPhone").val(),
 				publishTime : $("#publishTime").val(),
-				msgStatus : $("#msgStatus").val()
+				msgStatus : $("#tags").val()
 			};
 			$.ajax({
 				type : "POST",

@@ -7,6 +7,7 @@ $(function() {
 				publisherPhone : $("#publisherPhone").val(),
 				publisherName :$("#publisherName").val(),
 				messageContext : $("#messageContext").val(),
+				auth:$("#authimg").val(),
 				msgRemark:""
 			};
 			$.ajax({

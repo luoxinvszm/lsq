@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    	<%@ taglib prefix="s" uri="/struts-tags"%>
     <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -14,6 +15,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <script type="text/javascript" src="<%=path %>/js/jquery-1.9.1.min.js"></script>
 <script type="text/javascript" src="<%=path %>/js/qh/publishMessage.js"></script>
 <script type="text/javascript" src="<%=path %>/js/yzp/curDate.js"></script>
+<script type="text/javascript">
+function changeImage() {
+	var date = new Date();
+	document.getElementById("auth").src = 'authImg?id=' + date.getTime();
+}
+</script>
 </head>
 <body onLoad="getEClock(clock)">
 	<div class="wrap">
@@ -40,13 +47,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<div class="left">
 				<h2>发布信息</h2>
 				<p class="p"><strong>请认真填写下面信息</strong></p>
+				<font color="red" face="songti"><s:fielderror /></font>
 				<dl class="dl">
 					<dt>署名</dt>
 					<dd><input type="text"  class="text" id="publisherName"/></dd>
 					<dt>电话号码</dt>
 					<dd><input type="text" class="text" id="publisherPhone"/></dd>
 					<dt>验证码</dt>
-					<dd><input type="text" class="text1" /></dd>
+					<dd><input type="text" class="text1" id="authimg"/><img src="authImg"  id="auth" style="width:100px;height:30px;"/><a
+								href="javascript:void(0)" onclick="changeImage()">看不清</a></dd>
 				</dl>
 				<p class="p">请输入您要发布的信息</p>
 				<textarea class="textarea" id="messageContext"></textarea>
@@ -73,12 +82,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<!-- // contents -->
 		<!-- footer -->
 		<div class="footer">
-			<p class="p1">地址:吉林省 长春市 卫星里 7089号   | 邮编：130022</p>
+			<p class="p1">地址:吉林省 长春市 卫星路 7089号   | 邮编：130022</p>
 			<ul>
 				<li>友情链接：</li>
 				<li><a href="http://www.cust.edu.cn/">长春理工大学</a></li>
 			</ul>
-			<p class="p1">Copyright @ 2013 ttlsp | 京ICP备13001629号</p>
+			<p class="p1">Copyright @ 2013 ttlsp | 吉ICP备13001629号</p>
 		</div>
 		<!-- // footer -->
 	</div>

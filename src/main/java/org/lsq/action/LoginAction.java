@@ -80,6 +80,7 @@ public class LoginAction extends ActionSupport {
 	//execute方法
 	public String execute(){
 		if(hasFieldErrors()){
+			System.out.println("input");
 			return INPUT;
 		}else{
 				System.out.println(username+"222"+password);
