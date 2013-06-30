@@ -5,7 +5,6 @@ import java.util.List;
 import org.lsq.service.IImageBuilderService;
 import org.lsq.service.IQureyMessageService;
 import org.lsq.service.IUpdateMessageStatusService;
-import org.lsq.service.impl.LsqClientService;
 import org.lsq.vo.Message;
 
 import com.opensymphony.xwork2.ActionSupport;
@@ -101,6 +100,7 @@ public class UpdateMessageStatusAction extends ActionSupport {
 			i = updateMessageStatusService.modifiedMessagestatus(publisherPhone,
 					publishTime, status,date);
 			if(status==1){
+				System.out.println(msg+"@@@@@@@@@@@@@@@");
 				imageBuilderService.createImage(msg);
 			}
 				

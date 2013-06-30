@@ -12,10 +12,14 @@ public class ImageBuilderService implements IImageBuilderService{
 	public void createImage(String msg){
 		try {
 			out=LsqClientSocket.getOut();
+			if(out!=null){
 			System.out.println(msg);
-			out.write(msg.getBytes());
+			out.write(msg.getBytes("utf-8"));
 			out.flush();
 			System.out.println("flush....");
+			}else{
+				System.out.println("socket is null...");
+			}
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
