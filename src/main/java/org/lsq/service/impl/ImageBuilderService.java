@@ -15,7 +15,6 @@ public class ImageBuilderService implements IImageBuilderService{
 			System.out.println(msg);
 			out.write(msg.getBytes());
 			out.flush();
-			System.out.println("flush....");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
