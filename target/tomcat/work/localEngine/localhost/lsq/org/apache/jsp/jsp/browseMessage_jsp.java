@@ -178,7 +178,7 @@ public final class browseMessage_jsp extends org.apache.jasper.runtime.HttpJspBa
       out.write("\t\t\t</ul>\r\n");
       out.write("\t\t\t<div class=\"search\">\r\n");
       out.write("\t\t\t\t<input type=\"button\" value=\" \" class=\"btn\" onclick=\"result()\" />\r\n");
-      out.write("\t\t\t\t<input type=\"text\" class=\"text1\" id=\"publicTime1\" value=\"日期\"name=\"publishTime\" onClick=\"WdatePicker()\"/>\r\n");
+      out.write("\t\t\t\t<input type=\"text\" class=\"text1\" id=\"publicTime1\" name=\"publishTime\" onClick=\"WdatePicker()\"/>\r\n");
       out.write("\t\t\t\t<input type=\"text\" class=\"text\" id=\"queryExp\" value=\"电话号码\" name=\"publisherPhone\" />\r\n");
       out.write("\t\t\t</div>\r\n");
       out.write("\t\t\r\n");

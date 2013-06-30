@@ -98,22 +98,10 @@ public class UpdateMessageStatusAction extends ActionSupport {
 					publishTime, status,date);
 				
 		}
-		//messageList = qureyMessageService.checkQuery("", "", nowStatus,0,0);
+		
 		
 		System.out.println(i);
-	/*	System.out.println("#########################");
-		for (Message m : messageList) {
-			System.out.println(m.getMsgId());
-			System.out.println(m.getMsgTypeId());
-			System.out.println(m.getPublisherName());
-			System.out.println(m.getPublisherPhone());
-			System.out.println(m.getMsgRemark());
-			System.out.println(m.getPublishTime());
-			System.out.println(m.getMsgConctent());
-			System.out.println(m.getMsgStatus());
-		}
-		System.out.println("#########################");
-*/
+	
 		return SUCCESS;
 	}
 }

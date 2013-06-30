@@ -91,7 +91,7 @@
 			</ul>
 			<div class="search">
 				<input type="button" value=" " class="btn" onclick="result()" />
-				<input type="text" class="text1" id="publicTime1" value="日期"name="publishTime" onClick="WdatePicker()"/>
+				<input type="text" class="text1" id="publicTime1" name="publishTime" onClick="WdatePicker()"/>
 				<input type="text" class="text" id="queryExp" value="电话号码" name="publisherPhone" />
 			</div>
 		

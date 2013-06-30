@@ -59,14 +59,9 @@ public final class ht_002dlogin_jsp extends org.apache.jasper.runtime.HttpJspBas
 
       out.write("\r\n");
       out.write("\t\r\n");
-<<<<<<< HEAD
+      out.write("\r\n");
  String path = request.getContextPath();
-=======
-      out.write("\t");
-
-String path = request.getContextPath();
->>>>>>> f49d7f6096a0a086bcfb8252efa06b7021b99c7c
-String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+	String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 
       out.write("\r\n");
       out.write("<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">\r\n");
@@ -117,7 +112,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       out.write("\t<div class=\"wrap\">\r\n");
       out.write("\t\t<h1>\r\n");
       out.write("\t\t\t<img src=\"");
-      out.print(path );
+      out.print(path);
       out.write("/image/ht-login_h1.gif\" alt=\"校园信息自主发布平台\" />\r\n");
       out.write("\t\t</h1>\r\n");
       out.write("\t\t<img src=\"");
@@ -171,15 +166,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     org.apache.struts2.views.jsp.ui.FormTag _jspx_th_s_005fform_005f0 = (org.apache.struts2.views.jsp.ui.FormTag) _005fjspx_005ftagPool_005fs_005fform_0026_005fmethod_005faction.get(org.apache.struts2.views.jsp.ui.FormTag.class);
     _jspx_th_s_005fform_005f0.setPageContext(_jspx_page_context);
     _jspx_th_s_005fform_005f0.setParent(null);
-<<<<<<< HEAD
-    // /jsp/ht-login.jsp(55,2) name = action type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_s_005fform_005f0.setAction("login");
-    // /jsp/ht-login.jsp(55,2) name = method type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-=======
     // /jsp/ht-login.jsp(57,2) name = action type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_s_005fform_005f0.setAction("login");
     // /jsp/ht-login.jsp(57,2) name = method type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
->>>>>>> f49d7f6096a0a086bcfb8252efa06b7021b99c7c
     _jspx_th_s_005fform_005f0.setMethod("post");
     int _jspx_eval_s_005fform_005f0 = _jspx_th_s_005fform_005f0.doStartTag();
     if (_jspx_eval_s_005fform_005f0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
@@ -209,16 +198,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         out.write("\t\t\t\t</dd>\r\n");
         out.write("\r\n");
         out.write("\t\t\t\t<dt>验证码:</dt>\r\n");
-<<<<<<< HEAD
-        out.write("\t\t\t\t<dd>\r\n");
-        out.write("\t\t\t\t\t<table>\r\n");
-        out.write("\t\t\t\t\t\t<tr>\r\n");
-        out.write("\t\t\t\t\t\t\t<td><input type=\"text\" name=\"auth\" onblur=\"checkyan()\"\r\n");
-        out.write("\t\t\t\t\t\t\t\tid=\"yanzhengma\"  width=\"10px\" border=\" 1px solid red\"/></td>\r\n");
-        out.write("\t\t\t\t\t\t\t<td><img src=\"authImg\" name=\"auth\" id=\"auth\" /><a\r\n");
-        out.write("\t\t\t\t\t\t\t\thref=\"javascript:void(0)\" onclick=\"changeImage()\">看不清</a></td>\r\n");
-        out.write("\t\t\t\t\t\t\t<td><div style=\"display: none\" id=\"yan\">\r\n");
-=======
         out.write("\t\t\t\t<dd class=\"dd\">\r\n");
         out.write("\t\t\t\t\t<input type=\"text\" name=\"auth\" onblur=\"checkyan()\"\r\n");
         out.write("\t\t\t\t\t\t\t\tid=\"yanzhengma\" class=\"text\" />\r\n");
@@ -227,7 +206,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         out.write("\t\t\t\t\t\t\t\thref=\"javascript:void(0)\" onclick=\"changeImage()\">看不清</a>\r\n");
         out.write("\t\t\t\t\t\t\t</div>\r\n");
         out.write("\t\t\t\t\t\t\t<div style=\"display: none\" id=\"yan\" class=\"font\">\r\n");
->>>>>>> 0a513bc82f7bf8ffcab1364d89cbe26dfadab728
         out.write("\t\t\t\t\t\t\t\t\t<font face=\"宋体\" color=\"red\">验证码不能为空</font>\r\n");
         out.write("\t\t\t\t\t\t\t\t</div>\r\n");
         out.write("\t\t\t\t</dd>\r\n");

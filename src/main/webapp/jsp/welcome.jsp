@@ -99,7 +99,7 @@ function buildHtml3(busList){
 				<div class="search">
 					<input type="submit" value="" class="btn"/>
 					<input type="hidden" name="msgStatus" value="1">
-					<input type="text" class="text1" value="日期" id="publishTime" name="publishTime" onClick="WdatePicker()"/>
+					<input type="text" class="text1"  id="publishTime" name="publishTime" onClick="WdatePicker()"/>
 					<input type="text" class="text" id="publisherPhone" name="publisherPhone" onkeydown="autoPhone()"  value="电话号码"/>
 					<div id="result"></div>
 				</div>
