@@ -32,5 +32,23 @@ public class InfoService implements IInfoService {
 		// TODO Auto-generated method stub
 		return infoDAO.queryInfo(infoState, infoType, first, max);
 	}
+	/**
+	 * 插入info
+	 * @param infoTitle
+	 * @param infoContent
+	 * @param infoRemark
+	 * @param infoDate
+	 * @param userName
+	 * @param infoType
+	 * @param infoState
+	 * @return
+	 */
+	public int insertInfo(String infoTitle, String infoContent,
+			String infoRemark, String infoDate, String userName,
+			Integer infoType, Integer infoState) {
+		// TODO Auto-generated method stub
+		return infoDAO.insertInfo(infoTitle, infoContent, infoRemark, infoDate, userName, infoType, infoState);
+	}
+	
 
 }

@@ -43,7 +43,6 @@ function buildHtml(stuList){
             </ul>
           <!--分页控件 -->
 			<div id="paging" class="paging"></div>
-            </div>
          </div>
 	  </div>
     <!-- // contents -->

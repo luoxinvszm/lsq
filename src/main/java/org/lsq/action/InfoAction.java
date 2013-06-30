@@ -1,5 +1,6 @@
 package org.lsq.action;
 
+import java.io.UnsupportedEncodingException;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -7,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.apache.struts2.ServletActionContext;
 import org.lsq.service.IInfoService;
 import org.lsq.service.IQureyMessageService;
+import org.lsq.util.DateFormat;
 import org.lsq.util.PagingUtil;
 import org.lsq.vo.Info;
 import org.lsq.vo.Message;
@@ -27,6 +29,43 @@ public class InfoAction  extends ActionSupport{
 	private List<Info> busList;
 	private Integer totalSize;
 	
+	private String infoTitle;
+	private String infoContent;
+	private String userName;
+	private Integer infoType;
+	
+	public String getInfoTitle() {
+		return infoTitle;
+	}
+
+	public void setInfoTitle(String infoTitle) {
+		this.infoTitle = infoTitle;
+	}
+
+	public String getInfoContent() {
+		return infoContent;
+	}
+
+	public void setInfoContent(String infoContent) {
+		this.infoContent = infoContent;
+	}
+
+	public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
+	public Integer getInfoType() {
+		return infoType;
+	}
+
+	public void setInfoType(Integer infoType) {
+		this.infoType = infoType;
+	}
+
 	public IQureyMessageService getQueryMessageService() {
 		return queryMessageService;
 	}
@@ -111,6 +150,16 @@ public class InfoAction  extends ActionSupport{
 			}
 			return SUCCESS;
 		}
+		
+		public String insertInfo() {
+			System.out.println("insertInfo starting yzp 2013-06-30····");
+			System.out.println("infoTitle="+infoTitle);
+			String infoDate=DateFormat.dateToString();//获取系统当前时间
+		    infoService.insertInfo(infoTitle, infoContent,"",infoDate, userName, infoType, 0);
+		
+			return SUCCESS;
+		}
+		
 		
 		
 		

@@ -116,15 +116,12 @@ public final class businessInfo_jsp extends org.apache.jasper.runtime.HttpJspBas
       out.write("    <!-- // contents -->\r\n");
       out.write("\t\t<!-- footer -->\r\n");
       out.write("\t\t<div class=\"footer\">\r\n");
-      out.write("\t\t\t<p class=\"p1\">版权所有：长春理工大学</p>\r\n");
+      out.write("\t\t\t<p class=\"p1\">地址:吉林省 长春市 卫星路 7089号   | 邮编：130022</p>\r\n");
       out.write("\t\t\t<ul>\r\n");
       out.write("\t\t\t\t<li>友情链接：</li>\r\n");
-      out.write("\t\t\t\t<li><a href=\"\">长春理工大学</a></li>\r\n");
-      out.write("\t\t\t\t<li><a href=\"\">吉林大学</a></li>\r\n");
-      out.write("\t\t\t\t<li><a href=\"\">东北师范大学</a></li>\r\n");
-      out.write("\t\t\t\t<li class=\"bg\"><a href=\"\">长春大学</a></li>\r\n");
+      out.write("\t\t\t\t<li><a href=\"http://www.cust.edu.cn/\">长春理工大学</a></li>\r\n");
       out.write("\t\t\t</ul>\r\n");
-      out.write("\t\t\t<p class=\"p1\">地址:吉林省 长春市 卫星里 7089号  邮编：130022</p>\r\n");
+      out.write("\t\t\t<p class=\"p1\">Copyright @ 2013 ttlsp | 吉ICP备13001629号</p>\r\n");
       out.write("\t\t</div>\r\n");
       out.write("\t\t<!-- // footer -->\r\n");
       out.write("</body>\r\n");

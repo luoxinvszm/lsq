@@ -116,7 +116,7 @@ function buildHtml3(busList){
 								<!--此处为主页面学生信息  -->
 								<div class="more">
 										<span><a href="<%=path %>/jsp/browseMessage.jsp?msgStatus=1&publishTime=&publisherPhone=">more...</a></span>
-									</div>
+								</div>
 								</div>
 					</div>
 				</div>
