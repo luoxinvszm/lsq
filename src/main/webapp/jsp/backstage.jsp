@@ -27,7 +27,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <%
 	String userRealName=session.getAttribute("userRealName").toString();
 	String time = new SimpleDateFormat("yyyy年MM月dd日 EE").format(new Date());
-
 	String password = session.getAttribute("password").toString();
 %>
 	<!-- header -->
