@@ -59,10 +59,16 @@ public final class ht_002dlogin_jsp extends org.apache.jasper.runtime.HttpJspBas
 
       out.write("\r\n");
       out.write("\t\r\n");
+<<<<<<< HEAD
       out.write("\t");
 
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+=======
+      out.write("\r\n");
+ String path = request.getContextPath();
+	String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+>>>>>>> f7a234f1421c5b06c6c5a082d71b1dc3c8f3218a
 
       out.write("\r\n");
       out.write("<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">\r\n");

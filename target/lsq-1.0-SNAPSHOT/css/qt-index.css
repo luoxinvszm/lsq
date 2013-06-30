@@ -14,7 +14,7 @@ a:hover { text-decoration:underline;}
 .header .link li a { color:#00b8d5;}
 .header .search { float:right; width:400px; height:40px; padding-right:8px;}
 .header .search .text { float:right; width:160px; height:22px; margin:5px 3px 0 0; padding-left:8px; border:1px #c6c6c6 solid;  background:#fff; line-height:22px; color:#cecece;}
-.header .search .text1 { float:right; width:120px; height:22px; margin:5px 3px 0 0; padding-left:8px; border:1px #c6c6c6 solid; background:#fff; line-height:22px; color:#000;}
+.header .search .text1 { float:right; width:120px; height:22px; margin:5px 3px 0 0; padding-left:8px; border:1px #c6c6c6 solid; background:#fff url(../js/skin/datePicker.gif) no-repeat right; line-height:22px; color:#000;}
 .header .search .btn { float:right; width:36px; height:24px; margin-top:5px; border:none; background:#fff url(../image/qt-btnbg.gif) no-repeat center center;}
 .header .meun { float:left; width:600px; padding-left:14px; text-align:center;} 
 .header .meun li { display:inline; line-height:40px; font-size:18px; margin:0 3px; }

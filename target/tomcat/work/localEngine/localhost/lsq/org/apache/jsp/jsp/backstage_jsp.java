@@ -70,10 +70,17 @@ public final class backstage_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<link type=\"text/css\" rel=\"stylesheet\" href=\"");
       out.print(path);
       out.write("/css/houtai.css\" />\r\n");
+<<<<<<< HEAD
       out.write("<link type=\"text/css\" rel=\"stylesheet\"\r\n");
       out.write("\thref=\"");
       out.print(path);
       out.write("/css/pagination.css\" />\r\n");
+=======
+      out.write("<link type=\"text/css\"  rel=\"stylesheet\" href=\"");
+      out.print(path );
+      out.write("/css/pagination.css\"  />\r\n");
+      out.write("\r\n");
+>>>>>>> f7a234f1421c5b06c6c5a082d71b1dc3c8f3218a
       out.write("<script type=\"text/javascript\" src=\"");
       out.print(path);
       out.write("/js/yzp/jquery-1.4.3.js\"></script>\r\n");
@@ -146,10 +153,6 @@ public final class backstage_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t<!-- right1 -->\r\n");
       out.write("\t\t<div id=\"right1\">\r\n");
       out.write("\t\t\t<div class=\"tlt\">当前位置：待审信息</div>\r\n");
-      out.write("\t\t\t<p>\r\n");
-      out.write("\t\t\t\t批量操作： <input type=\"checkbox\" /><input type=\"button\" value=\"发布\" />\r\n");
-      out.write("\t\t\t\t<input type=\"button\" value=\"不通过\" />\r\n");
-      out.write("\t\t\t</p>\r\n");
       out.write("\t\t\t<table cellpadding=\"0\" cellspacing=\"0\" id=\"messsageList0\">\r\n");
       out.write("\t\t\t\t<tr>\r\n");
       out.write("\t\t\t\t\t<th width=\"50\">编号</th>\r\n");
@@ -166,8 +169,7 @@ public final class backstage_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t<div id=\"right2\">\r\n");
       out.write("\t\t\t<div class=\"tlt\">当前位置：已发布信息</div>\r\n");
       out.write("\t\t\t<p>\r\n");
-      out.write("\t\t\t\t批量操作： <input type=\"checkbox\" /><input type=\"button\" value=\"删除信息\" /><input\r\n");
-      out.write("\t\t\t\t\ttype=\"button\" value=\"撤销发布\" />\r\n");
+      out.write("\t\t\t\t批量操作： <input type=\"checkbox\" /><input type=\"button\" value=\"删除信息\" />\r\n");
       out.write("\t\t\t</p>\r\n");
       out.write("\t\t\t<table cellpadding=\"0\" cellspacing=\"0\" id=\"messsageList1\">\r\n");
       out.write("\t\t\t\t<tr>\r\n");
@@ -186,8 +188,7 @@ public final class backstage_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t<div id=\"right3\">\r\n");
       out.write("\t\t\t<div class=\"tlt\">当前位置：未通过信息</div>\r\n");
       out.write("\t\t\t<p>\r\n");
-      out.write("\t\t\t\t批量操作： <input type=\"checkbox\" /><input type=\"button\" value=\"删除\" /><input\r\n");
-      out.write("\t\t\t\t\ttype=\"button\" value=\"待审\" />\r\n");
+      out.write("\t\t\t\t批量操作： <input type=\"checkbox\" /><input type=\"button\" value=\"删除\" />\r\n");
       out.write("\t\t\t</p>\r\n");
       out.write("\t\t\t<table cellpadding=\"0\" cellspacing=\"0\" id=\"messsageList2\">\r\n");
       out.write("\t\t\t\t<tr>\r\n");

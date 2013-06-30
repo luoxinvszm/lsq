@@ -10,17 +10,20 @@
     	<property name="userDAO" ref="userDAO"></property>
     </bean>  
 
-
-
-   
-
      <!-- 接收PC机发来的信息 -->
     <bean id="MessageListening" class="org.lsq.messagelistening.MessageListening" >
-
         <property name="messageReciverService" ref="messageReciverService"></property>
+        <property name="lsqClientService" ref="lsqClientService"></property>
     </bean>
+    
     <bean id="messageReciverService" class="org.lsq.service.impl.MessageReciverService" >
         <property name="insertMessageDAO" ref="InsertMessageDAO"></property>
+    </bean>
+    
+    <bean id="lsqClientService" class="org.lsq.service.impl.LsqClientService" >
+    </bean>
+    
+      <bean id="imageBuilderService" class="org.lsq.service.impl.ImageBuilderService" >
     </bean>
 
   <!-- 接收PC机发来的信息 -->
