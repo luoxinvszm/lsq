@@ -35,7 +35,9 @@ public class MessageReciverService extends Thread {
 			}
 			String msg=new String(dataBuf,"GB2312");
 			System.out.println(msg);
-			insertMessageDAO.insertMessage(msg, "串口接收", "串口com1发送", DateFormat.dateToString(), "");
+			String phoneNum=msg.substring(0,11);
+			String msgText=msg.substring(11);
+			insertMessageDAO.insertMessage(msgText, "待定", phoneNum, DateFormat.dateToString(), "");
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
