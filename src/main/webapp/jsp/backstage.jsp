@@ -147,11 +147,11 @@
 			<form>
 				<table cellpadding="0" border="0" cellspacing="0">
 					<tr>
-						<td width="90px" valign="top" align="left"><br>标题：(40字)<br><br>内容：(200字)</td>
+						<td width="90px" valign="top" align="left"><br>标题：(30字)<br><br>内容：(200字)</td>
 						<td colspan="2">
 							<br>
 							<input id="userName" type="hidden" value="${username}">
-							<input id="infoTitle" type="text" size="72px" maxlength="40">
+							<input id="infoTitle" type="text" size="72px" maxlength="30">
 							<select id="infoType" style="height: 20px; width: 80px">
 									<option selected="selected" value="1">校园资讯</option>
 									<option value="0">商家广告</option>

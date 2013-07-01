@@ -233,13 +233,13 @@ public final class backstage_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t\t<form>\r\n");
       out.write("\t\t\t\t<table cellpadding=\"0\" border=\"0\" cellspacing=\"0\">\r\n");
       out.write("\t\t\t\t\t<tr>\r\n");
-      out.write("\t\t\t\t\t\t<td width=\"90px\" valign=\"top\" align=\"left\"><br>标题：(40字)<br><br>内容：(200字)</td>\r\n");
+      out.write("\t\t\t\t\t\t<td width=\"90px\" valign=\"top\" align=\"left\"><br>标题：(30字)<br><br>内容：(200字)</td>\r\n");
       out.write("\t\t\t\t\t\t<td colspan=\"2\">\r\n");
       out.write("\t\t\t\t\t\t\t<br>\r\n");
       out.write("\t\t\t\t\t\t\t<input id=\"userName\" type=\"hidden\" value=\"");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${username}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
       out.write("\">\r\n");
-      out.write("\t\t\t\t\t\t\t<input id=\"infoTitle\" type=\"text\" size=\"72px\" maxlength=\"40\">\r\n");
+      out.write("\t\t\t\t\t\t\t<input id=\"infoTitle\" type=\"text\" size=\"72px\" maxlength=\"30\">\r\n");
       out.write("\t\t\t\t\t\t\t<select id=\"infoType\" style=\"height: 20px; width: 80px\">\r\n");
       out.write("\t\t\t\t\t\t\t\t\t<option selected=\"selected\" value=\"1\">校园资讯</option>\r\n");
       out.write("\t\t\t\t\t\t\t\t\t<option value=\"0\">商家广告</option>\r\n");

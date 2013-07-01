@@ -18,6 +18,8 @@ $(function() {
 					infoType : $("#infoType").val(),
 					infoContent:$("#infoContent").val()
 			};
+			$("#infoTitle").val("");
+			$("#infoContent").val("");
 //	        alert(params.userName);
 //			alert(params.infoTitle);
 //			alert(params.infoType);
@@ -29,6 +31,17 @@ $(function() {
 				contentType: "application/x-www-form-urlencoded;charset=utf-8", 
 				success : function() { //返回的json
 					//发布后立即查询，实现即时更新效果
+					$("#infos").html("");
+					if($("#infoType").val()==0){
+						//查询商家广告
+						$("#infoTypeQuery").val(0);
+						$("#paging5").asynPage3("queryBusInfo", null, "#datas", buildHtml,2, "busList", "totalSize");
+					}
+					if($("#infoType").val()==1){
+						//查询校园资讯
+						$("#infoTypeQuery").val(1);
+						$("#paging5").asynPage2("querySchoolInfo", null, "#datas", buildHtml,2, "schoolList", "totalSize");
+					}
 					}
 				
 			});
@@ -63,13 +76,12 @@ function buildHtml(List){
 	$("#infos").html("");
 	$.each(List,function(i,lis){
 		var str = [
-'<tr><td width="50"><input type="checkbox"/>',
-			       i+1,'</td><td width="640"><span>标题:',lis.infoTitle,
+'<tr><td width="40"><input type="checkbox"/>',
+			       i+1,'</td><td width="690"><span>标题:',lis.infoTitle,
 			       '</span><br/><span>内容：',lis.infoContent,
 			       '</span><span>管理员账号：',lis.userName,
 			       '</span><span>发布时间：',lis.infoDate,
-			       '</span></td><td width="30"><span>',lis.infoType,
-			       '</span></td><td width="50"><span><input type="button" value="删除" onclick="delInfo(',lis.infoId,')" /></span></td></tr>'
+			       '</span></td><td width="40"><span><input type="button" value="删除" onclick="delInfo(',lis.infoId,')" /></span></td></tr>'
 		].join('');
 		$("#infos").append(str);
 	});
