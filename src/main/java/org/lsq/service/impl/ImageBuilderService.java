@@ -16,11 +16,12 @@ public class ImageBuilderService implements IImageBuilderService{
 			System.out.println(msg);
 			out.write(msg.getBytes("utf-8"));
 			out.flush();
+
 			System.out.println("flush....");
 			}else{
 				System.out.println("socket is null...");
-			}
-		} catch (IOException e) {
+				}
+			} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}

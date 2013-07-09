@@ -40,7 +40,7 @@ public final class qureyresult_jsp extends org.apache.jasper.runtime.HttpJspBase
 
 
     try {
-      response.setContentType("text/html; charset=UTF-8");
+      response.setContentType("text/html");
       pageContext = _jspxFactory.getPageContext(this, request, response,
       			null, true, 8192, true);
       _jspx_page_context = pageContext;
@@ -50,60 +50,34 @@ public final class qureyresult_jsp extends org.apache.jasper.runtime.HttpJspBase
       out = pageContext.getOut();
       _jspx_out = out;
 
-      out.write("\r\n");
-      out.write("<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">\r\n");
-      out.write("<html>\r\n");
-      out.write("<head>\r\n");
-      out.write("<title>Insert title here</title>\r\n");
-      out.write("\r\n");
-      out.write("<script type=\"text/javascript\" src=\"js/jquery-1.9.1.min.js\"></script>\r\n");
-      out.write("\r\n");
+      out.write("<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\r\n");
+      out.write("<html xmlns=\"http://www.w3.org/1999/xhtml\">\r\n");
+      out.write("<head runat=\"server\">\r\n");
+      out.write("<title>jQueryå®ç°CheckBoxå¨éãå¨ä¸é</title>\r\n");
+      out.write("<script src=\"http://code.jquery.com/jquery-1.4.4.min.js\" type=\"text/javascript\"></script>    \r\n");
       out.write("<script type=\"text/javascript\">\r\n");
-      out.write("\t$(function() {\r\n");
-      out.write("\t\t$(\"#btnGet\").click(function() {\r\n");
+      out.write("        $(function() {\r\n");
+      out.write("           $(\"#checkAll\").click(function() {\r\n");
+      out.write("                $('input[name=\"subBox\"]').attr(\"checked\",this.checked); \r\n");
+      out.write("            });\r\n");
+      out.write("            var $subBox = $(\"input[name='subBox']\");\r\n");
+      out.write("            $subBox.click(function(){\r\n");
+      out.write("\t\t\t\t$(\"#checkAll\").attr(\"checked\",$subBox.length == $(\"input[name='subBox']:checked\").length ? true : false);\r\n");
+      out.write("            });\r\n");
+      out.write("        });\r\n");
+      out.write("    </script>\r\n");
       out.write("\r\n");
-      out.write("\t\t\t//提交的参数，name和inch是和struts action中对应的接收变量\r\n");
-      out.write("\t\t\tvar params = {\r\n");
-      out.write("\t\t\t\tpublisherPhone : $(\"#publisherPhone\").val(),\r\n");
-      out.write("\t\t\t\tpublishTime : $(\"#publishTime\").val(),\r\n");
-      out.write("\t\t\t\tmsgStatus : $(\"#msgStatus\").val()\r\n");
-      out.write("\t\t\t};\r\n");
-      out.write("\t\t\t$.ajax({\r\n");
-      out.write("\t\t\t\ttype : \"POST\",\r\n");
-      out.write("\t\t\t\turl : \"qureyMessage.action\",\r\n");
-      out.write("\t\t\t\tdata : params,\r\n");
-      out.write("\t\t\t\tdataType : \"json\", //ajax返回值设置为json格式\r\n");
-      out.write("\t\t\t\tsuccess : function(json) { //返回的json\r\n");
-      out.write("\t\t\t\t\t\t$(\"#info\").html(\"\");\r\n");
-      out.write("\t\t\t\t\t $.each(json.messageList, function(i, item) { //messageList是action中的list对的是get方法 \r\n");
-      out.write("\t\t\t\t\t\t $(\"#info\").append(\r\n");
-      out.write("\t\t\t\t                    \"<div>\" + item.msgId + \"</div>\" + \r\n");
-      out.write("\t\t\t\t                    \"<div>\" + item.msgTypeId + \"</div>\" + \r\n");
-      out.write("\t\t\t\t                    \"<div>\" + item.msgStatus + \"</div>\" + \r\n");
-      out.write("\t\t\t\t                    \"<div>\" + item.msgConctent + \"</div>\" + \r\n");
-      out.write("\t\t\t\t                    \"<div>\" + item.publisherName + \"</div>\" + \r\n");
-      out.write("\t\t\t\t                    \"<div>\" + item.publisherPhone + \"</div>\" + \r\n");
-      out.write("\t\t\t\t                    \"<div>\" + item.msgRemark + \"</div>\" + \r\n");
-      out.write("\t\t\t\t                    \"<div>\" + item.publishTime + \"</div><hr/>\");\r\n");
-      out.write("\t\t\t\t\t   }); \r\n");
-      out.write("\t\t\t\t}\r\n");
-      out.write("\t\t\t});\r\n");
-      out.write("\t\t});\r\n");
-      out.write("\t});\r\n");
-      out.write("</script>\r\n");
       out.write("</head>\r\n");
       out.write("<body>\r\n");
-      out.write("\r\n");
-      out.write("\t<input type=\"text\" id=\"publisherPhone\" value=\"publisherPhone\">\r\n");
-      out.write("\t<input type=\"text\" id=\"publishTime\" value=\"publishTime\">\r\n");
-      out.write("\t<input type=\"text\" id=\"msgStatus\" value=\"msgStatus\">\r\n");
-      out.write("\t<br>\r\n");
-      out.write("\r\n");
-      out.write("\t<input type=\"button\" value=\"获取\" id=\"btnGet\" />\r\n");
-      out.write("\t<br>\r\n");
-      out.write("\t<div id=\"info\"></div>\r\n");
+      out.write("    <div>\r\n");
+      out.write("        <input id=\"checkAll\" type=\"checkbox\" />å¨é\r\n");
+      out.write("        <input name=\"subBox\" type=\"checkbox\" />é¡¹1\r\n");
+      out.write("        <input name=\"subBox\" type=\"checkbox\" />é¡¹2\r\n");
+      out.write("        <input name=\"subBox\" type=\"checkbox\" />é¡¹3\r\n");
+      out.write("        <input name=\"subBox\" type=\"checkbox\" />é¡¹4\r\n");
+      out.write("    </div>\r\n");
       out.write("</body>\r\n");
-      out.write("</html>");
+      out.write("</html>\r\n");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;
