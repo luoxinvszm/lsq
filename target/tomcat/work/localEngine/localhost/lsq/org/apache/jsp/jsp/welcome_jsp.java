@@ -299,8 +299,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       out.write("\t\t\taddListener(publisherPhone,\"click\",function(){\r\n");
       out.write("\t\t\t\tpublisherPhone.value = \"\";\r\n");
       out.write("\t\t\t})\r\n");
-      out.write("\t\t\r\n");
-      out.write("\r\n");
       out.write("</script>\r\n");
       out.write("</html>");
     } catch (Throwable t) {

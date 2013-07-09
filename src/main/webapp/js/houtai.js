@@ -1,11 +1,6 @@
 function Tab(num) {
 	var i;
-	if (num == 8) {
-		displayNone();
-		displayOne(num);
-		querySettings();
-		document.getElementById("right10").style.display = "none";
-	}else if(num==1){
+	if(num==1){
 		displayNone();
 		displayOne(num);
 		queryMessage(0);
@@ -41,7 +36,18 @@ function Tab(num) {
 		displayOne(num);
 		searchUsingAdmin(1);
 		document.getElementById("right10").style.display = "none";
-	}else if(num==10){
+		
+	}else if(num == 8){
+		displayNone();
+		displayOne(num);
+		document.getElementById("right10").style.display = "none";
+	}else if(num == 9) {
+		displayNone();
+		displayOne(num);
+		querySettings();
+		document.getElementById("right10").style.display = "none";
+	}
+	else if(num==10){
 		document.getElementById("right10").style.display = "block";
 	}
 }

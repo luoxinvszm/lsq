@@ -195,7 +195,5 @@ function buildHtml3(busList){
 			addListener(publisherPhone,"click",function(){
 				publisherPhone.value = "";
 			})
-		
-
 </script>
 </html>

@@ -73,12 +73,6 @@ public final class backstage_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<link type=\"text/css\"  rel=\"stylesheet\" href=\"");
       out.print(path );
       out.write("/css/pagination.css\"  />\r\n");
-<<<<<<< HEAD
-      out.write("<link type=\"text/css\" rel=\"stylesheet\"\r\n");
-      out.write("\thref=\"");
-      out.print(path);
-      out.write("/css/pagination.css\" />\r\n");
-=======
       out.write("\r\n");
       out.write("<script type=\"text/javascript\" src=\"");
       out.print(path);
@@ -87,7 +81,9 @@ public final class backstage_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.print(path);
       out.write("/js/backstage.js\"></script>\r\n");
       out.write("\r\n");
->>>>>>> b6ccf996281c20a706e237ca6ab4c403b0340130
+      out.write("<script type=\"text/javascript\" src=\"");
+      out.print(path);
+      out.write("/js/qh/backstageMessage.js\"></script>\r\n");
       out.write("<script type=\"text/javascript\" src=\"");
       out.print(path);
       out.write("/js/yzp/jquery-1.4.3.js\"></script>\r\n");
@@ -109,16 +105,9 @@ public final class backstage_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<script type=\"text/javascript\" src=\"");
       out.print(path);
       out.write("/js/yhy/yhy.js\"></script>\r\n");
-<<<<<<< HEAD
-      out.write("\r\n");
-=======
       out.write("<!--<script type=\"text/javascript\" src=\"");
       out.print(path );
       out.write("/js/yhy/queryMessage.js\" ></script>-->\r\n");
->>>>>>> b6ccf996281c20a706e237ca6ab4c403b0340130
-      out.write("<script type=\"text/javascript\" src=\"");
-      out.print(path);
-      out.write("/js/qh/backstageMessage.js\"></script>\r\n");
       out.write("</head>\r\n");
       out.write("<body onload=\"\">\r\n");
       out.write("\t");
