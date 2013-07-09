@@ -142,7 +142,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       out.write("\t\t\t\t\t(2)危害国家安全，泄露国家秘密，颠覆国家政权，破坏国家统一的；\r\n");
       out.write("\t\t\t\t\t(3)损害国家荣誉和利益，攻击党和政府的信息;</font>\r\n");
       out.write("\t\t\t\t\t</p>\r\n");
-      out.write("\t\t\t\t\t&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color=\"#00b8d5\"><strong><a>更多相关. . . .</a></strong></font>\r\n");
+      out.write("\t\t\t\t\t&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color=\"#00b8d5\"><strong><a href=\"Xiangxixieyi.jsp\">更多相关. . . .</a></strong></font>\r\n");
       out.write("\t\t\t\t\t\r\n");
       out.write("\t\t\t</div>\r\n");
       out.write("\t\t\t<!-- // right -->\r\n");

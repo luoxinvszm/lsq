@@ -17,7 +17,7 @@ a:hover { text-decoration:underline;}
 .header .search .btn { float:right; width:36px; height:32px; background:url(../image/btnbg.gif) no-repeat left top;}
 .header .meun { float:left; width:720px; padding-left:14px; text-align:center;} 
 .header .meun li { display:inline; line-height:40px; font-size:18px; margin:0 3px; }
-.header .meun li a { display:block; float:left; width:170px; height:40px; background:url(../image/meun_libg.png) no-repeat center top; color:#00b8d5;}
+.header .meun li a { dxisplay:block; float:left; width:170px; height:40px; background:url(../image/meun_libg.png) no-repeat center top; color:#00b8d5;}
 .header .meun li a:hover { color:#fa9a2c; text-decoration:none;}
 
 /* contents */
