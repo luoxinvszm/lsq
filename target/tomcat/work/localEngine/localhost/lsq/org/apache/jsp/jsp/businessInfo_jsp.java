@@ -91,7 +91,7 @@ public final class businessInfo_jsp extends org.apache.jasper.runtime.HttpJspBas
       out.print(path);
       out.write("/image/qt-p_icon.jpg\"/>&nbsp;&nbsp;',\r\n");
       out.write("\t\t\tbus.infoDate,'&nbsp;&nbsp;----&nbsp;&nbsp;',\r\n");
-      out.write("\t\t\t,bus.infoContent,'</li>'\r\n");
+      out.write("\t\t\t,bus.infoTitle,'</li>'\r\n");
       out.write("\t\t].join('');\r\n");
       out.write("\t\t$(\"#bus\").append(str);\r\n");
       out.write("\t});\r\n");

@@ -91,7 +91,7 @@ public final class schoolInfo_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.print(path);
       out.write("/image/qt-p_icon.jpg\"/>&nbsp;&nbsp;',\r\n");
       out.write("\t\t\tstu.infoDate,'&nbsp;&nbsp;----&nbsp;&nbsp;',\r\n");
-      out.write("\t\t\t,stu.infoContent,'</li>'\r\n");
+      out.write("\t\t\t,stu.infoTitle,'</li>'\r\n");
       out.write("\t\t].join('');\r\n");
       out.write("\t\t$(\"#stu\").append(str);\r\n");
       out.write("\t});\r\n");
