@@ -49,6 +49,13 @@ public class InfoService implements IInfoService {
 		// TODO Auto-generated method stub
 		return infoDAO.insertInfo(infoTitle, infoContent, infoRemark, infoDate, userName, infoType, infoState);
 	}
+
+	public int delInfo(long infoId) {
+		// TODO Auto-generated method stub
+		return infoDAO.delInfo(infoId);
+	}
+	
+	
 	
 
 }

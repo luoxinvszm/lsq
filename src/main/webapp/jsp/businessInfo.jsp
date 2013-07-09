@@ -25,7 +25,7 @@ function buildHtml(busList){
 		var str = [
 			'<li><img src="<%=path%>/image/qt-p_icon.jpg"/>&nbsp;&nbsp;',
 			bus.infoDate,'&nbsp;&nbsp;----&nbsp;&nbsp;',
-			,bus.infoContent,'</li>'
+			,bus.infoTitle,'</li>'
 		].join('');
 		$("#bus").append(str);
 	});

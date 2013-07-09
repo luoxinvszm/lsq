@@ -28,6 +28,7 @@ function Tab(num) {
 	}else if(num==5){
 		displayNone();
 		displayOne(num);
+		queryInfo(2);
 		document.getElementById("right10").style.display = "none";
 	}
 	else if(num == 6){

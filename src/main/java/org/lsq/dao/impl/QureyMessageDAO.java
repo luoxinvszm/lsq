@@ -25,7 +25,7 @@ public class QureyMessageDAO implements IQureyMessageDAO {
 				+ publisherPhone);
 
 		String sql = "select * from message where publisherPhone='"
-				+ publisherPhone ;
+				+ publisherPhone  +" order by publishTime desc ";
 		if(max>0){
 			sql += " limit "+first+","+max+ ";";
 		}
@@ -43,7 +43,7 @@ public class QureyMessageDAO implements IQureyMessageDAO {
 						+ publisherPhone);
 
 		String sql = "select * from message where publisherPhone= '"
-				+ publisherPhone + "' and msgStatus= " + msgStatus ;
+				+ publisherPhone + "' and msgStatus= " + msgStatus +" order by publishTime desc ";
 		if(max>0){
 			sql += " limit "+first+","+max+ ";";
 		}
@@ -60,7 +60,7 @@ public class QureyMessageDAO implements IQureyMessageDAO {
 		System.out.println("qureyMessagesDAObytime starting······ ");
 
 		String sql = "select * from message where publishTime like '"
-				+ publishTime + "%' ";
+				+ publishTime + "%' "+" order by publishTime desc ";
 		if(max>0){
 			sql += " limit "+first+","+max+ ";";
 		}
@@ -76,7 +76,7 @@ public class QureyMessageDAO implements IQureyMessageDAO {
 						+ publishTime);
 
 		String sql = "select * from message where publishTime like '"
-				+ publishTime + "%' and msgStatus= " + msgStatus ;
+				+ publishTime + "%' and msgStatus= " + msgStatus +" order by publishTime desc ";
 		if(max>0){
 			sql += " limit "+first+","+max+ ";";
 		}
@@ -94,7 +94,7 @@ public class QureyMessageDAO implements IQureyMessageDAO {
 
 		String sql = "select * from message where publisherPhone='"
 				+ publisherPhone + "' and publishTime like '" + publishTime
-				+ "%' and msgStatus= " + msgStatus ;
+				+ "%' and msgStatus= " + msgStatus +" order by publishTime desc ";
 		if(max>0){
 			sql += " limit "+first+","+max+ ";";
 		}
@@ -110,7 +110,7 @@ public class QureyMessageDAO implements IQureyMessageDAO {
 
 		String sql = "select * from message where publisherPhone='"
 				+ publisherPhone + "' and publishTime like '" + publishTime
-				+ "%' ";
+				+ "%' "+" order by publishTime desc ";
 		if(max>0){
 			sql += " limit "+first+","+max+ ";";
 		}
@@ -124,7 +124,7 @@ public class QureyMessageDAO implements IQureyMessageDAO {
 
 		System.out.println("qureyMessagesDAO starting······ ");
 
-		String sql = "select * from message where msgStatus=" + msgStatus + ";";
+		String sql = "select * from message where msgStatus=" + msgStatus + " order by publishTime desc ";
 
 		System.out.println(sql);
 
@@ -138,7 +138,7 @@ public class QureyMessageDAO implements IQureyMessageDAO {
 			keywords += msgLike.charAt(i) + "%";
 		}
 		String sql = "select * from message where publisherPhone like'"
-				+ keywords + "' limit 0,10;";
+				+ keywords + "' order by publishTime desc limit 0,10;";
 		return getMessages(sql);
 	}
 
@@ -195,7 +195,7 @@ public class QureyMessageDAO implements IQureyMessageDAO {
 		
 		System.out.println("qureyMessagesDAO starting /*yzp 2013-05-19*/······ ");
 		
-		String sql = "select * from message where msgStatus="+msgStatus;
+		String sql = "select * from message where msgStatus="+msgStatus +" order by publishTime desc ";
 		
 		if(max>0){
 			
