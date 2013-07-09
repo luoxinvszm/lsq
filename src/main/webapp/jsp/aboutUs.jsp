@@ -73,7 +73,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					(2)危害国家安全，泄露国家秘密，颠覆国家政权，破坏国家统一的；
 					(3)损害国家荣誉和利益，攻击党和政府的信息;</font>
 					</p>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00b8d5"><strong><a>更多相关. . . .</a></strong></font>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00b8d5"><strong><a href="Xiangxixieyi.jsp">更多相关. . . .</a></strong></font>
 					
 			</div>
 			<!-- // right -->

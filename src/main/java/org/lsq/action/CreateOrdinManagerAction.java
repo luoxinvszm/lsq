@@ -81,7 +81,7 @@ public class CreateOrdinManagerAction extends ActionSupport{
 		System.out.println("创建管理员"+RealName);
 		
 		username=userService.createUsername();
-		CipherUtil c = new CipherUtil();
+
 		CipherUtil.encodeByMD5("111111");
 		roleId="2";
 		String time =new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());

@@ -67,7 +67,8 @@ public class LoginAction extends ActionSupport {
 	}
 	//重新validate方法 进行数据校验
 		public void validate(){
-			password = new CipherUtil().encodeByMD5(password);
+			new CipherUtil();
+			password = CipherUtil.encodeByMD5(password);
 			System.out.println("password:"+password);
 			System.out.println(auth+"auth-----");
 			HttpSession session =ServletActionContext.getRequest().getSession();
