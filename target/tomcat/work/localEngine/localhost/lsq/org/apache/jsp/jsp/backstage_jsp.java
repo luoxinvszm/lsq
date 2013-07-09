@@ -80,7 +80,10 @@ public final class backstage_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<script type=\"text/javascript\" src=\"");
       out.print(path);
       out.write("/js/backstage.js\"></script>\r\n");
+<<<<<<< HEAD
       out.write("\r\n");
+=======
+>>>>>>> 9cb9e653ae6f7eaa0887b6dd596baf9a2fb55230
       out.write("<script type=\"text/javascript\" src=\"");
       out.print(path);
       out.write("/js/qh/backstageMessage.js\"></script>\r\n");
