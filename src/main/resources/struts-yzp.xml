@@ -4,6 +4,9 @@
 	"http://struts.apache.org/dtds/struts-2.3.dtd">
 <struts>
     <package name="json7" extends="json-default">
+        <action name="deleteInfo" class="InfoAction" method="delInfo">
+			<result name="success" type="json"></result>
+		</action>
         <action name="queryStuInfo" class="InfoAction" method="queryStuInfo">
 			<result name="success" type="json"></result>
 		</action>
@@ -16,5 +19,6 @@
 		<action name="insertInfo" class="InfoAction" method="insertInfo">
 			<result name="success" type="json"></result>
 		</action>
+		
 	</package>
 </struts>

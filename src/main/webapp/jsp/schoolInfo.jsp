@@ -9,9 +9,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>校园信息自主发布平台</title>
-<link type="text/css"  rel="stylesheet" href="<%=path %>/css/pagination.css" />
 <link type="text/css"  rel="stylesheet" href="<%=path %>/css/qt-index1.css"/>
 <link type="text/css"  rel="stylesheet" href="<%=path %>/css/qt-style1.css" />
+<link type="text/css"  rel="stylesheet" href="<%=path %>/css/pagination.css" />
 <script type="text/javascript" src="<%=path %>/js/yzp/jquery-1.4.3.js"></script>
 <script type="text/javascript" src="<%=path %>/js/yzp/json2.js"></script>
 <script type="text/javascript" src="<%=path %>/js/yzp/asynPage-School.js"></script>
@@ -25,7 +25,7 @@ function buildHtml(stuList){
 		var str = [
 			'<li><img src="<%=path%>/image/qt-p_icon.jpg"/>&nbsp;&nbsp;',
 			stu.infoDate,'&nbsp;&nbsp;----&nbsp;&nbsp;',
-			,stu.infoContent,'</li>'
+			,stu.infoTitle,'</li>'
 		].join('');
 		$("#stu").append(str);
 	});

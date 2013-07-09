@@ -82,7 +82,7 @@ public class CreateOrdinManagerAction extends ActionSupport{
 		
 		username=userService.createUsername();
 		CipherUtil c = new CipherUtil();
-		c.encodeByMD5("111111");
+		CipherUtil.encodeByMD5("111111");
 		roleId="2";
 		String time =new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
 		if(userService.isAddUser(username, password, roleId,RealName,time)){

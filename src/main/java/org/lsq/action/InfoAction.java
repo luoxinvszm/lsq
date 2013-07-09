@@ -1,6 +1,5 @@
 package org.lsq.action;
 
-import java.io.UnsupportedEncodingException;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -33,7 +32,16 @@ public class InfoAction  extends ActionSupport{
 	private String infoContent;
 	private String userName;
 	private Integer infoType;
+	private Long infoId;
 	
+	public Long getInfoId() {
+		return infoId;
+	}
+
+	public void setInfoId(Long infoId) {
+		this.infoId = infoId;
+	}
+
 	public String getInfoTitle() {
 		return infoTitle;
 	}
@@ -153,13 +161,19 @@ public class InfoAction  extends ActionSupport{
 		
 		public String insertInfo() {
 			System.out.println("insertInfo starting yzp 2013-06-30····");
-			System.out.println("infoTitle="+infoTitle);
 			String infoDate=DateFormat.dateToString();//获取系统当前时间
 		    infoService.insertInfo(infoTitle, infoContent,"",infoDate, userName, infoType, 0);
-		
 			return SUCCESS;
 		}
 		
+		public String delInfo() {
+			System.out.println("delInfo starting yzp 2013-06-30····");
+			System.out.println("infoId="+infoId);
+			if(infoId!=null||"".equals("")){
+				infoService.delInfo(infoId);
+			}
+			return SUCCESS;
+		}
 		
 		
 		

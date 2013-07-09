@@ -30,4 +30,11 @@ public interface IInfoService {
 	 * @return
 	 */
 	public int insertInfo(String infoTitle,String infoContent,String infoRemark,String infoDate,String userName,Integer infoType,Integer infoState  );
+	/**
+	 * 删除info
+	 * @param infoId
+	 * @return
+	 */
+	public int delInfo(long infoId);
+	
 }

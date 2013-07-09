@@ -15,17 +15,19 @@
 <title>校园信息自主发布平台管理系统</title>
 <link type="text/css" rel="stylesheet" href="<%=path %>/css/houtai.css" />
 <link type="text/css"  rel="stylesheet" href="<%=path %>/css/pagination.css"  />
-<link type="text/css" rel="stylesheet"
-	href="<%=path%>/css/pagination.css" />
-<script type="text/javascript" src="<%=path%>/js/yzp/jquery-1.4.3.js"></script>
-<script type="text/javascript" src="<%=path%>/js/yzp/json2.js"></script>
-<script type="text/javascript" src="<%=path%>/js/yzp/asynPage-Msg.js"></script>
+
 <script type="text/javascript" src="<%=path%>/js/houtai.js"></script>
 <script type="text/javascript" src="<%=path%>/js/backstage.js"></script>
-<script type="text/javascript" src="<%=path%>/js/yhy/yhy.js"></script>
-<%-- <script type="text/javascript" src="<%=path %>/js/yhy/queryMessage.js" ></script> --%>
-<script type="text/javascript" src="<%=path%>/js/qh/backstageMessage.js"></script>
+
+<script type="text/javascript" src="<%=path%>/js/yzp/jquery-1.4.3.js"></script>
+<script type="text/javascript" src="<%=path%>/js/yzp/json2.js"></script>
 <script type="text/javascript" src="<%=path%>/js/yzp/info.js"></script>
+<script type="text/javascript" src="<%=path%>/js/yzp/asynPage-Bus.js"></script>
+<script type="text/javascript" src="<%=path%>/js/yzp/asynPage-School.js"></script>
+<script type="text/javascript" src="<%=path%>/js/yzp/asynPage-Msg.js"></script>
+<script type="text/javascript" src="<%=path%>/js/yhy/yhy.js"></script>
+<!--<script type="text/javascript" src="<%=path %>/js/yhy/queryMessage.js" ></script>-->
+<script type="text/javascript" src="<%=path%>/js/qh/backstageMessage.js"></script>
 </head>
 <body onload="">
 	<%
@@ -145,11 +147,11 @@
 			<form>
 				<table cellpadding="0" border="0" cellspacing="0">
 					<tr>
-						<td width="90px" valign="top" align="left"><br>标题：(40字)<br><br>内容：(200字)</td>
+						<td width="90px" valign="top" align="left"><br>标题：(30字)<br><br>内容：(200字)</td>
 						<td colspan="2">
 							<br>
 							<input id="userName" type="hidden" value="${username}">
-							<input id="infoTitle" type="text" size="72px" maxlength="40">
+							<input id="infoTitle" type="text" size="72px" maxlength="30">
 							<select id="infoType" style="height: 20px; width: 80px">
 									<option selected="selected" value="1">校园资讯</option>
 									<option value="0">商家广告</option>
@@ -164,16 +166,21 @@
 				</table>
 			</form>
 			<!--已发布校园资讯&广告显示及删除-->
-			<table cellpadding="0" cellspacing="0" id="messsageList3">
+			<table cellpadding="0" cellspacing="0">
 				<tr>
 					<th width="50">编号</th>
-					<th width="670">信息内容</th>
+					<th width="640">信息内容</th>
+					<th width="30"><select id="infoTypeQuery" style="height: 20px; width: 80px" onclick="queryInfo(3)">
+									<option  selected="selected"  value="0" >商家广告</option>
+									<option   value="1">校园资讯</option>
+							</select></th>
 					<th width="50">操作</th>
 				</tr>
-			</table>
+			</table >
+			<table  id="infos" cellpadding="0" cellspacing="0"></table>
 			<!--分页-->
 			<div class="page">
-				<div id="paging4" class="paging"></div>
+				<div id="paging5" class="paging"></div>
 			</div>
 		</div>
 		<!-- //right5 -->

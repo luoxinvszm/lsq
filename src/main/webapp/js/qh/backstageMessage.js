@@ -75,7 +75,7 @@ function publishMessageStatus(m){
 					var stat=0;
 					var time ="";
 					var phone = "";
-					var params = "msgStatus="+stat+"publishTime=" + time + "&publisherPhone=" + phone;
+					var params = "msgStatus="+stat+"&publishTime=" + time + "&publisherPhone=" + phone;
 					$("#paging").asynPage("qureyMessage.action", params, "#messsageList0", buildHtml0,
 							4, "messageList", "totalSize");
 				}

@@ -73,10 +73,21 @@ public final class backstage_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<link type=\"text/css\"  rel=\"stylesheet\" href=\"");
       out.print(path );
       out.write("/css/pagination.css\"  />\r\n");
+<<<<<<< HEAD
       out.write("<link type=\"text/css\" rel=\"stylesheet\"\r\n");
       out.write("\thref=\"");
       out.print(path);
       out.write("/css/pagination.css\" />\r\n");
+=======
+      out.write("\r\n");
+      out.write("<script type=\"text/javascript\" src=\"");
+      out.print(path);
+      out.write("/js/houtai.js\"></script>\r\n");
+      out.write("<script type=\"text/javascript\" src=\"");
+      out.print(path);
+      out.write("/js/backstage.js\"></script>\r\n");
+      out.write("\r\n");
+>>>>>>> b6ccf996281c20a706e237ca6ab4c403b0340130
       out.write("<script type=\"text/javascript\" src=\"");
       out.print(path);
       out.write("/js/yzp/jquery-1.4.3.js\"></script>\r\n");
@@ -85,23 +96,29 @@ public final class backstage_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("/js/yzp/json2.js\"></script>\r\n");
       out.write("<script type=\"text/javascript\" src=\"");
       out.print(path);
+      out.write("/js/yzp/info.js\"></script>\r\n");
+      out.write("<script type=\"text/javascript\" src=\"");
+      out.print(path);
+      out.write("/js/yzp/asynPage-Bus.js\"></script>\r\n");
+      out.write("<script type=\"text/javascript\" src=\"");
+      out.print(path);
+      out.write("/js/yzp/asynPage-School.js\"></script>\r\n");
+      out.write("<script type=\"text/javascript\" src=\"");
+      out.print(path);
       out.write("/js/yzp/asynPage-Msg.js\"></script>\r\n");
       out.write("<script type=\"text/javascript\" src=\"");
       out.print(path);
-      out.write("/js/houtai.js\"></script>\r\n");
-      out.write("<script type=\"text/javascript\" src=\"");
-      out.print(path);
-      out.write("/js/backstage.js\"></script>\r\n");
-      out.write("<script type=\"text/javascript\" src=\"");
-      out.print(path);
       out.write("/js/yhy/yhy.js\"></script>\r\n");
+<<<<<<< HEAD
       out.write("\r\n");
+=======
+      out.write("<!--<script type=\"text/javascript\" src=\"");
+      out.print(path );
+      out.write("/js/yhy/queryMessage.js\" ></script>-->\r\n");
+>>>>>>> b6ccf996281c20a706e237ca6ab4c403b0340130
       out.write("<script type=\"text/javascript\" src=\"");
       out.print(path);
       out.write("/js/qh/backstageMessage.js\"></script>\r\n");
-      out.write("<script type=\"text/javascript\" src=\"");
-      out.print(path);
-      out.write("/js/yzp/info.js\"></script>\r\n");
       out.write("</head>\r\n");
       out.write("<body onload=\"\">\r\n");
       out.write("\t");
@@ -227,13 +244,13 @@ public final class backstage_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t\t<form>\r\n");
       out.write("\t\t\t\t<table cellpadding=\"0\" border=\"0\" cellspacing=\"0\">\r\n");
       out.write("\t\t\t\t\t<tr>\r\n");
-      out.write("\t\t\t\t\t\t<td width=\"90px\" valign=\"top\" align=\"left\"><br>标题：(40字)<br><br>内容：(200字)</td>\r\n");
+      out.write("\t\t\t\t\t\t<td width=\"90px\" valign=\"top\" align=\"left\"><br>标题：(30字)<br><br>内容：(200字)</td>\r\n");
       out.write("\t\t\t\t\t\t<td colspan=\"2\">\r\n");
       out.write("\t\t\t\t\t\t\t<br>\r\n");
       out.write("\t\t\t\t\t\t\t<input id=\"userName\" type=\"hidden\" value=\"");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${username}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
       out.write("\">\r\n");
-      out.write("\t\t\t\t\t\t\t<input id=\"infoTitle\" type=\"text\" size=\"72px\" maxlength=\"40\">\r\n");
+      out.write("\t\t\t\t\t\t\t<input id=\"infoTitle\" type=\"text\" size=\"72px\" maxlength=\"30\">\r\n");
       out.write("\t\t\t\t\t\t\t<select id=\"infoType\" style=\"height: 20px; width: 80px\">\r\n");
       out.write("\t\t\t\t\t\t\t\t\t<option selected=\"selected\" value=\"1\">校园资讯</option>\r\n");
       out.write("\t\t\t\t\t\t\t\t\t<option value=\"0\">商家广告</option>\r\n");
@@ -248,16 +265,21 @@ public final class backstage_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t\t\t</table>\r\n");
       out.write("\t\t\t</form>\r\n");
       out.write("\t\t\t<!--已发布校园资讯&广告显示及删除-->\r\n");
-      out.write("\t\t\t<table cellpadding=\"0\" cellspacing=\"0\" id=\"messsageList3\">\r\n");
+      out.write("\t\t\t<table cellpadding=\"0\" cellspacing=\"0\">\r\n");
       out.write("\t\t\t\t<tr>\r\n");
       out.write("\t\t\t\t\t<th width=\"50\">编号</th>\r\n");
-      out.write("\t\t\t\t\t<th width=\"670\">信息内容</th>\r\n");
+      out.write("\t\t\t\t\t<th width=\"640\">信息内容</th>\r\n");
+      out.write("\t\t\t\t\t<th width=\"30\"><select id=\"infoTypeQuery\" style=\"height: 20px; width: 80px\" onclick=\"queryInfo(3)\">\r\n");
+      out.write("\t\t\t\t\t\t\t\t\t<option  selected=\"selected\"  value=\"0\" >商家广告</option>\r\n");
+      out.write("\t\t\t\t\t\t\t\t\t<option   value=\"1\">校园资讯</option>\r\n");
+      out.write("\t\t\t\t\t\t\t</select></th>\r\n");
       out.write("\t\t\t\t\t<th width=\"50\">操作</th>\r\n");
       out.write("\t\t\t\t</tr>\r\n");
-      out.write("\t\t\t</table>\r\n");
+      out.write("\t\t\t</table >\r\n");
+      out.write("\t\t\t<table  id=\"infos\" cellpadding=\"0\" cellspacing=\"0\"></table>\r\n");
       out.write("\t\t\t<!--分页-->\r\n");
       out.write("\t\t\t<div class=\"page\">\r\n");
-      out.write("\t\t\t\t<div id=\"paging4\" class=\"paging\"></div>\r\n");
+      out.write("\t\t\t\t<div id=\"paging5\" class=\"paging\"></div>\r\n");
       out.write("\t\t\t</div>\r\n");
       out.write("\t\t</div>\r\n");
       out.write("\t\t<!-- //right5 -->\r\n");

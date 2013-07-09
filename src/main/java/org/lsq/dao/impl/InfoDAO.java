@@ -33,7 +33,7 @@ public class InfoDAO implements IInfoDAO{
 		// TODO Auto-generated method stub
 			System.out.println("queryInfo starting······ ");
 
-			String sql = "select * from info where infoState= " + infoState + " and infoType = "+infoType;
+			String sql = "select * from info where infoState= " + infoState + " and infoType = "+infoType+" order by infoDate desc ";
 
 			if(max>0){
 				
@@ -84,17 +84,25 @@ public class InfoDAO implements IInfoDAO{
 			return infos;
 		}
 		
+		// **************************插入校园资讯&广告************************************
+	
 		public int insertInfo(String infoTitle,String infoContent,String infoRemark,String infoDate,String userName,Integer infoType,Integer infoState  ){
 			System.out.println("insertInfo starting······");
 			int i = 0;
-			long infoId = IdBuilder.getNewId(); //随机获取主键值
+			long infoId=System.currentTimeMillis();//获取系统当前时间毫秒数(13位)作为主键值
 			String sql=" insert into info (infoId,infoTitle,infoContent,infoRemark,infoDate,userName,infoType,infoState) values("+
 					    infoId+","+"'"+infoTitle+"','"+infoContent+"','"+infoRemark+"','"+infoDate+"','"+userName+"',"+infoType+","+infoState+");";
 			i = jdbcTemplate.update(sql);
 			return i;
 		}
 		
+		// **************************删除校园资讯&广告************************************
 		
+		public int delInfo(long infoId){
+			System.out.println("delInfo starting······");
+			int i = jdbcTemplate.update("update info set infoState = 1 where infoId = ?", new Object[] {infoId});
+			return i;
+		}
 		
 		
 		
