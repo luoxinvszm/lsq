@@ -50,12 +50,9 @@ function buildHtml0(messageList){
 //(待审中)发布方法
 function publishMessageStatus(m){
 	var idval = m.id;
-	//alert(idval);
 	var tablelength = $("#messsageList0 tr").length;
-	//alert(tablelength);
 	for(var i=0;i<tablelength;i++){
 		var string = "publish"+i;
-		//alert(string);
 		if(string==idval){
 			var publisherPhone1 = "#publisherPhone"+i;
 			var publishTime1	 = "#publishTime"+i;
@@ -88,16 +85,12 @@ function publishMessageStatus(m){
 //(待审中)未通过的方法
 function unpublishMessageStatus(m){
 	var idval = m.id;
-	//alert(idval);
 	var tablelength = $("#messsageList0 tr").length;
-	//alert(tablelength);
 	for(var i=0;i<tablelength;i++){
 		var string = "unpublish"+i;
-		//alert(string);
 		if(string==idval){
 			var publisherPhone1 = "#publisherPhone"+i;
 			var publishTime1	 = "#publishTime"+i;
-			//alert($(publisherPhone1).text());
 			var params1= {
 					publisherPhone:$(publisherPhone1).text(),
 					publishTime:$(publishTime1).text(),
@@ -148,16 +141,12 @@ function buildHtml1(messageList){
 //(发布中)删除方法---------------------未完成，有bug
 function deletePublishMessage(m){
 	var idval = m.id;
-	//alert(idval);
 	var tablelength = $("#messsageList1 tr").length;
-	//alert(tablelength);
 	for(var i=0 ;i<tablelength;i++){
 		var string = "deletePublishMessage"+i;
-		//alert(string);
 		if(string==idval){
 			var publisherPhone1 = "#publisherPhone1"+i;
 			var publishTime1	 = "#publishTime1"+i;
-			//alert($(publisherPhone1).text());
 			var params1= {
 					publisherPhone:$(publisherPhone1).text(),
 					publishTime:$(publishTime1).text(),

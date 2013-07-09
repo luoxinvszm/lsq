@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.lsq.dao.IInfoDAO;
+import org.lsq.util.IdBuilder;
 import org.lsq.vo.Info;
 import org.springframework.jdbc.core.JdbcTemplate;
 /**
@@ -61,7 +62,7 @@ public class InfoDAO implements IInfoDAO{
 				String infoDate = (String) infoMap.get("infoDate");
 				int infoType = (Integer) infoMap.get("infoType");
 				int infoState = (Integer) infoMap.get("infoState");
-				long userId = (Long) infoMap.get("userId");
+				String userName = (String) infoMap.get("userName");
 				// 创建对象
 
 				Info info = new Info();
@@ -74,7 +75,7 @@ public class InfoDAO implements IInfoDAO{
 				info.setInfoRemark(infoRemark);
 				info.setInfoDate(infoDate);
 				info.setInfoType(infoType);
-				info.setUserId(userId);
+				info.setUserName(userName);
 				info.setInfoState(infoState);
 				// 将对象添加到infos集合中
 
@@ -82,4 +83,20 @@ public class InfoDAO implements IInfoDAO{
 			}
 			return infos;
 		}
+		
+		public int insertInfo(String infoTitle,String infoContent,String infoRemark,String infoDate,String userName,Integer infoType,Integer infoState  ){
+			System.out.println("insertInfo starting······");
+			int i = 0;
+			long infoId = IdBuilder.getNewId(); //随机获取主键值
+			String sql=" insert into info (infoId,infoTitle,infoContent,infoRemark,infoDate,userName,infoType,infoState) values("+
+					    infoId+","+"'"+infoTitle+"','"+infoContent+"','"+infoRemark+"','"+infoDate+"','"+userName+"',"+infoType+","+infoState+");";
+			i = jdbcTemplate.update(sql);
+			return i;
+		}
+		
+		
+		
+		
+		
+		
 }

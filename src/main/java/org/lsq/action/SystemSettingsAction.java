@@ -3,6 +3,7 @@ package org.lsq.action;
 import java.util.List;
 
 import org.lsq.service.ISystemSettingsService;
+import org.lsq.util.CipherUtil;
 import org.lsq.vo.Settings;
 
 import com.opensymphony.xwork2.ActionSupport;
@@ -56,6 +57,7 @@ public String getMethod() {
 		}
 		if (method.equals("defaultPasswords")) {
 			settingsId = 3;
+			settingsValue=CipherUtil.encodeByMD5(settingsValue);
 		}
 		System.out.println(settingsValue);
 		systemSettingsService.UpdateSystemSettings(settingsId,

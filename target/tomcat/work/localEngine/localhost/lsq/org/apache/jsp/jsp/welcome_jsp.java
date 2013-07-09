@@ -216,7 +216,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       out.write("\t\t\t\t\t\t\t\t\t\t<span><a href=\"");
       out.print(path );
       out.write("/jsp/browseMessage.jsp?msgStatus=1&publishTime=&publisherPhone=\">more...</a></span>\r\n");
-      out.write("\t\t\t\t\t\t\t\t\t</div>\r\n");
+      out.write("\t\t\t\t\t\t\t\t</div>\r\n");
       out.write("\t\t\t\t\t\t\t\t</div>\r\n");
       out.write("\t\t\t\t\t</div>\r\n");
       out.write("\t\t\t\t</div>\r\n");

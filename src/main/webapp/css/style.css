@@ -2,7 +2,7 @@
 /* CSS Document */
 
 /*xieyi*/
-.contents1 { min-height:500px;}
+.contents1 { min-height:600px;}
 .contents1 h1 { display:block; float:left; width:500px; height:80px; padding-left:40px; line-height:57px; color:#fff; text-align:left;}
 .contents1 .main { width:1024px; margin:0 auto; background:url(../image/h1bg.gif) no-repeat 0 10px;}
 .contents1 .main .btnbox { float:right; width:400px; height:65px; padding-top:15px;}

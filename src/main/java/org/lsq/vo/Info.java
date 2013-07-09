@@ -12,7 +12,7 @@ public class Info {
 	private String infoDate;
 	private int infoType;
 	private int infoState;
-	private long userId;
+	private String userName;
 	public long getInfoId() {
 		return infoId;
 	}
@@ -55,12 +55,11 @@ public class Info {
 	public void setInfoState(int infoState) {
 		this.infoState = infoState;
 	}
-	public long getUserId() {
-		return userId;
+	public String getUserName() {
+		return userName;
 	}
-	public void setUserId(long userId) {
-		this.userId = userId;
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
-	
 	
 }

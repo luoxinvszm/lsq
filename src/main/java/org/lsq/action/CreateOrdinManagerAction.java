@@ -6,6 +6,7 @@ import java.util.Date;
 import java.util.List;
 
 import org.lsq.service.IUserService;
+import org.lsq.util.CipherUtil;
 import org.lsq.vo.User;
 
 import com.opensymphony.xwork2.ActionSupport;
@@ -80,7 +81,8 @@ public class CreateOrdinManagerAction extends ActionSupport{
 		System.out.println("创建管理员"+RealName);
 		
 		username=userService.createUsername();
-		password="111111";
+		CipherUtil c = new CipherUtil();
+		c.encodeByMD5("111111");
 		roleId="2";
 		String time =new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
 		if(userService.isAddUser(username, password, roleId,RealName,time)){

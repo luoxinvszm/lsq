@@ -4,12 +4,9 @@ package org.lsq.action;
 
 import javax.servlet.http.HttpSession;
 
-
 import org.apache.struts2.ServletActionContext;
 import org.lsq.service.IInsertMessageService;
-import org.lsq.util.DateFormat;
-
-
+import org.lsq.util.DateFormat;	
 import com.opensymphony.xwork2.ActionSupport;
 
 @SuppressWarnings("serial")
@@ -95,8 +92,16 @@ public class InsertMessageAction extends ActionSupport {
 				result=0;
 				return SUCCESS;
 			}
-				return INPUT;
+				return SUCCESS;
 			}
+
+	public String getJson() {
+		return Json;
+	}
+
+	public void setJson(String json) {
+		Json = json;
+	}
 	
 		
 		

@@ -111,9 +111,14 @@ public final class schoolInfo_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("            </ul>\r\n");
       out.write("          <!--分页控件 -->\r\n");
       out.write("\t\t\t<div id=\"paging\" class=\"paging\"></div>\r\n");
+<<<<<<< HEAD
+      out.write("         </div>\r\n");
+      out.write("\t  </div>\r\n");
+=======
       out.write("           </div>\r\n");
       out.write("        </div>\r\n");
       out.write("\t \r\n");
+>>>>>>> f7a234f1421c5b06c6c5a082d71b1dc3c8f3218a
       out.write("    <!-- // contents -->\r\n");
       out.write("\t\t<!-- footer -->\r\n");
       out.write("\t\t<div class=\"footer\">\r\n");

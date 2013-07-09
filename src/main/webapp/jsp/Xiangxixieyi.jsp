@@ -20,8 +20,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             <ul class="btnbox">
             	<li><a href="<%=path%>/jsp/publishMessage.jsp">返回上一层</a></li>
             </ul>
-       		<p>协议的内容协议的内容协议的内容协议的内容协议的内容协议的内容协议的内容协议的内容协议的内容协议的内容协议的内容协议的内容协议的内容。</p>
-            <p>协议的内容协议的内容协议的内容协议的内容协议的内容协议的内容协议的内容协议的内容协容协议的内容协议的内容协容协议的内容协议的内容协议的内容协议的内容协议的内容协议的内容协议的内容。</p>
+            <br/><br/><br/><br/>
+       		<div align="center"><font face="heiti" size="6" >用户协议</font></div>
+       		
             </div>
 	  </div>
     <!-- // contents -->

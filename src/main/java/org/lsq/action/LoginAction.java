@@ -10,6 +10,7 @@ import javax.servlet.http.HttpSession;
 import org.apache.struts2.ServletActionContext;
 import org.lsq.service.IRoleCastPowerService;
 import org.lsq.service.IUserService;
+import org.lsq.util.CipherUtil;
 import org.lsq.vo.Power;
 import org.lsq.vo.User;
 
@@ -66,6 +67,8 @@ public class LoginAction extends ActionSupport {
 	}
 	//重新validate方法 进行数据校验
 		public void validate(){
+			password = new CipherUtil().encodeByMD5(password);
+			System.out.println("password:"+password);
 			System.out.println(auth+"auth-----");
 			HttpSession session =ServletActionContext.getRequest().getSession();
 			String s = session.getAttribute("rand").toString();
@@ -86,6 +89,7 @@ public class LoginAction extends ActionSupport {
 				System.out.println(username+"222"+password);
 				int roleId=userService.isLogin(username, password);
 				long userId=userService.getuserId(username, password);
+				System.out.println("roleId:"+roleId);
 				User user1 =userService.queryUser(username, password);
 				HttpSession session=ServletActionContext.getRequest().getSession();
 				//如果用户成功登陆，则将用户信息添加到session中
@@ -95,6 +99,11 @@ public class LoginAction extends ActionSupport {
 				session.setAttribute("userId", userId);
 				session.setAttribute("userRealName", user1.getUserRealName());
 				powersList=roleCastPowerService.queryPowers(roleId);
+				if(roleId==1){
+					return "super";
+				}else if(roleId==2){
+					return "ordin";
+				}
 				return SUCCESS;
 			}
 	}

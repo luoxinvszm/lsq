@@ -79,8 +79,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       out.print(path);
       out.write("/jsp/publishMessage.jsp\">返回上一层</a></li>\r\n");
       out.write("            </ul>\r\n");
-      out.write("       \t\t<p>协议的内容协议的内容协议的内容协议的内容协议的内容协议的内容协议的内容协议的内容协议的内容协议的内容协议的内容协议的内容协议的内容。</p>\r\n");
-      out.write("            <p>协议的内容协议的内容协议的内容协议的内容协议的内容协议的内容协议的内容协议的内容协容协议的内容协议的内容协容协议的内容协议的内容协议的内容协议的内容协议的内容协议的内容协议的内容。</p>\r\n");
+      out.write("            <br/><br/><br/><br/>\r\n");
+      out.write("       \t\t<div align=\"center\"><font face=\"heiti\" size=\"6\" >用户协议</font></div>\r\n");
+      out.write("       \t\t\r\n");
       out.write("            </div>\r\n");
       out.write("\t  </div>\r\n");
       out.write("    <!-- // contents -->\r\n");
