@@ -77,10 +77,10 @@ function buildHtml(List){
 	$.each(List,function(i,lis){
 		var str = [
 '<tr><td width="40"><input type="checkbox"/>',
-			       i+1,'</td><td width="690"><span>标题:',lis.infoTitle,
-			       '</span><br/><span>内容：',lis.infoContent,
-			       '</span><span>管理员账号：',lis.userName,
-			       '</span><span>发布时间：',lis.infoDate,
+			       i+1,'</td><td width="690"><span><font color="blue">标题:</font>',lis.infoTitle,
+			       '</span><br/><span><font color="blue">内容：</font>',lis.infoContent,
+			       '</span><span><font color="blue"><br>管理员账号：</font>',lis.userName,
+			       '</span><span><font color="blue">发布时间：</font>',lis.infoDate,
 			       '</span></td><td width="40"><span><input type="button" value="删除" onclick="delInfo(',lis.infoId,')" /></span></td></tr>'
 		].join('');
 		$("#infos").append(str);

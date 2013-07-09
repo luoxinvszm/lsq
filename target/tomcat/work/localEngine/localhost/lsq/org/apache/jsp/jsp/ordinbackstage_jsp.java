@@ -139,7 +139,6 @@ public final class ordinbackstage_jsp extends org.apache.jasper.runtime.HttpJspB
       out.write("\t\t\t\t<li><a href=\"#\" onClick=\"Tab(3)\">未通过的信息</a></li>\r\n");
       out.write("\t\t\t\t<li><a href=\"#\" onClick=\"Tab(4)\">发布过期信息</a></li>\r\n");
       out.write("\t\t\t\t<li><a href=\"#\" onClick=\"Tab(5)\">发布校园资讯&广告</a></li>\r\n");
-      out.write("\t\t\t\t\r\n");
       out.write("\t\t\t</ul>\r\n");
       out.write("\t\t</div>\r\n");
       out.write("\t\t<!-- //left -->\r\n");

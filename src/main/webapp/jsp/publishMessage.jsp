@@ -15,12 +15,34 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <script type="text/javascript" src="<%=path %>/js/jquery-1.9.1.min.js"></script>
 <script type="text/javascript" src="<%=path %>/js/qh/publishMessage.js"></script>
 <script type="text/javascript" src="<%=path %>/js/yzp/curDate.js"></script>
+<script type="text/javascript" src="<%=path %>/js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="<%=path %>/js/common.js"></script>
+<script type="text/javascript" src="<%=path %>/js/keyWords.js"></script>
 <script type="text/javascript">
 function changeImage() {
 	var date = new Date();
 	document.getElementById("auth").src = 'authImg?id=' + date.getTime();
 }
 </script>
+    <script type="text/javascript">
+		$(function(){
+			$("#messageContext").blur(function(){
+				var position = 0;
+				var length = 0;
+				var text = $("#messageContext").val();
+				for(var i = 0; i < keyWords.length ; i++){
+					var next1 = next(keyWords[i]);
+					position = pattern(text,keyWords[i],next1);
+					length = keyWords[i].length;
+					if(position != undefined){
+						replaceWords(text,position,length);
+						break;
+					}
+				
+				}	
+			});
+		});
+    </script>
 </head>
 <body onLoad="getEClock(clock)">
 	<div class="wrap">
@@ -58,7 +80,7 @@ function changeImage() {
 								href="javascript:void(0)" onclick="changeImage()">看不清</a></dd>
 				</dl>
 				<p class="p">请输入您要发布的信息</p>
-				<textarea class="textarea" id="messageContext"></textarea>
+				<textarea class="textarea" id="messageContext" ></textarea>
 				<input type="checkbox" checked class="check" /><label>我已接受**协议</label>
 				<input type="button" value="提&nbsp;交" class="btn" id="btnGet"/>
 			</div>

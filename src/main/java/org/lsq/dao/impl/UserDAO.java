@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.lsq.dao.IUserDAO;
+import org.lsq.util.CipherUtil;
 import org.lsq.util.NameUtil;
 import org.lsq.util.IdBuilder;
 
@@ -113,7 +114,8 @@ public class UserDAO implements IUserDAO {
 	//密码重置
 	public boolean resetPassword(String username){
 		System.out.println("密码重置--------");
-		String sql = "update user set userPassword='111111' where userName=?";
+		String password=CipherUtil.encodeByMD5("111111");
+		String sql = "update user set userPassword='"+password+"' where userName=?";
 		jdbcTemplate.update(sql,new Object[]{username});
 		return true;
 	}

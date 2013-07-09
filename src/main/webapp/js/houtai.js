@@ -1,6 +1,6 @@
 function Tab(num) {
 	var i;
-	if (num == 8) {
+	if (num == 9) {
 		displayNone();
 		displayOne(num);
 		querySettings();
@@ -34,9 +34,13 @@ function Tab(num) {
 	else if(num == 6){
 		displayNone();
 		displayOne(num);
-		searchUsingAdmin(0);
 		document.getElementById("right10").style.display = "none";
 	}else if(num == 7){
+		displayNone();
+		displayOne(num);
+		searchUsingAdmin(0);
+		document.getElementById("right10").style.display = "none";
+	}else if(num==8){
 		displayNone();
 		displayOne(num);
 		searchUsingAdmin(1);

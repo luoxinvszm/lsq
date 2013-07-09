@@ -75,7 +75,7 @@ public class CipherUtil {
 		return hexDigits[d1] + hexDigits[d2];
 	}
 	public static void main(String[] args) {
-		
+		System.out.println(CipherUtil.encodeByMD5("admin"));
 	}
 	
 }

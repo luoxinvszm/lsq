@@ -374,13 +374,12 @@ function checkcreate(){
 				data : params,
 				dataType : "json", //ajax返回值设置为json格式
 				success : function(json) {//返回的json
-						$(tag).html("");
 					 $.each(json.list, function(i, item) {
 						 alert(123);//messageList是action中的list对的是get方法 
 						 alert(
 								 "恭喜您,创建成功!" +
 								 "用户名:"+item.username+""+
-								 "真实姓名:"+item.userRealName+"" +
+								 "真实姓名:111111" +
 								 "初始密码:"+item.password+"");
 					   }); 
 				},

@@ -18,7 +18,7 @@
 
 <script type="text/javascript" src="<%=path%>/js/houtai.js"></script>
 <script type="text/javascript" src="<%=path%>/js/backstage.js"></script>
-
+<script type="text/javascript" src="<%=path%>/js/qh/backstageMessage.js"></script>
 <script type="text/javascript" src="<%=path%>/js/yzp/jquery-1.4.3.js"></script>
 <script type="text/javascript" src="<%=path%>/js/yzp/json2.js"></script>
 <script type="text/javascript" src="<%=path%>/js/yzp/info.js"></script>
@@ -27,7 +27,6 @@
 <script type="text/javascript" src="<%=path%>/js/yzp/asynPage-Msg.js"></script>
 <script type="text/javascript" src="<%=path%>/js/yhy/yhy.js"></script>
 <!--<script type="text/javascript" src="<%=path %>/js/yhy/queryMessage.js" ></script>-->
-<script type="text/javascript" src="<%=path%>/js/qh/backstageMessage.js"></script>
 </head>
 <body onload="">
 	<%
